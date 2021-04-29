@@ -63,6 +63,8 @@
 		B2EFF6B8263AEE8C00A584D2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B2EFF6B6263AEE8C00A584D2 /* README.md */; };
 		B2EFF6C3263AF69A00A584D2 /* mvvm.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EFF6C2263AF69A00A584D2 /* mvvm.png */; };
 		B2EFF6C4263AF69A00A584D2 /* mvvm.png in Resources */ = {isa = PBXBuildFile; fileRef = B2EFF6C2263AF69A00A584D2 /* mvvm.png */; };
+		B2EFF6D9263B002B00A584D2 /* .gitignor in Resources */ = {isa = PBXBuildFile; fileRef = B2EFF6D8263B002B00A584D2 /* .gitignor */; };
+		B2EFF6DA263B002B00A584D2 /* .gitignor in Resources */ = {isa = PBXBuildFile; fileRef = B2EFF6D8263B002B00A584D2 /* .gitignor */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -99,6 +101,7 @@
 		B2EFF69F263AE75A00A584D2 /* Xml.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Xml.swift; sourceTree = "<group>"; };
 		B2EFF6B6263AEE8C00A584D2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B2EFF6C2263AF69A00A584D2 /* mvvm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mvvm.png; sourceTree = "<group>"; };
+		B2EFF6D8263B002B00A584D2 /* .gitignor */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignor; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				B2EFF6B6263AEE8C00A584D2 /* README.md */,
+				B2EFF6D8263B002B00A584D2 /* .gitignor */,
 				B2B25D372639A9370044E693 /* Resources */,
 				B29ACAF1262D678A00209343 /* Shared */,
 				B29ACAFB262D678A00209343 /* iOS */,
@@ -358,6 +362,7 @@
 			files = (
 				B2B25D392639A94C0044E693 /* user.json in Resources */,
 				B29ACB09262D678A00209343 /* Assets.xcassets in Resources */,
+				B2EFF6D9263B002B00A584D2 /* .gitignor in Resources */,
 				B2EFF6B7263AEE8C00A584D2 /* README.md in Resources */,
 				B2B25D3E2639AA0B0044E693 /* book.json in Resources */,
 				B2EFF6C3263AF69A00A584D2 /* mvvm.png in Resources */,
@@ -370,6 +375,7 @@
 			files = (
 				B2B25D3A2639A94C0044E693 /* user.json in Resources */,
 				B29ACB0A262D678A00209343 /* Assets.xcassets in Resources */,
+				B2EFF6DA263B002B00A584D2 /* .gitignor in Resources */,
 				B2EFF6B8263AEE8C00A584D2 /* README.md in Resources */,
 				B2B25D3F2639AA0B0044E693 /* book.json in Resources */,
 				B2EFF6C4263AF69A00A584D2 /* mvvm.png in Resources */,

@@ -7,4 +7,9 @@
     "id" : 2,
     "title": "Book 2",
     "author" : "Max"
+},
+{
+    "id" : 3,
+    "title": "Book 3",
+    "author" : "Brian"
 }]

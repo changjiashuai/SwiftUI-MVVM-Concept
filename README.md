@@ -8,11 +8,8 @@ Mvvm SwiftUI @Mvvm @SwiftUI Development Architecture
 # Model
 
 ```Swift 
-struct User: Model {
-    
+struct User: Model {    
     let id: Int    
-    
-    /// user's name
     let name: String
 }
 ```

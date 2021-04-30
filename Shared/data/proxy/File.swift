@@ -34,19 +34,19 @@ struct File<T:Model, R: Reader>: Proxy {
         var items: [Item] = []
         
         guard let file = Bundle.main.url(forResource: request.fileName, withExtension: nil) else {
-            return FileResponse(request: request, items:items, error: ProxyError.NoFile(fileName: fn))
+            return FileResponse(request: request, items:items, error: ProxyError.noFile(fileName: fn))
         }
 
         do {
             data = try Data(contentsOf: file)
         } catch {
-            return FileResponse(request: request, items: [], error: ProxyError.LoadError(fileName: fn))
+            return FileResponse(request: request, items: [], error: ProxyError.loadError(fileName: fn))
         }
         
         do {
             items = try reader.read(data: data) as! [Item]
         } catch {
-           return FileResponse(request: request, items: items, error: ReaderError.ReadError)
+           return FileResponse(request: request, items: items, error: ReaderError.readError)
         }
 
 

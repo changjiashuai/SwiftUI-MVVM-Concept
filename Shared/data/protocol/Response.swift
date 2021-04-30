@@ -20,5 +20,5 @@ protocol Response {
     var items: [Item] { get }
     
     /// Error while parsing or fetching
-    var error : Error? { get }
+    var error : DataError? { get }
 }

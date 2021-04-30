@@ -1,7 +1,8 @@
 //
-//  Store.swift
+//  RemoteStore.swift
+//  UniversalComponent
 //
-//  Created by Igor Shelopaev on 27.04.2021.
+//  Created by Igor Shelopaev on 30.04.2021.
 //
 
 import Foundation
@@ -50,24 +51,7 @@ class RemoteStore<T: Model, P: Proxy>: Store, ObservableObject {
     }
     
     
-    /// Turn error into description
-    /// - Parameter error: Error while loading
-    /// - Returns: Errors description
-    func prepareError(_ error: Error) -> String {
-        
-        var e: String
-        
-        switch error {
-        case ProxyError.NoFile(let fileName): e = "file \(fileName) not found"
-        case ProxyError.LoadError(let fileName): e = "could not load data from file \(fileName)"
-        case ReaderError.ReadError: e = "could not parse data"
-        default:
-            e = "unknown error"
-        }
-        
-        return e
-    }
-    
+   
     /// Load data from remote source
     /// - Parameters:
     ///   - params: Set of parameters to control a request of data (data range etc.)
@@ -88,7 +72,7 @@ class RemoteStore<T: Model, P: Proxy>: Store, ObservableObject {
                 callback()
                 self.loading = false
                 if let error = response.error {
-                    self.error = self.prepareError(error)
+                    self.error = error.getDescription()
                 }
             }
         })

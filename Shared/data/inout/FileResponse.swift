@@ -17,5 +17,5 @@ struct FileResponse<T: Model>: Response{
     let items: [T]
     
     /// Error while parsing or fetching from a file
-    let error : Error?
+    let error : DataError?
 }

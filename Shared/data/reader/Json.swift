@@ -18,7 +18,7 @@ struct Json<T: Model>: Reader{
         if let items = try? JSONDecoder().decode([T].self, from: data) {
             return items
         } else {
-            throw ReaderError.ReadError
+            throw ReaderError.readError
         }
     }
 }

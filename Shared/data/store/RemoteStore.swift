@@ -8,7 +8,7 @@
 import Foundation
 
 /// Store is a repo that maneges models conformed to Model protocol
-class RemoteStore<T: Model, P: Proxy>: Store, ObservableObject {
+class RemoteStore<T: Model, U: Proxy>: Store, ObservableObject {
     
     /// Set of stored data
     @Published private(set) var items: [T] = [T]()
@@ -20,11 +20,11 @@ class RemoteStore<T: Model, P: Proxy>: Store, ObservableObject {
     @Published var loading: Bool = false
     
     /// Defines the communication level for data
-    var proxy: P
+    var proxy: U
     
     /// Init
     /// - Parameter proxy: Performs requests to a remote source
-    init(proxy: P) {
+    init(proxy: U) {
         self.proxy = proxy
     }
     

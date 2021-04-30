@@ -20,10 +20,6 @@ struct UniversalList<T: Model, P: Proxy, Content: View>: View {
     /// View title
     let title : String?
     
-    
-    /// Load data on Appear
-    let autoLoad: Bool
-    
     var body: some View {
         ZStack {
             HStack {
@@ -51,7 +47,7 @@ struct UniversalList<T: Model, P: Proxy, Content: View>: View {
                 .opacity(store.loading ? 0 : 1).offset(y: 50)
         }.frame(width: 302, height: 150, alignment: .topLeading)
             .overlay(Text("Loading...").opacity(store.loading ? 1 : 0), alignment: .center)
-        .onAppear { if autoLoad { load() } }
+        .onAppear { if !store.loading { load() } }
     }
 
 

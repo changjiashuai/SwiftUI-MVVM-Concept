@@ -15,14 +15,9 @@ struct AgeChart<T: Model, P: Proxy, Content: View>: View {
 
     /// Template to defined Item view
     let content: (T) -> Content
-
     
     /// View title
     let title : String?
-    
-    
-    /// Load data on Appear
-    let autoLoad: Bool
         
     var body: some View {
         ZStack(alignment: .topLeading){
@@ -52,7 +47,7 @@ struct AgeChart<T: Model, P: Proxy, Content: View>: View {
         }.frame(width: 302, height: 150, alignment: .topLeading)
             .overlay(Text("Loading...")
             .opacity(store.loading ? 1 : 0), alignment: .center)
-        .onAppear { if autoLoad { load() } }
+        .onAppear { if !store.loading { load() } }
     }
 
 

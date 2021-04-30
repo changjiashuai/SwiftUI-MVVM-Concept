@@ -9,7 +9,7 @@ import Foundation
 
 /// Defines set of stores for your App using by view components
 struct AppViewModel: ViewModel {
-    
+      
     /// Users store
     let users = RemoteStore<User, File>(
         proxy: File<User, Json<User>>(
@@ -24,4 +24,5 @@ struct AppViewModel: ViewModel {
             fileName: "book.json"
         )
     )
+
 }

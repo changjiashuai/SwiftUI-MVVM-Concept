@@ -19,10 +19,8 @@ class RemoteStore<T: Model, P: Proxy>: Store, ObservableObject {
     /// Informs the View that loading process is in the progress
     @Published var loading: Bool = false
     
-    
     /// Defines the communication level for data
     var proxy: P
-
     
     /// Init
     /// - Parameter proxy: Performs requests to a remote source
@@ -59,7 +57,7 @@ class RemoteStore<T: Model, P: Proxy>: Store, ObservableObject {
         let queue = DispatchQueue.global(qos: .userInitiated)
         loading = true
         
-        queue.asyncAfter(deadline: .now() + 2, execute: {
+        queue.asyncAfter(deadline: .now() + 1, execute: {
             let proxy = self.proxy
             let request = proxy.createRequest(params: params)
             let response = proxy.run(request)

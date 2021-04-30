@@ -18,20 +18,17 @@ struct ContentView: View {
             UniversalList(
                 store: viewModel.users,
                 content: { user in userFactory(user) },
-                title: "Users",
-                autoLoad : true
+                title: "Users"
             ).border(Color.white)
             UniversalList(
                 store: viewModel.books,
                 content: { book in bookFactory(book) },
-                title: "Books",
-                autoLoad : true
+                title: "Books"
             ).border(Color.white)
             AgeChart(
                 store: viewModel.users,
                 content: { user in userAgeChartFactory(user) },
-                title: "Users age chart",
-                autoLoad : false
+                title: "Users age chart"
             ).border(Color.white)
             Spacer()
         }.padding()

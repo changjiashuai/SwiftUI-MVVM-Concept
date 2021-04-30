@@ -38,8 +38,7 @@ let users = RemoteStore<User, File>(
 UniversalList(
     store: viewModel.users,
     content: { user in userFactory(user) },
-    title: "Users",
-    autoLoad : true
+    title: "Users"
 )
 
 ```

@@ -46,7 +46,7 @@ UniversalList(
 
 ```
 
-* Define the template(@ViewBuilder) depicting entity
+* Define the template(@ViewBuilder) for creating view depicting entity
 ```Swift 
 @ViewBuilder
 func userFactory(_ user: User) -> some View {

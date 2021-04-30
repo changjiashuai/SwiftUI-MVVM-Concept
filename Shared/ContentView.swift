@@ -27,10 +27,10 @@ struct ContentView: View {
                 title: "Books",
                 autoLoad : true
             ).border(Color.white)
-            UniversalList(
+            AgeChart(
                 store: viewModel.users,
-                content: { user in userFactory(user) },
-                title: "Users (copy)",
+                content: { user in userAgeChartFactory(user) },
+                title: "Users age chart",
                 autoLoad : false
             ).border(Color.white)
             Spacer()
@@ -47,6 +47,20 @@ struct ContentView: View {
         }
             .frame(maxWidth: .infinity)
             .background(Color.orange)
+    }
+    
+    /// ViewBuilder to create view template for defining User in the UniversalList
+    /// - Parameter user: set of data for User
+    /// - Returns: View defining how User should be presented in the list
+    @ViewBuilder
+    private func userAgeChartFactory(_ user: User) -> some View {
+        let height = CGFloat(user.age)
+        let label = "\(user.name) - \(user.age)"
+        
+        Rectangle().frame(width: 88, height: height)
+            .foregroundColor(.green)
+            .overlay(Text(label).offset(y: -15),alignment: .topLeading)
+            .padding(.horizontal, 5)
     }
 
     /// ViewBuilder to create view template for defining Book in the UniversalList

@@ -1,6 +1,11 @@
 # Concept for organizing View and Data layers within SwiftUI App
 SwiftUI @SwiftUI Development Architecture
 
+It is not a universal solution but for some Apps it might be a suitable concept for building the architecture.
+It is not about how to create List and Chart view it's about one of possibility how to organize View and Data layers within SwiftUI App.
+
+Int the code example App stores assembled in AppViewModel. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  
+
 # Requirements
 
 * Swift 5
@@ -27,7 +32,7 @@ let users = RemoteStore<User, File>(
 
 # View
 
-* Define View and pass Store
+* Define List and pass Store with users data
 ```Swift 
 UniversalList(
     store: viewModel.users,
@@ -35,6 +40,7 @@ UniversalList(
     title: "Users",
     autoLoad : true
 )
+
 ```
 
 * Define the view template(@ViewBuilder) for Store items

@@ -15,6 +15,8 @@
 		B22DEAB6263BDE5300CDAAA2 /* ArrayStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DEAB4263BDE5300CDAAA2 /* ArrayStore.swift */; };
 		B22DEABA263BDEAF00CDAAA2 /* TreeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DEAB9263BDEAF00CDAAA2 /* TreeStore.swift */; };
 		B22DEABB263BDEAF00CDAAA2 /* TreeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DEAB9263BDEAF00CDAAA2 /* TreeStore.swift */; };
+		B22DEAC3263BE29500CDAAA2 /* AgeChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DEAC2263BE29500CDAAA2 /* AgeChart.swift */; };
+		B22DEAC4263BE29500CDAAA2 /* AgeChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DEAC2263BE29500CDAAA2 /* AgeChart.swift */; };
 		B24A918D26382DE700989C3B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A918C26382DE700989C3B /* User.swift */; };
 		B24A918E26382DE700989C3B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A918C26382DE700989C3B /* User.swift */; };
 		B24A919D26382E7A00989C3B /* UniversalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A919C26382E7A00989C3B /* UniversalList.swift */; };
@@ -76,6 +78,7 @@
 		B22DEAAD263BDDD800CDAAA2 /* RemoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStore.swift; sourceTree = "<group>"; };
 		B22DEAB4263BDE5300CDAAA2 /* ArrayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayStore.swift; sourceTree = "<group>"; };
 		B22DEAB9263BDEAF00CDAAA2 /* TreeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeStore.swift; sourceTree = "<group>"; };
+		B22DEAC2263BE29500CDAAA2 /* AgeChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeChart.swift; sourceTree = "<group>"; };
 		B24A918C26382DE700989C3B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B24A919C26382E7A00989C3B /* UniversalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalList.swift; sourceTree = "<group>"; };
 		B24A91A12638316700989C3B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -151,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				B24A919C26382E7A00989C3B /* UniversalList.swift */,
+				B22DEAC2263BE29500CDAAA2 /* AgeChart.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -398,6 +402,7 @@
 				B2EFF67F263AC4A600A584D2 /* Reader.swift in Sources */,
 				B2EFF631263AA93900A584D2 /* Https.swift in Sources */,
 				B2EFF67B263AC4A600A584D2 /* Store.swift in Sources */,
+				B22DEAC3263BE29500CDAAA2 /* AgeChart.swift in Sources */,
 				B2EFF62A263AA71800A584D2 /* FileResponse.swift in Sources */,
 				B2EFF681263AC4A600A584D2 /* ViewModel.swift in Sources */,
 				B22DEAA8263BDB8B00CDAAA2 /* DataError.swift in Sources */,
@@ -431,6 +436,7 @@
 				B2EFF680263AC4A600A584D2 /* Reader.swift in Sources */,
 				B2EFF632263AA93900A584D2 /* Https.swift in Sources */,
 				B2EFF67C263AC4A600A584D2 /* Store.swift in Sources */,
+				B22DEAC4263BE29500CDAAA2 /* AgeChart.swift in Sources */,
 				B2EFF62B263AA71800A584D2 /* FileResponse.swift in Sources */,
 				B2EFF682263AC4A600A584D2 /* ViewModel.swift in Sources */,
 				B22DEAA9263BDB8B00CDAAA2 /* DataError.swift in Sources */,

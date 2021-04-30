@@ -14,4 +14,7 @@ struct User: Model {
     
     /// user's name
     let name: String
+    
+    /// user's age
+    let age: Int
 }

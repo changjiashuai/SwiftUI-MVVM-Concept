@@ -1,5 +1,5 @@
 # Concept for organizing View and Data layers within SwiftUI App
-Mvvm SwiftUI @Mvvm @SwiftUI Development Architecture
+SwiftUI @SwiftUI Development Architecture
 
 # Requirements
 

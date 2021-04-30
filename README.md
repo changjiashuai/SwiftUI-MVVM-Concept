@@ -1,4 +1,4 @@
-# Concept "Organizing View and Data layers within SwiftUI App"
+# Organizing View and Data layers within SwiftUI App
 SwiftUI @SwiftUI Development Architecture
 
 It is not a universal solution but for some cases it can be a suitable concept for building the architecture. Especially It might be useful for a prototyping process when you need to focus on visual part of the app keeping your code clean and with less "copy paste" at the same time.

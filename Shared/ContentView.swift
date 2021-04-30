@@ -41,7 +41,7 @@ struct ContentView: View {
     /// - Parameter user: set of data for User
     /// - Returns: View defining how User should be presented in the list
     @ViewBuilder
-    func userFactory(_ user: User) -> some View {
+    private func userFactory(_ user: User) -> some View {
         HStack {
             Text("Name: \(user.name)").font(.system(size: 14, weight: .bold))
         }
@@ -53,7 +53,7 @@ struct ContentView: View {
     /// - Parameter book: set of data for Book
     /// - Returns: View defining how Book should be presented in the list
     @ViewBuilder
-    func bookFactory(_ book: Book) -> some View {
+    private func bookFactory(_ book: Book) -> some View {
         HStack {
             Text("Title: \(book.title)").font(.system(.headline))
             Text("Author: \(book.author)")

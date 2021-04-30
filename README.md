@@ -6,6 +6,8 @@ It is not about how to create List and Chart views it's about one of possibility
 
 Int the code example App stores assembled in AppViewModel. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  
 
+<img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/swiftui_mvvm.png?raw=true">
+
 # Requirements
 
 * Swift 5

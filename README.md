@@ -4,7 +4,7 @@ SwiftUI @SwiftUI Development Architecture
 It is not a universal solution but for some cases it might be a suitable concept for building the architecture.
 It is not about how to create List and Chart views it's about one of possibility how to organize View and Data layers within SwiftUI App.
 
-Int the code example App stores assembled in AppViewModel. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  
+In the code example App stores are assembled in AppViewModel. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  
 
 <img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/swiftui_mvvm.png?raw=true">
 

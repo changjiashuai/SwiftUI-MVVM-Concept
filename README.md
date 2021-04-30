@@ -9,11 +9,11 @@ Writer is not implemented in the example. It is placed on the diagram to show th
 
 <img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/swiftui_mvvm.png?raw=true">
 
-# Requirements
+## Requirements
 
 * Swift 5
 
-# Model
+## Model
 * Define Model describing you entity
 ```Swift 
 struct User: Model {    
@@ -23,7 +23,7 @@ struct User: Model {
 }
 ```
 
-# Store
+## Store
 * Define Store in AppViewModel
 ```Swift 
 let users = RemoteStore<User, File>(
@@ -34,7 +34,7 @@ let users = RemoteStore<User, File>(
 )
 ```
 
-# View
+## View
 
 * Define View component and pass Store
 ```Swift 

@@ -1,8 +1,8 @@
 # Concept "Organizing View and Data layers within SwiftUI App"
 SwiftUI @SwiftUI Development Architecture
 
-It is not a universal solution but for some cases it might be a suitable concept for building the architecture.
-It is not about how to create List and Chart views it's about one of possibility how to organize View and Data layers within SwiftUI App.
+It is not a universal solution but for some cases it can be a suitable concept for building the architecture. Especially It might be useful for prototyping process when you need to focus on visual part of the app keeping your code clean and with less "copy paste" at the same time.
+
 
 In the code example App stores are assembled in AppViewModel. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  
 

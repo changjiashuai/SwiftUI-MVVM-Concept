@@ -6,6 +6,8 @@ It is not about how to create List and Chart views it's about one of possibility
 
 In the code example App stores are assembled in AppViewModel. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  
 
+Writer is not implemented in the example. It is placed on the diagram to show the comprehensiveness of the solution for any type of communication with remote sources.
+
 <img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/swiftui_mvvm.png?raw=true">
 
 # Requirements

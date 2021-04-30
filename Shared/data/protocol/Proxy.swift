@@ -8,7 +8,7 @@
 import Foundation
 
 
-/// Defines a communication layerwith a remote source of data
+/// Defines a communication layer with a remote source of data
 protocol Proxy {
     associatedtype Item: Model
     associatedtype AbstractReader: Reader

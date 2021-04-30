@@ -11,7 +11,7 @@ import Foundation
 class RemoteStore<T: Model, P: Proxy>: Store, ObservableObject {
     
     /// Set of stored data
-    @Published var items: [T] = [T]()
+    @Published private(set) var items: [T] = [T]()
     
     /// Contains error string if loading ends up with errors
     @Published var error: String? = nil

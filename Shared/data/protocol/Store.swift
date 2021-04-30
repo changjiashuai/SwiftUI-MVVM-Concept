@@ -14,12 +14,7 @@ protocol Store {
 
     /// Defines communication layer with remote source of data
     var proxy: AbstractProxy { get set }
-
-    
-    /// Set of data
-    var items: [Item] { get set }
-
-    
+       
     /// Load data from a remote source
     /// - Parameters:
     ///   - params: Defines specs for requested data

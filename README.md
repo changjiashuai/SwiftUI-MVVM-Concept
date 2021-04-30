@@ -16,6 +16,7 @@ Int the code example App stores assembled in AppViewModel. Two views (UniversalL
 struct User: Model {    
     let id: Int    
     let name: String
+    let age: Int
 }
 ```
 

@@ -10,6 +10,5 @@ import Foundation
 
 /// Defines set of stores for your App
 protocol ViewModel{
-//    associatedtype AbstractStore
-//    func getStores() -> [AbstractStore]
+
 }

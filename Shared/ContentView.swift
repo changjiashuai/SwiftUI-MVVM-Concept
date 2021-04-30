@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Main view contains two lists of Users loaded from the same store and Books
-/// Two lists of users share the same Store
+/// Users list and Users ages chart  share the same Store
 struct ContentView: View {
 
     let viewModel: AppViewModel

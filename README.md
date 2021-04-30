@@ -27,8 +27,8 @@ struct User: Model {
 * Define Store in AppViewModel
 ```Swift 
 let users = RemoteStore<User, File>(
-    proxy: File<User, Json<User>>(
-        reader: Json(),
+    proxy: File<User, Json>(
+        reader: Json<User>(),
         fileName: "user.json"
     )
 )

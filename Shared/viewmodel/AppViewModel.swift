@@ -12,15 +12,15 @@ struct AppViewModel: ViewModel {
       
     /// Users store
     let users = RemoteStore<User, File>(
-        proxy: File<User, Json<User>>(
-            reader: Json(),
+        proxy: File<User, Json>(
+            reader: Json<User>(),
             fileName: "user.json"
         )
     )
     /// Books store
     let books = RemoteStore<Book, File>(
-        proxy: File<Book, Json<Book>>(
-            reader: Json(),
+        proxy: File<Book, Json>(
+            reader: Json<Book>(),
             fileName: "book.json"
         )
     )

@@ -49,8 +49,6 @@ class RemoteStore<T: Model, P: Proxy>: Store, ObservableObject {
     func removeAll() {
         items.removeAll()
     }
-    
-    
    
     /// Load data from remote source
     /// - Parameters:

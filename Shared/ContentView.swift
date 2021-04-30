@@ -49,9 +49,9 @@ struct ContentView: View {
             .background(Color.orange)
     }
     
-    /// ViewBuilder to create view template for defining User in the UniversalList
+    /// ViewBuilder to create view template for defining User in the AgeChart
     /// - Parameter user: set of data for User
-    /// - Returns: View defining how User should be presented in the list
+    /// - Returns: View defining how User's age should be presented in the chart
     @ViewBuilder
     private func userAgeChartFactory(_ user: User) -> some View {
         let height = CGFloat(user.age)

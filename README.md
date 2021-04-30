@@ -13,7 +13,7 @@ Int the code example App stores assembled in AppViewModel. Two views (UniversalL
 * Swift 5
 
 # Model
-
+* Define Model describing you entity
 ```Swift 
 struct User: Model {    
     let id: Int    
@@ -35,7 +35,7 @@ let users = RemoteStore<User, File>(
 
 # View
 
-* Define List and pass Store with users data
+* Define View component and pass Store
 ```Swift 
 UniversalList(
     store: viewModel.users,
@@ -45,7 +45,7 @@ UniversalList(
 
 ```
 
-* Define the view template(@ViewBuilder) for Store items
+* Define the template(@ViewBuilder) depicting entity
 ```Swift 
 @ViewBuilder
 func userFactory(_ user: User) -> some View {

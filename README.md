@@ -3,7 +3,6 @@ SwiftUI @SwiftUI Development Architecture
 
 It is not a universal solution but for some cases it can be a suitable concept for building the architecture. Especially It might be useful for prototyping process when you need to focus on visual part of the app keeping your code clean and with less "copy paste" at the same time.
 
-
 In the code example App stores are assembled in AppViewModel. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  
 
 Writer is not implemented in the example. It is placed on the diagram to show the comprehensiveness of the solution for any type of communication with remote sources.

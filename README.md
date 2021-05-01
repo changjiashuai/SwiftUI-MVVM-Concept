@@ -11,7 +11,7 @@ Writer is not implemented in this code example. It is placed on the diagram to s
 
 ## Requirements
 
-* Swift 5
+* Xcode Version 12.* with Swift 5.0
 
 ## Model
 * Define Model describing you entity

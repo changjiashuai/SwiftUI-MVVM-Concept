@@ -1,7 +1,7 @@
 # Organizing View and Data layers within SwiftUI App
 SwiftUI @SwiftUI Development Architecture
 
-This is one of the way how to separate View and Data Layers. Concept based on protocols for building the architecture SwiftUI apps. 
+Concept based on protocols. It is not about how to create List and Chart views it's about one of possibility how to organize View and Data layers within SwiftUI App.
 
 App stores are assembled in AppViewModel In the code example. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  
 

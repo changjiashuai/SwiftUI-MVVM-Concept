@@ -57,7 +57,7 @@ class RemoteStore<T: Model, U: Proxy>: Store, ObservableObject {
         let queue = DispatchQueue.global(qos: .userInitiated)
         loading = true
         
-        //use something else is DispatchQueue is not an option for managing tasks on threads
+        //use something else if DispatchQueue is not an option for managing tasks on threads
         queue.asyncAfter(deadline: .now() + 1, execute: {
             let proxy = self.proxy
             let request = proxy.createRequest(params: params)

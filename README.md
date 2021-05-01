@@ -1,11 +1,11 @@
 # Organizing View and Data layers within SwiftUI App
 SwiftUI @SwiftUI Development Architecture
 
-It is not a universal solution but for some cases it can be a suitable concept for building the architecture. Especially It might be useful for a prototyping process when you need to focus on visual part of the app keeping your code clean and with less "copy paste" at the same time.
+It is not a universal solution but for some cases it can be a suitable concept for building the architecture.
 
-In the code example App stores are assembled in AppViewModel. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  
+App stores are assembled in AppViewModel In the code example. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  
 
-Writer is not implemented in the example. It is placed on the diagram to show the comprehensiveness of the solution for any type of communication with remote sources.
+Writer is not implemented in this code example. It is placed on the diagram to show the comprehensiveness of the solution for any type of communication with remote sources.
 
 <img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/swiftui_mvvm.png?raw=true">
 

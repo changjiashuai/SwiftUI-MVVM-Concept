@@ -10,23 +10,25 @@ import SwiftUI
 /// Main view contains two lists of Users loaded from the same store and Books
 /// Users list and Users age chart  share the same Store
 struct ContentView: View {
-
-    let viewModel: AppViewModel
+    
+    @EnvironmentObject var viewModel: AppViewModel
+    
+    @EnvironmentObject var users: RemoteStore<User, File<User, Json<User>>>
     
     var body: some View {
-        VStack {
+       VStack {
             UniversalList(
-                store: viewModel.users,
+                store: users,
                 content: { user in userFactory(user) },
                 title: "Users"
             ).border(Color.white)
             UniversalList(
-                store: viewModel.books,
+                store: viewModel.getBooks(),
                 content: { book in bookFactory(book) },
                 title: "Books"
             ).border(Color.white)
             AgeChart(
-                store: viewModel.users,
+                store: users,
                 content: { user in userAgeChartFactory(user) },
                 title: "Users age chart"
             ).border(Color.white)
@@ -77,6 +79,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: AppViewModel())
+        ContentView()
     }
 }

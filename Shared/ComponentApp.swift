@@ -8,10 +8,15 @@ import SwiftUI
 
 
 @main
-struct LayoutApp: App {
+struct LayoutApp: App {    
+   
+    @StateObject var viewModel = AppViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: AppViewModel())
+            ContentView()
+                .environmentObject(viewModel)
+                .environmentObject(viewModel.getUsers())
         }
     }
 }

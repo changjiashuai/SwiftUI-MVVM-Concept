@@ -9,7 +9,7 @@ import SwiftUI
 
 /// List displays data conformed to Model protocol
 struct UniversalList<T: Model, P: Proxy, Content: View>: View {
-
+   
     /// Store with data
     @StateObject var store: RemoteStore<T, P>
 

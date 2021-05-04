@@ -13,26 +13,23 @@ struct ContentView: View {
     
     @EnvironmentObject var viewModel: AppViewModel
     
-    @EnvironmentObject var users: RemoteStore<User, File<User, Json<User>>>
-    
     var body: some View {
        VStack {
             UniversalList(
-                store: users,
+                store: viewModel.users,
                 content: { user in userFactory(user) },
                 title: "Users"
-            ).border(Color.white)
+            )
             UniversalList(
-                store: viewModel.getBooks(),
+                store: viewModel.books,
                 content: { book in bookFactory(book) },
                 title: "Books"
-            ).border(Color.white)
+            )
             AgeChart(
-                store: users,
+                store: viewModel.users,
                 content: { user in userAgeChartFactory(user) },
                 title: "Users age chart"
-            ).border(Color.white)
-            Spacer()
+            )
         }.padding()
     }
 

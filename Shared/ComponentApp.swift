@@ -18,7 +18,7 @@ struct LayoutApp: App {
                 //inject viewModel for get access from every view in the hierarchy
                 .environmentObject(viewModel)
                 //inject store on the next view level
-                .environmentObject(viewModel.getUsers())
+                //.environmentObject(viewModel.getUsers())
         }
     }
 }

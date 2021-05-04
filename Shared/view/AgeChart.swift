@@ -19,6 +19,8 @@ struct AgeChart<T: Model, P: Proxy, Content: View>: View {
     /// View title
     let title: String?
     
+    var autoLoad : Bool = false
+    
     var body: some View {
         ZStack(alignment: .topLeading) {
             HStack {
@@ -48,7 +50,7 @@ struct AgeChart<T: Model, P: Proxy, Content: View>: View {
         .overlay(Text("Loading...")
         .opacity(store.loading ? 1 : 0), alignment: .center)
         .border(Color.white)
-        .onAppear { if !store.loading { load() } }
+        .onAppear { if !store.loading && autoLoad { load() } }
     }
     
     

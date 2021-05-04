@@ -15,7 +15,7 @@ struct LayoutApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                //inject viewModel for get access from every view in the hierarchy
+                //inject viewModel for to get access from every view in the hierarchy
                 .environmentObject(viewModel)
         }
     }

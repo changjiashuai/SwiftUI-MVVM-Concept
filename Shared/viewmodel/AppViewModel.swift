@@ -9,7 +9,7 @@ import Foundation
 
 /// Defines set of stores for your App using by view components
 class AppViewModel: ViewModel, ObservableObject {
-       
+          
    func getUsers() -> RemoteStore<User, File<User, Json<User>>>{
         return RemoteStore<User, File>(
             proxy: File<User, Json>(

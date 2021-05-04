@@ -21,6 +21,7 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             VStack {
+                getToolbar()
                 UniversalList(
                     store: viewModel.users,
                     content: { user in userFactory(user) },
@@ -36,7 +37,6 @@ struct ContentView: View {
                     content: { book in bookFactory(book) },
                     title: "Books"
                 )
-                getToolbar()
                 getChartViews()
             }
         }.padding()

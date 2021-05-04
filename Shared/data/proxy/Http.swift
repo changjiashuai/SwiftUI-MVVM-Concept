@@ -7,4 +7,4 @@
 
 import Foundation
 
-//Proxy for https requests
+//Http proxy uses http requests to load data from the server

@@ -51,10 +51,8 @@ UniversalList(
 @ViewBuilder
 func userFactory(_ user: User) -> some View {
     HStack {
-        Text("Name: \(user.name)").font(.system(size: 14, weight: .bold))
+        Text("Name: \(user.name)")
     }
-        .frame(maxWidth: .infinity)
-        .background(Color.orange)
 }
 ```
 

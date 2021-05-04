@@ -39,10 +39,10 @@ let users = RemoteStore<User, File>(
 * Define View component and pass Store
 ```Swift 
 UniversalList(
-    store: users,
+    store: viewModel.users,
     content: { user in userFactory(user) },
     title: "Users"
-).border(Color.white)
+)
 
 ```
 

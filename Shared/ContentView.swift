@@ -63,7 +63,7 @@ struct ContentView: View {
         if col > 0 {
             ForEach(1...col, id: \.self) { id in
                 AgeChart(
-                    store: viewModel.getFileJsonStore("user.json"),
+                    store: viewModel.getFileJsonStore(from: "user.json"),
                     content: { user in userAgeChartFactory(user) },
                     title: "Users age chart \(id)",
                     autoLoad: true

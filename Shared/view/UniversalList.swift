@@ -13,13 +13,16 @@ struct UniversalList<T: Model, P: Proxy, Content: View>: View {
     /// Store with data
     @StateObject var store: RemoteStore<T, P>
 
-    /// Template to defined Item view
+    /// A view builder that creates the content of an Item view
     let content: (T) -> Content
-
     
     /// View title
     let title : String?
     
+    /// The type of view representing the body of this view.
+    ///
+    /// When you create a custom view, Swift infers this type from your
+    /// implementation of the required `body` property.
     var body: some View {
         ZStack {
             HStack {

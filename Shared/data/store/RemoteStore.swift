@@ -28,6 +28,13 @@ class RemoteStore<T: Model, U: Proxy>: Store, ObservableObject {
         self.proxy = proxy
     }
     
+    
+    /// Get total of items in Store
+    /// - Returns: count
+    func count() -> Int {
+        items.count
+    }
+    
     /// Append a element of store
     /// - Parameter item: an element of store
     func append(_ item: T) {

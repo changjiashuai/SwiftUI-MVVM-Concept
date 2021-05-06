@@ -10,6 +10,8 @@ import Foundation
 /// Parse JSON data loaded from a remote source
 struct Json<T: Model>: Reader{       
     
+    typealias RawData = Data
+    
     /// Parse JSON data
     /// - Parameter data: JSON data
     /// - Throws: Throws an error if there's error while parsing

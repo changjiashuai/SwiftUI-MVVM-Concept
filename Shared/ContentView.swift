@@ -61,7 +61,7 @@ struct ContentView: View {
         if col == 0 { EmptyView() } else {
             ForEach(1...col, id: \.self) { id in
                 AgeChart(
-                    store: viewModel.getFileJsonStore(from: "user.json"),
+                    store: viewModel.getFileJsonStore(from: "user_chart.json"),
                     content: userAgeChartFactory,
                     title: "Age chart \(id)",
                     autoLoad: true
@@ -86,14 +86,14 @@ struct ContentView: View {
     /// - Parameter user: set of data for User
     /// - Returns: View defining how User's age should be presented in the chart
     @ViewBuilder
-    private func userAgeChartFactory(_ user: User) -> some View {
+    private func userAgeChartFactory(_ user: User, _ width: CGFloat) -> some View {
         let height = CGFloat(user.age)
         let label = "\(user.name) - \(user.age)"
 
-        Rectangle().frame(width: 88, height: height)
+        Rectangle().frame(width: width, height: height)
             .foregroundColor(.green)
-            .overlay(Text(label).offset(y: -15), alignment: .topLeading)
-            .padding(.horizontal, 5)
+            .overlay(Text(label).offset(y: -20), alignment: .topLeading)
+            .padding(.horizontal, 8)
     }
 
     /// ViewBuilder to create view template for defining Book in the UniversalList

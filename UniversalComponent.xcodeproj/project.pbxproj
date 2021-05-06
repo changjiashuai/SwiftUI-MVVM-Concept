@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B212028926443E1B0053EC0E /* user_chart.json in Resources */ = {isa = PBXBuildFile; fileRef = B212028826443E1B0053EC0E /* user_chart.json */; };
+		B212028A26443E1B0053EC0E /* user_chart.json in Resources */ = {isa = PBXBuildFile; fileRef = B212028826443E1B0053EC0E /* user_chart.json */; };
 		B22DEAA8263BDB8B00CDAAA2 /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DEAA7263BDB8B00CDAAA2 /* DataError.swift */; };
 		B22DEAA9263BDB8B00CDAAA2 /* DataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DEAA7263BDB8B00CDAAA2 /* DataError.swift */; };
 		B22DEAAE263BDDD800CDAAA2 /* RemoteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DEAAD263BDDD800CDAAA2 /* RemoteStore.swift */; };
@@ -76,6 +78,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B212028826443E1B0053EC0E /* user_chart.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user_chart.json; sourceTree = "<group>"; };
 		B22DEAA7263BDB8B00CDAAA2 /* DataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataError.swift; sourceTree = "<group>"; };
 		B22DEAAD263BDDD800CDAAA2 /* RemoteStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteStore.swift; sourceTree = "<group>"; };
 		B22DEAB4263BDE5300CDAAA2 /* ArrayStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayStore.swift; sourceTree = "<group>"; };
@@ -220,6 +223,7 @@
 				B22DEAEB263C0A5700CDAAA2 /* swiftui_mvvm.png */,
 				B2B25D3D2639AA0B0044E693 /* book.json */,
 				B2B25D382639A94C0044E693 /* user.json */,
+				B212028826443E1B0053EC0E /* user_chart.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -376,6 +380,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B212028926443E1B0053EC0E /* user_chart.json in Resources */,
 				B2B25D392639A94C0044E693 /* user.json in Resources */,
 				B29ACB09262D678A00209343 /* Assets.xcassets in Resources */,
 				B2EFF6B7263AEE8C00A584D2 /* README.md in Resources */,
@@ -389,6 +394,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B212028A26443E1B0053EC0E /* user_chart.json in Resources */,
 				B2B25D3A2639A94C0044E693 /* user.json in Resources */,
 				B29ACB0A262D678A00209343 /* Assets.xcassets in Resources */,
 				B2EFF6B8263AEE8C00A584D2 /* README.md in Resources */,

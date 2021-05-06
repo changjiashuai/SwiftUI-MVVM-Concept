@@ -10,8 +10,8 @@ import Foundation
 
 /// Processes data fetched from a remote source
 protocol Reader {
-    associatedtype Item : Model
     
+    associatedtype Item : Model
     
     /// Parses data loaded from remote source
     /// - Parameter data: set of data

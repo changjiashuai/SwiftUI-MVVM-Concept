@@ -11,7 +11,7 @@ import Foundation
 protocol Store {
     associatedtype Item: Model
     associatedtype AbstractProxy: Proxy
-
+    
     /// Defines communication layer with remote source of data
     var proxy: AbstractProxy { get set }
        
@@ -21,6 +21,8 @@ protocol Store {
     ///   - callback: Do something after data is loaded
     func load(params:[String:String]? ,callback: @escaping () -> Void)
     
+    
+    func count() -> Int
     
     /// Append an element
     /// - Parameter item: an element of store

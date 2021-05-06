@@ -10,21 +10,29 @@ import Foundation
 
 /// Defines a communication layer with a remote source of data
 protocol Proxy {
-    associatedtype Item: Model
+    
+    associatedtype Item
+    
     associatedtype AbstractReader: Reader
     associatedtype AbstractRequest: Request
     associatedtype AbstractResponse: Response
     
-    
     /// Parses data loaded from remote source
-    var reader: AbstractReader { get set }    
+    var reader: AbstractReader { get set }
+    
+    /// Create request
+    /// - Parameter params: set of params to control what data to get from a remote source Range, Filter etc
+    /// - Returns: specs of request
+    func createRequest(params: [String : String]?) -> AbstractRequest
+    
+    /// Create response
+    /// - Parameters:
+    ///   - request: Initial request
+    ///   - error: Errors desc for View
+    ///   - items: Store items
+    func createResponse(_ request: AbstractRequest,_ error: DataError?,_ items: [Item]) -> AbstractResponse
     
     /// Fetch data from a remote source
     /// - Parameter request: Defines specs of request
     func run(_ request: AbstractRequest) -> AbstractResponse
-    
-    
-    /// Create request
-    /// - Parameter params: set of params to control what data to get from a remote source Range, Filter etc
-    func createRequest(params: [String : String]?) -> AbstractRequest
 }

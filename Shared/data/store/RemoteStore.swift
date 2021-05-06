@@ -28,20 +28,17 @@ class RemoteStore<T: Model, U: Proxy>: Store, ObservableObject {
         self.proxy = proxy
     }
     
-    
     /// Append a element of store
     /// - Parameter item: an element of store
     func append(_ item: T) {
         items.append(item)
     }
     
-    
     /// Append a group of elements of store
     /// - Parameter items: elements of store
     func appendAll(_ items: [T]) {
         self.items.append(contentsOf: items)
     }
-    
     
     /// Remove all elements
     func removeAll() {

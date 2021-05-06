@@ -11,7 +11,6 @@ import SwiftUI
 /// Users list and Users age chart  share the same Store
 struct ContentView: View {
 
-
     /// App viewModel
     @EnvironmentObject var viewModel: AppViewModel
 
@@ -21,9 +20,9 @@ struct ContentView: View {
     let maxCol = 100
 
     var body: some View {
-        ScrollView {
-            VStack {
-                getToolbar()
+        VStack {
+            getToolbar()
+            ScrollView {
                 UniversalList(
                     content: userFactory,
                     store: viewModel.users,

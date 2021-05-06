@@ -11,7 +11,7 @@ import SwiftUI
 /// Users list and Users age chart  share the same Store
 struct ContentView: View {
 
-    
+
     /// App viewModel
     @EnvironmentObject var viewModel: AppViewModel
 
@@ -59,9 +59,7 @@ struct ContentView: View {
     /// - Returns: Chart view
     @ViewBuilder
     func getChartViews() -> some View {
-        EmptyView()
-
-        if col > 0 {
+        if col == 0 { EmptyView() } else {
             ForEach(1...col, id: \.self) { id in
                 AgeChart(
                     store: viewModel.getFileJsonStore(from: "user.json"),

@@ -39,11 +39,10 @@ let users = RemoteStore<User, File>(
 * Define View component and pass Store
 ```Swift 
 UniversalList(
+    content: userFactory,
     store: viewModel.users,
-    content: { user in userFactory(user) },
     title: "Users"
 )
-
 ```
 
 * Define the template(@ViewBuilder) for creating view depicting entity

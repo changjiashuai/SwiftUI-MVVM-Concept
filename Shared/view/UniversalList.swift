@@ -9,12 +9,12 @@ import SwiftUI
 
 /// List displays data conformed to Model protocol
 struct UniversalList<T: Model, P: Proxy, Content: View>: View {
-   
-    /// Store with data
-    @StateObject var store: RemoteStore<T, P>
-
+    
     /// A view builder that creates the content of an Item view
     let content: (T) -> Content
+    
+    /// Store with data
+    @StateObject var store: RemoteStore<T, P>
     
     /// View title
     let title : String?
@@ -48,7 +48,7 @@ struct UniversalList<T: Model, P: Proxy, Content: View>: View {
                 }
             }
                 .opacity(store.loading ? 0 : 1).offset(y: 50)
-        }.frame(width: 302, height: 150, alignment: .topLeading)
+        }.frame(height: 150, alignment: .topLeading)
             .overlay(Text("Loading...").opacity(store.loading ? 1 : 0), alignment: .center)
         .border(Color.white)
         .onAppear { if !store.loading { load() } }

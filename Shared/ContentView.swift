@@ -11,8 +11,10 @@ import SwiftUI
 /// Users list and Users age chart  share the same Store
 struct ContentView: View {
 
-    @EnvironmentObject var viewModel: AppViewModel
     
+    /// App viewModel
+    @EnvironmentObject var viewModel: AppViewModel
+
     /// Amount of dynamically added charts
     @State var col = 0
     ///Max amount of charts
@@ -23,26 +25,25 @@ struct ContentView: View {
             VStack {
                 getToolbar()
                 UniversalList(
+                    content: userFactory,
                     store: viewModel.users,
-                    content: { user in userFactory(user) },
                     title: "Users"
                 )
                 AgeChart(
                     store: viewModel.users,
-                    content: { user in userAgeChartFactory(user) },
-                    title: "Users age chart"
+                    content: userAgeChartFactory,
+                    title: "Age chart"
                 )
                 UniversalList(
+                    content: bookFactory,
                     store: viewModel.books,
-                    content: { book in bookFactory(book) },
                     title: "Books"
                 )
                 getChartViews()
             }
         }.padding()
     }
-    
-    
+
     /// Get tool bar
     /// - Returns: Toolbar view
     @ViewBuilder
@@ -53,19 +54,19 @@ struct ContentView: View {
             if col != 0 { Button("- chart  \(col)") { col -= 1 } }
         }
     }
-    
+
     /// Get another chart
     /// - Returns: Chart view
     @ViewBuilder
     func getChartViews() -> some View {
         EmptyView()
-        
+
         if col > 0 {
             ForEach(1...col, id: \.self) { id in
                 AgeChart(
                     store: viewModel.getFileJsonStore(from: "user.json"),
-                    content: { user in userAgeChartFactory(user) },
-                    title: "Users age chart \(id)",
+                    content: userAgeChartFactory,
+                    title: "Age chart \(id)",
                     autoLoad: true
                 )
             }

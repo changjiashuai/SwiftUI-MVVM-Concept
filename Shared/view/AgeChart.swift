@@ -46,7 +46,7 @@ struct AgeChart<T: Model, P: Proxy, Content: View>: View {
                 }
             }.opacity(store.loading ? 0 : 1).offset(y: 50)
             .frame(height: 100, alignment: .bottomLeading)
-        }.frame(width: 302, height: 150, alignment: .topLeading)
+        }.frame(height: 150, alignment: .topLeading)
         .overlay(Text("Loading...")
         .opacity(store.loading ? 1 : 0), alignment: .center)
         .border(Color.white)

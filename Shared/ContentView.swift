@@ -55,8 +55,8 @@ struct ContentView: View {
         }
     }
 
-    /// Get another chart
-    /// - Returns: Chart view
+    /// Get  charts
+    /// - Returns: Chart views
     @ViewBuilder
     func getChartViews() -> some View {
         if col == 0 { EmptyView() } else {

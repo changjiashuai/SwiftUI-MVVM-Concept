@@ -14,7 +14,7 @@ fileprivate struct Mask: ViewModifier {
     func body(content: Content) -> some View {
         content.overlay(Rectangle().foregroundColor(.gray)
                             .overlay(Text("Loading...").foregroundColor(.black), alignment: .center)
-            .opacity(loading ? 1 : 0), alignment: .center)
+                            .opacity(loading ? 1 : 0), alignment: .center)
     }
 }
 

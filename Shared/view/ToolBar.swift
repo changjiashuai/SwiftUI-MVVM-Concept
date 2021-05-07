@@ -21,6 +21,10 @@ struct ToolBar: AbstractToolBar {
     /// Title text
     let title : String?
     
+    init(_ title : String?) {
+        self.title = title
+    }
+    
     /// State of toolbar
     @State var curentState = ToolBarState.IDLE
     

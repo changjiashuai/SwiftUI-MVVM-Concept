@@ -26,17 +26,17 @@ struct ContentView: View {
                 UniversalList(
                     content: userFactory,
                     store: viewModel.users,
-                    toolBar: ToolBar(title: "Users")                    
+                    toolBar: ToolBar("Users")
                 )
                 AgeChart(
                     store: viewModel.users,
                     content: userAgeChartFactory,
-                    toolBar: ToolBar(title: "Age chart")
+                    toolBar: ToolBar("Age chart")
                 )
                 UniversalList(
                     content: bookFactory,
                     store: viewModel.books,
-                    toolBar: ToolBar(title: "Books")
+                    toolBar: ToolBar("Books")
                 )
                 getChartViews()
             }
@@ -63,7 +63,7 @@ struct ContentView: View {
                 AgeChart(
                     store: viewModel.getFileJsonStore(from: "user_chart.json"),
                     content: userAgeChartFactory,
-                    toolBar: ToolBar(title: "Age chart \(id)"),
+                    toolBar: ToolBar("Age chart \(id)"),
                     autoLoad: true
                 )
             }

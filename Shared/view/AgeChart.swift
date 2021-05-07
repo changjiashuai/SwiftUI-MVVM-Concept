@@ -33,7 +33,7 @@ struct AgeChart<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: View, St
             toolBar.onPreferenceChange(StateKey.self, perform: self.onStateChanged)
             getChartBody()
         }.frame(height: 150, alignment: .topLeading)
-        .mask(store.loading)
+        .mask(!notLoading)
         .border(Color.white)
         .onAppear { if notLoading { load() } }
     }

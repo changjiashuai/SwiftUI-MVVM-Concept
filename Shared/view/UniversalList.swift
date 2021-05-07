@@ -30,7 +30,7 @@ struct UniversalList<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: Vie
             toolBar.onPreferenceChange(StateKey.self, perform: self.onStateChanged)
             getListBody()
         }.frame(height: 150, alignment: .topLeading)
-        .mask(store.loading)
+        .mask(!notLoading)
         .border(Color.white)
         .onAppear { if notLoading { load() } }
     }

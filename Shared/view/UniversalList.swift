@@ -17,44 +17,56 @@ struct UniversalList<T: Model, P: Proxy, Content: View>: View {
     @StateObject var store: RemoteStore<T, P>
     
     /// View title
-    let title : String?
+    let title : String?    
+    
+    /// check condition to start loading
+    var notLoading: Bool {
+        !store.loading
+    }
     
     /// The type of view representing the body of this view.
-    ///
-    /// When you create a custom view, Swift infers this type from your
-    /// implementation of the required `body` property.
     var body: some View {
         ZStack {
-            HStack {
-                if title != nil{
-                    Text("\(title!)")
-                }
-                Spacer()
-                Button("update", action: load).opacity(store.loading ? 0 : 1)
-                    .foregroundColor(.black)
-                
-            }
-                .padding(5).frame(height: 50).background(Color.gray)
-            VStack {
-                if store.error != nil { Text("\(store.error!)").foregroundColor(.red) }
-                else {
-                    if store.items.count > 0 {
-                        ForEach(store.items, id: \.self) { item in
-                            content(item)
-                        }
-                    } else {
-                        Text("Empty")
-                    }
-                }
-            }
-                .opacity(store.loading ? 0 : 1).offset(y: 50)
+            getToolBar()
+            getListBody()
         }.frame(height: 150, alignment: .topLeading)
-            .overlay(Text("Loading...").opacity(store.loading ? 1 : 0), alignment: .center)
+        .mask(store.loading)
         .border(Color.white)
-        .onAppear { if !store.loading { load() } }
+        .onAppear { if notLoading { load() } }
     }
-
-
+    
+    /// - Returns: list
+    @ViewBuilder
+    private func getListBody() -> some View {
+        VStack {
+            if store.error != nil { Text("\(store.error!)").foregroundColor(.red) }
+            else {
+                if store.items.count > 0 {
+                    ForEach(store.items, id: \.self) { item in
+                        content(item)
+                    }
+                } else {
+                    Text("Empty")
+                }
+            }
+        }
+        .opacity(store.loading ? 0 : 1).offset(y: 50)
+    }
+    
+    /// - Returns: tool bar
+    @ViewBuilder
+    private func getToolBar() -> some View {
+        HStack {
+            if title != nil {
+                Text("\(title!)")
+            }
+            Spacer()
+            Button("update", action: load).opacity(store.loading ? 0 : 1)
+                .foregroundColor(.black)
+        }.padding(.horizontal, 5)
+        .frame(height: 50).background(Color.gray)
+    }
+    
     /// load data
     func load() {
         store.load(params: ["page" : "*"]) {

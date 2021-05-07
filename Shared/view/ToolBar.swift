@@ -14,6 +14,8 @@ enum ToolBarState {
     case LOAD, CLEAR, IDLE
 }
 
+
+/// Toolbar for any View supporting StoredView protocol
 struct ToolBar: AbstractToolBar {
     
     /// Title text

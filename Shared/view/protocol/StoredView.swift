@@ -10,7 +10,7 @@ import Foundation
 
 /// Set of methods for views with store
 protocol StoredView {
-           
+    
     /// load data
     func load()
     
@@ -21,9 +21,9 @@ protocol StoredView {
 extension StoredView{
     
     /// Act on a command from the ToolBar
-    /// - Parameter command: Command from toolBar to do something
-    func onStateChanged(_ command: ToolBarState) {
-        switch command {
+    /// - Parameter state: Command from toolBar to do something
+    func onStateChanged(_ state: ToolBarState) {
+        switch state {
         case .CLEAR: clear()
         case .LOAD: load()
         case .IDLE: return

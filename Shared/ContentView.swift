@@ -21,7 +21,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            getToolbar()
+            getMainToolbar()
             ScrollView {
                 UniversalList(
                     content: userFactory,
@@ -46,7 +46,7 @@ struct ContentView: View {
     /// Get tool bar
     /// - Returns: Toolbar view
     @ViewBuilder
-    func getToolbar() -> some View {
+    func getMainToolbar() -> some View {
         HStack {
             if col < maxCol { Button("+ chart \(col)") { col += 1 } }
             Spacer()

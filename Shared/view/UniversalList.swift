@@ -8,16 +8,16 @@ import SwiftUI
 
 
 /// List displays data conformed to Model protocol
-struct UniversalList<T: Model, P: Proxy, Content: View>: View {
+struct UniversalList<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: View, StoredView {
     
     /// A view builder that creates the content of an Item view
     let content: (T) -> Content
     
     /// Store with data
-    @StateObject var store: RemoteStore<T, P>
+    @StateObject var store: RemoteStore<T, U>
     
-    /// View title
-    let title : String?    
+    /// ToolBar with diff controls
+    let toolBar: V
     
     /// check condition to start loading
     var notLoading: Bool {
@@ -26,8 +26,8 @@ struct UniversalList<T: Model, P: Proxy, Content: View>: View {
     
     /// The type of view representing the body of this view.
     var body: some View {
-        ZStack {
-            getToolBar()
+        ZStack(alignment: .top) {
+            toolBar.onPreferenceChange(StateKey.self, perform: self.onStateChanged)
             getListBody()
         }.frame(height: 150, alignment: .topLeading)
         .mask(store.loading)
@@ -39,32 +39,22 @@ struct UniversalList<T: Model, P: Proxy, Content: View>: View {
     @ViewBuilder
     private func getListBody() -> some View {
         VStack {
-            if store.error != nil { Text("\(store.error!)").foregroundColor(.red) }
+            if store.error != nil { ErrorView(store.error!)}
             else {
                 if store.items.count > 0 {
                     ForEach(store.items, id: \.self) { item in
                         content(item)
                     }
-                } else {
-                    Text("Empty")
-                }
+                } else { EmptyData() }
             }
         }
-        .opacity(store.loading ? 0 : 1).offset(y: 50)
+        .offset(y: 50)
+        .frame(height: 100, alignment: .topLeading)
     }
-    
-    /// - Returns: tool bar
-    @ViewBuilder
-    private func getToolBar() -> some View {
-        HStack {
-            if title != nil {
-                Text("\(title!)")
-            }
-            Spacer()
-            Button("update", action: load).opacity(store.loading ? 0 : 1)
-                .foregroundColor(.black)
-        }.padding(.horizontal, 5)
-        .frame(height: 50).background(Color.gray)
+
+    /// clear data
+    func clear(){
+        store.removeAll()
     }
     
     /// load data

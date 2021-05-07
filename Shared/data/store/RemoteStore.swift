@@ -51,6 +51,12 @@ class RemoteStore<T: Model, U: Proxy>: Store, ObservableObject {
     func removeAll() {
         items.removeAll()
     }
+    
+    /// Get if Store is empty
+    /// - Returns: true if empty
+    func isEmpty() -> Bool{
+        items.count == 0
+    }
    
     /// Load data from remote source
     /// - Parameters:

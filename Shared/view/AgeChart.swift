@@ -8,16 +8,16 @@
 import SwiftUI
 
 /// List displays data conformed to Model protocol
-struct AgeChart<T: Model, P: Proxy, Content: View>: View {
+struct AgeChart<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: View, StoredView {
     
     /// Store with data
-    @StateObject var store: RemoteStore<T, P>
+    @StateObject var store: RemoteStore<T, U>
     
     /// Template to defined Item view
-    let content: (T, CGFloat) -> Content
+    let content: (T, CGFloat) -> Content       
     
-    /// View title
-    let title: String?
+    /// ToolBar with diff controls
+    let toolBar: V
     
     /// check condition to start loading
     var notLoading: Bool {
@@ -30,14 +30,13 @@ struct AgeChart<T: Model, P: Proxy, Content: View>: View {
     /// The type of view representing the body of this view.
     var body: some View {
         ZStack(alignment: .topLeading) {
-            getToolBar()
+            toolBar.onPreferenceChange(StateKey.self, perform: self.onStateChanged)
             getChartBody()
         }.frame(height: 150, alignment: .topLeading)
         .mask(store.loading)
         .border(Color.white)
         .onAppear { if notLoading { load() } }
     }
-    
     
     /// Get Item width
     /// - Parameter proxy: Geometry reader proxy
@@ -51,33 +50,22 @@ struct AgeChart<T: Model, P: Proxy, Content: View>: View {
     private func getChartBody() -> some View {
         GeometryReader { proxy in
             HStack(alignment: .bottom, spacing: 0) {
-                if store.error != nil { Text("\(store.error!)").foregroundColor(.red) }
+                if store.error != nil { ErrorView(store.error!)}
                 else {
                     if store.items.count > 0 {
                         ForEach(store.items, id: \.self) { item in
                             content(item, getItemWidth(proxy))
                         }
-                    } else {
-                        Text("Empty")
-                    }
+                    } else { EmptyData() }
                 }
-            }.opacity(store.loading ? 0 : 1).offset(y: 50)
+            }.offset(y: 50)
             .frame(height: 100, alignment: .bottomLeading)
         }
     }
     
-    /// - Returns: tool bar
-    @ViewBuilder
-    private func getToolBar() -> some View {
-        HStack {
-            if title != nil {
-                Text("\(title!)")
-            }
-            Spacer()
-            Button("update", action: load).opacity(store.loading ? 0 : 1)
-                .foregroundColor(.black)
-        }.padding(.horizontal, 5)
-        .frame(height: 50).background(Color.gray)
+    /// clear data
+    func clear(){
+        store.removeAll()
     }
     
     /// load data

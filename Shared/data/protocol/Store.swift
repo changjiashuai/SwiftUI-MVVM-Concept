@@ -33,6 +33,9 @@ protocol Store {
     /// - Parameter items: elements of store
     func appendAll(_ items: [Item])
     
+    /// Get if Store is empty
+    /// - Returns: true if empty
+    func isEmpty() -> Bool
     
     /// Remove all elements
     func removeAll()

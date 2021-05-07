@@ -41,7 +41,7 @@ let users = RemoteStore<User, File>(
 UniversalList(
     content: userFactory,
     store: viewModel.users,
-    title: "Users"
+    toolBar: ToolBar(title: "Users")                    
 )
 ```
 

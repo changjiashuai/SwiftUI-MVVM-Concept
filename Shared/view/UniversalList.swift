@@ -16,7 +16,7 @@ struct UniversalList<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: Vie
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
     
-    /// ToolBar with diff controls
+    /// ToolBar with set of controls
     let toolBar: V
     
     /// check condition to start loading

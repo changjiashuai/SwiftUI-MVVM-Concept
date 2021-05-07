@@ -16,7 +16,7 @@ struct AgeChart<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: View, St
     /// Template to defined Item view
     let content: (T, CGFloat) -> Content       
     
-    /// ToolBar with diff controls
+    /// ToolBar with set of controls
     let toolBar: V
     
     /// check condition to start loading

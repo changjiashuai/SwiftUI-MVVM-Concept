@@ -16,9 +16,11 @@ struct ContentView: View {
 
     /// Amount of dynamically added charts
     @State var col = 0
+    
     ///Max amount of charts
     let maxCol = 100
-
+    
+    /// The type of view representing the body of this view.
     var body: some View {
         VStack {
             getMainToolbar()
@@ -26,21 +28,37 @@ struct ContentView: View {
                 UniversalList(
                     content: userFactory,
                     store: viewModel.users,
-                    toolBar: ToolBar("Users")
+                    toolBar: ToolBar("Users", getExtraUserStoreControls)
                 )
                 AgeChart(
                     store: viewModel.users,
                     content: userAgeChartFactory,
-                    toolBar: ToolBar("Age chart")
+                    toolBar: ToolBar<EmptyView>()
                 )
                 UniversalList(
                     content: bookFactory,
                     store: viewModel.books,
-                    toolBar: ToolBar("Books")
+                    toolBar: ToolBar<EmptyView>("Books")
                 )
                 getChartViews()
             }
         }.padding()
+    }
+    
+    /// Get custom user store controls
+    /// - Returns: Set of controls for the user store
+    @ViewBuilder
+    func getExtraUserStoreControls() -> some View{
+        Button("get Users page 1", action: {
+            viewModel.users.load(params: ["page" : "1"]) {
+                print("do something after loading")
+            }
+        })
+        Button("get Users page 2", action: {
+            viewModel.users.load(params: ["page" : "2"]) {
+                print("do something after loading")
+            }
+        })
     }
 
     /// Get tool bar
@@ -63,7 +81,7 @@ struct ContentView: View {
                 AgeChart(
                     store: viewModel.getFileJsonStore(from: "user_chart.json"),
                     content: userAgeChartFactory,
-                    toolBar: ToolBar("Age chart \(id)"),
+                    toolBar: ToolBar<EmptyView>("Age chart \(id)"),
                     autoLoad: true
                 )
             }

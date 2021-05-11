@@ -14,7 +14,7 @@ struct AgeChart<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: View {
     @StateObject var store: RemoteStore<T, U>
     
     /// Template to defined Item view
-    let content: (T, CGFloat) -> Content       
+    let content: (T, CGFloat) -> Content
     
     /// ToolBar with set of controls
     let toolBar: V

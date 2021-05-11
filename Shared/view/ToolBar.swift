@@ -10,13 +10,16 @@ import SwiftUI
 
 
 /// Toolbar for any View supporting StoredView protocol
-struct ToolBar: AbstractToolBar {
+struct ToolBar<Content: View>: AbstractToolBar {
 
     /// Title text
     let title: String?
+    
+    let items : (() -> Content)?
 
-    init(_ title: String?) {
+    init(_ title: String? = nil ,_ items:( () -> Content)? = nil ) {
         self.title = title
+        self.items = items
     }
 
     /// State of toolbar
@@ -28,6 +31,7 @@ struct ToolBar: AbstractToolBar {
                 Text("\(title!)")
             }
             Spacer()
+            getItemsView()
             Button("update", action: {
                 curentCommand = StoreCommand(type: .load)
             })
@@ -39,6 +43,17 @@ struct ToolBar: AbstractToolBar {
             .padding(.horizontal, 5)
             .frame(height: 50).background(Color.gray)
             .preference(key: StoreCommandKey.self, value: curentCommand)
+    }
+    
+    /// Get View for extra controls
+    /// - Returns: get extra controls from config
+    @ViewBuilder
+    func getItemsView() -> some View{
+        if items != nil{
+            HStack{ items!()}.padding().background(Color.blue)
+        }else{
+            EmptyView()
+        }
     }
 }
 

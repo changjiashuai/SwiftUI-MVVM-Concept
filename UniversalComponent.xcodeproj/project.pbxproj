@@ -179,14 +179,13 @@
 		B24A917E26382D9200989C3B /* view */ = {
 			isa = PBXGroup;
 			children = (
+				B265ED22264A5CA20054D0A2 /* miscellaneous */,
 				B265ED11264A58130054D0A2 /* command */,
 				B262303B26453602005BDCBE /* protocol */,
 				B262302A26451202005BDCBE /* modifiers */,
 				B24A919C26382E7A00989C3B /* UniversalList.swift */,
 				B22DEAC2263BE29500CDAAA2 /* AgeChart.swift */,
 				B2623036264530C5005BDCBE /* ToolBar.swift */,
-				B26230512645457E005BDCBE /* EmptyData.swift */,
-				B26230582645490B005BDCBE /* ErrorView.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -222,6 +221,15 @@
 				B265ED19264A58870054D0A2 /* CommandType.swift */,
 			);
 			path = enum;
+			sourceTree = "<group>";
+		};
+		B265ED22264A5CA20054D0A2 /* miscellaneous */ = {
+			isa = PBXGroup;
+			children = (
+				B26230512645457E005BDCBE /* EmptyData.swift */,
+				B26230582645490B005BDCBE /* ErrorView.swift */,
+			);
+			path = miscellaneous;
 			sourceTree = "<group>";
 		};
 		B29ACAEC262D678A00209343 = {

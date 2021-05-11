@@ -20,7 +20,7 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     let toolBar: ToolContent
     
     /// check condition to start loading
-    var notLoading: Bool {
+    private var notLoading: Bool {
         !store.loading
     }
     

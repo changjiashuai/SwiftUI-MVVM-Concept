@@ -15,10 +15,10 @@ struct ContentView: View {
     @EnvironmentObject var viewModel: AppViewModel
 
     /// Amount of dynamically added charts
-    @State var col = 0
+    @State private var col = 0
     
     ///Max amount of charts
-    let maxCol = 100
+    private let maxCol = 100
     
     /// The type of view representing the body of this view.
     var body: some View {
@@ -28,7 +28,7 @@ struct ContentView: View {
                 UniversalList(
                     store: viewModel.users,
                     content: userFactory,
-                    toolBar: ToolBar("Users :: Store Users", getExtraUserStoreControls)
+                    toolBar: ToolBar("Users", getExtraUserStoreControls)
                 )
                 AgeChart(
                     store: viewModel.users,
@@ -38,7 +38,7 @@ struct ContentView: View {
                 AgeChart(
                     store: viewModel.users,
                     content: userAgeChartFactory,
-                    toolBar: ToolBar<EmptyView>("Chart :: Store Users")
+                    toolBar: ToolBar<EmptyView>("Chart")
                 )
                 UniversalList(
                     store: viewModel.books,

@@ -10,10 +10,10 @@ import SwiftUI
 
 
 /// Toolbar for any View supporting StoredView protocol
-struct ToolBar<Content: View>: AbstractToolBar {
+struct ToolBar<Content: View> : View{
 
     /// Title text
-    let title: String?    
+    let title: String?
     
     /// Set of extra controls to add to default set
     let items : (() -> Content)?
@@ -24,7 +24,7 @@ struct ToolBar<Content: View>: AbstractToolBar {
     }
 
     /// State of toolbar
-    @State var curentCommand: StoreCommand = StoreCommand(type: .idle)
+    @State var curentCommand = StoreCommand(type: .idle)
 
     var body: some View {
         HStack {

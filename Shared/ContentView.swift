@@ -33,6 +33,11 @@ struct ContentView: View {
                 AgeChart(
                     store: viewModel.users,
                     content: userAgeChartFactory,
+                    toolBar: EmptyView()
+                )
+                AgeChart(
+                    store: viewModel.users,
+                    content: userAgeChartFactory,
                     toolBar: ToolBar<EmptyView>()
                 )
                 UniversalList(

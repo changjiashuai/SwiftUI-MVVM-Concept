@@ -8,7 +8,7 @@ import SwiftUI
 
 
 /// List displays data conformed to Model protocol
-struct UniversalList<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: View {
+struct UniversalList<T: Model, U: Proxy, V: View, Content: View>: View {
     
     /// A view builder that creates the content of an Item view
     let content: (T) -> Content

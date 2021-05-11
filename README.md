@@ -41,7 +41,7 @@ let users = RemoteStore<User, File>(
 AgeChart(
     store: viewModel.users,
     content: userAgeChartFactory,
-    toolBar: ToolBar<EmptyView>()
+    toolBar: ToolBar<EmptyView>("Chart")
 )
 ```
 

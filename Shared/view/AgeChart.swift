@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// List displays data conformed to Model protocol
-struct AgeChart<T: Model, U: Proxy, V : View, Content: View>: View {
+struct AgeChart<T: Model, U: Proxy, ToolContent : View, Content: View>: View {
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -17,7 +17,7 @@ struct AgeChart<T: Model, U: Proxy, V : View, Content: View>: View {
     let content: (T, CGFloat) -> Content
     
     /// ToolBar with set of controls
-    let toolBar: V
+    let toolBar: ToolContent
     
     /// check condition to start loading
     var notLoading: Bool {

@@ -11,9 +11,9 @@ import Foundation
 /// Defines command for store from a UI control
 struct StoreCommand: Command {
     
-    /// type of command for a store
+    /// Type of command for a store
     let type : StoreCommandType
     
-    //time stamp to differ repeating the same command several times in a row
+    /// Time stamp to differ repeating the same command several times in a row
     let date = Date()
 }

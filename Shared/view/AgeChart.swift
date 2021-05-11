@@ -30,7 +30,7 @@ struct AgeChart<T: Model, U: Proxy, ToolContent : View, Content: View>: View {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             getChartBody()
         }.frame(height: 150, alignment: .topLeading)
-        .mask(!notLoading)
+        .mask(!notLoading, text: "Loading data for chart...")
         .border(Color.white)
         .onAppear { if notLoading { load() } }
     }

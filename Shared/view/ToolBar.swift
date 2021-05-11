@@ -12,6 +12,9 @@ import SwiftUI
 /// Toolbar for any View supporting StoredView protocol
 struct ToolBar<Content: View> : View{
 
+    /// State of toolbar
+    @State var curentCommand = StoreCommand(type: .idle)
+    
     /// Title text
     let title: String?
     
@@ -22,9 +25,6 @@ struct ToolBar<Content: View> : View{
         self.title = title
         self.items = items
     }
-
-    /// State of toolbar
-    @State var curentCommand = StoreCommand(type: .idle)
 
     var body: some View {
         HStack {

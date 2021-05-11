@@ -50,7 +50,7 @@ struct ToolBar<Content: View>: AbstractToolBar {
     @ViewBuilder
     func getItemsView() -> some View{
         if items != nil{
-            HStack{ items!()}.padding().background(Color.blue)
+            HStack{ items!() }.padding().background(Color.secondary)
         }else{
             EmptyView()
         }

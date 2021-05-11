@@ -38,10 +38,10 @@ let users = RemoteStore<User, File>(
 
 * Define View component and pass Store
 ```Swift 
-UniversalList(
-    content: userFactory,
+AgeChart(
     store: viewModel.users,
-    toolBar: ToolBar("Users")
+    content: userAgeChartFactory,
+    toolBar: ToolBar<EmptyView>()
 )
 ```
 

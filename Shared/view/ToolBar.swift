@@ -17,7 +17,7 @@ struct ToolBar<Content: View>: AbstractToolBar {
     
     let items : (() -> Content)?
 
-    init(_ title: String? = nil ,_ items:( () -> Content)? = nil ) {
+    init(_ title: String? = nil ,_ items:( () -> Content )? = nil ) {
         self.title = title
         self.items = items
     }

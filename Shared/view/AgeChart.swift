@@ -30,7 +30,7 @@ struct AgeChart<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: View {
     /// The type of view representing the body of this view.
     var body: some View {
         ZStack(alignment: .topLeading) {
-            toolBar.onPreferenceChange(StateKey.self, perform: self.onCommandChanged)
+            toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             getChartBody()
         }.frame(height: 150, alignment: .topLeading)
         .mask(!notLoading)

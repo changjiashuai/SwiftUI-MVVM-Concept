@@ -8,6 +8,7 @@
 import SwiftUI
 
 
+
 /// Toolbar for any View supporting StoredView protocol
 struct ToolBar: AbstractToolBar {
 
@@ -19,7 +20,7 @@ struct ToolBar: AbstractToolBar {
     }
 
     /// State of toolbar
-    @State var curentState: StoreCommand = StoreCommand(type: .idle)
+    @State var curentCommand: StoreCommand = StoreCommand(type: .idle)
 
     var body: some View {
         HStack {
@@ -28,20 +29,20 @@ struct ToolBar: AbstractToolBar {
             }
             Spacer()
             Button("update", action: {
-                curentState = StoreCommand(type: .load)
+                curentCommand = StoreCommand(type: .load)
             })
             Button("clear", action: {
-                curentState = StoreCommand(type: .removeAll)
+                curentCommand = StoreCommand(type: .removeAll)
             })
         }
             .foregroundColor(.black)
             .padding(.horizontal, 5)
             .frame(height: 50).background(Color.gray)
-            .preference(key: StateKey.self, value: curentState)
+            .preference(key: StoreCommandKey.self, value: curentCommand)
     }
 }
 
-struct StateKey: PreferenceKey {
+struct StoreCommandKey: PreferenceKey {
     static let defaultValue: StoreCommand = StoreCommand(type: .idle)
     static func reduce(value: inout StoreCommand, nextValue: () -> StoreCommand) {
         value = nextValue()

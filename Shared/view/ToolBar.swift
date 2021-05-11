@@ -29,7 +29,7 @@ struct ToolBar<Content: View> : View{
     var body: some View {
         HStack {
             if title != nil {
-                Text("\(title!)")
+                Text("\(title!)").frame(minWidth: 50)
             }
             Spacer()
             getItemsView()

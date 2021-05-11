@@ -8,15 +8,20 @@ import SwiftUI
 
 
 @main
-struct LayoutApp: App {    
-   
+struct LayoutApp: App {
+
     @StateObject var viewModel = AppViewModel()
-    
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HStack {
+                ContentView()
                 //inject viewModel for to get access from every view in the hierarchy
                 .environmentObject(viewModel)
+                ContentView()
+                //inject viewModel for to get access from every view in the hierarchy
+                .environmentObject(viewModel)
+            }
         }
     }
 }

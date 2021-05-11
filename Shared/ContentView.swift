@@ -48,18 +48,19 @@ struct ContentView: View {
                 getChartViews()
             }
         }.padding()
+        .frame(minWidth: 502)
     }
     
     /// Get custom user store controls
     /// - Returns: Set of controls for the user store
     @ViewBuilder
     func getExtraUserStoreControls() -> some View{
-        Button("get Users page 1", action: {
+        Button("get page 1", action: {
             viewModel.users.load(params: ["page" : "1"]) {
                 print("do something after loading")
             }
         })
-        Button("get Users page 2", action: {
+        Button("get page 2", action: {
             viewModel.users.load(params: ["page" : "2"]) {
                 print("do something after loading")
             }

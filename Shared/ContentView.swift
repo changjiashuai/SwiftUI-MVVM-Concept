@@ -26,8 +26,8 @@ struct ContentView: View {
             getMainToolbar()
             ScrollView {
                 UniversalList(
-                    content: userFactory,
                     store: viewModel.users,
+                    content: userFactory,
                     toolBar: ToolBar("Users", getExtraUserStoreControls)
                 )
                 AgeChart(
@@ -38,11 +38,11 @@ struct ContentView: View {
                 AgeChart(
                     store: viewModel.users,
                     content: userAgeChartFactory,
-                    toolBar: ToolBar<EmptyView>()
+                    toolBar: ToolBar<EmptyView>("Chart")
                 )
                 UniversalList(
-                    content: bookFactory,
                     store: viewModel.books,
+                    content: bookFactory,
                     toolBar: ToolBar<EmptyView>("Books")
                 )
                 getChartViews()

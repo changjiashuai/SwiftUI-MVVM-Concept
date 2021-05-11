@@ -13,8 +13,9 @@ import SwiftUI
 struct ToolBar<Content: View>: AbstractToolBar {
 
     /// Title text
-    let title: String?
+    let title: String?    
     
+    /// Set of extra controls to add to default set
     let items : (() -> Content)?
 
     init(_ title: String? = nil ,_ items:( () -> Content )? = nil ) {

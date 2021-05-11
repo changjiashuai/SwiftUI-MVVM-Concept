@@ -48,7 +48,7 @@ struct ContentView: View {
                 getChartViews()
             }
         }.padding()
-        .frame(minWidth: 502)
+        .frame(minWidth: 522)
     }
     
     /// Get custom user store controls

@@ -8,7 +8,7 @@ import SwiftUI
 
 
 /// List displays data conformed to Model protocol
-struct UniversalList<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: View, StoredView {
+struct UniversalList<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: View {
     
     /// A view builder that creates the content of an Item view
     let content: (T) -> Content
@@ -27,7 +27,7 @@ struct UniversalList<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: Vie
     /// The type of view representing the body of this view.
     var body: some View {
         ZStack(alignment: .top) {
-            toolBar.onPreferenceChange(StateKey.self, perform: self.onStateChanged)
+            toolBar.onPreferenceChange(StateKey.self, perform: self.onCommandChanged)
             getListBody()
         }.frame(height: 150, alignment: .topLeading)
         .mask(!notLoading)
@@ -38,7 +38,7 @@ struct UniversalList<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: Vie
     /// - Returns: list
     @ViewBuilder
     private func getListBody() -> some View {
-        VStack {
+        VStack(spacing: 5) {
             if store.error != nil { ErrorView(store.error!)}
             else {
                 if store.items.count > 0 {
@@ -52,8 +52,18 @@ struct UniversalList<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: Vie
         .frame(height: 100, alignment: .topLeading)
     }
 
+    /// Act on a command from the ToolBar
+    /// - Parameter state: Command from toolBar to do something
+    func onCommandChanged(_ command: StoreCommand) {
+        switch command.type {
+        case .removeAll: removeAll()
+        case .load: load()
+        case .idle: return
+        }
+    }
+    
     /// clear data
-    func clear(){
+    func removeAll(){
         store.removeAll()
     }
     

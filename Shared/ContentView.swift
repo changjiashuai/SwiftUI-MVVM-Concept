@@ -76,7 +76,7 @@ struct ContentView: View {
     @ViewBuilder
     private func userFactory(_ user: User) -> some View {
         HStack {
-            Text("Name: \(user.name)").font(.system(size: 14, weight: .bold))
+            Text("Name: \(user.name)").font(.system(size: 14, weight: .bold)).padding(3)
         }
             .frame(maxWidth: .infinity)
             .background(Color.orange)
@@ -102,11 +102,11 @@ struct ContentView: View {
     @ViewBuilder
     private func bookFactory(_ book: Book) -> some View {
         HStack {
-            Text("Title: \(book.title)").font(.system(.headline))
-            Text("Author: \(book.author)")
+            Rectangle().overlay(Text("Author: \(book.author)").foregroundColor(.white).font(.system(.headline)), alignment: .center)
+            Rectangle().overlay(Text("Title: \(book.title)").foregroundColor(.white).font(.system(.headline)), alignment: .center)
         }
             .frame(maxWidth: .infinity)
-            .background(Color.blue)
+            .foregroundColor(Color.blue)
     }
 
 }

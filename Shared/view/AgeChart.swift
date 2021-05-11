@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// List displays data conformed to Model protocol
-struct AgeChart<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: View, StoredView {
+struct AgeChart<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: View {
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -30,7 +30,7 @@ struct AgeChart<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: View, St
     /// The type of view representing the body of this view.
     var body: some View {
         ZStack(alignment: .topLeading) {
-            toolBar.onPreferenceChange(StateKey.self, perform: self.onStateChanged)
+            toolBar.onPreferenceChange(StateKey.self, perform: self.onCommandChanged)
             getChartBody()
         }.frame(height: 150, alignment: .topLeading)
         .mask(!notLoading)
@@ -63,8 +63,18 @@ struct AgeChart<T: Model, U: Proxy, V: AbstractToolBar, Content: View>: View, St
         }
     }
     
+    /// Act on a command from the ToolBar
+    /// - Parameter state: Command from toolBar to do something
+    func onCommandChanged(_ command: StoreCommand) {
+        switch command.type {
+        case .removeAll: removeAll()
+        case .load: load()
+        case .idle: return
+        }
+    }
+    
     /// clear data
-    func clear(){
+    func removeAll(){
         store.removeAll()
     }
     

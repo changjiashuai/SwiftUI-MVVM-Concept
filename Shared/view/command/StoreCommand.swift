@@ -17,8 +17,3 @@ struct StoreCommand: Command {
     //time stamp to differ repeating the same command several times in a row
     let date = Date()
 }
-
-/// Base protocol for defining commands from UI controls
-protocol Command: Equatable {
-
-}

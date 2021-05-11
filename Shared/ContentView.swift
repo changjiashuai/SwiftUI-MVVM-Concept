@@ -28,7 +28,7 @@ struct ContentView: View {
                 UniversalList(
                     store: viewModel.users,
                     content: userFactory,
-                    toolBar: ToolBar("Users", getExtraUserStoreControls)
+                    toolBar: ToolBar("Users :: Store Users", getExtraUserStoreControls)
                 )
                 AgeChart(
                     store: viewModel.users,
@@ -38,7 +38,7 @@ struct ContentView: View {
                 AgeChart(
                     store: viewModel.users,
                     content: userAgeChartFactory,
-                    toolBar: ToolBar<EmptyView>("Chart")
+                    toolBar: ToolBar<EmptyView>("Chart :: Store Users")
                 )
                 UniversalList(
                     store: viewModel.books,

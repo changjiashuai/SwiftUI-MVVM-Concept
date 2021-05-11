@@ -24,9 +24,6 @@ struct AgeChart<T: Model, U: Proxy, ToolContent : View, Content: View>: View {
         !store.loading
     }
     
-    /// Load data from the remote source onAppear
-    var autoLoad: Bool = false
-    
     /// The type of view representing the body of this view.
     var body: some View {
         ZStack(alignment: .topLeading) {

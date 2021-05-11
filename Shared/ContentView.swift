@@ -86,8 +86,7 @@ struct ContentView: View {
                 AgeChart(
                     store: viewModel.getFileJsonStore(from: "user_chart.json"),
                     content: userAgeChartFactory,
-                    toolBar: ToolBar<EmptyView>("Age chart \(id)"),
-                    autoLoad: true
+                    toolBar: ToolBar<EmptyView>("Age chart \(id)")
                 )
             }
         }

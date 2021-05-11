@@ -39,8 +39,8 @@
 		B262305A2645490B005BDCBE /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26230582645490B005BDCBE /* ErrorView.swift */; };
 		B265ED15264A583F0054D0A2 /* StoreCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED14264A583F0054D0A2 /* StoreCommand.swift */; };
 		B265ED16264A583F0054D0A2 /* StoreCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED14264A583F0054D0A2 /* StoreCommand.swift */; };
-		B265ED1A264A58870054D0A2 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED19264A58870054D0A2 /* CommandType.swift */; };
-		B265ED1B264A58870054D0A2 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED19264A58870054D0A2 /* CommandType.swift */; };
+		B265ED1A264A58870054D0A2 /* StoreCommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED19264A58870054D0A2 /* StoreCommandType.swift */; };
+		B265ED1B264A58870054D0A2 /* StoreCommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED19264A58870054D0A2 /* StoreCommandType.swift */; };
 		B29ACB05262D678A00209343 /* ComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29ACAF2262D678A00209343 /* ComponentApp.swift */; };
 		B29ACB06262D678A00209343 /* ComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29ACAF2262D678A00209343 /* ComponentApp.swift */; };
 		B29ACB07262D678A00209343 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29ACAF3262D678A00209343 /* ContentView.swift */; };
@@ -108,7 +108,7 @@
 		B26230512645457E005BDCBE /* EmptyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyData.swift; sourceTree = "<group>"; };
 		B26230582645490B005BDCBE /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		B265ED14264A583F0054D0A2 /* StoreCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCommand.swift; sourceTree = "<group>"; };
-		B265ED19264A58870054D0A2 /* CommandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommandType.swift; sourceTree = "<group>"; };
+		B265ED19264A58870054D0A2 /* StoreCommandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCommandType.swift; sourceTree = "<group>"; };
 		B29ACAF2262D678A00209343 /* ComponentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentApp.swift; sourceTree = "<group>"; };
 		B29ACAF3262D678A00209343 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B29ACAF4262D678A00209343 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -218,7 +218,7 @@
 		B265ED12264A58230054D0A2 /* enum */ = {
 			isa = PBXGroup;
 			children = (
-				B265ED19264A58870054D0A2 /* CommandType.swift */,
+				B265ED19264A58870054D0A2 /* StoreCommandType.swift */,
 			);
 			path = enum;
 			sourceTree = "<group>";
@@ -507,7 +507,7 @@
 				B24A918D26382DE700989C3B /* User.swift in Sources */,
 				B2EFF683263AC4A600A584D2 /* Proxy.swift in Sources */,
 				B250E538264170D8003E93BD /* Rest.swift in Sources */,
-				B265ED1A264A58870054D0A2 /* CommandType.swift in Sources */,
+				B265ED1A264A58870054D0A2 /* StoreCommandType.swift in Sources */,
 				B22DEAAE263BDDD800CDAAA2 /* RemoteStore.swift in Sources */,
 				B2EFF685263AC4A600A584D2 /* Model.swift in Sources */,
 				B2CA046A26395B9500DD4764 /* Json.swift in Sources */,
@@ -548,7 +548,7 @@
 				B24A918E26382DE700989C3B /* User.swift in Sources */,
 				B2EFF684263AC4A600A584D2 /* Proxy.swift in Sources */,
 				B250E539264170D8003E93BD /* Rest.swift in Sources */,
-				B265ED1B264A58870054D0A2 /* CommandType.swift in Sources */,
+				B265ED1B264A58870054D0A2 /* StoreCommandType.swift in Sources */,
 				B22DEAAF263BDDD800CDAAA2 /* RemoteStore.swift in Sources */,
 				B2EFF686263AC4A600A584D2 /* Model.swift in Sources */,
 				B2CA046B26395B9500DD4764 /* Json.swift in Sources */,

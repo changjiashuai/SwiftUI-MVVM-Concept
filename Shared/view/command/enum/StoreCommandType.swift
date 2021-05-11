@@ -8,7 +8,6 @@
 import Foundation
 
 /// Set of commands from Toolbar
-/// Match between commands and requared methods defined in StoredView protocol
-enum CommandType {
+enum StoreCommandType {
     case load, removeAll, idle
 }

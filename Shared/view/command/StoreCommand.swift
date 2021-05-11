@@ -12,7 +12,7 @@ import Foundation
 struct StoreCommand: Command {
     
     /// type of command for a store
-    let type : CommandType
+    let type : StoreCommandType
     
     //time stamp to differ repeating the same command several times in a row
     let date = Date()

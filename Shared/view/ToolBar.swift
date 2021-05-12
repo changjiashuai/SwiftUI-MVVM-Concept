@@ -21,11 +21,17 @@ struct ToolBar<Content: View> : View{
     /// Set of extra controls to add to default set
     let items : (() -> Content)?
 
+    
+    /// Initializer
+    /// - Parameters:
+    ///   - title: Text of title
+    ///   - items: Additional items
     init(_ title: String? = nil ,_ items:( () -> Content )? = nil ) {
         self.title = title
         self.items = items
     }
 
+    /// The type of view representing the body of this view.
     var body: some View {
         HStack {
             if title != nil {

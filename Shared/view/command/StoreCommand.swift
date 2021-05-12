@@ -15,7 +15,7 @@ class StoreCommand: Equatable {
     let date = Date()
        
     /// execute method
-    func execute<V:Model, U: Proxy>(store : RemoteStore<V,U>){}
+    func execute<V:Model, U: Proxy>(store : RemoteStore<V,U>){ }
     
     static func == (lhs: StoreCommand, rhs: StoreCommand) -> Bool {
         lhs.date == rhs.date

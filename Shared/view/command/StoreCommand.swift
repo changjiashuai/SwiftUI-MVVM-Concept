@@ -9,14 +9,11 @@ import Foundation
 
 
 /// Defines command for store from a UI control
-class StoreCommand: Command, Equatable {
+class StoreCommand: Equatable {
     
     /// Time stamp to differ repeating the same command several times in a row
     let date = Date()
-    
-    /// execute method
-    func execute(){}
-    
+       
     /// execute method
     func execute<V:Model, U: Proxy>(store : RemoteStore<V,U>){}
     

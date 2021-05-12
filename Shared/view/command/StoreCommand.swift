@@ -10,14 +10,17 @@ import Foundation
 
 /// Defines command for store from a UI control
 class StoreCommand: Command, Equatable {
-    static func == (lhs: StoreCommand, rhs: StoreCommand) -> Bool {
-        lhs.date == rhs.date
-    }
-   
+    
     /// Time stamp to differ repeating the same command several times in a row
     let date = Date()
     
-    func execute<T:Model, U: Proxy>(store : RemoteStore<T,U>){
-        
+    /// execute method
+    func execute(){}
+    
+    /// execute method
+    func execute<V:Model, U: Proxy>(store : RemoteStore<V,U>){}
+    
+    static func == (lhs: StoreCommand, rhs: StoreCommand) -> Bool {
+        lhs.date == rhs.date
     }
 }

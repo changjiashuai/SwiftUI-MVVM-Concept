@@ -12,7 +12,7 @@ import SwiftUI
 /// Toolbar for any View supporting StoredView protocol
 struct ToolBar<Content: View> : View{
 
-    /// State of toolbar
+    /// Current command
     @State var curentCommand: StoreCommand = StoreCommand()
     
     /// Title text
@@ -53,7 +53,7 @@ struct ToolBar<Content: View> : View{
     }
     
     /// Get View for extra controls
-    /// - Returns: get extra controls from config
+    /// - Returns: extra controls from the config
     @ViewBuilder
     func getItemsView() -> some View{
         if items != nil{
@@ -64,10 +64,14 @@ struct ToolBar<Content: View> : View{
     }
 }
 
+
+/// A named value produced by a view.
 struct StoreCommandKey: PreferenceKey {
-
+    
+    /// The default value of the preference.
     static var defaultValue = StoreCommand()
-
+    
+    /// Combines a sequence of values by modifying the previously-accumulated value with the result of a closure that provides the next value.
     static func reduce(value: inout StoreCommand, nextValue: () -> StoreCommand) {
         value = nextValue()
     }

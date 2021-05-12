@@ -24,7 +24,6 @@ class LoadCommand: StoreCommand{
         self.params = params ?? [:]
         self.callback = callback ?? {}
     }
-
     
     /// Load data
     /// - Parameter store: controlled store

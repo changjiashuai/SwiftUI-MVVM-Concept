@@ -9,7 +9,13 @@ import Foundation
 
 /// Base protocol for defining commands from UI controls
 protocol Command {
-    
+       
     /// time stamp for a command launch
     var date : Date { get }
+    
+    /// execute method
+    func execute()
+        
 }
+
+

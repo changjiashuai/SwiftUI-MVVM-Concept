@@ -59,11 +59,5 @@ struct AgeChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
             .frame(height: 100, alignment: .bottomLeading)
         }
     }
-    
-    /// load data
-    func load() {
-        store.load(params: ["page": "*"]) {
-            print("do something after loading")
-        }
-    }
+
 }

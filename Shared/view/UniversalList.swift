@@ -51,11 +51,5 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
         .offset(y: 50)
         .frame(height: 100, alignment: .topLeading)
     }
-   
-    /// load data
-    func load() {
-        store.load(params: ["page" : "*"]) {
-            print("do something after loading")
-        }
-    }
+
 }

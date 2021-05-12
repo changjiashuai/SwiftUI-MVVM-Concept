@@ -27,5 +27,12 @@ extension Controllable{
     func onCommandChanged(_ command: StoreCommand) {
         command.execute(store: store)
     }
+    
+    /// load data
+    func load() {
+        store.load(params: ["page": "*"]) {
+            print("do something after loading")
+        }
+    }
 }
 

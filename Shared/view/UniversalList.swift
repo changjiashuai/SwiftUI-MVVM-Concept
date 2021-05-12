@@ -51,14 +51,7 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
         .offset(y: 50)
         .frame(height: 100, alignment: .topLeading)
     }
-
-    /// Act on a command from the ToolBar
-    /// - Parameter state: Command from toolBar to do something
-    func onCommandChanged(_ command: StoreCommand) {
-        command.execute(store: store)
-    }
-    
-    
+   
     /// load data
     func load() {
         store.load(params: ["page" : "*"]) {

@@ -53,7 +53,7 @@ struct ToolBar<Content: View> : View{
     }
     
     /// Get View for extra controls
-    /// - Returns: extra controls from the config
+    /// - Returns: extra controls from config
     @ViewBuilder
     func getItemsView() -> some View{
         if items != nil{

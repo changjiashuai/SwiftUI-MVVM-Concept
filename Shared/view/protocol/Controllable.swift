@@ -10,6 +10,22 @@ import Foundation
 
 /// Add controllable behavior to view to obey commands from others views
 protocol Controllable{
-    func onCommandChanged(_ command: StoreCommand)
+    
+    associatedtype Item: Model
+    associatedtype AbstractProxy: Proxy
+    
+    /// Store with data
+    var store: RemoteStore<Item, AbstractProxy> {get}
+    
+}
+
+
+extension Controllable{
+    
+    /// Act on a command from the ToolBar
+    /// - Parameter command: Command from toolBar to do some actions
+    func onCommandChanged(_ command: StoreCommand) {
+        command.execute(store: store)
+    }
 }
 

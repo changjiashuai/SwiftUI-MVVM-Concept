@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// List displays data conformed to Model protocol
-struct AgeChart<T: Model, U: Proxy, ToolContent : View, Content: View>: View {
+struct AgeChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable {
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -17,7 +17,7 @@ struct AgeChart<T: Model, U: Proxy, ToolContent : View, Content: View>: View {
     let content: (T, CGFloat) -> Content
     
     /// ToolBar with set of controls
-    let toolBar: ToolContent
+    let toolBar: ToolBarContent
     
     /// check condition to start loading
     private var notLoading: Bool {
@@ -61,18 +61,9 @@ struct AgeChart<T: Model, U: Proxy, ToolContent : View, Content: View>: View {
     }
     
     /// Act on a command from the ToolBar
-    /// - Parameter state: Command from toolBar to do something
+    /// - Parameter command: Command from toolBar to do some actions
     func onCommandChanged(_ command: StoreCommand) {
-        switch command.type {
-        case .removeAll: removeAll()
-        case .load: load()
-        case .idle: return
-        }
-    }
-    
-    /// clear data
-    func removeAll(){
-        store.removeAll()
+        command.execute(store: store)
     }
     
     /// load data

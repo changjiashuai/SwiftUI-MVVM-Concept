@@ -13,7 +13,7 @@ import SwiftUI
 struct ToolBar<Content: View> : View{
 
     /// State of toolbar
-    @State var curentCommand = StoreCommand(type: .idle)
+    @State var curentCommand: StoreCommand = StoreCommand()
     
     /// Title text
     let title: String?
@@ -34,10 +34,10 @@ struct ToolBar<Content: View> : View{
             Spacer()
             getItemsView()
             Button("update", action: {
-                curentCommand = StoreCommand(type: .load)
+                curentCommand = LoadCommand(params:["page":"*"], callback: {print("do something")})
             })
             Button("clear", action: {
-                curentCommand = StoreCommand(type: .removeAll)
+                curentCommand = RemoveAllCommand()
             })
         }
             .foregroundColor(.black)
@@ -59,7 +59,9 @@ struct ToolBar<Content: View> : View{
 }
 
 struct StoreCommandKey: PreferenceKey {
-    static let defaultValue: StoreCommand = StoreCommand(type: .idle)
+
+    static var defaultValue = StoreCommand()
+
     static func reduce(value: inout StoreCommand, nextValue: () -> StoreCommand) {
         value = nextValue()
     }

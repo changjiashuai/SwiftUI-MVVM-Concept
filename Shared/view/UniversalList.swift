@@ -8,7 +8,7 @@ import SwiftUI
 
 
 /// List displays data conformed to Model protocol
-struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View {
+struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable {
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -55,17 +55,9 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     /// Act on a command from the ToolBar
     /// - Parameter state: Command from toolBar to do something
     func onCommandChanged(_ command: StoreCommand) {
-        switch command.type {
-        case .removeAll: removeAll()
-        case .load: load()
-        case .idle: return
-        }
+        command.execute(store: store)
     }
     
-    /// clear data
-    func removeAll(){
-        store.removeAll()
-    }
     
     /// load data
     func load() {

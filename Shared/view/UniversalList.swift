@@ -6,8 +6,8 @@
 
 import SwiftUI
 
-
 /// List displays data conformed to Model protocol
+/// Method onCommandChanged is implemented in Controllable
 struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable {
     
     /// Store with data

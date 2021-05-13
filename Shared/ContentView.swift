@@ -55,13 +55,8 @@ struct ContentView: View {
     /// - Returns: Set of controls for the user store
     @ViewBuilder
     func getExtraUserStoreControls() -> some View{
-        Button("update 1", action: {
+        Button("another update", action: {
             viewModel.users.load(params: ["page" : "1"]) {
-                print("do something after loading")
-            }
-        })
-        Button("update 2", action: {
-            viewModel.users.load(params: ["page" : "2"]) {
                 print("do something after loading")
             }
         })

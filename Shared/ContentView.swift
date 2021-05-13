@@ -19,7 +19,7 @@ struct ContentView: View {
     
     ///Max amount of charts
     private let maxCol = 100
-    
+   
     /// The type of view representing the body of this view.
     var body: some View {
         VStack {
@@ -55,10 +55,8 @@ struct ContentView: View {
     /// - Returns: Set of controls for the user store
     @ViewBuilder
     func getExtraUserStoreControls() -> some View{
-        Button("another update", action: {
-            viewModel.users.load(params: ["page" : "1"]) {
-                print("do something after loading")
-            }
+        Button("do something", action: {
+            print("do something")
         })
     }
 

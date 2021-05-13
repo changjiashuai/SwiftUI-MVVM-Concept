@@ -18,9 +18,8 @@ struct ToolBar<Content: View> : View{
     /// Title text
     let title: String?
     
-    /// Set of extra controls to add to default set
+    /// Set of extra controls to add to the default set
     let items : (() -> Content)?
-
     
     /// Initializer
     /// - Parameters:

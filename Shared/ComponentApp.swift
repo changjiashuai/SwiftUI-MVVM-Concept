@@ -18,9 +18,6 @@ struct LayoutApp: App {
                 ContentView()
                 //inject viewModel for to get access from every view in the hierarchy
                 .environmentObject(viewModel)
-                ContentView()
-                //inject viewModel for to get access from every view in the hierarchy
-                .environmentObject(viewModel)
             }
         }
     }

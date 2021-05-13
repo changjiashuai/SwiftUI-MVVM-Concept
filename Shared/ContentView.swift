@@ -27,22 +27,22 @@ struct ContentView: View {
             ScrollView {
                 UniversalList(
                     store: viewModel.users,
-                    content: userFactory,
+                    content: ItemFactory.user,
                     toolBar: ToolBar("Users", getExtraToolBarControls)
                 )
                 AgeChart(
                     store: viewModel.users,
-                    content: userAgeChartFactory,
+                    content: ItemFactory.userAgeBar,
                     toolBar: EmptyView()
                 )
                 AgeChart(
                     store: viewModel.users,
-                    content: userAgeChartFactory,
+                    content: ItemFactory.userAgeBar,
                     toolBar: ToolBar<EmptyView>("Chart")
                 )
                 UniversalList(
                     store: viewModel.books,
-                    content: bookFactory,
+                    content: ItemFactory.book,
                     toolBar: ToolBar<EmptyView>("Books")
                 )
                 getChartViews()
@@ -50,7 +50,7 @@ struct ContentView: View {
         }.padding()
             .frame(minWidth: 522)
     }
-    
+
 
     /// Get extra controls for a tool bar
     /// - Returns: Set of controls
@@ -80,56 +80,10 @@ struct ContentView: View {
             ForEach(1...col, id: \.self) { id in
                 AgeChart(
                     store: viewModel.getFileJsonStore(from: "user_chart.json"),
-                    content: userAgeChartFactory,
+                    content: ItemFactory.userAgeBar,
                     toolBar: ToolBar<EmptyView>("Age chart \(id)")
                 )
             }
         }
-    }
-
-    /// ViewBuilder to create view template for defining User in the UniversalList
-    /// - Parameter user: Set of data for User
-    /// - Returns: View defining how User should be presented in the list
-    @ViewBuilder
-    private func userFactory(_ user: User) -> some View {
-        HStack {
-            Text("Name: \(user.name)").font(.system(size: 14, weight: .bold)).padding(3)
-        }
-            .frame(maxWidth: .infinity)
-            .background(Color.orange)
-    }
-
-    /// Create view template for defining User in the AgeChart
-    /// - Parameter user: Set of data for User
-    /// - Returns: View defining how User's age should be presented in the chart
-    @ViewBuilder
-    private func userAgeChartFactory(_ user: User, _ width: CGFloat) -> some View {
-        let height = CGFloat(user.age)
-        let label = "\(user.name) - \(user.age)"
-
-        Rectangle().frame(width: width, height: height)
-            .foregroundColor(.green)
-            .overlay(Text(label).offset(y: -20), alignment: .topLeading)
-            .padding(.horizontal, 8)
-    }
-
-    /// Create view template for defining Book in the UniversalList
-    /// - Parameter book: Set of data for Book
-    /// - Returns: View defining how Book should be presented in the list
-    @ViewBuilder
-    private func bookFactory(_ book: Book) -> some View {
-        HStack {
-            Rectangle().overlay(Text("Author: \(book.author)").foregroundColor(.white).font(.system(.headline)), alignment: .center)
-            Rectangle().overlay(Text("Title: \(book.title)").foregroundColor(.white).font(.system(.headline)), alignment: .center)
-        }
-            .frame(maxWidth: .infinity)
-            .foregroundColor(Color.blue)
-    }
-
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

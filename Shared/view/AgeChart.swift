@@ -11,7 +11,7 @@ import SwiftUI
 struct AgeChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable {
     
     /// Store with data
-    @ObservedObject var store: RemoteStore<T, U>
+    @StateObject var store: RemoteStore<T, U>
     
     /// Template to defined Item view
     let content: (T, CGFloat) -> Content

@@ -45,7 +45,9 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
                     ForEach(store.items, id: \.self) { item in
                         content(item)
                     }
-                } else { EmptyData() }
+                } else {
+                    EmptyData()
+                }
             }
         }
         .offset(y: 50)

@@ -19,7 +19,7 @@ struct ContentView: View {
     
     ///Max amount of charts
     private let maxCol = 100
-   
+    
     /// The type of view representing the body of this view.
     var body: some View {
         VStack {
@@ -51,8 +51,8 @@ struct ContentView: View {
         .frame(minWidth: 522)
     }
     
-    /// Get extra tool bar controls
-    /// - Returns: Set of controls
+    /// Get custom user store controls
+    /// - Returns: Set of controls for the user store
     @ViewBuilder
     func getExtraToolBarControls() -> some View{
         Button("do something", action: {

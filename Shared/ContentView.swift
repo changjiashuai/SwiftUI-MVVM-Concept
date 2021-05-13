@@ -28,7 +28,7 @@ struct ContentView: View {
                 UniversalList(
                     store: viewModel.users,
                     content: userFactory,
-                    toolBar: ToolBar("Users", getExtraUserStoreControls)
+                    toolBar: ToolBar("Users", getExtraToolBarControls)
                 )
                 AgeChart(
                     store: viewModel.users,
@@ -51,10 +51,10 @@ struct ContentView: View {
         .frame(minWidth: 522)
     }
     
-    /// Get custom user store controls
-    /// - Returns: Set of controls for the user store
+    /// Get extra tool bar controls
+    /// - Returns: Set of controls
     @ViewBuilder
-    func getExtraUserStoreControls() -> some View{
+    func getExtraToolBarControls() -> some View{
         Button("do something", action: {
             print("do something")
         })

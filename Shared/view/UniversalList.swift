@@ -26,7 +26,8 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     
     /// The type of view representing the body of this view.
     var body: some View {
-        ZStack(alignment: .top) {
+        print("UniversalList")
+        return ZStack(alignment: .top) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             getListBody()
         }.frame(height: 150, alignment: .topLeading)
@@ -45,9 +46,7 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
                     ForEach(store.items, id: \.self) { item in
                         content(item)
                     }
-                } else {
-                    EmptyData()
-                }
+                } else { EmptyData() }
             }
         }
         .offset(y: 50)

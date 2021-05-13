@@ -16,10 +16,10 @@ struct ContentView: View {
 
     /// Amount of dynamically added charts
     @State private var col = 0
-    
+
     ///Max amount of charts
     private let maxCol = 100
-    
+
     /// The type of view representing the body of this view.
     var body: some View {
         VStack {
@@ -48,13 +48,14 @@ struct ContentView: View {
                 getChartViews()
             }
         }.padding()
-        .frame(minWidth: 522)
+            .frame(minWidth: 522)
     }
     
+
     /// Get extra controls for a tool bar
     /// - Returns: Set of controls
     @ViewBuilder
-    func getExtraToolBarControls() -> some View{
+    private func getExtraToolBarControls() -> some View {
         Button("do something", action: {
             print("do something")
         })
@@ -63,7 +64,7 @@ struct ContentView: View {
     /// Get tool bar
     /// - Returns: Toolbar view
     @ViewBuilder
-    func getMainToolbar() -> some View {
+    private func getMainToolbar() -> some View {
         HStack {
             if col < maxCol { Button("+ chart \(col)") { col += 1 } }
             Spacer()
@@ -74,7 +75,7 @@ struct ContentView: View {
     /// Get  charts
     /// - Returns: Chart views
     @ViewBuilder
-    func getChartViews() -> some View {
+    private func getChartViews() -> some View {
         if col == 0 { EmptyView() } else {
             ForEach(1...col, id: \.self) { id in
                 AgeChart(
@@ -87,7 +88,7 @@ struct ContentView: View {
     }
 
     /// ViewBuilder to create view template for defining User in the UniversalList
-    /// - Parameter user: set of data for User
+    /// - Parameter user: Set of data for User
     /// - Returns: View defining how User should be presented in the list
     @ViewBuilder
     private func userFactory(_ user: User) -> some View {
@@ -99,7 +100,7 @@ struct ContentView: View {
     }
 
     /// Create view template for defining User in the AgeChart
-    /// - Parameter user: set of data for User
+    /// - Parameter user: Set of data for User
     /// - Returns: View defining how User's age should be presented in the chart
     @ViewBuilder
     private func userAgeChartFactory(_ user: User, _ width: CGFloat) -> some View {
@@ -113,7 +114,7 @@ struct ContentView: View {
     }
 
     /// Create view template for defining Book in the UniversalList
-    /// - Parameter book: set of data for Book
+    /// - Parameter book: Set of data for Book
     /// - Returns: View defining how Book should be presented in the list
     @ViewBuilder
     private func bookFactory(_ book: Book) -> some View {

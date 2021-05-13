@@ -42,6 +42,7 @@ struct AgeChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
         proxy.size.width / CGFloat(store.count()) - 16.0
     }
     
+    /// Get chart View
     /// - Returns: chart
     @ViewBuilder
     private func getChartBody() -> some View {

@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-/// Main view contains two lists of Users loaded from the same store and Books
-/// Users list and Users age chart share the same Store
+/// Main view
+/// Users list and Users age chart share the same Store but introduce a different presentation for the data
 struct ContentView: View {
 
     /// App viewModel
@@ -51,8 +51,8 @@ struct ContentView: View {
         .frame(minWidth: 522)
     }
     
-    /// Get custom user store controls
-    /// - Returns: Set of controls for the user store
+    /// Get extra controls for a tool bar
+    /// - Returns: Set of controls
     @ViewBuilder
     func getExtraToolBarControls() -> some View{
         Button("do something", action: {
@@ -98,7 +98,7 @@ struct ContentView: View {
             .background(Color.orange)
     }
 
-    /// ViewBuilder to create view template for defining User in the AgeChart
+    /// Create view template for defining User in the AgeChart
     /// - Parameter user: set of data for User
     /// - Returns: View defining how User's age should be presented in the chart
     @ViewBuilder
@@ -112,7 +112,7 @@ struct ContentView: View {
             .padding(.horizontal, 8)
     }
 
-    /// ViewBuilder to create view template for defining Book in the UniversalList
+    /// Create view template for defining Book in the UniversalList
     /// - Parameter book: set of data for Book
     /// - Returns: View defining how Book should be presented in the list
     @ViewBuilder

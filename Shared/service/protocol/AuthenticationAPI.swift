@@ -12,4 +12,7 @@ protocol AuthenticationAPI {
     
   /// Attempt to  authenticate
   func signIn()
+    
+  /// Attempt to log out from the app
+  func signOut()
 }

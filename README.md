@@ -28,6 +28,8 @@ struct User: Model {
 
 ## Store
 * Define Store in AppViewModel. It's **store** parameter for **UniversalList** View
+Proxy is defining a communication layer. Proxies are used by Store to handle the loading and saving of Model data
+Readers are used to interpret data to be loaded into a Model instance
 ```Swift 
 let store = RemoteStore<User, File>(
     proxy: File<User, Json>(

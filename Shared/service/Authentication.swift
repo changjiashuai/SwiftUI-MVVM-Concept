@@ -14,11 +14,16 @@ class Authentication: ObservableObject, AuthenticationAPI {
     @Published var authenticated = false
     
     /// authenticated user
-    @Published var user: String?    
+    @Published var user: String?
     
     /// Attempt to  authenticate
     func signIn(){
         authenticated = true
         user = "User \(Int.random(in: 1...102))"
+    }
+    
+    func signOut(){
+        authenticated = false
+        user = nil
     }
 }

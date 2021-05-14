@@ -1,6 +1,5 @@
 //
 //  Json.swift
-//  UniversalComponent
 //
 //  Created by Igor Shelopaev on 28.04.2021.
 //

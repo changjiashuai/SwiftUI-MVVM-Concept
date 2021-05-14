@@ -1,6 +1,5 @@
 //
 //  Rest.swift
-//  UniversalComponent
 //
 //  Created by Igor Shelopaev on 04.05.2021.
 //

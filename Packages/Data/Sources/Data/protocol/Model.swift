@@ -1,6 +1,5 @@
 //
 //  Model.swift
-//  UniversalComponent
 //
 //  Created by Igor Shelopaev on 27.04.2021.
 //

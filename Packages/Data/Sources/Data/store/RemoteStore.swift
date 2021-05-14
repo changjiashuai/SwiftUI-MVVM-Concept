@@ -1,7 +1,6 @@
 //
 //  File.swift
 //
-//
 //  Created by Igor Shelopaev on 14.05.2021.
 //
 

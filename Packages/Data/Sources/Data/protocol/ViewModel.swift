@@ -1,6 +1,5 @@
 //
 //  ViewModel.swift
-//  UniversalComponent
 //
 //  Created by Igor Shelopaev on 29.04.2021.
 //

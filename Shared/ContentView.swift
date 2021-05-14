@@ -23,7 +23,7 @@ struct ContentView: View {
     /// Widget view factory
     let widget: WidgetFactory
     
-    /// The type of view representing the body of this view.
+    /// The type of view representing the body of this view
     var body: some View {
         VStack {
             MainToolBar(count: $count)

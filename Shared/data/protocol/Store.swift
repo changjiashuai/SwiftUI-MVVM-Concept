@@ -12,6 +12,9 @@ protocol Store {
     associatedtype Item: Model
     associatedtype AbstractProxy: Proxy
     
+    /// Indicates state of loading
+    var loading: Bool { get set }
+    
     /// Defines communication layer with remote source of data
     var proxy: AbstractProxy { get set }
        

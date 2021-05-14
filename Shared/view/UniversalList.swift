@@ -8,7 +8,7 @@ import SwiftUI
 
 /// List displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable
-struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable {
+struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable {
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -18,11 +18,7 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     
     /// ToolBar with set of controls
     let toolBar: ToolContent
-    
-    /// Check condition to start loading
-    private var notLoading: Bool {
-        !store.loading
-    }
+
     
     /// The type of view representing the body of this view.
     var body: some View {

@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// List displays data conformed to Model protocol
-struct AgeChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable {
+struct AgeChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable, Loadable {
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -18,12 +18,7 @@ struct AgeChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     
     /// ToolBar with set of controls
     let toolBar: ToolBarContent
-    
-    /// Check condition to start loading
-    private var notLoading: Bool {
-        !store.loading
-    }
-    
+   
     /// The type of view representing the body of this view.
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -37,7 +32,7 @@ struct AgeChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     
     /// Get Item width
     /// - Parameter proxy: Geometry reader proxy
-    /// - Returns: Width
+    /// - Returns: Width for an item
     private func getItemWidth(_ proxy: GeometryProxy) -> CGFloat{
         proxy.size.width / CGFloat(store.count()) - 16.0
     }

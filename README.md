@@ -38,17 +38,17 @@ let users = RemoteStore<User, File>(
 
 * Define View component and pass Store
 ```Swift 
-AgeChart(
-    store: viewModel.users,
-    content: userAgeChartFactory,
-    toolBar: ToolBar<EmptyView>("Chart")
+UniversalList(
+    store: store,
+    content: content,
+    toolBar: toolBar
 )
 ```
 
-* Define the template(@ViewBuilder) for creating view depicting entity
+* Define the template(**@ViewBuilder**) for creating View depicting entity. It's **"content"** parameter for **UniversalList** View
 ```Swift 
 @ViewBuilder
-func userFactory(_ user: User) -> some View {
+func user(_ user: User) -> some View {
     HStack {
         Text("Name: \(user.name)")
     }

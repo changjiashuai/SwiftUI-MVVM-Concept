@@ -60,5 +60,4 @@ struct AgeChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
             .frame(height: 100, alignment: .bottomLeading)
         }
     }
-
 }

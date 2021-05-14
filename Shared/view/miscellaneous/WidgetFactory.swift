@@ -26,8 +26,8 @@ struct WidgetFactory {
         }
     }
     
-    /// Get  charts
-    /// - Returns: Chart views
+    /// Get  chart
+    /// - Returns: Chart view
     @ViewBuilder
     func getChart<T:Model, U: Proxy, Content: View, ToolBarContent: View>(store: RemoteStore<T,U>, content: @escaping (T, CGFloat) -> Content, toolBar: ToolBarContent) -> some View {
         AgeChart(
@@ -37,8 +37,8 @@ struct WidgetFactory {
         )
     }
     
-    /// Get  charts
-    /// - Returns: Chart views
+    /// Get  list
+    /// - Returns: List view
     @ViewBuilder
     func getList<T:Model, U: Proxy, Content: View, ToolBarContent: View>(store: RemoteStore<T,U>, content: @escaping (T) -> Content, toolBar: ToolBarContent) -> some View {
         UniversalList(

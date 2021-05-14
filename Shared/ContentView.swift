@@ -12,50 +12,51 @@ import SwiftUI
 struct ContentView: View {
 
     /// App viewModel
-    @EnvironmentObject var viewModel: AppViewModel
+    @EnvironmentObject var vm: AppViewModel
 
     /// Amount of dynamically added charts
     @State private var count = 0
     
     /// Item view factory
-    let itemFactory: ItemFactory
+    let item: ItemFactory
     
     /// Widget view factory
-    let widgetFactory: WidgetFactory
+    let widget: WidgetFactory
     
     /// The type of view representing the body of this view.
     var body: some View {
         VStack {
             MainToolBar(count: $count)
             ScrollView {
-                widgetFactory.getList(
-                    store: viewModel.users,
-                    content: itemFactory.user,
+                widget.getList(
+                    store: vm.users,
+                    content: item.user,
                     toolBar: ToolBar("Users"){
                         Button("do something", action: { print("do something")})
                     }
                 )
-                widgetFactory.getChart(
-                    store: viewModel.users,
-                    content: itemFactory.userAgeBar,
+                widget.getChart(
+                    store: vm.users,
+                    content: item.userAgeBar,
                     toolBar: EmptyView()
                 )
-                widgetFactory.getChart(
-                    store: viewModel.users,
-                    content: itemFactory.userAgeBar,
+                widget.getChart(
+                    store: vm.users,
+                    content: item.userAgeBar,
                     toolBar: ToolBar<EmptyView>("Chart")
                 )
-                widgetFactory.getList(
-                    store: viewModel.books,
-                    content: itemFactory.book,
+                widget.getList(
+                    store: vm.books,
+                    content: item.book,
                     toolBar: ToolBar<EmptyView>("Books")
                 )
-                widgetFactory.getCharts(
-                    viewModel: viewModel,
-                    factory: itemFactory,
+                widget.getCharts(
+                    viewModel: vm,
+                    factory: item,
                     count: count
                 )
             }
         }.padding()
+         .frame(minWidth: 522)
     }
 }

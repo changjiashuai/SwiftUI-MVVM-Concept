@@ -5,4 +5,4 @@ Service package is comprised of set of classes, structs and protocols for implem
 
 ## Requirements
 
-* Xcode Version 12+ Swift 5.0
+* Xcode Version 12+ Swift 5.3

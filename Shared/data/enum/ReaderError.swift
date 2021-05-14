@@ -9,8 +9,12 @@ import Foundation
 
 /// Set of errors while parsing  data
 enum ReaderError : DataError{
-    case readError
     
+    /// Parsing error
+    case readError    
+    
+    /// Get error description
+    /// - Returns: Error text
     func getDescription() -> String {
         var e: String
 

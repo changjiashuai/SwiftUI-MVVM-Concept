@@ -14,9 +14,14 @@ class StoreCommand: Equatable {
     /// Time stamp to differ repeating the same command several times in a row
     let date = Date()
        
-    /// execute method
-    func execute<V:Model, U: Proxy>(store : RemoteStore<V,U>){ }
+    /// Execute command method
+    func execute<V:Model, U: Proxy>(store : RemoteStore<V,U>){ }    
     
+    /// Compare values for equality or inequality
+    /// - Parameters:
+    ///   - lhs: First value
+    ///   - rhs: Second value
+    /// - Returns: Returns a Boolean value indicating whether two values are equal
     static func == (lhs: StoreCommand, rhs: StoreCommand) -> Bool {
         lhs.date == rhs.date
     }

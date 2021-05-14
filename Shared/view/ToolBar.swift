@@ -63,7 +63,6 @@ struct ToolBar<Content: View> : View{
     }
 }
 
-
 /// A named value produced by a view.
 struct StoreCommandKey: PreferenceKey {
     

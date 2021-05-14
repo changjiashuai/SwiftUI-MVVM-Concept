@@ -11,12 +11,12 @@ import Foundation
 /// Command to load Store with params
 class LoadCommand: StoreCommand{
 
-    //set of params
+    /// Set of params
     let params: [String:String]
-    //Do something after loading
+    /// Do something after loading
     private let callback: (() -> Void)
     
-    /// <#Description#>
+    /// Initializer
     /// - Parameters:
     ///   - params: set of params
     ///   - callback: Do something after loading

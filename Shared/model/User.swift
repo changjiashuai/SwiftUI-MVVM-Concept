@@ -8,13 +8,14 @@ import Foundation
 
 
 /// Model defining User
-struct User: Model {
+struct User: Model {    
     
+    /// User ID
     let id: Int    
     
-    /// user's name
+    /// User name
     let name: String
     
-    /// user's age
+    /// User age
     let age: Int
 }

@@ -10,9 +10,9 @@ import Foundation
 struct Book: Model {
     let id: Int
     
-    /// title of a book
+    /// Title of a book
     let title: String    
     
-    /// author of a book
+    /// Author of a book
     let author: String
 }

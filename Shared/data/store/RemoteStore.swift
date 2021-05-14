@@ -26,8 +26,7 @@ final class RemoteStore<T: Model, U: Proxy>: Store, ObservableObject {
     /// - Parameter proxy: Performs requests to a remote source
     init(proxy: U) {
         self.proxy = proxy
-    }
-    
+    }    
     
     /// Get total of items in Store
     /// - Returns: count

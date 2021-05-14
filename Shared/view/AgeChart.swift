@@ -19,7 +19,7 @@ struct AgeChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     /// ToolBar with set of controls
     let toolBar: ToolBarContent
     
-    /// check condition to start loading
+    /// Check condition to start loading
     private var notLoading: Bool {
         !store.loading
     }

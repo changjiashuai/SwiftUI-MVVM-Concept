@@ -24,9 +24,9 @@ struct User: Model {
 ```
 
 ## Store
-* Define Store in AppViewModel
+* Define Store in AppViewModel. It's **"store"** parameter for **UniversalList** View
 ```Swift 
-let users = RemoteStore<User, File>(
+let store = RemoteStore<User, File>(
     proxy: File<User, Json>(
         reader: Json<User>(),
         fileName: "user.json"

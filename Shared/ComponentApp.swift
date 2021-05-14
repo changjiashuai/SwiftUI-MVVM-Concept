@@ -9,7 +9,6 @@ import Service
 
 @main
 struct LayoutApp: App {
-
     
     /// Main view model
     @StateObject var vm = AppViewModel()

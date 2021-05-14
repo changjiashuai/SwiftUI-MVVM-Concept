@@ -15,12 +15,8 @@ public enum ReaderError : DataError{
     /// Get error description
     /// - Returns: Error text
     public func getDescription() -> String {
-        var e: String
-
         switch self {
-            case .readError: e = "could not parse data"
+            case .readError: return "could not parse data"
         }
-
-        return e
     }
 }

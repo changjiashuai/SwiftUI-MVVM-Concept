@@ -18,13 +18,9 @@ public enum ProxyError: DataError{
     /// Get error description
     /// - Returns: Error text
     public func getDescription() -> String {
-        var e: String
-
         switch self {
-            case .noFile(let fileName): e = "file \(fileName) not found"
-            case .loadError(let fileName): e = "could not load data from file \(fileName)"
+            case .noFile(let fileName): return "file \(fileName) not found"
+            case .loadError(let fileName): return "could not load data from file \(fileName)"
         }
-
-        return e
     }
 }

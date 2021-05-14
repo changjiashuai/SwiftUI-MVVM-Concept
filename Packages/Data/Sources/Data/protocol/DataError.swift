@@ -9,7 +9,7 @@ import Foundation
 
 
 /// Data error
-protocol DataError: Error {
+public protocol DataError: Error {
     
     /// Get error description
     func getDescription() -> String

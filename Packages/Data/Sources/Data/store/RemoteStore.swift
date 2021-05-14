@@ -1,59 +1,60 @@
 //
-//  RemoteStore.swift
-//  UniversalComponent
+//  File.swift
 //
-//  Created by Igor Shelopaev on 30.04.2021.
+//
+//  Created by Igor Shelopaev on 14.05.2021.
 //
 
 import Foundation
 
+
 /// Store is a repo that maneges models conformed to Model protocol
-final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store  {
+public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store  {
     
     /// Set of stored data
-    @Published private(set) var items: [T] = [T]()
+    @Published public private(set) var items: [T] = [T]()
     
     /// Contains error string if loading ends up with errors
-    @Published var error: String? = nil
+    @Published public var error: String? = nil
     
     /// Informs the View that loading process is in the progress
-    @Published var loading: Bool = false
+    @Published public var loading: Bool = false
     
     /// Defines the communication level for data
-    var proxy: U
+    public var proxy: U
     
     /// Init
     /// - Parameter proxy: Performs requests to a remote source
-    init(proxy: U) {
+    public init(proxy: U) {
         self.proxy = proxy
     }
     
     /// Get total of items in Store
     /// - Returns: count
-    func count() -> Int {
+    public func count() -> Int {
         items.count
     }
     
     /// Append a element of store
     /// - Parameter item: an element of store
-    func append(_ item: T) {
+    public func append(_ item: T) {
         items.append(item)
     }
     
     /// Append a group of elements of store
     /// - Parameter items: elements of store
-    func appendAll(_ items: [T]) {
+    public func appendAll(_ items: [T]) {
         self.items.append(contentsOf: items)
     }
     
     /// Remove all elements
-    func removeAll() {
+    public func removeAll() {
         items.removeAll()
     }
     
     /// Get if Store is empty
     /// - Returns: true if empty
-    func isEmpty() -> Bool{
+    public func isEmpty() -> Bool{
         items.count == 0
     }
    
@@ -61,7 +62,7 @@ final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store  {
     /// - Parameters:
     ///   - params: Set of parameters to control a request of data (data range etc.)
     ///   - callback: Closure to perform something after loading
-    func load(params: [String: String]?, callback: @escaping () -> Void) {
+    public func load(params: [String: String]?, callback: @escaping () -> Void) {
        
         let queue = DispatchQueue.global(qos: .userInitiated)
         loading = true

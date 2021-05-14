@@ -9,6 +9,6 @@ import Foundation
 
 
 /// Defines set of stores for your App
-protocol ViewModel{
+public protocol ViewModel{
 
 }

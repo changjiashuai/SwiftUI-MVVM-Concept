@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Data
 
 /// Protocol for a view containing a store
 protocol Loadable {

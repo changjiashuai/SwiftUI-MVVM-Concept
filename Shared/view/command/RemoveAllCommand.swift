@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Data
 
 /// Command to temode all items from a store
 class RemoveAllCommand: StoreCommand{

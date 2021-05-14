@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import Data
 
 /// Model defining Book
 struct Book: Model {

@@ -8,7 +8,7 @@ import Foundation
 
 
 /// Defines repository with data
-protocol Store {
+public protocol Store {
     
     /// Defines an element of Store
     associatedtype Item: Model

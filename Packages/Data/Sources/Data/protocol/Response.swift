@@ -9,7 +9,7 @@ import Foundation
 
 
 /// Contains result of retrieved data
-protocol Response {
+public protocol Response {
     
     /// Defines an element of Store
     associatedtype Item : Model

@@ -8,7 +8,7 @@
 import Foundation
 
 /// Protocol for models
-protocol Model: Identifiable, Hashable, Codable {
+public protocol Model: Identifiable, Hashable, Codable {
     
     /// Identifier of Model
     var id: Int { get }

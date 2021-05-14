@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Data
 
 /// Defines set of stores for your App using by view components
 class AppViewModel: ViewModel, ObservableObject {   

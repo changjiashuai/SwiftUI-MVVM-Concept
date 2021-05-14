@@ -8,14 +8,14 @@
 import Foundation
 
 /// Set of errors while parsing  data
-enum ReaderError : DataError{
+public enum ReaderError : DataError{
     
     /// Parsing error
     case readError    
     
     /// Get error description
     /// - Returns: Error text
-    func getDescription() -> String {
+    public func getDescription() -> String {
         var e: String
 
         switch self {

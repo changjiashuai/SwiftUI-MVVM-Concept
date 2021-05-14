@@ -9,7 +9,7 @@ import Foundation
 
 
 /// Defines a communication layer with a remote source of data
-protocol Proxy {
+public protocol Proxy {
     
     /// Defines an element of Store
     associatedtype Item    
@@ -21,7 +21,7 @@ protocol Proxy {
     associatedtype AbstractResponse: Response
     
     /// Parses data loaded from remote source
-    var reader: AbstractReader { get set }
+    var reader: AbstractReader { get }
     
     /// Create request
     /// - Parameter params: set of params to control what data to get from a remote source Range, Filter etc

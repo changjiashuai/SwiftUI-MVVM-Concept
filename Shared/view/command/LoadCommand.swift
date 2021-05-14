@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Data
 
 /// Command to load Store with params
 class LoadCommand: StoreCommand{

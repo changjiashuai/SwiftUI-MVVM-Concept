@@ -9,7 +9,7 @@ import Foundation
 
 
 /// Processes data fetched from a remote source
-protocol Reader {
+public protocol Reader {
     
     /// Defines an element of Store
     associatedtype Item : Model

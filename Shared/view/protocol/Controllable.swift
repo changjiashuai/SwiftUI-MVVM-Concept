@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Data
 
 /// Add controllable behavior to view to obey commands from others views
 protocol Controllable{

@@ -5,7 +5,7 @@
 //
 
 import Foundation
-
+import Data
 
 /// Model defining User
 struct User: Model {    

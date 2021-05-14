@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import Data
 
 /// Defines command for store from a UI control
 class StoreCommand: Equatable {

@@ -9,7 +9,7 @@ import Foundation
 
 
 /// Set of errors while fetching data from a remote source
-enum ProxyError: DataError{
+public enum ProxyError: DataError{
     
     /// File not found
     case noFile(fileName: String)
@@ -18,7 +18,7 @@ enum ProxyError: DataError{
 
     /// Get error description
     /// - Returns: Error text
-    func getDescription() -> String {
+    public func getDescription() -> String {
         var e: String
 
         switch self {

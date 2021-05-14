@@ -8,14 +8,14 @@
 import Foundation
 
 /// Contains result of fetched data
-struct FileResponse<T: Model>: Response{   
+public struct FileResponse<T: Model>: Response{
     
     /// Defines specs of request
-    let request : Request    
+    public let request : Request
     
     /// Fetched data
-    let items: [T]
+    public let items: [T]
     
     /// Error while parsing or fetching from a file
-    let error : DataError?
+    public let error : DataError?
 }

@@ -8,18 +8,23 @@
 import Foundation
 
 /// Defines communication layer to get data from local files
-struct File<T:Model, R: Reader>: Proxy {
+public struct File<T:Model, R: Reader>: Proxy {
     
     /// Parse data loaded from a file
-    var reader: R
+    public let reader: R
     
     /// File path
-    let fileName: String
+    private let fileName: String
+    
+    public init(reader: R, fileName: String){
+        self.reader = reader
+        self.fileName = fileName
+    }
     
     /// Create request
     /// - Parameter params: set of params to control what data to get from a remote source Range, Filter etc
     /// - Returns: specs of request
-    func createRequest(params: [String: String]?) -> FileRequest {
+    public func createRequest(params: [String: String]?) -> FileRequest {
         FileRequest(params: params, fileName: fileName)
     }
     
@@ -28,12 +33,12 @@ struct File<T:Model, R: Reader>: Proxy {
     ///   - request: Initial request
     ///   - error: Errors desc for View
     ///   - items: Store items
-    func createResponse(_ request: FileRequest, _ error: DataError?, _ items: [T] = []) -> FileResponse<T> {
+    public func createResponse(_ request: FileRequest, _ error: DataError?, _ items: [T] = []) -> FileResponse<T> {
         FileResponse(request: request, items: items, error: error)
     }
     
     /// Fetch data from a file
-    func run(_ request: FileRequest) -> FileResponse<T>  {
+    public func run(_ request: FileRequest) -> FileResponse<T>  {
         let data: Data
         let fn = request.fileName
         var items: [T] = []

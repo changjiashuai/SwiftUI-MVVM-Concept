@@ -1,7 +1,10 @@
 # Organizing View and Data layers within SwiftUI App
 SwiftUI Development Architecture
 
+
 **Concept based on protocols.** It is not "pure" MVVM for SwiftUI as you might find on the web. It is not about how to create List and Chart views. **It's about one of possibility how to organize View and Data layers within SwiftUI App.**
+
+**Data package** is comprised of set of classes, structs and protocols for organizing **a data layer** for apps.
 
 App stores are assembled in AppViewModel In the code example. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  
 

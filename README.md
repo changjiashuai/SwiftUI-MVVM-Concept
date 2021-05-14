@@ -2,7 +2,7 @@
 SwiftUI Development Architecture
 
 
-**Concept based on protocols.** It is not "pure" MVVM for SwiftUI as you might find on the web. It is not about how to create List and Chart views. **It's about one of possibility how to organize View and Data layers within SwiftUI App.**
+**Concept based on protocols.** It is not "pure" MVVM for SwiftUI as you might find on the web. It is not about how to create Lists and Charts and view design. **It's about one of possibility how to organize View and Data layers within SwiftUI App.**
 
 **Data package** is comprised of set of classes, structs and protocols for organizing **a data layer** for apps.
 

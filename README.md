@@ -6,7 +6,7 @@ SwiftUI Development Architecture
 
 **Data package** is comprised of set of classes, structs and protocols for organizing **a data layer** for apps.
 
-App stores are assembled in AppViewModel In the code example. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  
+App stores are assembled in AppViewModel In the code example. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  When you update data in one the others are updated automatically.
 
 Writer is not implemented in the code example. It is placed on the diagram to show the comprehensiveness of the solution for any type of communication with remote sources.
 

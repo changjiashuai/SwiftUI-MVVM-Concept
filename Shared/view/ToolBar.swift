@@ -20,15 +20,6 @@ struct ToolBar<Content: View> : View{
     
     /// Set of extra controls to add to the default set
     let items : (() -> Content)?
-    
-    /// Initializer
-    /// - Parameters:
-    ///   - title: Text of title
-    ///   - items: Additional items
-    init(_ title: String? = nil ,_ items:( () -> Content )? = nil ) {
-        self.title = title
-        self.items = items
-    }
 
     /// The type of view representing the body of this view
     var body: some View {
@@ -49,6 +40,17 @@ struct ToolBar<Content: View> : View{
             .padding(.horizontal, 5)
             .frame(height: 50).background(Color.gray)
             .preference(key: StoreCommandKey.self, value: curentCommand)
+    }
+    
+    // MARK: - Methods
+    
+    /// Initializer
+    /// - Parameters:
+    ///   - title: Text of title
+    ///   - items: Additional items
+    init(_ title: String? = nil ,_ items:( () -> Content )? = nil ) {
+        self.title = title
+        self.items = items
     }
     
     /// Get View for extra controls

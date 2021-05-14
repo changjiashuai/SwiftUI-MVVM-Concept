@@ -16,6 +16,8 @@ class LoadCommand: StoreCommand{
     /// Do something after loading
     private let callback: (() -> Void)
     
+    // MARK: - Methods
+    
     /// Initializer
     /// - Parameters:
     ///   - params: set of params

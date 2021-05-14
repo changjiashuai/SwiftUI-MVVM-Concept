@@ -14,16 +14,15 @@ struct ErrorView: View {
     /// Error description
     let text : String
     
+    /// The type of view representing the body of this view
+    var body: some View {
+        Color.clear.overlay(Text("\(text)").foregroundColor(.red), alignment: .center)
+    }
     
     /// Initializer
     /// - Parameter text: Error text
     init(_ text : String){
         self.text = text
-    }
-    
-    /// The type of view representing the body of this view
-    var body: some View {
-        Color.clear.overlay(Text("\(text)").foregroundColor(.red), alignment: .center)
     }
 }
 

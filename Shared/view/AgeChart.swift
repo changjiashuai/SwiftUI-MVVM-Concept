@@ -32,6 +32,8 @@ struct AgeChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
         .onAppear { if notLoading { load() } }
     }
     
+    // MARK: - Methods
+    
     /// Get Item width
     /// - Parameter proxy: Geometry reader proxy
     /// - Returns: Width for an item

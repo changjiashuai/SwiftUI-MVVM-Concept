@@ -28,7 +28,7 @@ fileprivate struct Mask: ViewModifier {
 
 extension View {
     
-    /// Mask or unmask View Depends on Store loading process
+    /// Mask or unmask View. Depends on Store loading process
     /// - Parameters:
     ///   - loading: Boolean flag  true - is loading, false - loaded
     ///   - text: Text displayed while loading. Default value "Loading..."

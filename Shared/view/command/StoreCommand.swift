@@ -14,6 +14,8 @@ class StoreCommand: Equatable {
     /// Time stamp to differ repeating the same command several times in a row
     let date = Date()
        
+    // MARK: - Methods
+    
     /// Execute command method
     func execute<V:Model, U: Proxy>(store : RemoteStore<V,U>){ }    
     

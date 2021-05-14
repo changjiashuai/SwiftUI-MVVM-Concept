@@ -31,6 +31,8 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
         .onAppear { if notLoading { load() } }
     }
     
+    // MARK: - Methods
+    
     /// Get list View
     /// - Returns: list view
     @ViewBuilder

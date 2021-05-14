@@ -15,7 +15,7 @@ struct LayoutApp: App {
     var body: some Scene {
         WindowGroup {
             HStack {
-                ContentView()
+                ContentView(itemFactory: ItemFactory(), widgetFactory: WidgetFactory())
                 //inject viewModel for to get access from every view in the hierarchy
                 .environmentObject(viewModel)
             }

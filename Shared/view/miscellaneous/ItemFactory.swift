@@ -8,13 +8,14 @@
 import SwiftUI
 
 
+/// Set of templates for items View
 struct ItemFactory{
     
     /// Create view template for defining User in the UniversalList
     /// - Parameter user: Set of data for User
     /// - Returns: View defining how User should be presented in the list
     @ViewBuilder
-    static func user(_ user: User) -> some View {
+    func user(_ user: User) -> some View {
         HStack {
             Text("Name: \(user.name)").font(.system(size: 14, weight: .bold)).padding(3)
         }
@@ -26,7 +27,7 @@ struct ItemFactory{
     /// - Parameter user: Set of data for User
     /// - Returns: View defining how User's age should be presented in the chart
     @ViewBuilder
-    static func userAgeBar(_ user: User, _ width: CGFloat) -> some View {
+    func userAgeBar(_ user: User, _ width: CGFloat) -> some View {
         let height = CGFloat(user.age)
         let label = "\(user.name) - \(user.age)"
 
@@ -40,7 +41,7 @@ struct ItemFactory{
     /// - Parameter book: Set of data for Book
     /// - Returns: View defining how Book should be presented in the list
     @ViewBuilder
-    static func book(_ book: Book) -> some View {
+    func book(_ book: Book) -> some View {
         HStack {
             Rectangle().overlay(Text("Author: \(book.author)").foregroundColor(.white).font(.system(.headline)), alignment: .center)
             Rectangle().overlay(Text("Title: \(book.title)").foregroundColor(.white).font(.system(.headline)), alignment: .center)

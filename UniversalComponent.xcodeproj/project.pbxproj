@@ -25,6 +25,10 @@
 		B24A91A32638316700989C3B /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A91A12638316700989C3B /* Book.swift */; };
 		B250E538264170D8003E93BD /* Rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B250E537264170D8003E93BD /* Rest.swift */; };
 		B250E539264170D8003E93BD /* Rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B250E537264170D8003E93BD /* Rest.swift */; };
+		B2559699264E3E3E00353A37 /* MainToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2559698264E3E3E00353A37 /* MainToolBar.swift */; };
+		B255969A264E3E3E00353A37 /* MainToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2559698264E3E3E00353A37 /* MainToolBar.swift */; };
+		B255969E264E40C100353A37 /* WidgetFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255969D264E40C100353A37 /* WidgetFactory.swift */; };
+		B255969F264E40C100353A37 /* WidgetFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255969D264E40C100353A37 /* WidgetFactory.swift */; };
 		B262302C26451212005BDCBE /* LoadingMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262302B26451212005BDCBE /* LoadingMask.swift */; };
 		B262302D26451212005BDCBE /* LoadingMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262302B26451212005BDCBE /* LoadingMask.swift */; };
 		B2623037264530C5005BDCBE /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2623036264530C5005BDCBE /* ToolBar.swift */; };
@@ -103,6 +107,8 @@
 		B24A919C26382E7A00989C3B /* UniversalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalList.swift; sourceTree = "<group>"; };
 		B24A91A12638316700989C3B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		B250E537264170D8003E93BD /* Rest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rest.swift; sourceTree = "<group>"; };
+		B2559698264E3E3E00353A37 /* MainToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainToolBar.swift; sourceTree = "<group>"; };
+		B255969D264E40C100353A37 /* WidgetFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetFactory.swift; sourceTree = "<group>"; };
 		B262302B26451212005BDCBE /* LoadingMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingMask.swift; sourceTree = "<group>"; };
 		B2623036264530C5005BDCBE /* ToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
 		B26230512645457E005BDCBE /* EmptyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyData.swift; sourceTree = "<group>"; };
@@ -188,6 +194,7 @@
 				B24A919C26382E7A00989C3B /* UniversalList.swift */,
 				B22DEAC2263BE29500CDAAA2 /* AgeChart.swift */,
 				B2623036264530C5005BDCBE /* ToolBar.swift */,
+				B2559698264E3E3E00353A37 /* MainToolBar.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -224,6 +231,7 @@
 				B26230512645457E005BDCBE /* EmptyData.swift */,
 				B26230582645490B005BDCBE /* ErrorView.swift */,
 				B2C900E4264D2CC800547364 /* ItemFactory.swift */,
+				B255969D264E40C100353A37 /* WidgetFactory.swift */,
 			);
 			path = miscellaneous;
 			sourceTree = "<group>";
@@ -492,6 +500,7 @@
 				B2B25D432639AD1F0044E693 /* Csv.swift in Sources */,
 				B2EFF613263A94A100A584D2 /* FileRequest.swift in Sources */,
 				B2C900E5264D2CC800547364 /* ItemFactory.swift in Sources */,
+				B255969E264E40C100353A37 /* WidgetFactory.swift in Sources */,
 				B2623AC6264BC547007C4F05 /* Controllable.swift in Sources */,
 				B24A91A22638316700989C3B /* Book.swift in Sources */,
 				B2623AD6264BC69E007C4F05 /* RemoveAllCommand.swift in Sources */,
@@ -499,6 +508,7 @@
 				B24A919D26382E7A00989C3B /* UniversalList.swift in Sources */,
 				B2CA046526395B6A00DD4764 /* File.swift in Sources */,
 				B262302C26451212005BDCBE /* LoadingMask.swift in Sources */,
+				B2559699264E3E3E00353A37 /* MainToolBar.swift in Sources */,
 				B2EFF661263AC0B300A584D2 /* AppViewModel.swift in Sources */,
 				B26230522645457E005BDCBE /* EmptyData.swift in Sources */,
 				B2623037264530C5005BDCBE /* ToolBar.swift in Sources */,
@@ -534,6 +544,7 @@
 				B2B25D442639AD1F0044E693 /* Csv.swift in Sources */,
 				B2EFF614263A94A100A584D2 /* FileRequest.swift in Sources */,
 				B2C900E6264D2CC800547364 /* ItemFactory.swift in Sources */,
+				B255969F264E40C100353A37 /* WidgetFactory.swift in Sources */,
 				B2623AC7264BC547007C4F05 /* Controllable.swift in Sources */,
 				B24A91A32638316700989C3B /* Book.swift in Sources */,
 				B2623AD7264BC69E007C4F05 /* RemoveAllCommand.swift in Sources */,
@@ -541,6 +552,7 @@
 				B24A919E26382E7A00989C3B /* UniversalList.swift in Sources */,
 				B2CA046626395B6A00DD4764 /* File.swift in Sources */,
 				B262302D26451212005BDCBE /* LoadingMask.swift in Sources */,
+				B255969A264E3E3E00353A37 /* MainToolBar.swift in Sources */,
 				B2EFF662263AC0B300A584D2 /* AppViewModel.swift in Sources */,
 				B26230532645457E005BDCBE /* EmptyData.swift in Sources */,
 				B2623038264530C5005BDCBE /* ToolBar.swift in Sources */,

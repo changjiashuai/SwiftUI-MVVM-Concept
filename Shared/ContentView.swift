@@ -15,75 +15,47 @@ struct ContentView: View {
     @EnvironmentObject var viewModel: AppViewModel
 
     /// Amount of dynamically added charts
-    @State private var col = 0
-
-    ///Max amount of charts
-    private let maxCol = 100
-
+    @State private var count = 0
+    
+    /// Item view factory
+    let itemFactory: ItemFactory
+    
+    /// Widget view factory
+    let widgetFactory: WidgetFactory
+    
     /// The type of view representing the body of this view.
     var body: some View {
         VStack {
-            getMainToolbar()
+            MainToolBar(count: $count)
             ScrollView {
-                UniversalList(
+                widgetFactory.getList(
                     store: viewModel.users,
-                    content: ItemFactory.user,
-                    toolBar: ToolBar("Users", getExtraToolBarControls)
+                    content: itemFactory.user,
+                    toolBar: ToolBar("Users"){
+                        Button("do something", action: { print("do something")})
+                    }
                 )
-                AgeChart(
+                widgetFactory.getChart(
                     store: viewModel.users,
-                    content: ItemFactory.userAgeBar,
+                    content: itemFactory.userAgeBar,
                     toolBar: EmptyView()
                 )
-                AgeChart(
+                widgetFactory.getChart(
                     store: viewModel.users,
-                    content: ItemFactory.userAgeBar,
+                    content: itemFactory.userAgeBar,
                     toolBar: ToolBar<EmptyView>("Chart")
                 )
-                UniversalList(
+                widgetFactory.getList(
                     store: viewModel.books,
-                    content: ItemFactory.book,
+                    content: itemFactory.book,
                     toolBar: ToolBar<EmptyView>("Books")
                 )
-                getChartViews()
-            }
-        }.padding()
-            .frame(minWidth: 522)
-    }
-
-
-    /// Get extra controls for a tool bar
-    /// - Returns: Set of controls
-    @ViewBuilder
-    private func getExtraToolBarControls() -> some View {
-        Button("do something", action: {
-            print("do something")
-        })
-    }
-
-    /// Get tool bar
-    /// - Returns: Toolbar view
-    @ViewBuilder
-    private func getMainToolbar() -> some View {
-        HStack {
-            if col < maxCol { Button("+ chart \(col)") { col += 1 } }
-            Spacer()
-            if col != 0 { Button("- chart  \(col)") { col -= 1 } }
-        }
-    }
-
-    /// Get  charts
-    /// - Returns: Chart views
-    @ViewBuilder
-    private func getChartViews() -> some View {
-        if col == 0 { EmptyView() } else {
-            ForEach(1...col, id: \.self) { id in
-                AgeChart(
-                    store: viewModel.getFileJsonStore(from: "user_chart.json"),
-                    content: ItemFactory.userAgeBar,
-                    toolBar: ToolBar<EmptyView>("Age chart \(id)")
+                widgetFactory.getCharts(
+                    viewModel: viewModel,
+                    factory: itemFactory,
+                    count: count
                 )
             }
-        }
+        }.padding()
     }
 }

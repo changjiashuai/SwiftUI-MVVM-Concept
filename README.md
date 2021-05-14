@@ -24,7 +24,7 @@ struct User: Model {
 ```
 
 ## Store
-* Define Store in AppViewModel. It's **"store"** parameter for **UniversalList** View
+* Define Store in AppViewModel. It's **store** parameter for **UniversalList** View
 ```Swift 
 let store = RemoteStore<User, File>(
     proxy: File<User, Json>(
@@ -45,7 +45,7 @@ UniversalList(
 )
 ```
 
-* Define the template(**@ViewBuilder**) for creating View depicting entity. It's **"content"** parameter for **UniversalList** View
+* Define the template(**@ViewBuilder**) for creating View depicting entity. It's **content** parameter for **UniversalList** View
 ```Swift 
 @ViewBuilder
 func user(_ user: User) -> some View {

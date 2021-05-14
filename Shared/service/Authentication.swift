@@ -14,8 +14,7 @@ class Authentication: ObservableObject, AuthenticationAPI {
     @Published var authenticated = false
     
     /// authenticated user
-    @Published var user: String?
-    
+    @Published var user: String?    
     
     /// Attempt to  authenticate
     func signIn(){

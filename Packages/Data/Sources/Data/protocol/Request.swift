@@ -11,5 +11,5 @@ import Foundation
 public protocol Request {
     
     ///  Set of params to control what data to get from a remote source Range, Filter etc
-    var params: [String: String]? { get set }
+    var params: [String: String]? { get }
 }

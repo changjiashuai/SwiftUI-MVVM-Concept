@@ -5,6 +5,7 @@
 //
 
 import SwiftUI
+import Service
 
 @main
 struct LayoutApp: App {

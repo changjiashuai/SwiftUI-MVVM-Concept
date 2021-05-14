@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import Service
 
 /// Main tool bar of the app
 struct MainToolBar: View {

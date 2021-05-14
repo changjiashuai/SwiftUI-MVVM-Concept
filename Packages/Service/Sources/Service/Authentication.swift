@@ -8,21 +8,23 @@
 import Foundation
 
 
-class Authentication: ObservableObject, AuthenticationAPI {
+public class Authentication: ObservableObject, AuthenticationAPI {
     
     /// State of authentication
-    @Published var authenticated = false
+    @Published public var authenticated = false
     
     /// authenticated user
-    @Published var user: String?
+    @Published public var user: String?
+    
+    public init(){}
     
     /// Attempt to  authenticate
-    func signIn(){
+    public func signIn(){
         authenticated = true
         user = "User \(Int.random(in: 1...102))"
     }
     
-    func signOut(){
+    public func signOut(){
         authenticated = false
         user = nil
     }

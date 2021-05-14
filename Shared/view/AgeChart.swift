@@ -8,6 +8,8 @@
 import SwiftUI
 
 /// List displays data conformed to Model protocol
+/// Method onCommandChanged is implemented in Controllable
+/// Property notLoading is implemented in Loadable
 struct AgeChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable, Loadable {
     
     /// Store with data

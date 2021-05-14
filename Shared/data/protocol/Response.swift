@@ -10,6 +10,8 @@ import Foundation
 
 /// Contains result of retrieved data
 protocol Response {
+    
+    /// Defines an element of Store
     associatedtype Item : Model
     
     /// Defines specs of request

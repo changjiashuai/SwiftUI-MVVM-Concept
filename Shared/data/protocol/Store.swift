@@ -9,7 +9,10 @@ import Foundation
 
 /// Defines repository with data
 protocol Store {
+    
+    /// Defines an element of Store
     associatedtype Item: Model
+    /// Defines a communication layer with a remote source of data
     associatedtype AbstractProxy: Proxy
     
     /// Indicates state of loading

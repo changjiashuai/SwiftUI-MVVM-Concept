@@ -12,11 +12,11 @@ import Foundation
 protocol Loadable {
     associatedtype AbstractStore: Store
     /// Repository with data
-    var store: AbstractStore { get }    
+    var store: AbstractStore { get }
 }
 
 extension Loadable{
-    /// Check condition to start loading
+    /// Indicates state of loading
     var notLoading: Bool {
         !store.loading
     }

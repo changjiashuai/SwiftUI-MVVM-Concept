@@ -8,7 +8,7 @@
 import Foundation
 
 
-/// Defines specs of request
+/// Defines specs for a request
 protocol Request {
     
     ///  Set of params to control what data to get from a remote source Range, Filter etc

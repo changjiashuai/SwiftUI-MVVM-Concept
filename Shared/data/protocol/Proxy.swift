@@ -11,10 +11,13 @@ import Foundation
 /// Defines a communication layer with a remote source of data
 protocol Proxy {
     
-    associatedtype Item
-    
+    /// Defines an element of Store
+    associatedtype Item    
+    /// Processes data fetched from a remote source
     associatedtype AbstractReader: Reader
+    /// Defines specs for a request
     associatedtype AbstractRequest: Request
+    /// Contains result of retrieved data
     associatedtype AbstractResponse: Response
     
     /// Parses data loaded from remote source

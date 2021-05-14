@@ -10,6 +10,6 @@ import Foundation
 /// Protocol for models
 protocol Model: Identifiable, Hashable, Codable {
     
-    /// Model ID
+    /// Identifier of Model
     var id: Int { get }
 }

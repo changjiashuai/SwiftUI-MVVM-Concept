@@ -30,7 +30,7 @@ struct ToolBar<Content: View> : View{
         self.items = items
     }
 
-    /// The type of view representing the body of this view.
+    /// The type of view representing the body of this view
     var body: some View {
         HStack {
             if title != nil {

@@ -20,7 +20,7 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     /// ToolBar with set of controls
     let toolBar: ToolContent
     
-    /// The type of view representing the body of this view.
+    /// The type of view representing the body of this view
     var body: some View {
         ZStack(alignment: .top) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)

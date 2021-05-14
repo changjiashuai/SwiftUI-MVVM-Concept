@@ -31,6 +31,12 @@
 		B255969F264E40C100353A37 /* WidgetFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255969D264E40C100353A37 /* WidgetFactory.swift */; };
 		B25596A9264E5A9300353A37 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596A8264E5A9300353A37 /* Loadable.swift */; };
 		B25596AA264E5A9300353A37 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596A8264E5A9300353A37 /* Loadable.swift */; };
+		B25596BA264E83DD00353A37 /* Launching.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596B9264E83DD00353A37 /* Launching.swift */; };
+		B25596BB264E83DD00353A37 /* Launching.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596B9264E83DD00353A37 /* Launching.swift */; };
+		B25596C3264E873A00353A37 /* AuthenticationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596C2264E873A00353A37 /* AuthenticationAPI.swift */; };
+		B25596C4264E873A00353A37 /* AuthenticationAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596C2264E873A00353A37 /* AuthenticationAPI.swift */; };
+		B25596CA264E879300353A37 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596C9264E879300353A37 /* Authentication.swift */; };
+		B25596CB264E879300353A37 /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596C9264E879300353A37 /* Authentication.swift */; };
 		B262302C26451212005BDCBE /* LoadingMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262302B26451212005BDCBE /* LoadingMask.swift */; };
 		B262302D26451212005BDCBE /* LoadingMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262302B26451212005BDCBE /* LoadingMask.swift */; };
 		B2623037264530C5005BDCBE /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2623036264530C5005BDCBE /* ToolBar.swift */; };
@@ -112,6 +118,9 @@
 		B2559698264E3E3E00353A37 /* MainToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainToolBar.swift; sourceTree = "<group>"; };
 		B255969D264E40C100353A37 /* WidgetFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetFactory.swift; sourceTree = "<group>"; };
 		B25596A8264E5A9300353A37 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		B25596B9264E83DD00353A37 /* Launching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launching.swift; sourceTree = "<group>"; };
+		B25596C2264E873A00353A37 /* AuthenticationAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationAPI.swift; sourceTree = "<group>"; };
+		B25596C9264E879300353A37 /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		B262302B26451212005BDCBE /* LoadingMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingMask.swift; sourceTree = "<group>"; };
 		B2623036264530C5005BDCBE /* ToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
 		B26230512645457E005BDCBE /* EmptyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyData.swift; sourceTree = "<group>"; };
@@ -198,8 +207,26 @@
 				B22DEAC2263BE29500CDAAA2 /* AgeChart.swift */,
 				B2623036264530C5005BDCBE /* ToolBar.swift */,
 				B2559698264E3E3E00353A37 /* MainToolBar.swift */,
+				B25596B9264E83DD00353A37 /* Launching.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		B25596C0264E86FA00353A37 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				B25596C1264E871900353A37 /* protocol */,
+				B25596C9264E879300353A37 /* Authentication.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		B25596C1264E871900353A37 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				B25596C2264E873A00353A37 /* AuthenticationAPI.swift */,
+			);
+			path = protocol;
 			sourceTree = "<group>";
 		};
 		B262302A26451202005BDCBE /* modifiers */ = {
@@ -255,6 +282,7 @@
 		B29ACAF1262D678A00209343 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				B25596C0264E86FA00353A37 /* service */,
 				B2CA045A263958D800DD4764 /* data */,
 				B24A917E26382D9200989C3B /* view */,
 				B24A917D26382D8500989C3B /* model */,
@@ -500,6 +528,7 @@
 				B26230592645490B005BDCBE /* ErrorView.swift in Sources */,
 				B25596A9264E5A9300353A37 /* Loadable.swift in Sources */,
 				B2EFF6A0263AE75A00A584D2 /* Xml.swift in Sources */,
+				B25596CA264E879300353A37 /* Authentication.swift in Sources */,
 				B2623AD1264BC687007C4F05 /* LoadCommand.swift in Sources */,
 				B29ACB07262D678A00209343 /* ContentView.swift in Sources */,
 				B2B25D432639AD1F0044E693 /* Csv.swift in Sources */,
@@ -507,6 +536,7 @@
 				B2C900E5264D2CC800547364 /* ItemFactory.swift in Sources */,
 				B255969E264E40C100353A37 /* WidgetFactory.swift in Sources */,
 				B2623AC6264BC547007C4F05 /* Controllable.swift in Sources */,
+				B25596BA264E83DD00353A37 /* Launching.swift in Sources */,
 				B24A91A22638316700989C3B /* Book.swift in Sources */,
 				B2623AD6264BC69E007C4F05 /* RemoveAllCommand.swift in Sources */,
 				B29ACB05262D678A00209343 /* ComponentApp.swift in Sources */,
@@ -514,6 +544,7 @@
 				B2CA046526395B6A00DD4764 /* File.swift in Sources */,
 				B262302C26451212005BDCBE /* LoadingMask.swift in Sources */,
 				B2559699264E3E3E00353A37 /* MainToolBar.swift in Sources */,
+				B25596C3264E873A00353A37 /* AuthenticationAPI.swift in Sources */,
 				B2EFF661263AC0B300A584D2 /* AppViewModel.swift in Sources */,
 				B26230522645457E005BDCBE /* EmptyData.swift in Sources */,
 				B2623037264530C5005BDCBE /* ToolBar.swift in Sources */,
@@ -545,6 +576,7 @@
 				B262305A2645490B005BDCBE /* ErrorView.swift in Sources */,
 				B25596AA264E5A9300353A37 /* Loadable.swift in Sources */,
 				B2EFF6A1263AE75A00A584D2 /* Xml.swift in Sources */,
+				B25596CB264E879300353A37 /* Authentication.swift in Sources */,
 				B2623AD2264BC687007C4F05 /* LoadCommand.swift in Sources */,
 				B29ACB08262D678A00209343 /* ContentView.swift in Sources */,
 				B2B25D442639AD1F0044E693 /* Csv.swift in Sources */,
@@ -552,6 +584,7 @@
 				B2C900E6264D2CC800547364 /* ItemFactory.swift in Sources */,
 				B255969F264E40C100353A37 /* WidgetFactory.swift in Sources */,
 				B2623AC7264BC547007C4F05 /* Controllable.swift in Sources */,
+				B25596BB264E83DD00353A37 /* Launching.swift in Sources */,
 				B24A91A32638316700989C3B /* Book.swift in Sources */,
 				B2623AD7264BC69E007C4F05 /* RemoveAllCommand.swift in Sources */,
 				B29ACB06262D678A00209343 /* ComponentApp.swift in Sources */,
@@ -559,6 +592,7 @@
 				B2CA046626395B6A00DD4764 /* File.swift in Sources */,
 				B262302D26451212005BDCBE /* LoadingMask.swift in Sources */,
 				B255969A264E3E3E00353A37 /* MainToolBar.swift in Sources */,
+				B25596C4264E873A00353A37 /* AuthenticationAPI.swift in Sources */,
 				B2EFF662263AC0B300A584D2 /* AppViewModel.swift in Sources */,
 				B26230532645457E005BDCBE /* EmptyData.swift in Sources */,
 				B2623038264530C5005BDCBE /* ToolBar.swift in Sources */,

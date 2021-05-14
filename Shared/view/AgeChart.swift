@@ -21,7 +21,7 @@ struct AgeChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     /// ToolBar with set of controls
     let toolBar: ToolBarContent
    
-    /// The type of view representing the body of this view.
+    /// The type of view representing the body of this view
     var body: some View {
         ZStack(alignment: .topLeading) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)

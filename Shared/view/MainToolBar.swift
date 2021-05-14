@@ -17,8 +17,13 @@ struct MainToolBar: View {
     /// Current amount of dynamic charts
     @Binding var count: Int
     
+    /// authenticated user
+    @Binding var user: String?
+    
+    /// The type of view representing the body of this view
     var body: some View {
         HStack {
+            Text("Name: \(user ?? "")")
             if count < maxCol { Button("+ chart \(count)") { count += 1 } }
             Spacer()
             if count != 0 { Button("- chart  \(count)") { count -= 1 } }

@@ -19,8 +19,8 @@ class StoreCommand: Equatable {
     
     /// Compare values for equality or inequality
     /// - Parameters:
-    ///   - lhs: First value
-    ///   - rhs: Second value
+    ///   - lhs: A value to compare.
+    ///   - rhs: Another value to compare.
     /// - Returns: Returns a Boolean value indicating whether two values are equal
     static func == (lhs: StoreCommand, rhs: StoreCommand) -> Bool {
         lhs.date == rhs.date

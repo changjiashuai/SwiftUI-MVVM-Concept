@@ -14,6 +14,9 @@ struct ContentView: View {
     /// App viewModel
     @EnvironmentObject var viewModel: AppViewModel
 
+    /// App viewModel
+    @EnvironmentObject var auth: Authentication
+    
     /// Amount of dynamically added charts
     @State private var count = 0
     
@@ -26,7 +29,7 @@ struct ContentView: View {
     /// The type of view representing the body of this view.
     var body: some View {
         VStack {
-            MainToolBar(count: $count)
+            MainToolBar(count: $count, user: $auth.user)
             ScrollView {
                 widget.getList(
                     store: viewModel.users,

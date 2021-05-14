@@ -8,8 +8,8 @@
 import Foundation
 
 /// Defines set of stores for your App using by view components
-class AppViewModel: ViewModel, ObservableObject {
-
+class AppViewModel: ViewModel, ObservableObject {   
+    
     let users = RemoteStore<User, File>(
         proxy: File<User, Json>(
             reader: Json<User>(),

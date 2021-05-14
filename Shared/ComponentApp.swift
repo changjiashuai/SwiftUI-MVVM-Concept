@@ -6,18 +6,25 @@
 
 import SwiftUI
 
-
 @main
 struct LayoutApp: App {
+
+    /// Main view model
+    @StateObject var vm = AppViewModel()
     
     /// Main view model
-    @StateObject var viewModel = AppViewModel()
+    @StateObject var auth = Authentication()
     
     /// The content and behavior of the app
     var body: some Scene {
         WindowGroup {
+            if auth.authenticated {
                 ContentView(item: ItemFactory(), widget: WidgetFactory())
-                .environmentObject(viewModel) //inject viewModel for to get access from every view in the hierarchy
+                    .environmentObject(auth)
+                    .environmentObject(vm) //inject viewModel to get access to Stores from every view in the hierarchy                
+            } else {
+                Launching().environmentObject(auth)
+            }
         }
     }
 }

@@ -1,4 +1,4 @@
-# SwiftUI-MVVM Concept
+# SwiftUI MVVM Concept
 ## Organizing View and Data layers within SwiftUI App
 ### SwiftUI template Development Architecture Designing with Protocols
 

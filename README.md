@@ -1,6 +1,6 @@
 # SwiftUI-MVVM Concept
 ## Organizing View and Data layers within SwiftUI App
-### SwiftUI MVVM template Development Architecture
+### SwiftUI template Development Architecture Designing with Protocols
 
 
 **Concept based on protocols.** It is not "pure" MVVM for SwiftUI as you might find on the web. It is not about how to create Lists and Charts and view design. **It's about one of possibility how to organize View and Data layers within SwiftUI App.**

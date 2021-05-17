@@ -177,6 +177,7 @@
 		B265ED11264A58130054D0A2 /* command */ = {
 			isa = PBXGroup;
 			children = (
+				B2835A11265240CB00F257DA /* StoreCommandKey.swift */,
 				B265ED14264A583F0054D0A2 /* StoreCommand.swift */,
 				B2623AD0264BC687007C4F05 /* LoadCommand.swift */,
 				B2623AD5264BC69E007C4F05 /* RemoveAllCommand.swift */,
@@ -191,7 +192,6 @@
 				B26230582645490B005BDCBE /* ErrorView.swift */,
 				B2C900E4264D2CC800547364 /* ItemFactory.swift */,
 				B255969D264E40C100353A37 /* WidgetFactory.swift */,
-				B2835A11265240CB00F257DA /* StoreCommandKey.swift */,
 			);
 			path = miscellaneous;
 			sourceTree = "<group>";

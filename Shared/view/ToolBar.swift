@@ -42,7 +42,7 @@ struct ToolBar<Content: View> : View{
             .preference(key: StoreCommandKey.self, value: curentCommand)
     }
     
-    // MARK: - Methods
+    // MARK: - Life circle
     
     /// Initializer
     /// - Parameters:
@@ -53,10 +53,12 @@ struct ToolBar<Content: View> : View{
         self.items = items
     }
     
+    // MARK: - Methods
+    
     /// Get View for extra controls
     /// - Returns: extra controls from config
     @ViewBuilder
-    func getItemsView() -> some View{
+    private func getItemsView() -> some View{
         if items != nil{
             HStack{ items!() }.padding().background(Color.secondary)
         }else{
@@ -65,14 +67,3 @@ struct ToolBar<Content: View> : View{
     }
 }
 
-/// A named value produced by a view.
-struct StoreCommandKey: PreferenceKey {
-    
-    /// The default value of the preference.
-    static var defaultValue = StoreCommand()
-    
-    /// Combines a sequence of values by modifying the previously-accumulated value with the result of a closure that provides the next value.
-    static func reduce(value: inout StoreCommand, nextValue: () -> StoreCommand) {
-        value = nextValue()
-    }
-}

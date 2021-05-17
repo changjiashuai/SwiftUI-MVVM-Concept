@@ -9,6 +9,8 @@ import Data
 
 /// Model defining Book
 struct Book: Model {
+    
+    // Book ID
     let id: Int
     
     /// Title of a book

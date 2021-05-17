@@ -11,7 +11,7 @@ import Service
 struct LayoutApp: App {
     
     /// Main view model
-    @StateObject var vm = AppViewModel()
+    @StateObject var viewModel = AppViewModel()
     
     /// Authentication service
     @StateObject var auth = Authentication()
@@ -22,7 +22,7 @@ struct LayoutApp: App {
             if auth.authenticated {
                 ContentView(item: ItemFactory(), widget: WidgetFactory())
                     .environmentObject(auth)
-                    .environmentObject(vm) //inject viewModel to get access to Stores from every view in the hierarchy
+                    .environmentObject(viewModel) //inject viewModel to get access to Stores from every view in the hierarchy
             } else {
                 Launching().environmentObject(auth)
             }

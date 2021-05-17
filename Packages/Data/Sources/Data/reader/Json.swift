@@ -9,9 +9,11 @@ import Foundation
 /// Parse JSON data loaded from a remote source
 public struct Json<T: Model>: Reader{
     
-    public init(){
-        
-    }
+    // MARK: - Lide circle
+    
+    public init(){ }
+    
+    // MARK: - API Methods
     
     /// Parse JSON data
     /// - Parameter data: JSON data

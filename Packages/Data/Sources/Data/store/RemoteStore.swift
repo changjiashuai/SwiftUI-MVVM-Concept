@@ -22,11 +22,15 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store  {
     /// Defines the communication level for data
     public var proxy: U
     
+    // MARK: - Life circle
+    
     /// Init
     /// - Parameter proxy: Performs requests to a remote source
     public init(proxy: U) {
         self.proxy = proxy
     }
+    
+    // MARK: - API Methods
     
     /// Get total of items in Store
     /// - Returns: count

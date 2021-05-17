@@ -17,6 +17,8 @@ fileprivate struct Mask: ViewModifier {
     /// Text while loading
     let text : String
     
+    // MARK: - API Methods
+    
     /// The type of view representing the body of this view
     func body(content: Content) -> some View {
         content.overlay(Rectangle().foregroundColor(.gray)

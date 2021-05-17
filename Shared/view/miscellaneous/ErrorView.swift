@@ -19,6 +19,8 @@ struct ErrorView: View {
         Color.clear.overlay(Text("\(text)").foregroundColor(.red), alignment: .center)
     }
     
+    // MARK: - Life circle
+    
     /// Initializer
     /// - Parameter text: Error text
     init(_ text : String){

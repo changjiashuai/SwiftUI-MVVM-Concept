@@ -15,8 +15,8 @@ class LoadCommand: StoreCommand{
     let params: [String:String]
     /// Do something after loading
     private let callback: (() -> Void)
-    
-    // MARK: - Methods
+
+    // MARK: - Life circle
     
     /// Initializer
     /// - Parameters:
@@ -27,6 +27,7 @@ class LoadCommand: StoreCommand{
         self.callback = callback ?? {}
     }
     
+    // MARK: - Methods
     /// Load data
     /// - Parameter store: controlled store
     override func execute<T:Model, U: Proxy>(store : RemoteStore<T,U>){

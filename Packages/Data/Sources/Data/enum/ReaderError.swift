@@ -12,6 +12,9 @@ public enum ReaderError : DataError{
     /// Parsing error
     case readError    
     
+    
+    // MARK: - API Methods
+    
     /// Get error description
     /// - Returns: Error text
     public func getDescription() -> String {

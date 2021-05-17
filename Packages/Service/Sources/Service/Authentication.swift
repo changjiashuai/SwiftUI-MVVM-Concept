@@ -15,7 +15,11 @@ public class Authentication: ObservableObject, AuthenticationAPI {
     /// authenticated user
     @Published public var user: String?
     
+    // MARK: - Life circle
+    
     public init(){}
+    
+    // MARK: - API Methods
     
     /// Attempt to  authenticate
     public func signIn(){

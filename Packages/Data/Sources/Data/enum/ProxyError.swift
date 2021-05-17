@@ -15,6 +15,8 @@ public enum ProxyError: DataError{
     /// Error while fetching data from a source
     case loadError(fileName: String)
 
+    // MARK: - API Methods
+    
     /// Get error description
     /// - Returns: Error text
     public func getDescription() -> String {

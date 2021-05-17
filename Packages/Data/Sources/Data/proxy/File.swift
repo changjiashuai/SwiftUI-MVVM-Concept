@@ -15,10 +15,14 @@ public struct File<T:Model, R: Reader>: Proxy {
     /// File path
     private let fileName: String
     
+    // MARK: - Life circle
+    
     public init(reader: R, fileName: String){
         self.reader = reader
         self.fileName = fileName
     }
+    
+    // MARK: - API Methods
     
     /// Create request
     /// - Parameter params: set of params to control what data to get from a remote source Range, Filter etc

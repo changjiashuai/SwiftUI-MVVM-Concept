@@ -8,10 +8,15 @@
 import SwiftUI
 
 ///Empty data view
-struct EmptyData: View {
+public struct EmptyData: View {
     
     /// The type of view representing the body of this view
-    var body: some View {
+    public var body: some View {
         Color.clear.overlay(Text("Empty"),alignment: .center)
     }
+    
+    // MARK: - Life circle
+    
+    /// Initializer
+    public init(){ }
 }

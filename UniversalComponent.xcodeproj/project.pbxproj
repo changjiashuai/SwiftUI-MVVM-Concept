@@ -29,24 +29,7 @@
 		B25596BB264E83DD00353A37 /* Launching.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596B9264E83DD00353A37 /* Launching.swift */; };
 		B255970E264EC71D00353A37 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = B255970D264EC71D00353A37 /* Data */; };
 		B2559723264ED47300353A37 /* Service in Frameworks */ = {isa = PBXBuildFile; productRef = B2559722264ED47300353A37 /* Service */; };
-		B262302C26451212005BDCBE /* LoadingMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262302B26451212005BDCBE /* LoadingMask.swift */; };
-		B262302D26451212005BDCBE /* LoadingMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = B262302B26451212005BDCBE /* LoadingMask.swift */; };
-		B2623037264530C5005BDCBE /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2623036264530C5005BDCBE /* ToolBar.swift */; };
-		B2623038264530C5005BDCBE /* ToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2623036264530C5005BDCBE /* ToolBar.swift */; };
-		B26230522645457E005BDCBE /* EmptyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26230512645457E005BDCBE /* EmptyData.swift */; };
-		B26230532645457E005BDCBE /* EmptyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26230512645457E005BDCBE /* EmptyData.swift */; };
-		B26230592645490B005BDCBE /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26230582645490B005BDCBE /* ErrorView.swift */; };
-		B262305A2645490B005BDCBE /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26230582645490B005BDCBE /* ErrorView.swift */; };
-		B2623AC6264BC547007C4F05 /* Controllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2623AC5264BC547007C4F05 /* Controllable.swift */; };
-		B2623AC7264BC547007C4F05 /* Controllable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2623AC5264BC547007C4F05 /* Controllable.swift */; };
-		B2623AD1264BC687007C4F05 /* LoadCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2623AD0264BC687007C4F05 /* LoadCommand.swift */; };
-		B2623AD2264BC687007C4F05 /* LoadCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2623AD0264BC687007C4F05 /* LoadCommand.swift */; };
-		B2623AD6264BC69E007C4F05 /* RemoveAllCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2623AD5264BC69E007C4F05 /* RemoveAllCommand.swift */; };
-		B2623AD7264BC69E007C4F05 /* RemoveAllCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2623AD5264BC69E007C4F05 /* RemoveAllCommand.swift */; };
-		B265ED15264A583F0054D0A2 /* StoreCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED14264A583F0054D0A2 /* StoreCommand.swift */; };
-		B265ED16264A583F0054D0A2 /* StoreCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = B265ED14264A583F0054D0A2 /* StoreCommand.swift */; };
-		B2835A12265240CB00F257DA /* StoreCommandKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2835A11265240CB00F257DA /* StoreCommandKey.swift */; };
-		B2835A13265240CB00F257DA /* StoreCommandKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2835A11265240CB00F257DA /* StoreCommandKey.swift */; };
+		B2835A2126524AAB00F257DA /* Ui in Frameworks */ = {isa = PBXBuildFile; productRef = B2835A2026524AAB00F257DA /* Ui */; };
 		B29ACB05262D678A00209343 /* ComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29ACAF2262D678A00209343 /* ComponentApp.swift */; };
 		B29ACB06262D678A00209343 /* ComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29ACAF2262D678A00209343 /* ComponentApp.swift */; };
 		B29ACB07262D678A00209343 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29ACAF3262D678A00209343 /* ContentView.swift */; };
@@ -80,15 +63,7 @@
 		B25596B9264E83DD00353A37 /* Launching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launching.swift; sourceTree = "<group>"; };
 		B255970A264EC6F900353A37 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = Packages/Data; sourceTree = "<group>"; };
 		B255971F264ED46A00353A37 /* Service */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Service; path = Packages/Service; sourceTree = "<group>"; };
-		B262302B26451212005BDCBE /* LoadingMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingMask.swift; sourceTree = "<group>"; };
-		B2623036264530C5005BDCBE /* ToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBar.swift; sourceTree = "<group>"; };
-		B26230512645457E005BDCBE /* EmptyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyData.swift; sourceTree = "<group>"; };
-		B26230582645490B005BDCBE /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
-		B2623AC5264BC547007C4F05 /* Controllable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controllable.swift; sourceTree = "<group>"; };
-		B2623AD0264BC687007C4F05 /* LoadCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadCommand.swift; sourceTree = "<group>"; };
-		B2623AD5264BC69E007C4F05 /* RemoveAllCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveAllCommand.swift; sourceTree = "<group>"; };
-		B265ED14264A583F0054D0A2 /* StoreCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCommand.swift; sourceTree = "<group>"; };
-		B2835A11265240CB00F257DA /* StoreCommandKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCommandKey.swift; sourceTree = "<group>"; };
+		B2835A1D26524AA100F257DA /* Ui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Ui; path = Packages/Ui; sourceTree = "<group>"; };
 		B29ACAF2262D678A00209343 /* ComponentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentApp.swift; sourceTree = "<group>"; };
 		B29ACAF3262D678A00209343 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B29ACAF4262D678A00209343 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -119,6 +94,7 @@
 			files = (
 				B2559723264ED47300353A37 /* Service in Frameworks */,
 				B255970E264EC71D00353A37 /* Data in Frameworks */,
+				B2835A2126524AAB00F257DA /* Ui in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,11 +115,8 @@
 			children = (
 				B2623AC4264BC524007C4F05 /* protocol */,
 				B265ED22264A5CA20054D0A2 /* miscellaneous */,
-				B265ED11264A58130054D0A2 /* command */,
-				B262302A26451202005BDCBE /* modifiers */,
 				B24A919C26382E7A00989C3B /* UniversalList.swift */,
 				B22DEAC2263BE29500CDAAA2 /* AgeChart.swift */,
-				B2623036264530C5005BDCBE /* ToolBar.swift */,
 				B2559698264E3E3E00353A37 /* MainToolBar.swift */,
 				B25596B9264E83DD00353A37 /* Launching.swift */,
 			);
@@ -157,14 +130,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B262302A26451202005BDCBE /* modifiers */ = {
-			isa = PBXGroup;
-			children = (
-				B262302B26451212005BDCBE /* LoadingMask.swift */,
-			);
-			path = modifiers;
-			sourceTree = "<group>";
-		};
 		B2623AC4264BC524007C4F05 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,40 +138,19 @@
 			path = protocol;
 			sourceTree = "<group>";
 		};
-		B265ED11264A58130054D0A2 /* command */ = {
-			isa = PBXGroup;
-			children = (
-				B2835A1A2652495500F257DA /* infrastructure */,
-				B265ED14264A583F0054D0A2 /* StoreCommand.swift */,
-				B2623AD0264BC687007C4F05 /* LoadCommand.swift */,
-				B2623AD5264BC69E007C4F05 /* RemoveAllCommand.swift */,
-			);
-			path = command;
-			sourceTree = "<group>";
-		};
 		B265ED22264A5CA20054D0A2 /* miscellaneous */ = {
 			isa = PBXGroup;
 			children = (
-				B26230512645457E005BDCBE /* EmptyData.swift */,
-				B26230582645490B005BDCBE /* ErrorView.swift */,
 				B2C900E4264D2CC800547364 /* ItemFactory.swift */,
 				B255969D264E40C100353A37 /* WidgetFactory.swift */,
 			);
 			path = miscellaneous;
 			sourceTree = "<group>";
 		};
-		B2835A1A2652495500F257DA /* infrastructure */ = {
-			isa = PBXGroup;
-			children = (
-				B2623AC5264BC547007C4F05 /* Controllable.swift */,
-				B2835A11265240CB00F257DA /* StoreCommandKey.swift */,
-			);
-			path = infrastructure;
-			sourceTree = "<group>";
-		};
 		B29ACAEC262D678A00209343 = {
 			isa = PBXGroup;
 			children = (
+				B2835A1D26524AA100F257DA /* Ui */,
 				B255971F264ED46A00353A37 /* Service */,
 				B255970A264EC6F900353A37 /* Data */,
 				B2EFF6B6263AEE8C00A584D2 /* README.md */,
@@ -314,6 +258,7 @@
 			packageProductDependencies = (
 				B255970D264EC71D00353A37 /* Data */,
 				B2559722264ED47300353A37 /* Service */,
+				B2835A2026524AAB00F257DA /* Ui */,
 			);
 			productName = "Layout (macOS)";
 			productReference = B29ACB01262D678A00209343 /* UniversalComponent.app */;
@@ -391,26 +336,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B265ED15264A583F0054D0A2 /* StoreCommand.swift in Sources */,
 				B22DEAC3263BE29500CDAAA2 /* AgeChart.swift in Sources */,
-				B26230592645490B005BDCBE /* ErrorView.swift in Sources */,
 				B25596A9264E5A9300353A37 /* Loadable.swift in Sources */,
-				B2623AD1264BC687007C4F05 /* LoadCommand.swift in Sources */,
 				B29ACB07262D678A00209343 /* ContentView.swift in Sources */,
 				B2C900E5264D2CC800547364 /* ItemFactory.swift in Sources */,
 				B255969E264E40C100353A37 /* WidgetFactory.swift in Sources */,
-				B2623AC6264BC547007C4F05 /* Controllable.swift in Sources */,
 				B25596BA264E83DD00353A37 /* Launching.swift in Sources */,
 				B24A91A22638316700989C3B /* Book.swift in Sources */,
-				B2623AD6264BC69E007C4F05 /* RemoveAllCommand.swift in Sources */,
 				B29ACB05262D678A00209343 /* ComponentApp.swift in Sources */,
 				B24A919D26382E7A00989C3B /* UniversalList.swift in Sources */,
-				B262302C26451212005BDCBE /* LoadingMask.swift in Sources */,
 				B2559699264E3E3E00353A37 /* MainToolBar.swift in Sources */,
 				B2EFF661263AC0B300A584D2 /* AppViewModel.swift in Sources */,
-				B2835A12265240CB00F257DA /* StoreCommandKey.swift in Sources */,
-				B26230522645457E005BDCBE /* EmptyData.swift in Sources */,
-				B2623037264530C5005BDCBE /* ToolBar.swift in Sources */,
 				B24A918D26382DE700989C3B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -419,26 +355,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B265ED16264A583F0054D0A2 /* StoreCommand.swift in Sources */,
 				B22DEAC4263BE29500CDAAA2 /* AgeChart.swift in Sources */,
-				B262305A2645490B005BDCBE /* ErrorView.swift in Sources */,
 				B25596AA264E5A9300353A37 /* Loadable.swift in Sources */,
-				B2623AD2264BC687007C4F05 /* LoadCommand.swift in Sources */,
 				B29ACB08262D678A00209343 /* ContentView.swift in Sources */,
 				B2C900E6264D2CC800547364 /* ItemFactory.swift in Sources */,
 				B255969F264E40C100353A37 /* WidgetFactory.swift in Sources */,
-				B2623AC7264BC547007C4F05 /* Controllable.swift in Sources */,
 				B25596BB264E83DD00353A37 /* Launching.swift in Sources */,
 				B24A91A32638316700989C3B /* Book.swift in Sources */,
-				B2623AD7264BC69E007C4F05 /* RemoveAllCommand.swift in Sources */,
 				B29ACB06262D678A00209343 /* ComponentApp.swift in Sources */,
 				B24A919E26382E7A00989C3B /* UniversalList.swift in Sources */,
-				B262302D26451212005BDCBE /* LoadingMask.swift in Sources */,
 				B255969A264E3E3E00353A37 /* MainToolBar.swift in Sources */,
 				B2EFF662263AC0B300A584D2 /* AppViewModel.swift in Sources */,
-				B2835A13265240CB00F257DA /* StoreCommandKey.swift in Sources */,
-				B26230532645457E005BDCBE /* EmptyData.swift in Sources */,
-				B2623038264530C5005BDCBE /* ToolBar.swift in Sources */,
 				B24A918E26382DE700989C3B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -694,6 +621,10 @@
 		B2559722264ED47300353A37 /* Service */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Service;
+		};
+		B2835A2026524AAB00F257DA /* Ui */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Ui;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -10,7 +10,7 @@ import SwiftUI
 
 
 /// Toolbar for any View supporting StoredView protocol
-struct ToolBar<Content: View> : View{
+public struct ToolBar<Content: View> : View{
 
     /// Current command
     @State var curentCommand: StoreCommand = StoreCommand()
@@ -22,7 +22,7 @@ struct ToolBar<Content: View> : View{
     let items : (() -> Content)?
 
     /// The type of view representing the body of this view
-    var body: some View {
+    public var body: some View {
         HStack {
             if title != nil {
                 Text("\(title!)").frame(minWidth: 50)
@@ -48,7 +48,7 @@ struct ToolBar<Content: View> : View{
     /// - Parameters:
     ///   - title: Text of title
     ///   - items: Additional items
-    init(_ title: String? = nil ,_ items:( () -> Content )? = nil ) {
+    public init(_ title: String? = nil ,_ items:( () -> Content )? = nil ) {
         self.title = title
         self.items = items
     }

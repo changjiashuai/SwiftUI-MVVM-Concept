@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Ui
 
 /// Main view
 /// User list and User age chart share the same Store but introduce a different presentation for the data

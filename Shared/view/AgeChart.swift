@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Data
+import Ui
 
 /// List displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable

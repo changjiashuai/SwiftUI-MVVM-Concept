@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Data
+import Ui
 
 /// Set of widgets for the app
 struct WidgetFactory {

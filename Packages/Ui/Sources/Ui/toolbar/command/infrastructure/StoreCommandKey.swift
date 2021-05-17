@@ -8,13 +8,13 @@
 import SwiftUI
 
 /// A named value produced by a view.
-struct StoreCommandKey: PreferenceKey {
+public struct StoreCommandKey: PreferenceKey {
     
     /// The default value of the preference.
-    static var defaultValue = StoreCommand()
+    public static var defaultValue = StoreCommand()
     
     /// Combines a sequence of values by modifying the previously-accumulated value with the result of a closure that provides the next value.
-    static func reduce(value: inout StoreCommand, nextValue: () -> StoreCommand) {
+    public static func reduce(value: inout StoreCommand, nextValue: () -> StoreCommand) {
         value = nextValue()
     }
 }

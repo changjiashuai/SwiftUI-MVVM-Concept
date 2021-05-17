@@ -9,13 +9,13 @@ import SwiftUI
 
 
 /// View for displaying errors
-struct ErrorView: View {
+public struct ErrorView: View {
     
     /// Error description
     let text : String
     
     /// The type of view representing the body of this view
-    var body: some View {
+    public var body: some View {
         Color.clear.overlay(Text("\(text)").foregroundColor(.red), alignment: .center)
     }
     
@@ -23,7 +23,7 @@ struct ErrorView: View {
     
     /// Initializer
     /// - Parameter text: Error text
-    init(_ text : String){
+    public init(_ text : String){
         self.text = text
     }
 }

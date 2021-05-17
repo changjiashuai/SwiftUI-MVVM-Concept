@@ -9,7 +9,7 @@ import Foundation
 import Data
 
 /// Add controllable behavior to view to obey commands from others views
-protocol Controllable{
+public protocol Controllable{
     
     associatedtype Item: Model
     associatedtype AbstractProxy: Proxy
@@ -19,17 +19,16 @@ protocol Controllable{
     
 }
 
-
 extension Controllable{
     
     /// Act on a command from the ToolBar
     /// - Parameter command: Command from toolBar to do some actions
-    func onCommandChanged(_ command: StoreCommand) {
+    public func onCommandChanged(_ command: StoreCommand) {
         command.execute(store: store)
     }
     
     /// load data
-    func load() {
+    public func load() {
         store.load(params: ["page": "*"]) {
             print("do something after loading")
         }

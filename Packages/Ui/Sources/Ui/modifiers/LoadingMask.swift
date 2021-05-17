@@ -35,7 +35,7 @@ extension View {
     ///   - loading: Boolean flag  true - is loading, false - loaded
     ///   - text: Text displayed while loading. Default value "Loading..."
     /// - Returns: Mask view
-    func mask(_ loading: Bool, text: String = "Loading...") -> some View {
+    public func mask(_ loading: Bool, text: String = "Loading...") -> some View {
         self.modifier(Mask(loading: loading, text: text))
     }
 }

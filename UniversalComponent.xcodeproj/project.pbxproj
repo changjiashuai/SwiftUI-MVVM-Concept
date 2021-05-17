@@ -168,7 +168,6 @@
 		B2623AC4264BC524007C4F05 /* protocol */ = {
 			isa = PBXGroup;
 			children = (
-				B2623AC5264BC547007C4F05 /* Controllable.swift */,
 				B25596A8264E5A9300353A37 /* Loadable.swift */,
 			);
 			path = protocol;
@@ -177,7 +176,7 @@
 		B265ED11264A58130054D0A2 /* command */ = {
 			isa = PBXGroup;
 			children = (
-				B2835A11265240CB00F257DA /* StoreCommandKey.swift */,
+				B2835A1A2652495500F257DA /* infrastructure */,
 				B265ED14264A583F0054D0A2 /* StoreCommand.swift */,
 				B2623AD0264BC687007C4F05 /* LoadCommand.swift */,
 				B2623AD5264BC69E007C4F05 /* RemoveAllCommand.swift */,
@@ -194,6 +193,15 @@
 				B255969D264E40C100353A37 /* WidgetFactory.swift */,
 			);
 			path = miscellaneous;
+			sourceTree = "<group>";
+		};
+		B2835A1A2652495500F257DA /* infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				B2623AC5264BC547007C4F05 /* Controllable.swift */,
+				B2835A11265240CB00F257DA /* StoreCommandKey.swift */,
+			);
+			path = infrastructure;
 			sourceTree = "<group>";
 		};
 		B29ACAEC262D678A00209343 = {

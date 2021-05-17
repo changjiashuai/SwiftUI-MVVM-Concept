@@ -6,10 +6,9 @@
 //
 
 import Foundation
-import Data
 
 /// Protocol for a view containing a store
-protocol Loadable {
+public protocol Loadable {
     associatedtype AbstractStore: Store
     /// Repository with data
     var store: AbstractStore { get }
@@ -17,7 +16,7 @@ protocol Loadable {
 
 extension Loadable{
     /// Indicates state of loading
-    var notLoading: Bool {
+    public var notLoading: Bool {
         !store.loading
     }
 }

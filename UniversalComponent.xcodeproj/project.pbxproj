@@ -23,8 +23,6 @@
 		B255969A264E3E3E00353A37 /* MainToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2559698264E3E3E00353A37 /* MainToolBar.swift */; };
 		B255969E264E40C100353A37 /* WidgetFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255969D264E40C100353A37 /* WidgetFactory.swift */; };
 		B255969F264E40C100353A37 /* WidgetFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255969D264E40C100353A37 /* WidgetFactory.swift */; };
-		B25596A9264E5A9300353A37 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596A8264E5A9300353A37 /* Loadable.swift */; };
-		B25596AA264E5A9300353A37 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596A8264E5A9300353A37 /* Loadable.swift */; };
 		B25596BA264E83DD00353A37 /* Launching.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596B9264E83DD00353A37 /* Launching.swift */; };
 		B25596BB264E83DD00353A37 /* Launching.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596B9264E83DD00353A37 /* Launching.swift */; };
 		B255970E264EC71D00353A37 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = B255970D264EC71D00353A37 /* Data */; };
@@ -59,7 +57,6 @@
 		B24A91A12638316700989C3B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		B2559698264E3E3E00353A37 /* MainToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainToolBar.swift; sourceTree = "<group>"; };
 		B255969D264E40C100353A37 /* WidgetFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetFactory.swift; sourceTree = "<group>"; };
-		B25596A8264E5A9300353A37 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		B25596B9264E83DD00353A37 /* Launching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launching.swift; sourceTree = "<group>"; };
 		B255970A264EC6F900353A37 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = Packages/Data; sourceTree = "<group>"; };
 		B255971F264ED46A00353A37 /* Service */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Service; path = Packages/Service; sourceTree = "<group>"; };
@@ -113,8 +110,7 @@
 		B24A917E26382D9200989C3B /* view */ = {
 			isa = PBXGroup;
 			children = (
-				B2623AC4264BC524007C4F05 /* protocol */,
-				B265ED22264A5CA20054D0A2 /* miscellaneous */,
+				B265ED22264A5CA20054D0A2 /* factory */,
 				B24A919C26382E7A00989C3B /* UniversalList.swift */,
 				B22DEAC2263BE29500CDAAA2 /* AgeChart.swift */,
 				B2559698264E3E3E00353A37 /* MainToolBar.swift */,
@@ -130,21 +126,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B2623AC4264BC524007C4F05 /* protocol */ = {
-			isa = PBXGroup;
-			children = (
-				B25596A8264E5A9300353A37 /* Loadable.swift */,
-			);
-			path = protocol;
-			sourceTree = "<group>";
-		};
-		B265ED22264A5CA20054D0A2 /* miscellaneous */ = {
+		B265ED22264A5CA20054D0A2 /* factory */ = {
 			isa = PBXGroup;
 			children = (
 				B2C900E4264D2CC800547364 /* ItemFactory.swift */,
 				B255969D264E40C100353A37 /* WidgetFactory.swift */,
 			);
-			path = miscellaneous;
+			path = factory;
 			sourceTree = "<group>";
 		};
 		B29ACAEC262D678A00209343 = {
@@ -337,7 +325,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B22DEAC3263BE29500CDAAA2 /* AgeChart.swift in Sources */,
-				B25596A9264E5A9300353A37 /* Loadable.swift in Sources */,
 				B29ACB07262D678A00209343 /* ContentView.swift in Sources */,
 				B2C900E5264D2CC800547364 /* ItemFactory.swift in Sources */,
 				B255969E264E40C100353A37 /* WidgetFactory.swift in Sources */,
@@ -356,7 +343,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B22DEAC4263BE29500CDAAA2 /* AgeChart.swift in Sources */,
-				B25596AA264E5A9300353A37 /* Loadable.swift in Sources */,
 				B29ACB08262D678A00209343 /* ContentView.swift in Sources */,
 				B2C900E6264D2CC800547364 /* ItemFactory.swift in Sources */,
 				B255969F264E40C100353A37 /* WidgetFactory.swift in Sources */,

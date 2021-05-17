@@ -1,4 +1,4 @@
-# Organizing View and Data layers within SwiftUI App
+# SwiftUI-MVVM Organizing View and Data layers within SwiftUI App
 SwiftUI Development Architecture
 
 

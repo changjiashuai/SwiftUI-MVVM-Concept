@@ -31,7 +31,7 @@ public class Authentication: ObservableObject, AuthenticationAPI {
     /// Attempt to  authenticate
     public func signIn(){
         authenticated = true
-        self.user = AuthenticatedUser(name: "User \(Int.random(in: 1...102))")
+        self.user = AuthenticatedUser(id: Int.random(in: 1...102), name: "User \(Int.random(in: 1...102))")
     }
     
     

@@ -9,6 +9,10 @@ import Foundation
 /// API for authenticating
 public protocol AuthenticationAPI {
    
+    /// Get authenticated user name
+    /// - Returns: user name
+    func getAuthenticatedUserName() -> String
+    
     /// Attempt to  authenticate
     func signIn()
 
@@ -16,5 +20,6 @@ public protocol AuthenticationAPI {
     func signOut()
 
     ///Generate secret token to prove level of access to communicate with remote sources
+    /// - Returns: Secret token
     func getToken() -> String
 }

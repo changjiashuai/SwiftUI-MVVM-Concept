@@ -13,7 +13,7 @@ public class Authentication: ObservableObject, AuthenticationAPI {
     @Published public var authenticated = false
     
     /// authenticated user
-    @Published public var user: String?
+    private var user: AuthenticatedUser? = nil
     
     // MARK: - Life circle
     
@@ -21,12 +21,21 @@ public class Authentication: ObservableObject, AuthenticationAPI {
     
     // MARK: - API Methods
     
+    
+    /// Get authenticated user name
+    /// - Returns: user name
+    public func getAuthenticatedUserName() -> String{
+        return user?.name ?? ""
+    }
+    
     /// Attempt to  authenticate
     public func signIn(){
         authenticated = true
-        user = "User \(Int.random(in: 1...102))"
+        self.user = AuthenticatedUser(name: "User \(Int.random(in: 1...102))")
     }
     
+    
+    /// Leave the current app session
     public func signOut(){
         authenticated = false
         user = nil
@@ -39,6 +48,6 @@ public class Authentication: ObservableObject, AuthenticationAPI {
             return ""
         }
         /// Generate secret token
-        return "TOKEN\(Int.random(in: 1...100))"
+        return "\(Int.random(in: 1...1_000_000)) \(user?.name.uppercased() ?? "")"
     }
 }

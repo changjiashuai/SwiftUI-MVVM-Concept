@@ -23,7 +23,7 @@ struct MainToolBar: View {
     /// The type of view representing the body of this view
     var body: some View {
         HStack {
-            Text("Name: \(auth.user ?? "")")
+            Text("Name: \(auth.getAuthenticatedUserName())")
             if count < maxCol { Button("+ chart \(count)") { count += 1 } }
             Spacer()
             if count != 0 { Button("- chart  \(count)") { count -= 1 } }

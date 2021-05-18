@@ -38,8 +38,8 @@
 		B2B25D3A2639A94C0044E693 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B25D382639A94C0044E693 /* user.json */; };
 		B2B25D3E2639AA0B0044E693 /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B25D3D2639AA0B0044E693 /* book.json */; };
 		B2B25D3F2639AA0B0044E693 /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B25D3D2639AA0B0044E693 /* book.json */; };
-		B2BBD4C32653C67D005692F7 /* swiftui_mvvm_architecture.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BBD4C22653C67D005692F7 /* swiftui_mvvm_architecture.png */; };
-		B2BBD4C42653C67D005692F7 /* swiftui_mvvm_architecture.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BBD4C22653C67D005692F7 /* swiftui_mvvm_architecture.png */; };
+		B2BBD4C32653C67D005692F7 /* architecture_swiftui_mvvm.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BBD4C22653C67D005692F7 /* architecture_swiftui_mvvm.png */; };
+		B2BBD4C42653C67D005692F7 /* architecture_swiftui_mvvm.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BBD4C22653C67D005692F7 /* architecture_swiftui_mvvm.png */; };
 		B2C900E5264D2CC800547364 /* ItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C900E4264D2CC800547364 /* ItemFactory.swift */; };
 		B2C900E6264D2CC800547364 /* ItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C900E4264D2CC800547364 /* ItemFactory.swift */; };
 		B2EFF661263AC0B300A584D2 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EFF660263AC0B300A584D2 /* AppViewModel.swift */; };
@@ -73,7 +73,7 @@
 		B29ACB04262D678A00209343 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		B2B25D382639A94C0044E693 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		B2B25D3D2639AA0B0044E693 /* book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = book.json; sourceTree = "<group>"; };
-		B2BBD4C22653C67D005692F7 /* swiftui_mvvm_architecture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swiftui_mvvm_architecture.png; path = ../../../../Desktop/swiftui_mvvm_architecture.png; sourceTree = "<group>"; };
+		B2BBD4C22653C67D005692F7 /* architecture_swiftui_mvvm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = architecture_swiftui_mvvm.png; path = ../../../../Desktop/architecture_swiftui_mvvm.png; sourceTree = "<group>"; };
 		B2C900E4264D2CC800547364 /* ItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFactory.swift; sourceTree = "<group>"; };
 		B2EFF660263AC0B300A584D2 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		B2EFF6B6263AEE8C00A584D2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -196,7 +196,7 @@
 		B2B25D372639A9370044E693 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B2BBD4C22653C67D005692F7 /* swiftui_mvvm_architecture.png */,
+				B2BBD4C22653C67D005692F7 /* architecture_swiftui_mvvm.png */,
 				B2EFF6C2263AF69A00A584D2 /* mvvm.png */,
 				B22DEAEB263C0A5700CDAAA2 /* swiftui_mvvm.png */,
 				B2B25D3D2639AA0B0044E693 /* book.json */,
@@ -302,7 +302,7 @@
 				B29ACB09262D678A00209343 /* Assets.xcassets in Resources */,
 				B2EFF6B7263AEE8C00A584D2 /* README.md in Resources */,
 				B22DEAEC263C0A5700CDAAA2 /* swiftui_mvvm.png in Resources */,
-				B2BBD4C32653C67D005692F7 /* swiftui_mvvm_architecture.png in Resources */,
+				B2BBD4C32653C67D005692F7 /* architecture_swiftui_mvvm.png in Resources */,
 				B2B25D3E2639AA0B0044E693 /* book.json in Resources */,
 				B2EFF6C3263AF69A00A584D2 /* mvvm.png in Resources */,
 			);
@@ -317,7 +317,7 @@
 				B29ACB0A262D678A00209343 /* Assets.xcassets in Resources */,
 				B2EFF6B8263AEE8C00A584D2 /* README.md in Resources */,
 				B22DEAED263C0A5700CDAAA2 /* swiftui_mvvm.png in Resources */,
-				B2BBD4C42653C67D005692F7 /* swiftui_mvvm_architecture.png in Resources */,
+				B2BBD4C42653C67D005692F7 /* architecture_swiftui_mvvm.png in Resources */,
 				B2B25D3F2639AA0B0044E693 /* book.json in Resources */,
 				B2EFF6C4263AF69A00A584D2 /* mvvm.png in Resources */,
 			);

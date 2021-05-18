@@ -25,6 +25,9 @@
 		B25596BB264E83DD00353A37 /* Launching.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596B9264E83DD00353A37 /* Launching.swift */; };
 		B2559723264ED47300353A37 /* Service in Frameworks */ = {isa = PBXBuildFile; productRef = B2559722264ED47300353A37 /* Service */; };
 		B26C89F12653E0250015909B /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = B26C89F02653E0250015909B /* Data */; };
+		B26C8A062653F0910015909B /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = B26C8A052653F0910015909B /* Data */; };
+		B26C8A082653F0950015909B /* Service in Frameworks */ = {isa = PBXBuildFile; productRef = B26C8A072653F0950015909B /* Service */; };
+		B26C8A0A2653F0990015909B /* Ui in Frameworks */ = {isa = PBXBuildFile; productRef = B26C8A092653F0990015909B /* Ui */; };
 		B2835A2126524AAB00F257DA /* Ui in Frameworks */ = {isa = PBXBuildFile; productRef = B2835A2026524AAB00F257DA /* Ui */; };
 		B29ACB05262D678A00209343 /* ComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29ACAF2262D678A00209343 /* ComponentApp.swift */; };
 		B29ACB06262D678A00209343 /* ComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29ACAF2262D678A00209343 /* ComponentApp.swift */; };
@@ -82,6 +85,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B26C8A082653F0950015909B /* Service in Frameworks */,
+				B26C8A062653F0910015909B /* Data in Frameworks */,
+				B26C8A0A2653F0990015909B /* Ui in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +232,11 @@
 			dependencies = (
 			);
 			name = "UniversalComponent (iOS)";
+			packageProductDependencies = (
+				B26C8A052653F0910015909B /* Data */,
+				B26C8A072653F0950015909B /* Service */,
+				B26C8A092653F0990015909B /* Ui */,
+			);
 			productName = "Layout (iOS)";
 			productReference = B29ACAF9262D678A00209343 /* UniversalComponent.app */;
 			productType = "com.apple.product-type.application";
@@ -607,6 +618,18 @@
 		B26C89F02653E0250015909B /* Data */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Data;
+		};
+		B26C8A052653F0910015909B /* Data */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Data;
+		};
+		B26C8A072653F0950015909B /* Service */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Service;
+		};
+		B26C8A092653F0990015909B /* Ui */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Ui;
 		};
 		B2835A2026524AAB00F257DA /* Ui */ = {
 			isa = XCSwiftPackageProductDependency;

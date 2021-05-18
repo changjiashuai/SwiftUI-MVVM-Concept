@@ -23,8 +23,8 @@
 		B255969F264E40C100353A37 /* WidgetFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255969D264E40C100353A37 /* WidgetFactory.swift */; };
 		B25596BA264E83DD00353A37 /* Launching.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596B9264E83DD00353A37 /* Launching.swift */; };
 		B25596BB264E83DD00353A37 /* Launching.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596B9264E83DD00353A37 /* Launching.swift */; };
-		B255970E264EC71D00353A37 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = B255970D264EC71D00353A37 /* Data */; };
 		B2559723264ED47300353A37 /* Service in Frameworks */ = {isa = PBXBuildFile; productRef = B2559722264ED47300353A37 /* Service */; };
+		B26C89F12653E0250015909B /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = B26C89F02653E0250015909B /* Data */; };
 		B2835A2126524AAB00F257DA /* Ui in Frameworks */ = {isa = PBXBuildFile; productRef = B2835A2026524AAB00F257DA /* Ui */; };
 		B29ACB05262D678A00209343 /* ComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29ACAF2262D678A00209343 /* ComponentApp.swift */; };
 		B29ACB06262D678A00209343 /* ComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29ACAF2262D678A00209343 /* ComponentApp.swift */; };
@@ -90,8 +90,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2559723264ED47300353A37 /* Service in Frameworks */,
-				B255970E264EC71D00353A37 /* Data in Frameworks */,
 				B2835A2126524AAB00F257DA /* Ui in Frameworks */,
+				B26C89F12653E0250015909B /* Data in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,9 +244,9 @@
 			);
 			name = "UniversalComponent (macOS)";
 			packageProductDependencies = (
-				B255970D264EC71D00353A37 /* Data */,
 				B2559722264ED47300353A37 /* Service */,
 				B2835A2026524AAB00F257DA /* Ui */,
+				B26C89F02653E0250015909B /* Data */,
 			);
 			productName = "Layout (macOS)";
 			productReference = B29ACB01262D678A00209343 /* UniversalComponent.app */;
@@ -600,13 +600,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B255970D264EC71D00353A37 /* Data */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Data;
-		};
 		B2559722264ED47300353A37 /* Service */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Service;
+		};
+		B26C89F02653E0250015909B /* Data */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Data;
 		};
 		B2835A2026524AAB00F257DA /* Ui */ = {
 			isa = XCSwiftPackageProductDependency;

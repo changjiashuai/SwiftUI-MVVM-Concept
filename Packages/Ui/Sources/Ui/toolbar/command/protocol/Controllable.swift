@@ -7,16 +7,20 @@
 
 import Foundation
 import Data
+import Service
 
 /// Add controllable behavior to view to obey commands from others views
 public protocol Controllable{
     
     associatedtype Item: Model
     associatedtype AbstractProxy: Proxy
+    associatedtype AbstractAuthentication: AuthenticationAPI
     
     /// Store with data
     var store: RemoteStore<Item, AbstractProxy> {get}
     
+    /// Authentication service
+    var authentication: AbstractAuthentication  {get}
 }
 
 extension Controllable{
@@ -29,7 +33,8 @@ extension Controllable{
     
     /// load data
     public func load() {
-        store.load(params: ["page": "*"]) {
+        ///Using authentication service generate secret token to prove level of access to communicate with remote sources
+        store.load(params: ["page": "*", "access token": authentication.getToken()]) {
             print("do something after loading")
         }
     }

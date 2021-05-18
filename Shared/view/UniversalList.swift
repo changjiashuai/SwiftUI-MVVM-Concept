@@ -7,6 +7,7 @@
 import SwiftUI
 import Data
 import Ui
+import Service
 
 /// List displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable
@@ -15,6 +16,9 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
+    
+    /// Authentication service
+    @EnvironmentObject var authentication: Authentication
     
     /// A view builder that creates the content of an Item view
     let content: (T) -> Content

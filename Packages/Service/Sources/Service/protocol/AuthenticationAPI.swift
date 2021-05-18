@@ -7,11 +7,14 @@
 import Foundation
 
 /// API for authenticating
-protocol AuthenticationAPI {
-    
-  /// Attempt to  authenticate
-  func signIn()
-    
-  /// Attempt to log out from the app
-  func signOut()
+public protocol AuthenticationAPI {
+   
+    /// Attempt to  authenticate
+    func signIn()
+
+    /// Attempt to log out from the app
+    func signOut()
+
+    ///Generate secret token to prove level of access to communicate with remote sources
+    func getToken() -> String
 }

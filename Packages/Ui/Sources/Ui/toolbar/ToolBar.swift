@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import Service
 
 
 /// Toolbar for any View supporting StoredView protocol
@@ -14,6 +14,9 @@ public struct ToolBar<Content: View> : View{
 
     /// Current command
     @State var curentCommand: StoreCommand = StoreCommand()
+    
+    /// Authentication service
+    @EnvironmentObject var authentication: Authentication
     
     /// Title text
     let title: String?
@@ -30,7 +33,7 @@ public struct ToolBar<Content: View> : View{
             Spacer()
             getItemsView()
             Button("update", action: {
-                curentCommand = LoadCommand(params:["page":"*"], callback: {print("do something")})
+                curentCommand = LoadCommand(params:["page":"*", "access token": authentication.getToken()], callback: {print("do something")})
             })
             Button("clear", action: {
                 curentCommand = RemoveAllCommand()

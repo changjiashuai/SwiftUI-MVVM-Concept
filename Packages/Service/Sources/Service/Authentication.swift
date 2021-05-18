@@ -31,4 +31,14 @@ public class Authentication: ObservableObject, AuthenticationAPI {
         authenticated = false
         user = nil
     }
+    
+    ///Generate secret token to prove level of access to communicate with remote sources
+    /// - Returns: Secret token
+    public func getToken() -> String {
+        guard authenticated else {
+            return ""
+        }
+        /// Generate secret token
+        return "TOKEN\(Int.random(in: 1...100))"
+    }
 }

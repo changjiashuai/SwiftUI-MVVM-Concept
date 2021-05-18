@@ -11,7 +11,7 @@ import Service
 /// This view is presented while the app is launching, i.e. determining if a user is signed in.
 struct Launching: View {
     
-    /// App viewModel
+    /// Authentication service
     @EnvironmentObject var authentication: Authentication
     
     /// The type of view representing the body of this view.

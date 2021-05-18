@@ -8,6 +8,7 @@
 import SwiftUI
 import Data
 import Ui
+import Service
 
 /// List displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable
@@ -15,7 +16,10 @@ import Ui
 struct AgeChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable, Loadable {
     
     /// Store with data
-    @StateObject var store: RemoteStore<T, U>
+    @StateObject var store: RemoteStore<T, U>    
+    
+    /// Authentication service
+    @EnvironmentObject var authentication: Authentication
     
     /// Template to defined Item view
     let content: (T, CGFloat) -> Content

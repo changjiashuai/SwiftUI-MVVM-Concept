@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Data
 
 protocol AbstractUser{
     var name: String { get }

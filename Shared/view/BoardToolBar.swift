@@ -22,6 +22,5 @@ struct BoardToolBar: View {
             Spacer()
             if count != 0 { Button("- chart  \(count)") { count -= 1 } }
         }
-
     }
 }

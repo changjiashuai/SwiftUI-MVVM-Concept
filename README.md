@@ -1,5 +1,5 @@
 # SwiftUI MVVM Concept
-It is not about how to create Lists and Charts and view design. **It's about one of possibility how to organize View and Data layers within SwiftUI App.**
+It is not about how to create Lists and Charts and view design. **It's about possibility how to organize View and Data layers within SwiftUI App.**
 
 ## Organizing View and Data layers within SwiftUI App
 **Concept based on protocols.** It is not "typical" MVVM for SwiftUI as you might find on the web. 

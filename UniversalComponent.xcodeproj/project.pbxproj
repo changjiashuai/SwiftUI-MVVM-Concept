@@ -59,8 +59,6 @@
 		B2B25D3A2639A94C0044E693 /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B25D382639A94C0044E693 /* user.json */; };
 		B2B25D3E2639AA0B0044E693 /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B25D3D2639AA0B0044E693 /* book.json */; };
 		B2B25D3F2639AA0B0044E693 /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B25D3D2639AA0B0044E693 /* book.json */; };
-		B2BBD4D12653C8BB005692F7 /* swiftui_mvvm_architecture.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BBD4D02653C8BB005692F7 /* swiftui_mvvm_architecture.png */; };
-		B2BBD4D22653C8BB005692F7 /* swiftui_mvvm_architecture.png in Resources */ = {isa = PBXBuildFile; fileRef = B2BBD4D02653C8BB005692F7 /* swiftui_mvvm_architecture.png */; };
 		B2C900E5264D2CC800547364 /* ItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C900E4264D2CC800547364 /* ItemFactory.swift */; };
 		B2C900E6264D2CC800547364 /* ItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C900E4264D2CC800547364 /* ItemFactory.swift */; };
 		B2EFF661263AC0B300A584D2 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EFF660263AC0B300A584D2 /* AppViewModel.swift */; };
@@ -103,7 +101,6 @@
 		B29ACB04262D678A00209343 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		B2B25D382639A94C0044E693 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		B2B25D3D2639AA0B0044E693 /* book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = book.json; sourceTree = "<group>"; };
-		B2BBD4D02653C8BB005692F7 /* swiftui_mvvm_architecture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swiftui_mvvm_architecture.png; sourceTree = "<group>"; };
 		B2C900E4264D2CC800547364 /* ItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFactory.swift; sourceTree = "<group>"; };
 		B2EFF660263AC0B300A584D2 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		B2EFF6B6263AEE8C00A584D2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -244,7 +241,6 @@
 		B2B25D372639A9370044E693 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B2BBD4D02653C8BB005692F7 /* swiftui_mvvm_architecture.png */,
 				B2EFF6C2263AF69A00A584D2 /* mvvm.png */,
 				B27DD75C2655140800977F74 /* video.png */,
 				B2B25D3D2639AA0B0044E693 /* book.json */,
@@ -353,7 +349,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B212028926443E1B0053EC0E /* user_chart.json in Resources */,
-				B2BBD4D12653C8BB005692F7 /* swiftui_mvvm_architecture.png in Resources */,
 				B27DD73D2654DFDF00977F74 /* movie.json in Resources */,
 				B27DD75D2655140800977F74 /* video.png in Resources */,
 				B2B25D392639A94C0044E693 /* user.json in Resources */,
@@ -370,7 +365,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B212028A26443E1B0053EC0E /* user_chart.json in Resources */,
-				B2BBD4D22653C8BB005692F7 /* swiftui_mvvm_architecture.png in Resources */,
 				B27DD73E2654DFDF00977F74 /* movie.json in Resources */,
 				B27DD75E2655140800977F74 /* video.png in Resources */,
 				B2B25D3A2639A94C0044E693 /* user.json in Resources */,

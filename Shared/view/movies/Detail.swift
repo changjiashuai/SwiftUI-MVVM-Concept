@@ -1,7 +1,8 @@
 //
-//  UniversalList.swift
+//  Movie.swift
+//  UniversalComponent
 //
-//  Created by Igor Shelopaev on 27.04.2021.
+//  Created by Igor Shelopaev on 19.05.2021.
 //
 
 import SwiftUI
@@ -12,7 +13,7 @@ import Ui
 /// List displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
-struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable {
+struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable {
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -31,10 +32,9 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
         ZStack(alignment: .top) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             getList()
-        }.frame(height: 150, alignment: .topLeading)
+        }.frame(alignment: .topLeading)
         .mask(!notLoading)
         .border(Color.white)
-        .onAppear { if notLoading { load() } }
     }
     
     // MARK: - Methods
@@ -54,6 +54,7 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
             }
         }
         .offset(y: 50)
-        .frame(height: 100, alignment: .topLeading)
+        .frame(maxHeight: .infinity ,alignment: .topLeading)
+        
     }
 }

@@ -25,6 +25,20 @@ class AppViewModel: ViewModel, ObservableObject {
         )
     )
     
+    let ganre = RemoteStore<Ganre, File>(
+        proxy: File<Ganre, Json>(
+            reader: Json<Ganre>(),
+            fileName: "ganre.json"
+        )
+    )
+
+    let movie = RemoteStore<Movie, File>(
+        proxy: File<Movie, Json>(
+            reader: Json<Movie>(),
+            fileName: "movie.json"
+        )
+    )
+    
     func getFileJsonStore<T: Model>(from fileName: String) -> RemoteStore<T, File<T, Json<T>>>{
         RemoteStore(
             proxy: File(

@@ -48,5 +48,5 @@ struct ItemFactory{
         }
             .frame(maxWidth: .infinity)
             .foregroundColor(Color.blue)
-    }
+    }    
 }

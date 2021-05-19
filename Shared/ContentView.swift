@@ -29,6 +29,11 @@ struct ContentView: View {
         VStack {
             MainToolBar(count: $count)
             ScrollView {
+                widget.getCharts(
+                    viewModel: viewModel,
+                    factory: item,
+                    count: count
+                )
                 widget.getList(
                     store: viewModel.users,
                     content: item.user,
@@ -50,11 +55,6 @@ struct ContentView: View {
                     store: viewModel.books,
                     content: item.book,
                     toolBar: ToolBar<EmptyView>("Books")
-                )
-                widget.getCharts(
-                    viewModel: viewModel,
-                    factory: item,
-                    count: count
                 )
             }
         }.padding()

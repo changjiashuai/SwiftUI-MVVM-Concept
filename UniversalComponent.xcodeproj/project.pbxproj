@@ -23,11 +23,27 @@
 		B255969F264E40C100353A37 /* WidgetFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B255969D264E40C100353A37 /* WidgetFactory.swift */; };
 		B25596BA264E83DD00353A37 /* Launching.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596B9264E83DD00353A37 /* Launching.swift */; };
 		B25596BB264E83DD00353A37 /* Launching.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25596B9264E83DD00353A37 /* Launching.swift */; };
-		B2559723264ED47300353A37 /* Service in Frameworks */ = {isa = PBXBuildFile; productRef = B2559722264ED47300353A37 /* Service */; };
-		B26C89F12653E0250015909B /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = B26C89F02653E0250015909B /* Data */; };
 		B26C8A062653F0910015909B /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = B26C8A052653F0910015909B /* Data */; };
 		B26C8A082653F0950015909B /* Service in Frameworks */ = {isa = PBXBuildFile; productRef = B26C8A072653F0950015909B /* Service */; };
 		B26C8A0A2653F0990015909B /* Ui in Frameworks */ = {isa = PBXBuildFile; productRef = B26C8A092653F0990015909B /* Ui */; };
+		B27DD7342654DCB100977F74 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7332654DCB100977F74 /* Movie.swift */; };
+		B27DD7352654DCB100977F74 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7332654DCB100977F74 /* Movie.swift */; };
+		B27DD7372654DCF300977F74 /* Ganre.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7362654DCF300977F74 /* Ganre.swift */; };
+		B27DD7382654DCF300977F74 /* Ganre.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7362654DCF300977F74 /* Ganre.swift */; };
+		B27DD73A2654DFAD00977F74 /* ganre.json in Resources */ = {isa = PBXBuildFile; fileRef = B27DD7392654DFAD00977F74 /* ganre.json */; };
+		B27DD73B2654DFAD00977F74 /* ganre.json in Resources */ = {isa = PBXBuildFile; fileRef = B27DD7392654DFAD00977F74 /* ganre.json */; };
+		B27DD73D2654DFDF00977F74 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = B27DD73C2654DFDF00977F74 /* movie.json */; };
+		B27DD73E2654DFDF00977F74 /* movie.json in Resources */ = {isa = PBXBuildFile; fileRef = B27DD73C2654DFDF00977F74 /* movie.json */; };
+		B27DD7412654E02500977F74 /* Master.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7402654E02500977F74 /* Master.swift */; };
+		B27DD7422654E02500977F74 /* Master.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7402654E02500977F74 /* Master.swift */; };
+		B27DD7442654E03000977F74 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7432654E03000977F74 /* Detail.swift */; };
+		B27DD7452654E03000977F74 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7432654E03000977F74 /* Detail.swift */; };
+		B27DD7472654E07A00977F74 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7462654E07900977F74 /* Movies.swift */; };
+		B27DD7482654E07A00977F74 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7462654E07900977F74 /* Movies.swift */; };
+		B27DD74A2654E68900977F74 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = B27DD7492654E68900977F74 /* Data */; };
+		B27DD74C2654E68E00977F74 /* Service in Frameworks */ = {isa = PBXBuildFile; productRef = B27DD74B2654E68E00977F74 /* Service */; };
+		B27DD74E2654E82100977F74 /* MovieFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD74D2654E82100977F74 /* MovieFactory.swift */; };
+		B27DD74F2654E82100977F74 /* MovieFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD74D2654E82100977F74 /* MovieFactory.swift */; };
 		B2835A2126524AAB00F257DA /* Ui in Frameworks */ = {isa = PBXBuildFile; productRef = B2835A2026524AAB00F257DA /* Ui */; };
 		B29ACB05262D678A00209343 /* ComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29ACAF2262D678A00209343 /* ComponentApp.swift */; };
 		B29ACB06262D678A00209343 /* ComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29ACAF2262D678A00209343 /* ComponentApp.swift */; };
@@ -62,6 +78,14 @@
 		B25596B9264E83DD00353A37 /* Launching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launching.swift; sourceTree = "<group>"; };
 		B255970A264EC6F900353A37 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = Packages/Data; sourceTree = "<group>"; };
 		B255971F264ED46A00353A37 /* Service */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Service; path = Packages/Service; sourceTree = "<group>"; };
+		B27DD7332654DCB100977F74 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		B27DD7362654DCF300977F74 /* Ganre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ganre.swift; sourceTree = "<group>"; };
+		B27DD7392654DFAD00977F74 /* ganre.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ganre.json; sourceTree = "<group>"; };
+		B27DD73C2654DFDF00977F74 /* movie.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
+		B27DD7402654E02500977F74 /* Master.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Master.swift; sourceTree = "<group>"; };
+		B27DD7432654E03000977F74 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		B27DD7462654E07900977F74 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
+		B27DD74D2654E82100977F74 /* MovieFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFactory.swift; sourceTree = "<group>"; };
 		B2835A1D26524AA100F257DA /* Ui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Ui; path = Packages/Ui; sourceTree = "<group>"; };
 		B29ACAF2262D678A00209343 /* ComponentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentApp.swift; sourceTree = "<group>"; };
 		B29ACAF3262D678A00209343 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,9 +119,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2559723264ED47300353A37 /* Service in Frameworks */,
+				B27DD74C2654E68E00977F74 /* Service in Frameworks */,
+				B27DD74A2654E68900977F74 /* Data in Frameworks */,
 				B2835A2126524AAB00F257DA /* Ui in Frameworks */,
-				B26C89F12653E0250015909B /* Data in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +133,8 @@
 			children = (
 				B24A918C26382DE700989C3B /* User.swift */,
 				B24A91A12638316700989C3B /* Book.swift */,
+				B27DD7332654DCB100977F74 /* Movie.swift */,
+				B27DD7362654DCF300977F74 /* Ganre.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -116,6 +142,7 @@
 		B24A917E26382D9200989C3B /* view */ = {
 			isa = PBXGroup;
 			children = (
+				B27DD73F2654E00F00977F74 /* movies */,
 				B265ED22264A5CA20054D0A2 /* factory */,
 				B24A919C26382E7A00989C3B /* UniversalList.swift */,
 				B22DEAC2263BE29500CDAAA2 /* AgeChart.swift */,
@@ -137,8 +164,19 @@
 			children = (
 				B2C900E4264D2CC800547364 /* ItemFactory.swift */,
 				B255969D264E40C100353A37 /* WidgetFactory.swift */,
+				B27DD74D2654E82100977F74 /* MovieFactory.swift */,
 			);
 			path = factory;
+			sourceTree = "<group>";
+		};
+		B27DD73F2654E00F00977F74 /* movies */ = {
+			isa = PBXGroup;
+			children = (
+				B27DD7402654E02500977F74 /* Master.swift */,
+				B27DD7432654E03000977F74 /* Detail.swift */,
+				B27DD7462654E07900977F74 /* Movies.swift */,
+			);
+			path = movies;
 			sourceTree = "<group>";
 		};
 		B29ACAEC262D678A00209343 = {
@@ -204,6 +242,8 @@
 				B2B25D3D2639AA0B0044E693 /* book.json */,
 				B2B25D382639A94C0044E693 /* user.json */,
 				B212028826443E1B0053EC0E /* user_chart.json */,
+				B27DD7392654DFAD00977F74 /* ganre.json */,
+				B27DD73C2654DFDF00977F74 /* movie.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -255,9 +295,9 @@
 			);
 			name = "UniversalComponent (macOS)";
 			packageProductDependencies = (
-				B2559722264ED47300353A37 /* Service */,
 				B2835A2026524AAB00F257DA /* Ui */,
-				B26C89F02653E0250015909B /* Data */,
+				B27DD7492654E68900977F74 /* Data */,
+				B27DD74B2654E68E00977F74 /* Service */,
 			);
 			productName = "Layout (macOS)";
 			productReference = B29ACB01262D678A00209343 /* UniversalComponent.app */;
@@ -306,11 +346,13 @@
 			files = (
 				B212028926443E1B0053EC0E /* user_chart.json in Resources */,
 				B2BBD4D12653C8BB005692F7 /* swiftui_mvvm_architecture.png in Resources */,
+				B27DD73D2654DFDF00977F74 /* movie.json in Resources */,
 				B2B25D392639A94C0044E693 /* user.json in Resources */,
 				B29ACB09262D678A00209343 /* Assets.xcassets in Resources */,
 				B2EFF6B7263AEE8C00A584D2 /* README.md in Resources */,
 				B2B25D3E2639AA0B0044E693 /* book.json in Resources */,
 				B2EFF6C3263AF69A00A584D2 /* mvvm.png in Resources */,
+				B27DD73A2654DFAD00977F74 /* ganre.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,11 +362,13 @@
 			files = (
 				B212028A26443E1B0053EC0E /* user_chart.json in Resources */,
 				B2BBD4D22653C8BB005692F7 /* swiftui_mvvm_architecture.png in Resources */,
+				B27DD73E2654DFDF00977F74 /* movie.json in Resources */,
 				B2B25D3A2639A94C0044E693 /* user.json in Resources */,
 				B29ACB0A262D678A00209343 /* Assets.xcassets in Resources */,
 				B2EFF6B8263AEE8C00A584D2 /* README.md in Resources */,
 				B2B25D3F2639AA0B0044E693 /* book.json in Resources */,
 				B2EFF6C4263AF69A00A584D2 /* mvvm.png in Resources */,
+				B27DD73B2654DFAD00977F74 /* ganre.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,17 +379,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B27DD74E2654E82100977F74 /* MovieFactory.swift in Sources */,
 				B22DEAC3263BE29500CDAAA2 /* AgeChart.swift in Sources */,
 				B29ACB07262D678A00209343 /* ContentView.swift in Sources */,
+				B27DD7342654DCB100977F74 /* Movie.swift in Sources */,
+				B27DD7412654E02500977F74 /* Master.swift in Sources */,
 				B2C900E5264D2CC800547364 /* ItemFactory.swift in Sources */,
 				B255969E264E40C100353A37 /* WidgetFactory.swift in Sources */,
 				B25596BA264E83DD00353A37 /* Launching.swift in Sources */,
 				B24A91A22638316700989C3B /* Book.swift in Sources */,
 				B29ACB05262D678A00209343 /* ComponentApp.swift in Sources */,
+				B27DD7372654DCF300977F74 /* Ganre.swift in Sources */,
+				B27DD7472654E07A00977F74 /* Movies.swift in Sources */,
 				B24A919D26382E7A00989C3B /* UniversalList.swift in Sources */,
 				B2559699264E3E3E00353A37 /* MainToolBar.swift in Sources */,
 				B2EFF661263AC0B300A584D2 /* AppViewModel.swift in Sources */,
 				B24A918D26382DE700989C3B /* User.swift in Sources */,
+				B27DD7442654E03000977F74 /* Detail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,17 +403,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B27DD74F2654E82100977F74 /* MovieFactory.swift in Sources */,
 				B22DEAC4263BE29500CDAAA2 /* AgeChart.swift in Sources */,
 				B29ACB08262D678A00209343 /* ContentView.swift in Sources */,
+				B27DD7352654DCB100977F74 /* Movie.swift in Sources */,
+				B27DD7422654E02500977F74 /* Master.swift in Sources */,
 				B2C900E6264D2CC800547364 /* ItemFactory.swift in Sources */,
 				B255969F264E40C100353A37 /* WidgetFactory.swift in Sources */,
 				B25596BB264E83DD00353A37 /* Launching.swift in Sources */,
 				B24A91A32638316700989C3B /* Book.swift in Sources */,
 				B29ACB06262D678A00209343 /* ComponentApp.swift in Sources */,
+				B27DD7382654DCF300977F74 /* Ganre.swift in Sources */,
+				B27DD7482654E07A00977F74 /* Movies.swift in Sources */,
 				B24A919E26382E7A00989C3B /* UniversalList.swift in Sources */,
 				B255969A264E3E3E00353A37 /* MainToolBar.swift in Sources */,
 				B2EFF662263AC0B300A584D2 /* AppViewModel.swift in Sources */,
 				B24A918E26382DE700989C3B /* User.swift in Sources */,
+				B27DD7452654E03000977F74 /* Detail.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,14 +667,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		B2559722264ED47300353A37 /* Service */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Service;
-		};
-		B26C89F02653E0250015909B /* Data */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Data;
-		};
 		B26C8A052653F0910015909B /* Data */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Data;
@@ -630,6 +678,14 @@
 		B26C8A092653F0990015909B /* Ui */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Ui;
+		};
+		B27DD7492654E68900977F74 /* Data */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Data;
+		};
+		B27DD74B2654E68E00977F74 /* Service */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Service;
 		};
 		B2835A2026524AAB00F257DA /* Ui */ = {
 			isa = XCSwiftPackageProductDependency;

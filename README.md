@@ -83,4 +83,4 @@ Click to watch the expected UI behavior for the example
 * Requesting data with authentication token
 
 
-[![click to watch expected UI behavior for the example](https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/video.png)](https://www.youtube.com/watch?v=eg19_PFfWFE)
+[![click to watch expected UI behavior for the example](https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/video.png)](https://www.youtube.com/watch?v=C5p1GdggNUQ)

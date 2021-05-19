@@ -20,13 +20,17 @@ struct LayoutApp: App {
     var body: some Scene {
         WindowGroup {
             if auth.authenticated {
-                HStack {
-                    ContentView(item: ItemFactory(), widget: WidgetFactory())
-                        .environmentObject(auth)
-                        .environmentObject(viewModel) //inject viewModel to get access to Stores from every view in the hierarchy
-                    Movies()
-                        .environmentObject(auth)
-                        .environmentObject(viewModel)
+                VStack {
+                    MainToolBar().environmentObject(auth)
+                    HStack {
+
+                        ContentView(item: ItemFactory(), widget: WidgetFactory())
+                            .environmentObject(auth)
+                            .environmentObject(viewModel) //inject viewModel to get access to Stores from every view in the hierarchy
+                        Movies()
+                            .environmentObject(auth)
+                            .environmentObject(viewModel)
+                    }
                 }
             } else {
                 Launching().environmentObject(auth)

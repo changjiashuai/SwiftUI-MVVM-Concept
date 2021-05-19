@@ -27,7 +27,7 @@ struct ContentView: View {
     /// The type of view representing the body of this view.
     var body: some View {
         VStack {
-            MainToolBar(count: $count)
+            BoardToolBar(count: $count)
             ScrollView {
                 widget.getCharts(
                     viewModel: viewModel,

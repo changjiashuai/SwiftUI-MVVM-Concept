@@ -26,8 +26,6 @@
 		B26C8A062653F0910015909B /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = B26C8A052653F0910015909B /* Data */; };
 		B26C8A082653F0950015909B /* Service in Frameworks */ = {isa = PBXBuildFile; productRef = B26C8A072653F0950015909B /* Service */; };
 		B26C8A0A2653F0990015909B /* Ui in Frameworks */ = {isa = PBXBuildFile; productRef = B26C8A092653F0990015909B /* Ui */; };
-		B27DD7342654DCB100977F74 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7332654DCB100977F74 /* Movie.swift */; };
-		B27DD7352654DCB100977F74 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7332654DCB100977F74 /* Movie.swift */; };
 		B27DD7372654DCF300977F74 /* Ganre.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7362654DCF300977F74 /* Ganre.swift */; };
 		B27DD7382654DCF300977F74 /* Ganre.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7362654DCF300977F74 /* Ganre.swift */; };
 		B27DD73A2654DFAD00977F74 /* ganre.json in Resources */ = {isa = PBXBuildFile; fileRef = B27DD7392654DFAD00977F74 /* ganre.json */; };
@@ -44,6 +42,8 @@
 		B27DD74C2654E68E00977F74 /* Service in Frameworks */ = {isa = PBXBuildFile; productRef = B27DD74B2654E68E00977F74 /* Service */; };
 		B27DD74E2654E82100977F74 /* MovieFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD74D2654E82100977F74 /* MovieFactory.swift */; };
 		B27DD74F2654E82100977F74 /* MovieFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD74D2654E82100977F74 /* MovieFactory.swift */; };
+		B27DD7512654FABA00977F74 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7502654FABA00977F74 /* Movie.swift */; };
+		B27DD7522654FABA00977F74 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7502654FABA00977F74 /* Movie.swift */; };
 		B2835A2126524AAB00F257DA /* Ui in Frameworks */ = {isa = PBXBuildFile; productRef = B2835A2026524AAB00F257DA /* Ui */; };
 		B29ACB05262D678A00209343 /* ComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29ACAF2262D678A00209343 /* ComponentApp.swift */; };
 		B29ACB06262D678A00209343 /* ComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29ACAF2262D678A00209343 /* ComponentApp.swift */; };
@@ -78,7 +78,6 @@
 		B25596B9264E83DD00353A37 /* Launching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launching.swift; sourceTree = "<group>"; };
 		B255970A264EC6F900353A37 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Data; path = Packages/Data; sourceTree = "<group>"; };
 		B255971F264ED46A00353A37 /* Service */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Service; path = Packages/Service; sourceTree = "<group>"; };
-		B27DD7332654DCB100977F74 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		B27DD7362654DCF300977F74 /* Ganre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ganre.swift; sourceTree = "<group>"; };
 		B27DD7392654DFAD00977F74 /* ganre.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ganre.json; sourceTree = "<group>"; };
 		B27DD73C2654DFDF00977F74 /* movie.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = movie.json; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		B27DD7432654E03000977F74 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		B27DD7462654E07900977F74 /* Movies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		B27DD74D2654E82100977F74 /* MovieFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFactory.swift; sourceTree = "<group>"; };
+		B27DD7502654FABA00977F74 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		B2835A1D26524AA100F257DA /* Ui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Ui; path = Packages/Ui; sourceTree = "<group>"; };
 		B29ACAF2262D678A00209343 /* ComponentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentApp.swift; sourceTree = "<group>"; };
 		B29ACAF3262D678A00209343 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -133,8 +133,8 @@
 			children = (
 				B24A918C26382DE700989C3B /* User.swift */,
 				B24A91A12638316700989C3B /* Book.swift */,
-				B27DD7332654DCB100977F74 /* Movie.swift */,
 				B27DD7362654DCF300977F74 /* Ganre.swift */,
+				B27DD7502654FABA00977F74 /* Movie.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -381,8 +381,8 @@
 			files = (
 				B27DD74E2654E82100977F74 /* MovieFactory.swift in Sources */,
 				B22DEAC3263BE29500CDAAA2 /* AgeChart.swift in Sources */,
+				B27DD7512654FABA00977F74 /* Movie.swift in Sources */,
 				B29ACB07262D678A00209343 /* ContentView.swift in Sources */,
-				B27DD7342654DCB100977F74 /* Movie.swift in Sources */,
 				B27DD7412654E02500977F74 /* Master.swift in Sources */,
 				B2C900E5264D2CC800547364 /* ItemFactory.swift in Sources */,
 				B255969E264E40C100353A37 /* WidgetFactory.swift in Sources */,
@@ -405,8 +405,8 @@
 			files = (
 				B27DD74F2654E82100977F74 /* MovieFactory.swift in Sources */,
 				B22DEAC4263BE29500CDAAA2 /* AgeChart.swift in Sources */,
+				B27DD7522654FABA00977F74 /* Movie.swift in Sources */,
 				B29ACB08262D678A00209343 /* ContentView.swift in Sources */,
-				B27DD7352654DCB100977F74 /* Movie.swift in Sources */,
 				B27DD7422654E02500977F74 /* Master.swift in Sources */,
 				B2C900E6264D2CC800547364 /* ItemFactory.swift in Sources */,
 				B255969F264E40C100353A37 /* WidgetFactory.swift in Sources */,

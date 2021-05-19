@@ -72,4 +72,4 @@ func user(_ user: User) -> some View {
 
 
 # UI behavior
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/eg19_PFfWFE/0.jpg)](https://www.youtube.com/watch?v=eg19_PFfWFE)
+[![click to watch expected UI behavior for the example](video.jpg)](https://www.youtube.com/watch?v=eg19_PFfWFE)

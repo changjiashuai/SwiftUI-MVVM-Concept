@@ -15,10 +15,10 @@ import Ui
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
 struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable {
-    
+
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
-    
+
     /// Store with data
     @StateObject var detail: RemoteStore<D, V>
 
@@ -30,7 +30,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
 
     /// ToolBar with set of controls
     let toolBar: ToolContent
-    
+
     /// Selected item
     @State var curentItem: T?
 
@@ -42,7 +42,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
         }.frame(alignment: .topLeading)
             .mask(!notLoading)
             .border(Color.white)
-        .onAppear { if notLoading { load(); detail.removeAll() } }
+            .onAppear { if notLoading { load(); detail.removeAll() } }
     }
 
     // MARK: - Methods
@@ -68,12 +68,12 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
             .frame(maxHeight: .infinity, alignment: .topLeading)
     }
 
-    
+
     /// Set curently selected item
     /// - Parameter item: selected item
     private func setCurentItem(_ item: T) {
         curentItem = item
-        
+
         detail.load(params: ["page": "*", "access token": authentication.getToken()], callback: { print("do something") })
     }
 }

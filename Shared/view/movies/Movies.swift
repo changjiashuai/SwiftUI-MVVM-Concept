@@ -13,7 +13,7 @@ struct Movies: View {
 
     /// Item view factory
     let item = MovieFactory()
-    
+
     /// App viewModel
     @EnvironmentObject var viewModel: AppViewModel
 
@@ -31,8 +31,8 @@ struct Movies: View {
                 toolBar: ToolBar<EmptyView>("Movie", showControls: false)
             )
         }
-        .padding(.trailing)
-        .padding(.vertical)
+            .padding(.trailing)
+            .padding(.vertical)
     }
 }
 

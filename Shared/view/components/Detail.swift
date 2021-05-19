@@ -10,7 +10,7 @@ import Data
 import Service
 import Ui
 
-/// List displays data conformed to Model protocol
+/// Detail list displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
 struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable {

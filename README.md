@@ -71,3 +71,9 @@ func user(_ user: User) -> some View {
 <img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/mvvm.png?raw=true">
 
 
+# UI behavior
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/eg19_PFfWFE" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>

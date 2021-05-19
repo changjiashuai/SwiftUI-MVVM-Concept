@@ -23,7 +23,6 @@ struct LayoutApp: App {
                 VStack {
                     MainToolBar().environmentObject(auth)
                     HStack {
-
                         ContentView(item: ItemFactory(), widget: WidgetFactory())
                             .environmentObject(auth)
                             .environmentObject(viewModel) //inject viewModel to get access to Stores from every view in the hierarchy

@@ -1,9 +1,10 @@
 # SwiftUI MVVM Concept
+It is not about how to create Lists and Charts and view design. **It's about one of possibility how to organize View and Data layers within SwiftUI App.**
+
 ## Organizing View and Data layers within SwiftUI App
+**Concept based on protocols.** It is not "pure" MVVM for SwiftUI as you might find on the web. 
+
 ### SwiftUI template Development Architecture Designing with Protocols
-
-
-**Concept based on protocols.** It is not "pure" MVVM for SwiftUI as you might find on the web. It is not about how to create Lists and Charts and view design. **It's about one of possibility how to organize View and Data layers within SwiftUI App.**
 
 App stores are assembled in AppViewModel In the code example. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  When you update data in one the others are updated automatically.
 

@@ -72,8 +72,4 @@ func user(_ user: User) -> some View {
 
 
 # UI behavior
-<iframe width="560" height="315"
-src="https://www.youtube.com/embed/eg19_PFfWFE" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/eg19_PFfWFE/0.jpg)](https://www.youtube.com/watch?v=eg19_PFfWFE)

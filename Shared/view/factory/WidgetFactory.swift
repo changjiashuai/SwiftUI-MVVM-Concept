@@ -31,7 +31,7 @@ struct WidgetFactory {
     /// - Returns: Chart view
     @ViewBuilder
     func getChart<T:Model, U: Proxy, Content: View, ToolBarContent: View>(store: RemoteStore<T,U>, content: @escaping (T, CGFloat) -> Content, toolBar: ToolBarContent) -> some View {
-        AgeChart(
+        BarChart(
             store: store,
             content: content,
             toolBar: toolBar

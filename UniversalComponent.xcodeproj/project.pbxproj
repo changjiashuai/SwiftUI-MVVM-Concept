@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		B212028926443E1B0053EC0E /* user_chart.json in Resources */ = {isa = PBXBuildFile; fileRef = B212028826443E1B0053EC0E /* user_chart.json */; };
 		B212028A26443E1B0053EC0E /* user_chart.json in Resources */ = {isa = PBXBuildFile; fileRef = B212028826443E1B0053EC0E /* user_chart.json */; };
-		B22DEAC3263BE29500CDAAA2 /* AgeChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DEAC2263BE29500CDAAA2 /* AgeChart.swift */; };
-		B22DEAC4263BE29500CDAAA2 /* AgeChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DEAC2263BE29500CDAAA2 /* AgeChart.swift */; };
+		B22DEAC3263BE29500CDAAA2 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DEAC2263BE29500CDAAA2 /* BarChart.swift */; };
+		B22DEAC4263BE29500CDAAA2 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22DEAC2263BE29500CDAAA2 /* BarChart.swift */; };
 		B24A918D26382DE700989C3B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A918C26382DE700989C3B /* User.swift */; };
 		B24A918E26382DE700989C3B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A918C26382DE700989C3B /* User.swift */; };
 		B24A919D26382E7A00989C3B /* UniversalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A919C26382E7A00989C3B /* UniversalList.swift */; };
@@ -71,7 +71,7 @@
 
 /* Begin PBXFileReference section */
 		B212028826443E1B0053EC0E /* user_chart.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = user_chart.json; sourceTree = "<group>"; };
-		B22DEAC2263BE29500CDAAA2 /* AgeChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeChart.swift; sourceTree = "<group>"; };
+		B22DEAC2263BE29500CDAAA2 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		B24A918C26382DE700989C3B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B24A919C26382E7A00989C3B /* UniversalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalList.swift; sourceTree = "<group>"; };
 		B24A91A12638316700989C3B /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -145,12 +145,11 @@
 		B24A917E26382D9200989C3B /* view */ = {
 			isa = PBXGroup;
 			children = (
-				B27DD73F2654E00F00977F74 /* movies */,
+				B27DD73F2654E00F00977F74 /* components */,
 				B265ED22264A5CA20054D0A2 /* factory */,
-				B24A919C26382E7A00989C3B /* UniversalList.swift */,
-				B22DEAC2263BE29500CDAAA2 /* AgeChart.swift */,
 				B2559698264E3E3E00353A37 /* MainToolBar.swift */,
 				B25596B9264E83DD00353A37 /* Launching.swift */,
+				B27DD7462654E07900977F74 /* Movies.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -172,14 +171,15 @@
 			path = factory;
 			sourceTree = "<group>";
 		};
-		B27DD73F2654E00F00977F74 /* movies */ = {
+		B27DD73F2654E00F00977F74 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				B24A919C26382E7A00989C3B /* UniversalList.swift */,
+				B22DEAC2263BE29500CDAAA2 /* BarChart.swift */,
 				B27DD7402654E02500977F74 /* Master.swift */,
 				B27DD7432654E03000977F74 /* Detail.swift */,
-				B27DD7462654E07900977F74 /* Movies.swift */,
 			);
-			path = movies;
+			path = components;
 			sourceTree = "<group>";
 		};
 		B29ACAEC262D678A00209343 = {
@@ -386,7 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B27DD74E2654E82100977F74 /* MovieFactory.swift in Sources */,
-				B22DEAC3263BE29500CDAAA2 /* AgeChart.swift in Sources */,
+				B22DEAC3263BE29500CDAAA2 /* BarChart.swift in Sources */,
 				B27DD7512654FABA00977F74 /* Movie.swift in Sources */,
 				B29ACB07262D678A00209343 /* ContentView.swift in Sources */,
 				B27DD7412654E02500977F74 /* Master.swift in Sources */,
@@ -410,7 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B27DD74F2654E82100977F74 /* MovieFactory.swift in Sources */,
-				B22DEAC4263BE29500CDAAA2 /* AgeChart.swift in Sources */,
+				B22DEAC4263BE29500CDAAA2 /* BarChart.swift in Sources */,
 				B27DD7522654FABA00977F74 /* Movie.swift in Sources */,
 				B29ACB08262D678A00209343 /* ContentView.swift in Sources */,
 				B27DD7422654E02500977F74 /* Master.swift in Sources */,

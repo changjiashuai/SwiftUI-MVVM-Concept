@@ -10,10 +10,10 @@ import Data
 import Ui
 import Service
 
-/// List displays data conformed to Model protocol
+/// Chart displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
-struct AgeChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable, Loadable {
+struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable, Loadable {
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>    

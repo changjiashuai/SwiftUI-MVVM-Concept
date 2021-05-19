@@ -74,4 +74,12 @@ func user(_ user: User) -> some View {
 # UI behavior
 Click to watch the expected UI behavior for the example
 
+* Shared source of data with different presentations
+* Views control
+* Dynamically added Views
+* Master detail view 
+* Sign in sign out 
+* Requesting data with authentication token
+
+
 [![click to watch expected UI behavior for the example](https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/video.png)](https://www.youtube.com/watch?v=eg19_PFfWFE)

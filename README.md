@@ -72,4 +72,4 @@ func user(_ user: User) -> some View {
 
 
 # UI behavior
-[![click to watch expected UI behavior for the example](video.jpg)](https://www.youtube.com/watch?v=eg19_PFfWFE)
+[![click to watch expected UI behavior for the example](https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/video.jpg)](https://www.youtube.com/watch?v=eg19_PFfWFE)

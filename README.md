@@ -84,3 +84,14 @@ Click to watch the expected UI behavior for the example
 
 
 [![click to watch expected UI behavior for the example](https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/video.png)](https://www.youtube.com/watch?v=C5p1GdggNUQ)
+
+
+# Aspirations
+
+* Decouple View and Data layers and loosen dependencies between them
+* Easily change a data source from web to file etc in different projects without changing any View implementation
+* Easily change a data source format from JSON to XML etc.
+* Share the same data source between different View presentations(Grid,Chart...)
+* Maximize reusing code between different projects
+* Testability
+* Easily split the development of View and Data layers between independent developers

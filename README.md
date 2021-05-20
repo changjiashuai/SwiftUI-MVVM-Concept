@@ -18,7 +18,7 @@ App stores are assembled in AppViewModel In the code example. Two views (Univers
 
 ## Requirements
 
-* Xcode Version 12+ Swift 5.3
+* Xcode Version 12.5+ Swift 5.3
 
 ## The principle of the concept 1-2-3
 

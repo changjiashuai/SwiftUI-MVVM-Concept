@@ -23,7 +23,7 @@ App stores are assembled in AppViewModel In the code example. Two views (Univers
 ## The principle of the concept 1-2-3
 
 ### 1. Model
-* Define Model describing you entity
+* Define Model
 ```Swift 
 struct User: Model {    
     let id: Int    
@@ -47,8 +47,7 @@ RemoteStore<User, File>(
 ```
 
 ### 3. View
-
-* Define View component
+* Define View
 ```Swift 
 UniversalList(
     store: store,

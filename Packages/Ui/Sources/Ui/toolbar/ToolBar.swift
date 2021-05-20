@@ -37,7 +37,7 @@ public struct ToolBar<Content: View>: View {
             if showControls {
                 getItemsView()
                 Button("update", action: {
-                    curentCommand = LoadCommand(params: ["page": "*", "access token": authentication.getToken()], callback: { print("do something") })
+                    curentCommand = LoadCommand(params: ["page": "*", "access token": authentication.getToken()], callback: { print("🟦 do something") })
                 })
                 Button("clear", action: {
                     curentCommand = RemoveAllCommand()

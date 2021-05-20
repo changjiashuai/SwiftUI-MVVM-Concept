@@ -38,7 +38,7 @@ struct ContentView: View {
                     store: viewModel.users,
                     content: item.user,
                     toolBar: ToolBar("Users"){
-                        Button("do something", action: { print("do something")})
+                        Button("do something", action: { print("🟦 do something")})
                     }
                 )
                 widget.getChart(

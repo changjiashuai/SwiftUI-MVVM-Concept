@@ -74,6 +74,6 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     private func setCurentItem(_ item: T) {
         curentItem = item
 
-        detail.load(params: ["page": "*", "access token": authentication.getToken(), "masterId": "\(item.id)"], callback: { print("do something") })
+        detail.load(params: ["page": "*", "access token": authentication.getToken(), "masterId": "\(item.id)"], callback: { print("🟦 do something") })
     }
 }

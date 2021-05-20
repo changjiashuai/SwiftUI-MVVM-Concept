@@ -35,7 +35,7 @@ extension Controllable{
     public func load() {
         ///Using authentication service generate secret token to prove level of access to communicate with remote sources
         store.load(params: ["page": "*", "access token": authentication.getToken()]) {
-            print("do something after loading")
+            print("🟦 do something after loading")
         }
     }
 }

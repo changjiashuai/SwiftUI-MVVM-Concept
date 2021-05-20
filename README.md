@@ -56,6 +56,7 @@ UniversalList(
     toolBar: toolBar
 )
 ```
+> **content** parameter is a template for creating View depicting an entity. 
 
 <img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/swiftui_mvvm_architecture.png?raw=true">
 

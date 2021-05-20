@@ -22,7 +22,9 @@ Writer is not implemented in the code example. It is placed on the diagram to sh
 
 * Xcode Version 12+ Swift 5.3
 
-## Model
+## How to use it
+
+### 1. Model
 * Define Model describing you entity
 ```Swift 
 struct User: Model {    
@@ -32,10 +34,11 @@ struct User: Model {
 }
 ```
 
-## Store
-* Define Store in AppViewModel. It's **store** parameter for **UniversalList** View
+### 2. Store
+* Define Store
+> It's **store** parameter for **UniversalList** View in the example.
 * Proxy is defining a communication layer. Proxies are used by Store to handle the loading and saving of Model data
-* Readers are used to interpret data to be loaded into a Model instance
+* Reader is used to interpret data to be loaded into a Model instance
 ```Swift 
 let store = RemoteStore<User, File>(
     proxy: File<User, Json>(
@@ -45,9 +48,9 @@ let store = RemoteStore<User, File>(
 )
 ```
 
-## View
+### 3. View
 
-* Define View component and pass Store
+* Define View component
 ```Swift 
 UniversalList(
     store: store,

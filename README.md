@@ -22,7 +22,7 @@ Writer is not implemented in the code example. It is placed on the diagram to sh
 
 * Xcode Version 12+ Swift 5.3
 
-## How to use it
+## The principle how to use it
 
 ### 1. Model
 * Define Model describing you entity

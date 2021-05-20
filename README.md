@@ -57,17 +57,6 @@ UniversalList(
 )
 ```
 
-* Define the template(**@ViewBuilder**) for creating View depicting entity. 
-> It's **content** parameter for **UniversalList** View
-```Swift 
-@ViewBuilder
-func user(_ user: User) -> some View {
-    HStack {
-        Text("Name: \(user.name)")
-    }
-}
-```
-
 <img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/swiftui_mvvm_architecture.png?raw=true">
 
 <img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/composition.png?raw=true">

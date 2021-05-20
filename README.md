@@ -67,7 +67,7 @@ UniversalList(
 <img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/mvvm.png?raw=true">
 
 
-# UI behavior
+# Example UI behavior
 Click to watch the expected UI behavior for the example
 
 * Shared source of data with different presentations

@@ -14,7 +14,7 @@ App stores are assembled in AppViewModel In the code example. Two views (Univers
 |**Service**|  The package is comprised of set of classes, structs and protocols for implementing different services like authentication etc.|
 |**Ui**|  The package  is comprised of view components that might be shared between diff projects.|
 
-Writer is not implemented in the code example. It is placed on the diagram to show the comprehensiveness of the solution for any type of communication with remote sources.
+> Writer is not implemented in the code example. It is placed on the diagram to show the comprehensiveness of the solution for any type of communication with remote sources.
 
 ## Requirements
 

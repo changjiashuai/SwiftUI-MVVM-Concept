@@ -59,7 +59,8 @@ UniversalList(
 )
 ```
 
-* Define the template(**@ViewBuilder**) for creating View depicting entity. It's **content** parameter for **UniversalList** View
+* Define the template(**@ViewBuilder**) for creating View depicting entity. 
+> It's **content** parameter for **UniversalList** View
 ```Swift 
 @ViewBuilder
 func user(_ user: User) -> some View {

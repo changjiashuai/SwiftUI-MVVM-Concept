@@ -11,7 +11,7 @@ import Data
 /// Model defining Movie
 struct Movie: Model {
     
-    // Book ID
+    // Movie ID
     let id: Int
     
     /// Title of a movie

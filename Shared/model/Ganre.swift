@@ -11,7 +11,7 @@ import Data
 /// Model defining Ganre
 struct Ganre: Model {
     
-    // Book ID
+    // Ganre ID
     let id: Int
     
     /// Title of a ganre

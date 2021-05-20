@@ -34,7 +34,7 @@ struct User: Model {
 
 ### 2. Store
 * Define Store
-> It's **store** parameter for **UniversalList** View in the example.
+> It's **store** parameter for **UniversalList** View in the example
 * Proxy is defining a communication layer. Proxies are used by Store to handle the loading and saving of Model data
 * Reader is used to interpret data to be loaded into a Model instance
 ```Swift 
@@ -56,7 +56,7 @@ UniversalList(
     toolBar: toolBar
 )
 ```
-> **content** parameter is a template for creating View depicting an entity. 
+> **content** parameter is a template for creating View depicting an entity 
 
 <img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/swiftui_mvvm_architecture.png?raw=true">
 

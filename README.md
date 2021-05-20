@@ -4,18 +4,6 @@ It is not about how to create Lists and Charts and view design. **It's about pos
 ## Organizing View and Data layers within SwiftUI App
 **Concept based on protocols.** It is not "typical" MVVM for SwiftUI as you might find on the web. 
 
-### SwiftUI template Development Architecture Designing with Protocols
-
-App stores are assembled in AppViewModel In the code example. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  When you update data in one the others are updated automatically.
-
-| Package | Description |
-| --- | --- |
-| **Data** | The package  is comprised of set of classes, structs and protocols for organizing infrastructure for **a data layer** in apps.| 
-|**Service**|  The package is comprised of set of classes, structs and protocols for implementing different services like authentication etc.|
-|**Ui**|  The package  is comprised of view components that might be shared between diff projects.|
-
-> Writer is not implemented in the code example. It is placed on the diagram to show the comprehensiveness of the solution for any type of communication with remote sources
-
 ## Requirements
 
 * Xcode Version 12.5+ Swift 5.3
@@ -61,6 +49,18 @@ UniversalList(
 
 <img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/composition.png?raw=true">
 
+### SwiftUI template Development Architecture Designing with Protocols
+
+App stores are assembled in AppViewModel In the code example. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  When you update data in one the others are updated automatically.
+
+| Package | Description |
+| --- | --- |
+| **Data** | The package  is comprised of set of classes, structs and protocols for organizing infrastructure for **a data layer** in apps.| 
+|**Service**|  The package is comprised of set of classes, structs and protocols for implementing different services like authentication etc.|
+|**Ui**|  The package  is comprised of view components that might be shared between diff projects.|
+
+> Writer is not implemented in the code example. It is placed on the diagram to show the comprehensiveness of the solution for any type of communication with remote sources
+
 
 # Class-Struct Diagramm
 
@@ -88,3 +88,6 @@ Click to watch the expected UI behavior for the example
 * Maximize reusing code between different projects
 * Testability
 * Easily split the development of View and Data layers between independent developers
+
+
+

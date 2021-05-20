@@ -12,7 +12,7 @@ import SwiftUI
 struct MovieFactory {
 
     /// Create view template for defining Ganre in the Master list
-    /// - Parameter book: Set of data for Ganre
+    /// - Parameter ganre: Set of data for Ganre
     /// - Returns: View defining how Ganre should be presented in the list
     @ViewBuilder
     func ganre(_ ganre: Ganre, _ selected: Ganre?) -> some View {

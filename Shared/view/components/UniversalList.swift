@@ -61,7 +61,7 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
         .frame(height: 100, alignment: .topLeading)
     }
     
-    /// Set curently selected item
+    /// Select item
     /// - Parameter item: selected item
     func select(_ item: T) { selectedItem = item }
 }

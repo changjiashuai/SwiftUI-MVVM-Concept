@@ -71,7 +71,7 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
         }
     }
     
-    /// Set curently selected item
+    /// Select item
     /// - Parameter item: selected item
     func select(_ item: T) { selectedItem = item }
 }

@@ -67,7 +67,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     }
 
 
-    /// Set curently selected item
+    /// Select item
     /// - Parameter item: selected item
     func select(_ item: T) {
         selectedItem = item

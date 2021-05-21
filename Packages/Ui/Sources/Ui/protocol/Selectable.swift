@@ -8,6 +8,8 @@
 import Foundation
 import Data
 
+
+/// Introduce selectable interfase for View
 public protocol Selectable {
 
     associatedtype Item: Model
@@ -15,5 +17,6 @@ public protocol Selectable {
     /// Selected item
     var selectedItem: Item? { get set }
     
+    /// Select item
     func select(_ item: Item)
 }

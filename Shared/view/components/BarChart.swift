@@ -62,7 +62,7 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
                     if store.items.count > 0 {
                         ForEach(store.items, id: \.self) { item in
                             content(item, selectedItem, getItemWidth(proxy))
-                                .onTapGesture { selectItem(item) }
+                                .onTapGesture { select(item) }
                         }
                     } else { EmptyData() }
                 }
@@ -73,5 +73,5 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     
     /// Set curently selected item
     /// - Parameter item: selected item
-    private func selectItem(_ item: T) { selectedItem = item }
+    func select(_ item: T) { selectedItem = item }
 }

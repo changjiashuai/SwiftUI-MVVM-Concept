@@ -57,7 +57,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
             else {
                 if store.items.count > 0 {
                     ForEach(store.items, id: \.self) { item in
-                        content(item, selectedItem).onTapGesture { selectItem(item) }
+                        content(item, selectedItem).onTapGesture { select(item) }
                     }
                 } else { EmptyData() }
             }
@@ -69,7 +69,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
 
     /// Set curently selected item
     /// - Parameter item: selected item
-    private func selectItem(_ item: T) {
+    func select(_ item: T) {
         selectedItem = item
 
         detail.load(params: ["page": "*", "access token": authentication.getToken(), "masterId": "\(item.id)"], callback: { print("🟦 do something") })

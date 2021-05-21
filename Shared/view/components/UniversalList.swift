@@ -52,7 +52,7 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
             else {
                 if store.items.count > 0 {
                     ForEach(store.items, id: \.self) { item in
-                        content(item, selectedItem).onTapGesture { selectItem(item) }
+                        content(item, selectedItem).onTapGesture { select(item) }
                     }
                 } else { EmptyData() }
             }
@@ -63,5 +63,5 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     
     /// Set curently selected item
     /// - Parameter item: selected item
-    private func selectItem(_ item: T) { selectedItem = item }
+    func select(_ item: T) { selectedItem = item }
 }

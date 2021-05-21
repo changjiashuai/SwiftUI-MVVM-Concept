@@ -13,6 +13,7 @@ public protocol Selectable {
     associatedtype Item: Model
 
     /// Selected item
-    var selectedItem: Item? { get }
-
+    var selectedItem: Item? { get set }
+    
+    func select(_ item: Item)
 }

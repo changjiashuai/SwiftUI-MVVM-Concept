@@ -13,8 +13,6 @@ public protocol Selectable {
     associatedtype Item: Model
 
     /// Selected item
-    var curentItem: Item? { get set }
-    
-    func setCurentItem(_ item: Item)
+    var selectedItem: Item? { get }
 
 }

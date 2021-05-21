@@ -32,7 +32,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     let toolBar: ToolContent
 
     /// Selected item
-    @State var curentItem: T?
+    @State var selectedItem: T?
 
     /// The type of view representing the body of this view
     var body: some View {
@@ -56,10 +56,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
             else {
                 if store.items.count > 0 {
                     ForEach(store.items, id: \.self) { item in
-                        content(item, curentItem)
-                            .onTapGesture {
-                            setCurentItem(item)
-                        }
+                        content(item, selectedItem).onTapGesture { selectItem(item) }
                     }
                 } else { EmptyData() }
             }
@@ -71,8 +68,8 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
 
     /// Set curently selected item
     /// - Parameter item: selected item
-    func setCurentItem(_ item: T) {
-        curentItem = item
+    private func selectItem(_ item: T) {
+        selectedItem = item
 
         detail.load(params: ["page": "*", "access token": authentication.getToken(), "masterId": "\(item.id)"], callback: { print("🟦 do something") })
     }

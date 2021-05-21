@@ -27,7 +27,7 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     let toolBar: ToolContent
     
     /// Selected item
-    @State var curentItem: T?
+    @State var selectedItem: T?
     
     /// The type of view representing the body of this view
     var body: some View {
@@ -51,9 +51,7 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
             else {
                 if store.items.count > 0 {
                     ForEach(store.items, id: \.self) { item in
-                        content(item, curentItem).onTapGesture {
-                            setCurentItem(item)
-                        }
+                        content(item, selectedItem).onTapGesture { selectItem(item) }
                     }
                 } else { EmptyData() }
             }
@@ -64,5 +62,5 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     
     /// Set curently selected item
     /// - Parameter item: selected item
-    func setCurentItem(_ item: T) { curentItem = item }
+    private func selectItem(_ item: T) { selectedItem = item }
 }

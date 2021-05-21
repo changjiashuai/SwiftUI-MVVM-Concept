@@ -28,13 +28,13 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     let toolBar: ToolBarContent
     
     /// Selected item
-    @State var curentItem: T?
+    @State var selectedItem: T?
    
     /// The type of view representing the body of this view
     var body: some View {
         ZStack(alignment: .topLeading) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
-            getChartBody()
+            getChart()
         }.frame(height: 150, alignment: .topLeading)
         .mask(!notLoading, text: "Loading data for chart...")
         .border(Color.white)
@@ -53,16 +53,15 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     /// Get chart View
     /// - Returns: chart
     @ViewBuilder
-    private func getChartBody() -> some View {
+    private func getChart() -> some View {
         GeometryReader { proxy in
             HStack(alignment: .bottom, spacing: 0) {
                 if store.error != nil { ErrorView(store.error!)}
                 else {
                     if store.items.count > 0 {
                         ForEach(store.items, id: \.self) { item in
-                            content(item, curentItem, getItemWidth(proxy)).onTapGesture {
-                                setCurentItem(item)
-                            }
+                            content(item, selectedItem, getItemWidth(proxy))
+                                .onTapGesture { selectItem(item) }
                         }
                     } else { EmptyData() }
                 }
@@ -73,5 +72,5 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     
     /// Set curently selected item
     /// - Parameter item: selected item
-    func setCurentItem(_ item: T) { curentItem = item }
+    private func selectItem(_ item: T) { selectedItem = item }
 }

@@ -13,7 +13,7 @@ import Service
 /// Chart displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
-struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable, Loadable {
+struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable, Loadable, Selectable {
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>    
@@ -22,10 +22,13 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     @EnvironmentObject var authentication: Authentication
     
     /// Template to defined Item view
-    let content: (T, CGFloat) -> Content
+    let content: (T, T?, CGFloat) -> Content
     
     /// ToolBar with set of controls
     let toolBar: ToolBarContent
+    
+    /// Selected item
+    @State var curentItem: T?
    
     /// The type of view representing the body of this view
     var body: some View {
@@ -57,7 +60,9 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
                 else {
                     if store.items.count > 0 {
                         ForEach(store.items, id: \.self) { item in
-                            content(item, getItemWidth(proxy))
+                            content(item, curentItem, getItemWidth(proxy)).onTapGesture {
+                                setCurentItem(item)
+                            }
                         }
                     } else { EmptyData() }
                 }
@@ -65,4 +70,8 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
             .frame(height: 100, alignment: .bottomLeading)
         }
     }
+    
+    /// Set curently selected item
+    /// - Parameter item: selected item
+    func setCurentItem(_ item: T) { curentItem = item }
 }

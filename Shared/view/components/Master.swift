@@ -14,7 +14,7 @@ import Ui
 /// Detail view is updated after am item is selected
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
-struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable {
+struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, Selectable {
 
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -71,7 +71,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
 
     /// Set curently selected item
     /// - Parameter item: selected item
-    private func setCurentItem(_ item: T) {
+    func setCurentItem(_ item: T) {
         curentItem = item
 
         detail.load(params: ["page": "*", "access token": authentication.getToken(), "masterId": "\(item.id)"], callback: { print("🟦 do something") })

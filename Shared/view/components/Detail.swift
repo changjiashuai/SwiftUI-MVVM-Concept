@@ -55,6 +55,5 @@ struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Contr
         }
             .offset(y: 50)
             .frame(maxHeight: .infinity, alignment: .topLeading)
-
     }
 }

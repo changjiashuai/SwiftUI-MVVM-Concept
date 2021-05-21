@@ -30,7 +30,7 @@ struct WidgetFactory {
     /// Get  chart
     /// - Returns: Chart view
     @ViewBuilder
-    func getChart<T:Model, U: Proxy, Content: View, ToolBarContent: View>(store: RemoteStore<T,U>, content: @escaping (T, CGFloat) -> Content, toolBar: ToolBarContent) -> some View {
+    func getChart<T:Model, U: Proxy, Content: View, ToolBarContent: View>(store: RemoteStore<T,U>, content: @escaping (T, T?, CGFloat) -> Content, toolBar: ToolBarContent) -> some View {
         BarChart(
             store: store,
             content: content,
@@ -41,7 +41,7 @@ struct WidgetFactory {
     /// Get  list
     /// - Returns: List view
     @ViewBuilder
-    func getList<T:Model, U: Proxy, Content: View, ToolBarContent: View>(store: RemoteStore<T,U>, content: @escaping (T) -> Content, toolBar: ToolBarContent) -> some View {
+    func getList<T:Model, U: Proxy, Content: View, ToolBarContent: View>(store: RemoteStore<T,U>, content: @escaping (T, T?) -> Content, toolBar: ToolBarContent) -> some View {
         UniversalList(
             store: store,
             content: content,

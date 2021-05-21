@@ -17,11 +17,11 @@ struct MovieFactory {
     @ViewBuilder
     func ganre(_ ganre: Ganre, _ selected: Ganre?) -> some View {
         HStack {
-            Rectangle().overlay(Text("Title: \(ganre.title)").foregroundColor(.white).font(.system(.headline)), alignment: .center)
+            Rectangle().overlay(Text("\(ganre.title)").foregroundColor(.white).font(.system(.headline)), alignment: .center)
         }
             .frame(maxWidth: .infinity)
             .frame(height: 25)
-        .foregroundColor(ganre.id == selected?.id ? Color.yellow : Color.pink)
+            .foregroundColor(ganre.id == selected?.id ? Color.yellow : Color.pink)
     }
 
     /// Create view template for defining Movie in the Detail list
@@ -30,10 +30,10 @@ struct MovieFactory {
     @ViewBuilder
     func movie(_ movie: Movie) -> some View {
         HStack {
-            Rectangle().overlay(Text("Title: \(movie.title)").foregroundColor(.white).font(.system(.headline)), alignment: .center)
+            Rectangle().overlay(Text("\(movie.title)").foregroundColor(.white).font(.system(.headline)), alignment: .center)
         }
             .frame(maxWidth: .infinity)
             .frame(height: 25)
-        .foregroundColor(Color.purple)
+            .foregroundColor(Color.purple)
     }
 }

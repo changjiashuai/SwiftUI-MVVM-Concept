@@ -12,7 +12,7 @@ import Ui
 /// List displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
-struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable {
+struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, Selectable {
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -21,10 +21,13 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     @EnvironmentObject var authentication: Authentication
     
     /// A view builder that creates the content of an Item view
-    let content: (T) -> Content
+    let content: (T, T?) -> Content
     
     /// ToolBar with set of controls
     let toolBar: ToolContent
+    
+    /// Selected item
+    @State var curentItem: T?
     
     /// The type of view representing the body of this view
     var body: some View {
@@ -48,7 +51,9 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
             else {
                 if store.items.count > 0 {
                     ForEach(store.items, id: \.self) { item in
-                        content(item)
+                        content(item, curentItem).onTapGesture {
+                            setCurentItem(item)
+                        }
                     }
                 } else { EmptyData() }
             }
@@ -56,4 +61,8 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
         .offset(y: 50)
         .frame(height: 100, alignment: .topLeading)
     }
+    
+    /// Set curently selected item
+    /// - Parameter item: selected item
+    func setCurentItem(_ item: T) { curentItem = item }
 }

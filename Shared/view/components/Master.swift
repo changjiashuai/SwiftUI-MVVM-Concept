@@ -39,7 +39,8 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
         ZStack(alignment: .top) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             getList()
-        }.frame(alignment: .topLeading)
+        }
+            .frame(alignment: .topLeading)
             .mask(!notLoading)
             .border(Color.white)
             .onAppear { if notLoading { load(); detail.removeAll() } }

@@ -35,7 +35,8 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
         ZStack(alignment: .topLeading) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             getChart()
-        }.frame(height: 150, alignment: .topLeading)
+        }
+        .frame(height: 150, alignment: .topLeading)
         .mask(!notLoading, text: "Loading data for chart...")
         .border(Color.white)
         .onAppear { if notLoading { load() } }

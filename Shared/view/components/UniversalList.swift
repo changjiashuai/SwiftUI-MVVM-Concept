@@ -34,7 +34,8 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
         ZStack(alignment: .top) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             getList()
-        }.frame(height: 150, alignment: .topLeading)
+        }
+        .frame(height: 150, alignment: .topLeading)
         .mask(!notLoading)
         .border(Color.white)
         .onAppear { if notLoading { load() } }

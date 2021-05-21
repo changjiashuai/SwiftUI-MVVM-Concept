@@ -32,9 +32,11 @@ struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Contr
         ZStack(alignment: .top) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             getList()
-        }.frame(alignment: .topLeading)
+        }
+            .frame(alignment: .topLeading)
             .mask(!notLoading)
             .border(Color.white)
+
     }
 
     // MARK: - Methods

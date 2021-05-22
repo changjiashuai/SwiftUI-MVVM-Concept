@@ -9,7 +9,7 @@ It is not about how to create Lists and Charts and view design. **It's about pos
 * Decouple View and Data layers and loosen dependencies between them
 * Easily change a data source  from  Web to File etc.
 * Easily change a data source format  from JSON to XML, XML to CSV etc.
-* Share the same data source between different View presentations(Grid,Chart other components)
+* Share the same data source between different View presentations(Grid, Chart other components)
 * Maximize reusing code between different projects
 * Easily split the development of View and Data layers between independent developers
 * Testability

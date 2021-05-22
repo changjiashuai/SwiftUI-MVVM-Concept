@@ -57,13 +57,13 @@ UniversalList(
 
 ### SwiftUI template Development Architecture Designing with Protocols
 
-App stores are assembled in AppViewModel In the code example. Two views (UniversalList, BarChart) implementing different presentation (Chart and List) share the same Store.
-
 | Package | Description |
 | --- | --- |
 | **Data** | The package  is comprised of set of classes, structs and protocols for organizing infrastructure for **a data layer** in apps.| 
 |**Service**|  The package is comprised of set of classes, structs and protocols for implementing different services like authentication etc.|
 |**Ui**|  The package  is comprised of view components that might be shared between diff projects.|
+
+App stores are assembled in AppViewModel In the code example. Two views (UniversalList, BarChart) implementing different presentation (Chart and List) share the same Store.
 
 > Writer is not implemented in the code example. It is placed on the diagram to show the comprehensiveness of the solution for any type of communication with remote sources
 

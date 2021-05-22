@@ -57,7 +57,7 @@ UniversalList(
 
 ### SwiftUI template Development Architecture Designing with Protocols
 
-App stores are assembled in AppViewModel In the code example. Two views (UniversalList, AgeChart) implementing different presentation (Chart and List) share the same Store.  When you update data in one the others are updated automatically.
+App stores are assembled in AppViewModel In the code example. Two views (UniversalList, BarChart) implementing different presentation (Chart and List) share the same Store.  When you update data in one the others are updated automatically.
 
 | Package | Description |
 | --- | --- |

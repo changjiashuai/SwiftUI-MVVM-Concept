@@ -39,6 +39,9 @@ public struct ToolBar<Content: View>: View {
                 Button("update", action: {
                     curentCommand = LoadCommand(params: ["page": "*", "access token": authentication.getToken()], callback: { print("🟦 do something") })
                 })
+                Button("update II", action: {
+                    curentCommand = LoadCommand(params: ["page": "*", "access token": authentication.getToken()])
+                })
                 Button("clear", action: {
                     curentCommand = RemoveAllCommand()
                 })

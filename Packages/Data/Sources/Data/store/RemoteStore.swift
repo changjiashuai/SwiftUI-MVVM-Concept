@@ -60,12 +60,15 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store  {
     public func isEmpty() -> Bool{
         items.count == 0
     }
+    
+
    
     /// Load data from remote source
     /// - Parameters:
     ///   - params: Set of parameters to control a request of data (data range etc.)
     ///   - callback: Closure to perform something after loading
-    public func load(params: [String: String]?, callback: @escaping () -> Void) {
+    /// callbackClosure -  Optinal closure type for a collback
+    public func load(params: [String: String]?, callback: callbackClosure ) {
        
         let queue = DispatchQueue.global(qos: .userInitiated)
         loading = true
@@ -79,7 +82,7 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store  {
             DispatchQueue.main.async {
                 self.removeAll(); self.error = nil;
                 self.appendAll(response.items as! [T])
-                callback()
+                callback?()
                 self.loading = false
                 if let error = response.error {
                     self.error = error.getDescription()

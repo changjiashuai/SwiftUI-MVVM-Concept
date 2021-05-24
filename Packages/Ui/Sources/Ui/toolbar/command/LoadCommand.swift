@@ -11,10 +11,13 @@ import Data
 /// Command to load Store with params
 class LoadCommand: StoreCommand{
 
+    /// Optinal closure type for a collback
+    typealias callbackClosure = ( () -> Void )?
+    
     /// Set of params
     let params: [String:String]
     /// Do something after loading
-    private let callback: () -> Void
+    private let callback: callbackClosure
 
     // MARK: - Life circle
     
@@ -22,9 +25,9 @@ class LoadCommand: StoreCommand{
     /// - Parameters:
     ///   - params: set of params
     ///   - callback: Do something after loading
-    init (params: [String:String]?, callback: (() -> Void)?){
+    init (params: [String:String]?, callback: callbackClosure = nil){
         self.params = params ?? [:]
-        self.callback = callback ?? {}
+        self.callback = callback
     }
     
     // MARK: - Methods

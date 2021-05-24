@@ -10,6 +10,9 @@ import Foundation
 /// Defines specs for a request
 public protocol Request {
     
+    ///Dic for a request params
+    typealias Params = [String: String]
+    
     ///  Set of params to control what data to get from a remote source Range, Filter etc
-    var params: [String: String]? { get }
+    var params: Params? { get }
 }

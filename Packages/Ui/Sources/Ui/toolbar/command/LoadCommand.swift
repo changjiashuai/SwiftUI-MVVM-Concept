@@ -12,12 +12,14 @@ import Data
 class LoadCommand: StoreCommand{
 
     /// Optinal closure type for a collback
-    typealias callbackClosure = ( () -> Void )?
+    typealias CallbackClosure = () -> Void
+    ///Dic for a request params
+    typealias Params = [String: String]
     
     /// Set of params
-    let params: [String:String]?
+    let params: Params?
     /// Do something after loading
-    private let callback: callbackClosure
+    private let callback: CallbackClosure?
 
     // MARK: - Life circle
     
@@ -25,7 +27,7 @@ class LoadCommand: StoreCommand{
     /// - Parameters:
     ///   - params: set of params
     ///   - callback: Do something after loading
-    init (params: [String:String]? = nil, callback: callbackClosure = nil){
+    init (params: Params? = nil, callback: CallbackClosure? = nil){
         self.params = params
         self.callback = callback
     }

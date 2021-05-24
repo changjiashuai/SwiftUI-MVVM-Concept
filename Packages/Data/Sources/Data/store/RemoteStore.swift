@@ -65,8 +65,9 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store  {
     /// - Parameters:
     ///   - params: Set of parameters to control a request of data (data range etc.)
     ///   - callback: Closure to perform something after loading
-    /// callbackClosure -  Optinal closure type for a collback
-    public func load(params: [String: String]?, callback: callbackClosure ) {
+    /// CallbackClosure -  Optinal closure type for a collback
+    /// Params - Dic for a request params
+    public func load(params: Params?, callback: CallbackClosure? ) {
        
         let queue = DispatchQueue.global(qos: .userInitiated)
         loading = true

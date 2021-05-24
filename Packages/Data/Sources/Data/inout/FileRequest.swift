@@ -10,7 +10,8 @@ import Foundation
 public struct FileRequest: Request{
     
     /// Set of params to control what data to get from a remote source Range, Filter etc
-    public let params: [String : String]?
+    /// Params - Dic for a request params
+    public let params: Params?
     
     /// A path to the source file with data
     public let fileName: String

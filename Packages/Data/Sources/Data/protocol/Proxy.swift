@@ -19,13 +19,16 @@ public protocol Proxy {
     /// Contains result of retrieved data
     associatedtype AbstractResponse: Response
     
+    ///Dic for a request params
+    typealias Params = [String: String]
+    
     /// Parses data loaded from remote source
     var reader: AbstractReader { get }
     
     /// Create request
     /// - Parameter params: set of params to control what data to get from a remote source Range, Filter etc
     /// - Returns: specs of request
-    func createRequest(params: [String : String]?) -> AbstractRequest
+    func createRequest(params: Params?) -> AbstractRequest
     
     /// Create response
     /// - Parameters:

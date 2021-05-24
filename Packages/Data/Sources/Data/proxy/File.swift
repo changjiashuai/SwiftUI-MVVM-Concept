@@ -27,7 +27,8 @@ public struct File<T:Model, R: Reader>: Proxy {
     /// Create request
     /// - Parameter params: set of params to control what data to get from a remote source Range, Filter etc
     /// - Returns: specs of request
-    public func createRequest(params: [String: String]?) -> FileRequest {
+    /// Params - Dic for a request params
+    public func createRequest(params: Params?) -> FileRequest {
         FileRequest(params: params, fileName: fileName)
     }
     

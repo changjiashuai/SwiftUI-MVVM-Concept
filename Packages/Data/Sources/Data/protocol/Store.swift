@@ -11,7 +11,9 @@ import Foundation
 public protocol Store {
     
     /// Optinal closure type for a collback
-    typealias callbackClosure = ( () -> Void )?
+    typealias CallbackClosure = () -> Void
+    ///Dic for a request params
+    typealias Params = [String: String]
     
     /// Defines an element of Store
     associatedtype Item: Model
@@ -28,15 +30,14 @@ public protocol Store {
     /// - Parameters:
     ///   - params: Defines specs for requested data
     ///   - callback: Do something after data is loaded
-    func load(params:[String:String]? , callback: callbackClosure)
+    func load(params:Params? , callback: CallbackClosure?)
     
-    
+    /// Amount of items in Store
     func count() -> Int
     
     /// Append an element
     /// - Parameter item: an element of store
     func append(_ item: Item)
-    
     
     /// Append set of elements
     /// - Parameter items: elements of store

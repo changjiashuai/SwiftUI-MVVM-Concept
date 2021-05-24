@@ -15,7 +15,7 @@ class LoadCommand: StoreCommand{
     typealias callbackClosure = ( () -> Void )?
     
     /// Set of params
-    let params: [String:String]
+    let params: [String:String]?
     /// Do something after loading
     private let callback: callbackClosure
 
@@ -25,8 +25,8 @@ class LoadCommand: StoreCommand{
     /// - Parameters:
     ///   - params: set of params
     ///   - callback: Do something after loading
-    init (params: [String:String]?, callback: callbackClosure = nil){
-        self.params = params ?? [:]
+    init (params: [String:String]? = nil, callback: callbackClosure = nil){
+        self.params = params
         self.callback = callback
     }
     

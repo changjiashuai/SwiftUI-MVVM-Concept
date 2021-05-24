@@ -70,7 +70,7 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store  {
        
         let queue = DispatchQueue.global(qos: .userInitiated)
         loading = true
-        print("🟩 \(params ?? [:]))")
+        print("🟩 \(params ?? [:])")
 
         queue.asyncAfter(deadline: .now() + 1, execute: {
             let proxy = self.proxy

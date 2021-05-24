@@ -14,7 +14,7 @@ class LoadCommand: StoreCommand{
     /// Set of params
     let params: [String:String]
     /// Do something after loading
-    private let callback: (() -> Void)
+    private let callback: () -> Void
 
     // MARK: - Life circle
     

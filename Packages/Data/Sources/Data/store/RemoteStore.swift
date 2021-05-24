@@ -60,8 +60,6 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store  {
     public func isEmpty() -> Bool{
         items.count == 0
     }
-    
-
    
     /// Load data from remote source
     /// - Parameters:
@@ -73,10 +71,10 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store  {
         let queue = DispatchQueue.global(qos: .userInitiated)
         loading = true
         print("🟩 \(params ?? [:]))")
-        //use something else if DispatchQueue is not an option for managing tasks on threads
+
         queue.asyncAfter(deadline: .now() + 1, execute: {
             let proxy = self.proxy
-            let request = proxy.createRequest(params: params)
+            let request  = proxy.createRequest(params: params)
             let response = proxy.run(request)
             
             DispatchQueue.main.async {

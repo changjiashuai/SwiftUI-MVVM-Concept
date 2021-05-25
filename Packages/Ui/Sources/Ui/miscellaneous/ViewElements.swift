@@ -59,11 +59,12 @@ public struct ElementBuilder {
     /// - Returns: Bar View
     @ViewBuilder
     public func bar(_ label: String, width: CGFloat, height: CGFloat) -> some View {
-        Rectangle().frame(width: width, height: height)
+        Rectangle()
+            .frame(width: width, height: height)
             .overlay(
-            cell(label).foregroundColor(.clear),
-            alignment: .topLeading
-        )
+                cell(label).foregroundColor(.clear),
+                alignment: .topLeading
+            )
             .padding(.horizontal, 8)
     }
 }

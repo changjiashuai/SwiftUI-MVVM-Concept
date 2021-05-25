@@ -8,6 +8,8 @@
 import SwiftUI
 import Data
 
+
+/// Template Method defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 public protocol Componentable{
     
     associatedtype Template : View
@@ -17,11 +19,14 @@ public protocol Componentable{
     /// Repository with data
     var store: AbstractStore { get }
     
+    /// build component body
     func buildComponentBody() -> Template
 }
 
 public extension Componentable{
     
+    /// Define component body depends on a request results
+    /// - Returns: Component body
     @ViewBuilder
     func controlRender() -> some View{
         if store.count() > 0 {

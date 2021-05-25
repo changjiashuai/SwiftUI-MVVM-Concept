@@ -26,9 +26,8 @@ struct ItemFactory: ChartBuilder, GridBuilder {
     {
         let height = CGFloat(user.age)
         let label = "\(user.name) - \(user.age)"
-        let color: Color = selected ? .purple : .green
         
-        bar(label, width, height, color)
+        bar(label, width, height, selected)
     }
 
     /// Create view template for defining User in the UniversalList
@@ -39,8 +38,7 @@ struct ItemFactory: ChartBuilder, GridBuilder {
     @ViewBuilder
     func userRow(_ user: User, _ selected: Bool) -> some View
     {
-        let color: Color = selected ? .purple : .orange
-        row("Name: \(user.name)", color)
+        row("Name: \(user.name)", selected)
     }
 
     /// Create view template for defining Book in the UniversalList
@@ -51,7 +49,6 @@ struct ItemFactory: ChartBuilder, GridBuilder {
     @ViewBuilder
     func bookRow(_ book: Book, _ selected: Bool) -> some View
     {
-        let color: Color = selected ? .purple : .blue
-        row(["Author: \(book.author)", "Title: \(book.title)"], color)
+        row(["Author: \(book.author)", "Title: \(book.title)"], selected)
     }
 }

@@ -28,7 +28,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             BoardToolBar(count: $count)
-            ScrollView {
+            ScrollView(showsIndicators: false) {
                 buildWidget.charts(
                     viewModel: viewModel,
                     factory: buildItem,

@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Set of elementary blocks for creating Grid View
-public protocol GridBuilder {
+public protocol GridBuilder: BlueStylable {
     
     //    Cell template
     associatedtype CellTemplate: View
@@ -20,12 +20,12 @@ public protocol GridBuilder {
     /// Form view of a row
     /// - Parameter content: Text to display
     /// - Returns: Row view
-    func row(_ content: [Content], _ color: Color) -> RowTemplate
+    func row(_ content: [Content], _ selected: Bool) -> RowTemplate
     
     /// Form view of a cell
     /// - Parameter content: Text to display
     /// - Returns: Cell view
-    func cell(_ content: Content) -> CellTemplate
+    func cell(_ content: Content, _ selected: Bool) -> CellTemplate
 }
 
 // MARK: - API Methods
@@ -36,37 +36,38 @@ public extension GridBuilder{
     /// - Parameter content: Text to display
     /// - Returns: Row view
     @ViewBuilder
-    func row(_ content: [String], _ color: Color) -> some View
+    func row(_ content: [String], _ selected: Bool) -> some View
     {
-        HStack {
+        HStack(spacing: 0) {
             ForEach(content, id: \.self) { text in
-                cell(text)
+                cell(text, selected)
             }
         }
         .frame(maxWidth: .infinity)
-        .frame(height: 25)
-        .foregroundColor(color)
+        .frame(height: 33)
     }
     
     /// Form View of a row
     /// - Parameter content: Text to display
     /// - Returns: Row view
     @ViewBuilder
-    func row(_ content: String, _ color: Color) -> some View
+    func row(_ content: String, _ selected: Bool) -> some View
     {
-        row([content], color)
+        row([content], selected)
     }
     
     /// Form View of a cell
     /// - Parameter content: Text to display
     /// - Returns: Cell view
     @ViewBuilder
-    func cell(_ content: String) -> some View
+    func cell(_ content: String, _ selected: Bool) -> some View
     {
         Rectangle().overlay(
-            Text(content).foregroundColor(.white).font(.system(.headline)),
+            Text(content).foregroundColor(.white).font(.system(size: 12, weight: .thin)),
             alignment: .center
         )
+        .foregroundColor(selected ? selectedRGB : cellRGB)
+        .border(width: 1, edges: [.bottom], color: borderRGB)
     }
 }
 

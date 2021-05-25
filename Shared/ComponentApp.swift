@@ -9,7 +9,7 @@ import Service
 import Ui
 
 @main
-struct LayoutApp: App {
+struct LayoutApp: App, BlueStylable {
 
     /// Main view model
     @StateObject var viewModel = AppViewModel()
@@ -31,6 +31,7 @@ struct LayoutApp: App {
                         Movies()
                     }.environmentObject(viewModel)
                 }.environmentObject(auth)
+                    .background(backgroundRGB)
             } else {
                 Launching().environmentObject(auth)
             }

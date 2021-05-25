@@ -10,7 +10,7 @@ import Service
 
 
 /// Toolbar for any View supporting StoredView protocol
-public struct ToolBar<Content: View>: View {
+public struct ToolBar<Content: View>: View, BlueStylable {
 
     /// Current command
     @State var curentCommand: StoreCommand = StoreCommand()
@@ -20,7 +20,7 @@ public struct ToolBar<Content: View>: View {
 
     /// Title text
     let title: String?
-    
+
     /// get rid off controls from the toolbar
     let showControls: Bool
 
@@ -31,7 +31,7 @@ public struct ToolBar<Content: View>: View {
     public var body: some View {
         HStack {
             if title != nil {
-                Text("\(title!)").frame(minWidth: 50)
+                Text("\(title!)").frame(minWidth: 50).font(.system(size: 17, weight: .thin))
             }
             Spacer()
             if showControls {
@@ -39,18 +39,18 @@ public struct ToolBar<Content: View>: View {
                 Button("update", action: {
                     curentCommand = LoadCommand(params: ["page": "*", "access token": authentication.getToken()], callback: { print("🟦 do something") })
                 })
-                Button("update II", action: {
-                    curentCommand = LoadCommand()
-                })
                 Button("clear", action: {
                     curentCommand = RemoveAllCommand()
                 })
             }
         }
-            .foregroundColor(.black)
             .padding(.horizontal, 5)
-            .frame(height: 50).background(Color.gray)
+            .frame(height: 50)
+            .font(.system(size: 12, weight: .thin))
+            .background(backgroundRGB)
+            .border(borderRGB)
             .preference(key: StoreCommandKey.self, value: curentCommand)
+
     }
 
     // MARK: - Life circle
@@ -65,7 +65,7 @@ public struct ToolBar<Content: View>: View {
         self.showControls = showControls
         self.items = items
     }
-    
+
     /// Initializer
     /// - Parameters:
     ///   - title: Text of title
@@ -83,7 +83,8 @@ public struct ToolBar<Content: View>: View {
     @ViewBuilder
     private func getItemsView() -> some View {
         if items != nil {
-            HStack { items!() }.padding().background(Color.secondary)
+            HStack { items!() }.padding().background(componentBorderRGB)
+                .border(width: 1, edges: [.leading,.trailing], color: borderRGB)
         } else {
             EmptyView()
         }

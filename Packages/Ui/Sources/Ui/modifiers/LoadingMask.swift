@@ -9,7 +9,7 @@ import SwiftUI
 
 
 /// Mask modifier
-fileprivate struct Mask: ViewModifier {
+fileprivate struct Mask: ViewModifier, BlueStylable {
     
     /// true - is loading, false - loaded
     let loading : Bool
@@ -18,14 +18,14 @@ fileprivate struct Mask: ViewModifier {
     let text : String
     
     // MARK: - API Methods
-    
+
     /// The type of view representing the body of this view
     func body(content: Content) -> some View {
         content.overlay(
             Rectangle()
-                .foregroundColor(.gray)
+                .foregroundColor(componentRGB)
                 .overlay(
-                    Text(text).foregroundColor(.black),
+                    Text(text).foregroundColor(.white).font(.system(size: 12, weight: .thin)),
                     alignment: .center)
                 .opacity(loading ? 1 : 0),
             alignment: .center)

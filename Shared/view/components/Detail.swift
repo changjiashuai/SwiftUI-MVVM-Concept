@@ -13,7 +13,8 @@ import Ui
 /// Detail list displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
-struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable {
+struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, BlueStylable
+{
 
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -35,7 +36,8 @@ struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Contr
         }
             .frame(alignment: .topLeading)
             .mask(!notLoading)
-            .border(Color.white)
+            .border(componentBorderRGB)
+            .background(componentRGB)
 
     }
 
@@ -45,7 +47,7 @@ struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Contr
     /// - Returns: list view
     @ViewBuilder
     private func getList() -> some View {
-        VStack(spacing: 5) {
+        VStack(spacing: 0) {
             if store.error != nil { ErrorView(store.error!) }
             else {
                 if store.items.count > 0 {

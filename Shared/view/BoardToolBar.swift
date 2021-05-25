@@ -6,8 +6,9 @@
 //
 
 import SwiftUI
+import Ui
 
-struct BoardToolBar: View {
+struct BoardToolBar: View, BlueStylable {
 
     ///Max amount of charts
     private let maxCol = 100
@@ -17,10 +18,17 @@ struct BoardToolBar: View {
 
     /// The type of view representing the body of this view
     var body: some View {
+        VStack{
         HStack {
-            if count < maxCol { Button("+ chart \(count)") { count += 1 } }
+            if count < maxCol { Button("Add chart") { count += 1 } }
             Spacer()
-            if count != 0 { Button("- chart  \(count)") { count -= 1 } }
+            if count != 0 { Button("Remove chart") { count -= 1 } }
+        }
+        .font(.system(size: 12, weight: .thin))
+        .padding()
+        .border(borderRGB)
+        .background(backgroundRGB)
+            ProgressView(value: Float(count) / Float(maxCol))
         }
     }
 }

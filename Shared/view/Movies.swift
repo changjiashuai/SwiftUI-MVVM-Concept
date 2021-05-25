@@ -18,6 +18,7 @@ struct Movies: View {
     @EnvironmentObject var viewModel: AppViewModel
 
     var body: some View {
+
         HStack(spacing: 0) {
             Master(
                 store: viewModel.ganre,

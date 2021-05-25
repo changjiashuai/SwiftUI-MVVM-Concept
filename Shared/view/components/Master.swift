@@ -14,7 +14,7 @@ import Ui
 /// Detail view is updated after am item is selected
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
-struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, Selectable {
+struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable {
 
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -27,7 +27,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
 
     /// Selected item
     @State var selectedItem: T?
-    
+
     /// A view builder that creates the content of an Item view
     let content: (T, Bool) -> Content
 
@@ -42,7 +42,8 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
         }
             .frame(alignment: .topLeading)
             .mask(!notLoading)
-            .border(Color.white)
+            .border(componentBorderRGB)
+            .background(componentRGB)
             .onAppear { if notLoading { load(); detail.removeAll() } }
     }
 
@@ -52,7 +53,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     /// - Returns: list view
     @ViewBuilder
     private func getList() -> some View {
-        VStack(spacing: 5) {
+        VStack(spacing: 0) {
             if store.error != nil { ErrorView(store.error!) }
             else {
                 if store.items.count > 0 {
@@ -71,7 +72,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     /// Select item
     /// - Parameter item: selected item
     func select(_ item: T) {
-       
+
         selectedItem = item
 
         detail.load(params: ["page": "*", "access token": authentication.getToken(), "masterId": "\(item.id)"], callback: { print("🟦 do something") })

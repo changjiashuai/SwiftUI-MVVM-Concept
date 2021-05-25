@@ -1,13 +1,39 @@
 [{
     "id" : 1,
-    "title": "ganre 1"
+    "title": "Anime"
 },
 {
     "id" : 2,
-    "title": "ganre 2"
+    "title": "Avant-Garde"
 },
 {
     "id" : 3,
-    "title": "ganre 3"
+    "title": "B-Movie"
+},{
+    "id" : 4,
+    "title": "Chick Flick"
+},
+{
+    "id" : 5,
+    "title": "Coming of Age"
+},
+{
+    "id" : 7,
+    "title": "Cult Film"
+},{
+    "id" : 8,
+    "title": "Epic"
+},
+{
+    "id" : 9,
+    "title": "Femme Fatale"
+},
+{
+    "id" : 10,
+    "title": "High School"
+},
+{
+    "id" : 11,
+    "title": "Supernatural"
 }]
 

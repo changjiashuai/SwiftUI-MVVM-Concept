@@ -13,7 +13,7 @@ import Service
 /// Chart displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
-struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable, Loadable, Selectable {
+struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable {
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>    
@@ -38,7 +38,8 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
         }
         .frame(height: 150, alignment: .topLeading)
         .mask(!notLoading, text: "Loading data for chart...")
-        .border(Color.white)
+        .border(componentBorderRGB)
+        .background(componentRGB)
         .onAppear { if notLoading { load() } }
     }
     

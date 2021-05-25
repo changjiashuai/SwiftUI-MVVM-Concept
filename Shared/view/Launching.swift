@@ -22,8 +22,6 @@ struct Launching: View, BlueStylable {
             Image("dashboard")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .shadow(radius: 5)
-                .padding(102)
             Button("Click to launch") { authentication.signIn() }
             Spacer()
         }.frame(width: 1024, height: 680)

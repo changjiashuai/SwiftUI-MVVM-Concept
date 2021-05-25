@@ -13,6 +13,7 @@ public struct EmptyData: View {
     /// The type of view representing the body of this view
     public var body: some View {
         Color.clear.overlay(Text("Empty"),alignment: .center)
+            .padding(.top, 35)
     }
     
     // MARK: - Life circle

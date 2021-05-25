@@ -16,7 +16,7 @@ import Service
 struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable {
     
     /// Store with data
-    @StateObject var store: RemoteStore<T, U>    
+    @StateObject var store: RemoteStore<T, U>
     
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
@@ -28,13 +28,18 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     let content: (T, Bool, CGFloat) -> Content
     
     /// ToolBar with set of controls
-    let toolBar: ToolBarContent   
-   
+    let toolBar: ToolBarContent
+    
     /// The type of view representing the body of this view
     var body: some View {
         ZStack(alignment: .topLeading) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
-            getChart()
+            if store.count() > 0 {
+                getChart()
+            } else {
+                if store.error != nil { ErrorView(store.error!) }
+                else { EmptyData() }
+            }
         }
         .frame(height: 150, alignment: .topLeading)
         .mask(!notLoading, text: "Loading data for chart...")
@@ -48,7 +53,7 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     /// Get Item width
     /// - Parameter proxy: Geometry reader proxy
     /// - Returns: Width for an item
-    private func getItemWidth(_ proxy: GeometryProxy) -> CGFloat{
+    private func getItemWidth(_ proxy: GeometryProxy) -> CGFloat {
         proxy.size.width / CGFloat(store.count()) - 16.0
     }
     
@@ -58,16 +63,12 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     private func getChart() -> some View {
         GeometryReader { proxy in
             HStack(alignment: .bottom, spacing: 0) {
-                if store.error != nil { ErrorView(store.error!)}
-                else {
-                    if store.items.count > 0 {
-                        ForEach(store.items, id: \.self) { item in
-                            content(item, isSelected(item), getItemWidth(proxy))
-                                .onTapGesture { select(item) }
-                        }
-                    } else { EmptyData() }
+                ForEach(store.items, id: \.self) { item in
+                    content(item, isSelected(item), getItemWidth(proxy))
+                        .onTapGesture { select(item) }
                 }
-            }.offset(y: 50)
+            }
+            .offset(y: 50)
             .frame(height: 100, alignment: .bottomLeading)
         }
     }

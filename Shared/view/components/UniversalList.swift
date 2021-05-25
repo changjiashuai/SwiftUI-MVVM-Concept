@@ -32,12 +32,16 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     /// The type of view representing the body of this view
     var body: some View {
 
-        ZStack(alignment: .top) {
+        VStack(spacing: 0) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
-            ScrollView {
-                getList()
-            }.frame(height: 100)
-                .offset(y: 50)
+            if store.count() > 0 {
+                ScrollView {
+                    getList()
+                }
+            } else {
+                if store.error != nil { ErrorView(store.error!) }
+                else { EmptyData() }
+            }
         }.frame(height: 150, alignment: .topLeading)
             .mask(!notLoading)
             .border(componentBorderRGB)
@@ -52,14 +56,9 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     @ViewBuilder
     private func getList() -> some View {
         VStack(spacing: 0) {
-            if store.error != nil { ErrorView(store.error!) }
-            else {
-                if store.items.count > 0 {
-                    ForEach(store.items, id: \.self) { item in
-                        content(item, isSelected(item))
-                            .onTapGesture { select(item) }
-                    }
-                } else { EmptyData() }
+            ForEach(store.items, id: \.self) { item in
+                content(item, isSelected(item))
+                    .onTapGesture { select(item) }
             }
         }
     }

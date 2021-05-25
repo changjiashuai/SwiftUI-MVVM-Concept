@@ -30,12 +30,10 @@ struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Contr
 
     /// The type of view representing the body of this view
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             controlRender()
-        }
-            .frame(alignment: .topLeading)
-            .mask(!notLoading)
+        }.mask(!notLoading)
     }
 
     // MARK: - Methods

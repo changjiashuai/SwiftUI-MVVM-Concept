@@ -15,38 +15,37 @@ import Ui
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
 struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable, Componentable {
-
+    
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
-
+    
     /// Store with data
     @StateObject var detail: RemoteStore<D, V>
-
+    
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
-
+    
     /// Selected item
     @State var selectedItem: T?
-
+    
     /// A view builder that creates the content of an Item view
     let content: (T, Bool) -> Content
-
+    
     /// ToolBar with set of controls
     let toolBar: ToolContent
-
+    
     /// The type of view representing the body of this view
     var body: some View {
-        VStack{
+        VStack(spacing: 0) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             controlRender()
         }
-            .frame(alignment: .topLeading)
-            .mask(!notLoading)
-            .onAppear { if notLoading { load(); detail.removeAll() } }
+        .mask(!notLoading)
+        .onAppear { if notLoading { load(); detail.removeAll() } }
     }
-
+    
     // MARK: - Methods
-
+    
     /// Get list View
     /// - Returns: list view
     @ViewBuilder
@@ -58,12 +57,12 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
             }
         }
     }
-
-
+    
+    
     /// Select item
     /// - Parameter item: selected item
     func select(_ item: T) {
-
+        
         selectedItem = item
         
         detail.load(params: ["page": "*", "access token": authentication.getToken(), "masterId": "\(item.id)"], callback: { print("🟦 do something") })

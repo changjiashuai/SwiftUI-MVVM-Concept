@@ -10,8 +10,8 @@ import Ui
 
 
 /// Set of templates for items View
-/// ChartBuilder - contains builders  for creating Chart elements
-/// GridBuilder - contains builders  for creating Grid elements
+/// ChartBuilder - contains builders for creating Chart elements
+/// GridBuilder - contains builders for creating Grid elements
 struct ItemFactory: ChartBuilder, GridBuilder {
 
     // MARK: - API Methods
@@ -29,27 +29,25 @@ struct ItemFactory: ChartBuilder, GridBuilder {
         let color: Color = selected ? .purple : .green
         
         bar(label, width, height, color)
-
     }
 
     /// Create view template for defining User in the UniversalList
+    /// GridBuilder.row - Create View of a row
     /// - Parameter user: Set of data for User
     /// - Parameter selected: True - if selected
     /// - Returns: View defining how User should be presented in the list
-    /// GridBuilder.row - Create View of a row
     @ViewBuilder
     func userRow(_ user: User, _ selected: Bool) -> some View
     {
         let color: Color = selected ? .purple : .orange
-        row("Name: \(user.name)", color)
-           
+        row("Name: \(user.name)", color)           
     }
 
     /// Create view template for defining Book in the UniversalList
+    /// GridBuilder.row - Create View of a row
     /// - Parameter book: Set of data for Book
     /// - Parameter selected: True - if selected
     /// - Returns: View defining how Book should be presented in the list
-    /// GridBuilder.row - Create View of a row
     @ViewBuilder
     func bookRow(_ book: Book, _ selected: Bool) -> some View
     {

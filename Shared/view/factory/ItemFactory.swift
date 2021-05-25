@@ -39,7 +39,7 @@ struct ItemFactory {
     /// - Parameter user: Set of data for User
     /// - Returns: View defining how User should be presented in the list
     @ViewBuilder
-    func user(_ user: User, _ selected: User?) -> some View
+    func userRow(_ user: User, _ selected: User?) -> some View
     {
         build.row("Name: \(user.name)")
             .foregroundColor(user.id == selected?.id ? Color.purple : Color.orange)
@@ -49,7 +49,7 @@ struct ItemFactory {
     /// - Parameter book: Set of data for Book
     /// - Returns: View defining how Book should be presented in the list
     @ViewBuilder
-    func book(_ book: Book, _ selected: Book?) -> some View
+    func bookRow(_ book: Book, _ selected: Book?) -> some View
     {
         build.row(["Author: \(book.author)", "Title: \(book.title)"])
             .foregroundColor(book.id == selected?.id ? Color.pink : Color.blue)

@@ -36,7 +36,7 @@ struct ContentView: View {
                 )
                 widget.getList(
                     store: viewModel.users,
-                    content: item.user,
+                    content: item.userRow,
                     toolBar: ToolBar("Users"){
                         Button("do something", action: { print("🟦 do something")})
                     }
@@ -53,7 +53,7 @@ struct ContentView: View {
                 )
                 widget.getList(
                     store: viewModel.books,
-                    content: item.book,
+                    content: item.bookRow,
                     toolBar: ToolBar<EmptyView>("Books")
                 )
             }

@@ -14,6 +14,7 @@ public protocol Componentable{
     
     associatedtype Template : View
     
+    /// Store is a repo that maneges models conformed to Model protocol
     associatedtype AbstractStore: Store
     
     /// Repository with data

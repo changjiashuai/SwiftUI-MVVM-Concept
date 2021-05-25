@@ -18,7 +18,7 @@ public protocol ChartBuilder {
     ///   - width: Bar width
     ///   - height: Bar height
     /// - Returns: Bar View
-    func bar(_ label: String, width: CGFloat, height: CGFloat) -> BarTemplate
+    func bar(_ label: String,_ width: CGFloat,_ height: CGFloat,_ color: Color) -> BarTemplate
 }
 
 // MARK: - API Methods
@@ -31,7 +31,7 @@ public extension ChartBuilder {
     ///   - height: Bar height
     /// - Returns: Bar View
     @ViewBuilder
-    func bar(_ label: String, width: CGFloat, height: CGFloat) -> some View
+    func bar(_ label: String, _ width: CGFloat, _ height: CGFloat, _ color: Color) -> some View
     {
         Rectangle()
             .frame(width: width, height: height)
@@ -43,5 +43,6 @@ public extension ChartBuilder {
                 alignment: .topLeading
             )
             .padding(.horizontal, 8)
+            .foregroundColor(color)
     }
 }

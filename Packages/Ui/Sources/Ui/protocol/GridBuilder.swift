@@ -20,7 +20,7 @@ public protocol GridBuilder {
     /// Form view of a row
     /// - Parameter content: Text to display
     /// - Returns: Row view
-    func row(_ content: [Content]) -> RowTemplate
+    func row(_ content: [Content], _ color: Color) -> RowTemplate
     
     /// Form view of a cell
     /// - Parameter content: Text to display
@@ -32,11 +32,11 @@ public protocol GridBuilder {
 
 public extension GridBuilder{
     
-    /// Create view of a row
+    /// Create View of a row
     /// - Parameter content: Text to display
     /// - Returns: Row view
     @ViewBuilder
-    func row(_ content: [String]) -> some View
+    func row(_ content: [String], _ color: Color) -> some View
     {
         HStack {
             ForEach(content, id: \.self) { text in
@@ -45,18 +45,19 @@ public extension GridBuilder{
         }
         .frame(maxWidth: .infinity)
         .frame(height: 25)
+        .foregroundColor(color)
     }
     
-    /// Form view of a row
+    /// Form View of a row
     /// - Parameter content: Text to display
     /// - Returns: Row view
     @ViewBuilder
-    func row(_ content: String) -> some View
+    func row(_ content: String, _ color: Color) -> some View
     {
-        row([content])
+        row([content], color)
     }
     
-    /// Form view of a cell
+    /// Form View of a cell
     /// - Parameter content: Text to display
     /// - Returns: Cell view
     @ViewBuilder

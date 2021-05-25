@@ -21,7 +21,8 @@ struct MovieFactory: GridBuilder {
     /// GridBuilder.row - Create View of a row
     @ViewBuilder
     func ganre(_ ganre: Ganre, _ selected: Bool) -> some View {
-        row("\(ganre.title)").foregroundColor( selected ? .yellow : .pink)
+        let color: Color = selected ? .yellow : .pink
+        row("\(ganre.title)", color)
     }
 
     /// Create view template for defining Movie in the Detail list
@@ -30,6 +31,6 @@ struct MovieFactory: GridBuilder {
     /// GridBuilder.row - Create View of a row
     @ViewBuilder
     func movie(_ movie: Movie) -> some View {
-        row("\(movie.title)").foregroundColor(.purple)
+        row("\(movie.title)", .purple)
     }
 }

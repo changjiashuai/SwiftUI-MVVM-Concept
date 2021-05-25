@@ -13,7 +13,7 @@ import Ui
 /// Detail list displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
-struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, BlueStylable
+struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, BlueStylable, Componentable
 {
 
     /// Store with data
@@ -32,7 +32,7 @@ struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Contr
     var body: some View {
         ZStack(alignment: .top) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
-            getList()
+            controlRender()
         }
             .frame(alignment: .topLeading)
             .mask(!notLoading)
@@ -46,15 +46,10 @@ struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Contr
     /// Get list View
     /// - Returns: list view
     @ViewBuilder
-    private func getList() -> some View {
+    func buildComponentBody() -> some View {
         VStack(spacing: 0) {
-            if store.error != nil { ErrorView(store.error!) }
-            else {
-                if store.items.count > 0 {
-                    ForEach(store.items, id: \.self) { item in
-                        content(item)
-                    }
-                } else { EmptyData() }
+            ForEach(store.items, id: \.self) { item in
+                content(item)
             }
         }
             .offset(y: 50)

@@ -12,7 +12,7 @@ import Ui
 /// List displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
-struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable {
+struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable, Componentable {
 
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -34,17 +34,11 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
 
         VStack(spacing: 0) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
-            if store.count() > 0 {
-                ScrollView {
-                    getList()
-                }
-            } else {
-                if store.error != nil { ErrorView(store.error!) }
-                else { EmptyData() }
-            }
+            controlRender()
         }.frame(height: 150, alignment: .topLeading)
             .mask(!notLoading)
-            .border(componentBorderRGB)
+            .border(width: 1, edges: [.leading, .bottom], color: selectedRGB)
+            .border(width: 1, edges: [.top, .trailing], color: borderRGB)
             .background(componentRGB)
             .onAppear { if notLoading { load() } }
     }
@@ -54,7 +48,7 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     /// Get list View
     /// - Returns: list view
     @ViewBuilder
-    private func getList() -> some View {
+    func buildComponentBody() -> some View {
         VStack(spacing: 0) {
             ForEach(store.items, id: \.self) { item in
                 content(item, isSelected(item))

@@ -81,7 +81,7 @@ Click to watch the expected UI behavior of the example
 * Master detail view 
 * Sign in sign out
 
-[![click to watch expected UI behavior for the example](https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/readme_app.png)](https://youtu.be/Tc5Ub16FRgA)
+[![click to watch expected UI behavior for the example](https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/readme_app.png)](https://youtu.be/tUgEK03Hu00)
 
 ## Requirements
 

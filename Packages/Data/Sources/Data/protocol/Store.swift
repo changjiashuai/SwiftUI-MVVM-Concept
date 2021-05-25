@@ -20,6 +20,9 @@ public protocol Store {
     /// Defines a communication layer with a remote source of data
     associatedtype AbstractProxy: Proxy
     
+    /// Contains error string if loading ends up with errors
+    var error: String? { get set }
+    
     /// Indicates state of loading
     var loading: Bool { get set }
     

@@ -13,7 +13,7 @@ import Service
 /// Chart displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
-struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable {
+struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable, Componentable {
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -35,7 +35,7 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
         ZStack(alignment: .topLeading) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             if store.count() > 0 {
-                getChart()
+                buildComponentBody()
             } else {
                 if store.error != nil { ErrorView(store.error!) }
                 else { EmptyData() }
@@ -43,7 +43,8 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
         }
         .frame(height: 150, alignment: .topLeading)
         .mask(!notLoading, text: "Loading data for chart...")
-        .border(componentBorderRGB)
+        .border(width: 1, edges: [.leading, .bottom], color: selectedRGB)
+        .border(width: 1, edges: [.top, .trailing], color: borderRGB)
         .background(componentRGB)
         .onAppear { if notLoading { load() } }
     }
@@ -60,7 +61,7 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     /// Get chart View
     /// - Returns: chart
     @ViewBuilder
-    private func getChart() -> some View {
+    func buildComponentBody() -> some View {
         GeometryReader { proxy in
             HStack(alignment: .bottom, spacing: 0) {
                 ForEach(store.items, id: \.self) { item in
@@ -69,7 +70,7 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
                 }
             }
             .offset(y: 50)
-            .frame(height: 100, alignment: .bottomLeading)
+           .frame(height: 100, alignment: .bottomLeading)
         }
     }
     

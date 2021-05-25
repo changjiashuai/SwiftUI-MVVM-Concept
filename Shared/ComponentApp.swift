@@ -31,7 +31,7 @@ struct LayoutApp: App, BlueStylable {
                         Movies()
                     }.environmentObject(viewModel)
                 }.environmentObject(auth)
-                    .background(backgroundRGB)
+                 .background(backgroundRGB)
             } else {
                 Launching().environmentObject(auth)
             }

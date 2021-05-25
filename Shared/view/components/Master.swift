@@ -14,7 +14,7 @@ import Ui
 /// Detail view is updated after am item is selected
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
-struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable {
+struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable, Componentable {
 
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -38,7 +38,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     var body: some View {
         ZStack(alignment: .top) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
-            getList()
+            controlRender()
         }
             .frame(alignment: .topLeading)
             .mask(!notLoading)
@@ -52,16 +52,11 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     /// Get list View
     /// - Returns: list view
     @ViewBuilder
-    private func getList() -> some View {
+    func buildComponentBody() -> some View {
         VStack(spacing: 0) {
-            if store.error != nil { ErrorView(store.error!) }
-            else {
-                if store.items.count > 0 {
-                    ForEach(store.items, id: \.self) { item in
-                        content(item, isSelected(item))
-                            .onTapGesture { select(item) }
-                    }
-                } else { EmptyData() }
+            ForEach(store.items, id: \.self) { item in
+                content(item, isSelected(item))
+                    .onTapGesture { select(item) }
             }
         }
             .offset(y: 50)

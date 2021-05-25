@@ -19,7 +19,7 @@ public extension BlueStylable {
                 stops: [
                     Gradient.Stop(
                         color:
-                            Color(red: 0.22, green: 0.26, blue: 0.43, opacity: 1),
+                            Color(red: 0.23, green: 0.27, blue: 0.43, opacity: 1),
                         location: 0.0),
                     Gradient.Stop(color:
                             Color(red: 0.2, green: 0.24, blue: 0.4, opacity: 1),

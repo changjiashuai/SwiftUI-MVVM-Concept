@@ -42,8 +42,6 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
         }
             .frame(alignment: .topLeading)
             .mask(!notLoading)
-            .border(componentBorderRGB)
-            .background(componentRGB)
             .onAppear { if notLoading { load(); detail.removeAll() } }
     }
 
@@ -69,7 +67,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     func select(_ item: T) {
 
         selectedItem = item
-
+        
         detail.load(params: ["page": "*", "access token": authentication.getToken(), "masterId": "\(item.id)"], callback: { print("🟦 do something") })
     }
 }

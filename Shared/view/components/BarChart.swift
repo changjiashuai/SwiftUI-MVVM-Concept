@@ -43,8 +43,6 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
         }
         .frame(height: 150, alignment: .topLeading)
         .mask(!notLoading, text: "Loading data for chart...")
-        .border(width: 1, edges: [.leading, .bottom], color: selectedRGB)
-        .border(width: 1, edges: [.top, .trailing], color: borderRGB)
         .background(componentRGB)
         .onAppear { if notLoading { load() } }
     }

@@ -37,9 +37,6 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
             controlRender()
         }.frame(height: 150, alignment: .topLeading)
             .mask(!notLoading)
-            .border(width: 1, edges: [.leading, .bottom], color: selectedRGB)
-            .border(width: 1, edges: [.top, .trailing], color: borderRGB)
-            .background(componentRGB)
             .onAppear { if notLoading { load() } }
     }
 

@@ -29,6 +29,9 @@ fileprivate struct Mask: ViewModifier, BlueStylable {
                     alignment: .center)
                 .opacity(loading ? 1 : 0),
             alignment: .center)
+            .border(width: 1, edges: [.leading, .bottom], color: selectedRGB)
+            .border(width: 1, edges: [.top, .trailing], color: borderRGB)
+            .background(componentRGB)
     }
 }
 

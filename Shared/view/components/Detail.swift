@@ -36,9 +36,6 @@ struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Contr
         }
             .frame(alignment: .topLeading)
             .mask(!notLoading)
-            .border(componentBorderRGB)
-            .background(componentRGB)
-
     }
 
     // MARK: - Methods

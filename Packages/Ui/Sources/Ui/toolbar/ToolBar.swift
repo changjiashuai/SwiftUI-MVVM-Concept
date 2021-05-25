@@ -44,7 +44,7 @@ public struct ToolBar<Content: View>: View, BlueStylable {
                 })
             }
         }
-            .padding(.horizontal, 5)
+            .padding(.horizontal, 11)
             .frame(height: 50)
             .font(.system(size: 12, weight: .thin))
             .background(backgroundRGB)

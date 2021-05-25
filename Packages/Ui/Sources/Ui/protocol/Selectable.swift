@@ -24,7 +24,7 @@ public protocol Selectable {
 
 extension Selectable{
     
-    /// Check item if selected
+    /// Check if item is selected
     /// - Parameter item: item to check
     /// - Returns: True is selected
     public func isSelected(_ item: Item) -> Bool{

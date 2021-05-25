@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-
 /// Set of elementary blocks for creating View
-public struct ElementBuilder {
+public struct ElementBuilder: GridBuilder, ChartBuilder {
 
     // MARK: - Life circle
 

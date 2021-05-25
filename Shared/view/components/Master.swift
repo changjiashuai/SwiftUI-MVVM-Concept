@@ -36,7 +36,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
 
     /// The type of view representing the body of this view
     var body: some View {
-        ZStack(alignment: .top) {
+        VStack{
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             controlRender()
         }
@@ -57,8 +57,6 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
                     .onTapGesture { select(item) }
             }
         }
-            .offset(y: 50)
-            .frame(maxHeight: .infinity, alignment: .topLeading)
     }
 
 

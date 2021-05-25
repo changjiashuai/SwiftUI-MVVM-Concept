@@ -30,7 +30,7 @@ struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Contr
 
     /// The type of view representing the body of this view
     var body: some View {
-        ZStack(alignment: .top) {
+        VStack {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             controlRender()
         }
@@ -49,7 +49,5 @@ struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Contr
                 content(item)
             }
         }
-            .offset(y: 50)
-            .frame(maxHeight: .infinity, alignment: .topLeading)
     }
 }

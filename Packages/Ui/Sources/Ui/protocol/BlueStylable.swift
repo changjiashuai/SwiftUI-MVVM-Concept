@@ -25,7 +25,6 @@ public extension BlueStylable {
                             Color(red: 0.2, green: 0.24, blue: 0.4, opacity: 1),
                         location: 1.0)]),
             startPoint: UnitPoint.topLeading, endPoint: UnitPoint.bottomTrailing)
-        
     }
     
     var barRGB: Color {

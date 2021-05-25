@@ -10,10 +10,17 @@ import SwiftUI
 
 /// Edge dorder shape
 fileprivate struct EdgeBorder: Shape {
-
+    
+    /// Border width
     var width: CGFloat
+    
+    /// Customize sides for bordering top, .bottom, .leading, .trailing
     var edges: [Edge]
 
+    
+    /// Build a path
+    /// - Parameter rect: define size
+    /// - Returns: Boder edges
     func path(in rect: CGRect) -> Path {
         var path = Path()
         for edge in edges {

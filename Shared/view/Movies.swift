@@ -17,6 +17,7 @@ struct Movies: View {
     /// App viewModel
     @EnvironmentObject var viewModel: AppViewModel
 
+    /// The type of view representing the body of this view
     var body: some View {
 
         HStack(spacing: 2) {

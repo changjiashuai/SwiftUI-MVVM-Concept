@@ -24,7 +24,10 @@ struct LayoutApp: App {
                 VStack {
                     MainToolBar()
                     HStack {
-                        ContentView(item: ItemFactory(ElementBuilder()), widget: WidgetFactory())
+                        ContentView(
+                            buildItem: ItemFactory(ElementBuilder()),
+                            buildWidget: WidgetFactory()
+                        )
                         Movies()
                     }.environmentObject(viewModel)
                 }.environmentObject(auth)

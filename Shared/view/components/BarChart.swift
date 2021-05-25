@@ -24,7 +24,7 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     /// Selected item
     @State var selectedItem: T?
     
-    /// Template to defined Item view
+    /// Template to define Item view
     let content: (T, Bool, CGFloat) -> Content
     
     /// ToolBar with set of controls

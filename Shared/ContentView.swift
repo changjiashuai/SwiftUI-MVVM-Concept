@@ -19,41 +19,41 @@ struct ContentView: View {
     @State private var count = 0
     
     /// Item view factory
-    let item: ItemFactory
+    let buildItem: ItemFactory
     
     /// Widget view factory
-    let widget: WidgetFactory
+    let buildWidget: WidgetFactory
     
     /// The type of view representing the body of this view.
     var body: some View {
         VStack {
             BoardToolBar(count: $count)
             ScrollView {
-                widget.getCharts(
+                buildWidget.charts(
                     viewModel: viewModel,
-                    factory: item,
+                    factory: buildItem,
                     count: count
                 )
-                widget.getList(
+                buildWidget.list(
                     store: viewModel.users,
-                    content: item.userRow,
+                    content: buildItem.userRow,
                     toolBar: ToolBar("Users"){
                         Button("do something", action: { print("🟦 do something")})
                     }
                 )
-                widget.getChart(
+                buildWidget.chart(
                     store: viewModel.users,
-                    content: item.userAgeBar,
+                    content: buildItem.userAgeBar,
                     toolBar: EmptyView()
                 )
-                widget.getChart(
+                buildWidget.chart(
                     store: viewModel.users,
-                    content: item.userAgeBar,
+                    content: buildItem.userAgeBar,
                     toolBar: ToolBar<EmptyView>("Chart")
                 )
-                widget.getList(
+                buildWidget.list(
                     store: viewModel.books,
-                    content: item.bookRow,
+                    content: buildItem.bookRow,
                     toolBar: ToolBar<EmptyView>("Books")
                 )
             }

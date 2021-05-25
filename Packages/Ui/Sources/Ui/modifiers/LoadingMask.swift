@@ -21,9 +21,14 @@ fileprivate struct Mask: ViewModifier {
     
     /// The type of view representing the body of this view
     func body(content: Content) -> some View {
-        content.overlay(Rectangle().foregroundColor(.gray)
-                            .overlay(Text(text).foregroundColor(.black), alignment: .center)
-                            .opacity(loading ? 1 : 0), alignment: .center)
+        content.overlay(
+            Rectangle()
+                .foregroundColor(.gray)
+                .overlay(
+                    Text(text).foregroundColor(.black),
+                    alignment: .center)
+                .opacity(loading ? 1 : 0),
+            alignment: .center)
     }
 }
 

@@ -31,7 +31,8 @@ public extension ChartBuilder {
     ///   - height: Bar height
     /// - Returns: Bar View
     @ViewBuilder
-    func bar(_ label: String, width: CGFloat, height: CGFloat) -> some View {
+    func bar(_ label: String, width: CGFloat, height: CGFloat) -> some View
+    {
         Rectangle()
             .frame(width: width, height: height)
             .overlay(

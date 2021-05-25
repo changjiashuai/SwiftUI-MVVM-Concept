@@ -18,18 +18,18 @@ struct MovieFactory: GridBuilder {
     /// - Parameter ganre: Set of data for Ganre
     /// - Parameter selected: True - if selected
     /// - Returns: View defining how Ganre should be presented in the list
+    /// GridBuilder.row - Create View of a row
     @ViewBuilder
     func ganre(_ ganre: Ganre, _ selected: Bool) -> some View {
-        row("\(ganre.title)")
-            .foregroundColor( selected ? .yellow : .pink)
+        row("\(ganre.title)").foregroundColor( selected ? .yellow : .pink)
     }
 
     /// Create view template for defining Movie in the Detail list
     /// - Parameter movie: Set of data for Movie
     /// - Returns: View defining how Movie should be presented in the list
+    /// GridBuilder.row - Create View of a row
     @ViewBuilder
     func movie(_ movie: Movie) -> some View {
-        row("\(movie.title)")
-            .foregroundColor(.purple)
+        row("\(movie.title)").foregroundColor(.purple)
     }
 }

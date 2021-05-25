@@ -35,7 +35,7 @@ struct ItemFactory: ChartBuilder, GridBuilder {
     /// - Parameter user: Set of data for User
     /// - Parameter selected: True - if selected
     /// - Returns: View defining how User should be presented in the list
-    /// GridBuilder - Create view of a row
+    /// GridBuilder.row - Create View of a row
     @ViewBuilder
     func userRow(_ user: User, _ selected: Bool) -> some View
     {
@@ -47,7 +47,7 @@ struct ItemFactory: ChartBuilder, GridBuilder {
     /// - Parameter book: Set of data for Book
     /// - Parameter selected: True - if selected
     /// - Returns: View defining how Book should be presented in the list
-    /// GridBuilder - Create view of a row
+    /// GridBuilder.row - Create View of a row
     @ViewBuilder
     func bookRow(_ book: Book, _ selected: Bool) -> some View
     {

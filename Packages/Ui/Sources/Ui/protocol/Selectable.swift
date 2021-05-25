@@ -27,7 +27,7 @@ extension Selectable{
     /// Check if item is selected
     /// - Parameter item: item to check
     /// - Returns: True is selected
-    public func isSelected(_ item: Item) -> Bool{
+    public func isSelected(_ item: Item) -> Bool {
         selectedItem?.id == item.id
     }
 }

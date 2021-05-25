@@ -10,11 +10,11 @@ import SwiftUI
 /// Set of elementary blocks for creating Grid View
 public protocol GridBuilder {
     
-//    Cell template
+    //    Cell template
     associatedtype CellTemplate: View
-//    Row template
+    //    Row template
     associatedtype RowTemplate: View
-//  Content to display in a View element
+    //  Content to display in a View element
     associatedtype Content
     
     /// Form view of a row
@@ -31,29 +31,31 @@ public protocol GridBuilder {
 // MARK: - API Methods
 
 public extension GridBuilder{
-
+    
     /// Create view of a row
     /// - Parameter content: Text to display
     /// - Returns: Row view
     @ViewBuilder
-     func row(_ content: [String]) -> some View {
+    func row(_ content: [String]) -> some View
+    {
         HStack {
             ForEach(content, id: \.self) { text in
                 cell(text)
             }
         }
-            .frame(maxWidth: .infinity)
-            .frame(height: 25)
+        .frame(maxWidth: .infinity)
+        .frame(height: 25)
     }
-
+    
     /// Form view of a row
     /// - Parameter content: Text to display
     /// - Returns: Row view
     @ViewBuilder
-    func row(_ content: String) -> some View {
+    func row(_ content: String) -> some View
+    {
         row([content])
     }
-
+    
     /// Form view of a cell
     /// - Parameter content: Text to display
     /// - Returns: Cell view

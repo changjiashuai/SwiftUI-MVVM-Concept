@@ -33,7 +33,7 @@ struct ItemFactory {
         let label = "\(user.name) - \(user.age)"
 
         build.bar(label, width: width, height: height)
-            .foregroundColor(selected ? Color.purple : Color.green)
+            .foregroundColor(selected ? .purple : .green)
     }
 
     /// Create view template for defining User in the UniversalList
@@ -44,7 +44,7 @@ struct ItemFactory {
     func userRow(_ user: User, _ selected: Bool) -> some View
     {
         build.row("Name: \(user.name)")
-            .foregroundColor(selected ? Color.purple : Color.orange)
+            .foregroundColor(selected ? .purple : .orange)
     }
 
     /// Create view template for defining Book in the UniversalList
@@ -55,7 +55,7 @@ struct ItemFactory {
     func bookRow(_ book: Book, _ selected: Bool) -> some View
     {
         build.row(["Author: \(book.author)", "Title: \(book.title)"])
-            .foregroundColor(selected ? Color.pink : Color.blue)
+            .foregroundColor(selected ? .pink : .blue)
     }
 
 }

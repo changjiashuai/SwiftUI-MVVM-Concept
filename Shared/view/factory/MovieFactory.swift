@@ -30,7 +30,7 @@ struct MovieFactory {
     @ViewBuilder
     func ganre(_ ganre: Ganre, _ selected: Bool) -> some View {
         build.row("\(ganre.title)")
-            .foregroundColor( selected ? Color.yellow : Color.pink)
+            .foregroundColor( selected ? .yellow : .pink)
     }
 
     /// Create view template for defining Movie in the Detail list
@@ -39,6 +39,6 @@ struct MovieFactory {
     @ViewBuilder
     func movie(_ movie: Movie) -> some View {
         build.row("\(movie.title)")
-            .foregroundColor(Color.purple)
+            .foregroundColor(.purple)
     }
 }

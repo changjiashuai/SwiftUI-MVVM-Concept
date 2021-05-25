@@ -8,7 +8,7 @@ import Foundation
 
 
 /// Store is a repo that maneges models conformed to Model protocol
-public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store  {
+public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
     
     /// Set of stored data
     @Published public private(set) var items: [T] = [T]()
@@ -57,36 +57,43 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store  {
     
     /// Get if Store is empty
     /// - Returns: true if empty
-    public func isEmpty() -> Bool{
+    public func isEmpty() -> Bool {
         items.count == 0
     }
-   
+    
+    /// Set of cations before loading
+    ///   - params: Set of parameters to control a request of data (data range etc.)
+    private func beforeLoad(_ params: Params?) {
+        loading = true; error = nil
+        print("🟩 \(params ?? [:])")
+    }
+    
     /// Load data from remote source
     /// - Parameters:
     ///   - params: Set of parameters to control a request of data (data range etc.)
     ///   - callback: Closure to perform something after loading
-    /// CallbackClosure -  Optinal closure type for a collback
-    /// Params - Dic for a request params
-    public func load(params: Params?, callback: CallbackClosure? ) {
-       
-        let queue = DispatchQueue.global(qos: .userInitiated)
-        loading = true
-        print("🟩 \(params ?? [:])")
-
-        queue.asyncAfter(deadline: .now() + 1, execute: {
-            let proxy = self.proxy
-            let request  = proxy.createRequest(params: params)
-            let response = proxy.run(request)
-            
-            DispatchQueue.main.async {
-                self.removeAll(); self.error = nil;
-                self.appendAll(response.items as! [T])
-                callback?()
-                self.loading = false
-                if let error = response.error {
-                    self.error = error.getDescription()
-                }
-            }
-        })
+    /// CallbackClosure -  Optinal closure type for a collback () -> Void
+    /// Params - Dic for a request params [String: String]
+    public func load(params: Params?, callback: CallbackClosure?) {
+        
+        beforeLoad(params)
+        
+        DispatchQueue.global(qos: .userInitiated)
+            .asyncAfter(
+                deadline: .now() + 1,
+                execute: {
+                    let request  = self.proxy.createRequest(params: params)
+                    let response = self.proxy.run(request)
+                    
+                    DispatchQueue.main.async {
+                        self.removeAll()
+                        self.appendAll(response.items as! [T])
+                        callback?()
+                        self.loading = false
+                        if let error = response.error {
+                            self.error = error.getDescription()
+                        }
+                    }
+                }) // end of asyncAfter
     }
 }

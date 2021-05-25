@@ -12,7 +12,7 @@ import Ui
 struct Movies: View {
 
     /// Item view factory
-    let item = MovieFactory()
+    let item = MovieFactory(ElementBuilder())
 
     /// App viewModel
     @EnvironmentObject var viewModel: AppViewModel
@@ -33,6 +33,7 @@ struct Movies: View {
         }
             .padding(.trailing)
             .padding(.vertical)
+            .frame(minWidth: 320)
     }
 }
 

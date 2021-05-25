@@ -58,6 +58,6 @@ struct ContentView: View {
                 )
             }
         }.padding()
-         .frame(minWidth: 522)
+         .frame(minWidth: 580)
     }
 }

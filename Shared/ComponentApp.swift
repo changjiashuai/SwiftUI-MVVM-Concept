@@ -6,6 +6,7 @@
 
 import SwiftUI
 import Service
+import Ui
 
 @main
 struct LayoutApp: App {
@@ -23,7 +24,7 @@ struct LayoutApp: App {
                 VStack {
                     MainToolBar()
                     HStack {
-                        ContentView(item: ItemFactory(), widget: WidgetFactory())                            
+                        ContentView(item: ItemFactory(ElementBuilder()), widget: WidgetFactory())
                         Movies()
                     }.environmentObject(viewModel)
                 }.environmentObject(auth)

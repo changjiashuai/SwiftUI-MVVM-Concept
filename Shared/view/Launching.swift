@@ -23,7 +23,7 @@ struct Launching: View {
                 .aspectRatio(contentMode: .fit)
             Button("Click to launch") { authentication.signIn()}
             Spacer()
-        }.frame(width: 800, height: 600)
+        }.frame(width: 980, height: 600)
         .padding()
     }
 }

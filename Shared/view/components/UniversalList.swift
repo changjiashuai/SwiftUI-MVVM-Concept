@@ -52,7 +52,8 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
             else {
                 if store.items.count > 0 {
                     ForEach(store.items, id: \.self) { item in
-                        content(item, selectedItem).onTapGesture { select(item) }
+                        content(item, selectedItem)
+                            .onTapGesture { select(item) }
                     }
                 } else { EmptyData() }
             }

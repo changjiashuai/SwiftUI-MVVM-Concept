@@ -39,7 +39,7 @@ public extension ChartBuilder {
                 Rectangle().overlay(
                     Text(label).foregroundColor(.white).font(.system(.headline)),
                     alignment: .center
-                ).foregroundColor(.clear),
+                ),
                 alignment: .topLeading
             )
             .padding(.horizontal, 8)

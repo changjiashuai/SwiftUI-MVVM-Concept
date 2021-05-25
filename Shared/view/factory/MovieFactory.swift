@@ -25,12 +25,12 @@ struct MovieFactory {
     
     /// Create view template for defining Ganre in the Master list
     /// - Parameter ganre: Set of data for Ganre
+    /// - Parameter selected: True - if selected
     /// - Returns: View defining how Ganre should be presented in the list
     @ViewBuilder
-    func ganre(_ ganre: Ganre, _ selected: Ganre?) -> some View {
-        let isSelexted = ganre.id == selected?.id
+    func ganre(_ ganre: Ganre, _ selected: Bool) -> some View {
         build.row("\(ganre.title)")
-            .foregroundColor( isSelexted ? Color.yellow : Color.pink)
+            .foregroundColor( selected ? Color.yellow : Color.pink)
     }
 
     /// Create view template for defining Movie in the Detail list

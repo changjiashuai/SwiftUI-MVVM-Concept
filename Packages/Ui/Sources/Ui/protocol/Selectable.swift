@@ -19,4 +19,15 @@ public protocol Selectable {
     
     /// Select item
     func select(_ item: Item)
+    
+}
+
+extension Selectable{
+    
+    /// Check item if selected
+    /// - Parameter item: item to check
+    /// - Returns: True is selected
+    public func isSelected(_ item: Item) -> Bool{
+        selectedItem?.id == item.id
+    }
 }

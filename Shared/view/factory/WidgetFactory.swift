@@ -34,7 +34,7 @@ struct WidgetFactory {
     func getChart<T:Model, U: Proxy, Content: View, ToolBarContent: View>
     (
         store: RemoteStore<T,U>,
-        content: @escaping (T, T?, CGFloat) -> Content,
+        content: @escaping (T, Bool, CGFloat) -> Content,
         toolBar: ToolBarContent
     ) -> some View
     {
@@ -51,7 +51,7 @@ struct WidgetFactory {
     func getList<T:Model, U: Proxy, Content: View, ToolBarContent: View>
     (
         store: RemoteStore<T,U>,
-        content: @escaping (T, T?) -> Content,
+        content: @escaping (T, Bool) -> Content,
         toolBar: ToolBarContent
     ) -> some View {
         UniversalList(

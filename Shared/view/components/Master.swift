@@ -26,7 +26,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     @EnvironmentObject var authentication: Authentication
 
     /// A view builder that creates the content of an Item view
-    let content: (T, T?) -> Content
+    let content: (T, Bool) -> Content
 
     /// ToolBar with set of controls
     let toolBar: ToolContent
@@ -57,7 +57,8 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
             else {
                 if store.items.count > 0 {
                     ForEach(store.items, id: \.self) { item in
-                        content(item, selectedItem).onTapGesture { select(item) }
+                        content(item, isSelected(item))
+                            .onTapGesture { select(item) }
                     }
                 } else { EmptyData() }
             }
@@ -70,6 +71,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     /// Select item
     /// - Parameter item: selected item
     func select(_ item: T) {
+       
         selectedItem = item
 
         detail.load(params: ["page": "*", "access token": authentication.getToken(), "masterId": "\(item.id)"], callback: { print("🟦 do something") })

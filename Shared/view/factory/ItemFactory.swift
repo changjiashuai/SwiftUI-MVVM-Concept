@@ -24,35 +24,38 @@ struct ItemFactory {
 
     /// Create view template for defining User in the AgeChart
     /// - Parameter user: Set of data for User
+    /// - Parameter selected: True - if selected
     /// - Returns: View defining how User's age should be presented in the chart
     @ViewBuilder
-    func userAgeBar(_ user: User, _ selected: User?, _ width: CGFloat) -> some View
+    func userAgeBar(_ user: User, _ selected: Bool, _ width: CGFloat) -> some View
     {
         let height = CGFloat(user.age)
         let label = "\(user.name) - \(user.age)"
 
         build.bar(label, width: width, height: height)
-            .foregroundColor(user.id == selected?.id ? Color.purple : Color.green)
+            .foregroundColor(selected ? Color.purple : Color.green)
     }
 
     /// Create view template for defining User in the UniversalList
     /// - Parameter user: Set of data for User
+    /// - Parameter selected: True - if selected
     /// - Returns: View defining how User should be presented in the list
     @ViewBuilder
-    func userRow(_ user: User, _ selected: User?) -> some View
+    func userRow(_ user: User, _ selected: Bool) -> some View
     {
         build.row("Name: \(user.name)")
-            .foregroundColor(user.id == selected?.id ? Color.purple : Color.orange)
+            .foregroundColor(selected ? Color.purple : Color.orange)
     }
 
     /// Create view template for defining Book in the UniversalList
     /// - Parameter book: Set of data for Book
+    /// - Parameter selected: True - if selected
     /// - Returns: View defining how Book should be presented in the list
     @ViewBuilder
-    func bookRow(_ book: Book, _ selected: Book?) -> some View
+    func bookRow(_ book: Book, _ selected: Bool) -> some View
     {
         build.row(["Author: \(book.author)", "Title: \(book.title)"])
-            .foregroundColor(book.id == selected?.id ? Color.pink : Color.blue)
+            .foregroundColor(selected ? Color.pink : Color.blue)
     }
 
 }

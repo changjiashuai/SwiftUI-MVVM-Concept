@@ -21,7 +21,7 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     @EnvironmentObject var authentication: Authentication
     
     /// A view builder that creates the content of an Item view
-    let content: (T, T?) -> Content
+    let content: (T, Bool) -> Content
     
     /// ToolBar with set of controls
     let toolBar: ToolContent
@@ -52,7 +52,7 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
             else {
                 if store.items.count > 0 {
                     ForEach(store.items, id: \.self) { item in
-                        content(item, selectedItem)
+                        content(item, isSelected(item))
                             .onTapGesture { select(item) }
                     }
                 } else { EmptyData() }

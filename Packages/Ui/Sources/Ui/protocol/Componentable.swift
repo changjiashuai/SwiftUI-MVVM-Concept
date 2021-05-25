@@ -9,7 +9,7 @@ import SwiftUI
 import Data
 
 
-/// Template Method defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
+/// Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 public protocol Componentable{
     
     associatedtype Template : View

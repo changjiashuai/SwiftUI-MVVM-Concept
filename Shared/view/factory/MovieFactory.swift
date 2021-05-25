@@ -10,16 +10,7 @@ import Ui
 
 
 /// Set of templates for Master Detail View presenting Ganges and Movies
-struct MovieFactory {
-
-    /// Set of elementary elms for creating View
-    let build: ElementBuilder
-    
-    // MARK: - Life circle
-    
-    init(_ build: ElementBuilder){
-        self.build = build
-    }
+struct MovieFactory: GridBuilder {
     
     // MARK: - API Methods
     
@@ -29,7 +20,7 @@ struct MovieFactory {
     /// - Returns: View defining how Ganre should be presented in the list
     @ViewBuilder
     func ganre(_ ganre: Ganre, _ selected: Bool) -> some View {
-        build.row("\(ganre.title)")
+        row("\(ganre.title)")
             .foregroundColor( selected ? .yellow : .pink)
     }
 
@@ -38,7 +29,7 @@ struct MovieFactory {
     /// - Returns: View defining how Movie should be presented in the list
     @ViewBuilder
     func movie(_ movie: Movie) -> some View {
-        build.row("\(movie.title)")
+        row("\(movie.title)")
             .foregroundColor(.purple)
     }
 }

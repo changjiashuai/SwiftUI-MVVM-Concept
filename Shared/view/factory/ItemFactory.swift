@@ -10,15 +10,9 @@ import Ui
 
 
 /// Set of templates for items View
-struct ItemFactory {
-
-    /// Set of elementary elms for creating View
-    let build: ElementBuilder
-
-    // MARK: - Life circle
-
-    init(_ build: ElementBuilder) { self.build = build }
-
+/// ChartBuilder - contains builders  for creating Chart elements
+/// GridBuilder - contains builders  for creating Grid elements
+struct ItemFactory: ChartBuilder, GridBuilder {
 
     // MARK: - API Methods
 
@@ -26,13 +20,14 @@ struct ItemFactory {
     /// - Parameter user: Set of data for User
     /// - Parameter selected: True - if selected
     /// - Returns: View defining how User's age should be presented in the chart
+    /// GridBuilder.bar - Create a bar for Chart
     @ViewBuilder
     func userAgeBar(_ user: User, _ selected: Bool, _ width: CGFloat) -> some View
     {
         let height = CGFloat(user.age)
         let label = "\(user.name) - \(user.age)"
 
-        build.bar(label, width: width, height: height)
+        bar(label, width: width, height: height)
             .foregroundColor(selected ? .purple : .green)
     }
 
@@ -40,10 +35,11 @@ struct ItemFactory {
     /// - Parameter user: Set of data for User
     /// - Parameter selected: True - if selected
     /// - Returns: View defining how User should be presented in the list
+    /// GridBuilder - Create view of a row
     @ViewBuilder
     func userRow(_ user: User, _ selected: Bool) -> some View
     {
-        build.row("Name: \(user.name)")
+        row("Name: \(user.name)")
             .foregroundColor(selected ? .purple : .orange)
     }
 
@@ -51,11 +47,11 @@ struct ItemFactory {
     /// - Parameter book: Set of data for Book
     /// - Parameter selected: True - if selected
     /// - Returns: View defining how Book should be presented in the list
+    /// GridBuilder - Create view of a row
     @ViewBuilder
     func bookRow(_ book: Book, _ selected: Bool) -> some View
     {
-        build.row(["Author: \(book.author)", "Title: \(book.title)"])
+        row(["Author: \(book.author)", "Title: \(book.title)"])
             .foregroundColor(selected ? .pink : .blue)
     }
-
 }

@@ -25,7 +25,7 @@ struct LayoutApp: App {
                     MainToolBar()
                     HStack {
                         ContentView(
-                            buildItem: ItemFactory(ElementBuilder()),
+                            buildItem: ItemFactory(),
                             buildWidget: WidgetFactory()
                         )
                         Movies()

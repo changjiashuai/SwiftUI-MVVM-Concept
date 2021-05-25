@@ -12,7 +12,7 @@ import Ui
 struct Movies: View {
 
     /// Item view factory
-    let item = MovieFactory(ElementBuilder())
+    let item = MovieFactory()
 
     /// App viewModel
     @EnvironmentObject var viewModel: AppViewModel

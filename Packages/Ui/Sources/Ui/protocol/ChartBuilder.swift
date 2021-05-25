@@ -8,15 +8,39 @@
 import SwiftUI
 
 /// Set of elementary blocks for creating Charts View
-protocol ChartBuilder {
+public protocol ChartBuilder {
     
     associatedtype BarTemplate: View
     
-    /// Get a bar for Chart
+    /// Create a bar for Chart
     /// - Parameters:
     ///   - label: Bar label
     ///   - width: Bar width
     ///   - height: Bar height
     /// - Returns: Bar View
     func bar(_ label: String, width: CGFloat, height: CGFloat) -> BarTemplate
+}
+
+// MARK: - API Methods
+
+public extension ChartBuilder {
+    /// Create a bar for Chart
+    /// - Parameters:
+    ///   - label: Bar label
+    ///   - width: Bar width
+    ///   - height: Bar height
+    /// - Returns: Bar View
+    @ViewBuilder
+    func bar(_ label: String, width: CGFloat, height: CGFloat) -> some View {
+        Rectangle()
+            .frame(width: width, height: height)
+            .overlay(
+                Rectangle().overlay(
+                    Text(label).foregroundColor(.white).font(.system(.headline)),
+                    alignment: .center
+                ).foregroundColor(.clear),
+                alignment: .topLeading
+            )
+            .padding(.horizontal, 8)
+    }
 }

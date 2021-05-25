@@ -19,7 +19,7 @@ struct Movies: View {
 
     var body: some View {
 
-        HStack(spacing: 0) {
+        HStack(spacing: 2) {
             Master(
                 store: viewModel.ganre,
                 detail: viewModel.movie,

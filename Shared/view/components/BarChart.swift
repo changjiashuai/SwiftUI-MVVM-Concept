@@ -21,14 +21,14 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
     
+    /// Selected item
+    @State var selectedItem: T?
+    
     /// Template to defined Item view
     let content: (T, Bool, CGFloat) -> Content
     
     /// ToolBar with set of controls
-    let toolBar: ToolBarContent
-    
-    /// Selected item
-    @State var selectedItem: T?
+    let toolBar: ToolBarContent   
    
     /// The type of view representing the body of this view
     var body: some View {
@@ -60,7 +60,7 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
                 if store.error != nil { ErrorView(store.error!)}
                 else {
                     if store.items.count > 0 {
-                        ForEach(store.items, id: \.self) { item in                            
+                        ForEach(store.items, id: \.self) { item in
                             content(item, isSelected(item), getItemWidth(proxy))
                                 .onTapGesture { select(item) }
                         }

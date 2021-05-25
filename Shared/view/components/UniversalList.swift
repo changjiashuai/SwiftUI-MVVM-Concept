@@ -20,14 +20,14 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
     
+    /// Selected item
+    @State var selectedItem: T?
+    
     /// A view builder that creates the content of an Item view
     let content: (T, Bool) -> Content
     
     /// ToolBar with set of controls
     let toolBar: ToolContent
-    
-    /// Selected item
-    @State var selectedItem: T?
     
     /// The type of view representing the body of this view
     var body: some View {

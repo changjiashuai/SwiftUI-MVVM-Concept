@@ -73,7 +73,7 @@ App stores are assembled in AppViewModel In the code example. Two views (Univers
 
 # UI behavior
 
-Click to watch the expected UI behavior of the example
+**Click the picture to watch the expected UI behavior of the example**
 
 * Shared source of data with different presentations
 * Views control

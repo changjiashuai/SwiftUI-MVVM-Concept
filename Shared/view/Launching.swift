@@ -24,8 +24,8 @@ struct Launching: View, BlueStylable {
                 .aspectRatio(contentMode: .fit)
             Button("Click to launch") { authentication.signIn() }
             Spacer()
-        }.frame(width: 1024)
-        .frame(minWidth: 1024, idealWidth: 1024, maxWidth: .infinity, minHeight: 768, idealHeight: .infinity, maxHeight: .infinity, alignment: .center)
+        }
+        .frame(minWidth: 980, idealWidth: 1024, maxWidth: .infinity, minHeight: 680, idealHeight: .infinity, maxHeight: .infinity, alignment: .center)
             .padding()
             .foregroundColor(.white)
             .background(backgroundRGB)

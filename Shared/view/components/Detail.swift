@@ -11,11 +11,13 @@ import Service
 import Ui
 
 /// Detail list displays data conformed to Model protocol
+///
 /// `Controllable` - Add controllable behavior to view to obey commands from others views. Method `onCommandChanged` is implemented in Controllable
 /// `Loadable` - Process load state of bound `Store`. Property `notLoading` is implemented in Loadable
-/// `Selectable` - Add selection behavior for `View` items
+/// `Selectable` - Add selection behavior for `View` items.  Method`isSelected` is defined in Selectable
 /// `Componentable` - Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 /// `Scrolable` - Defines to represent scroll into `View`
+
 struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, BlueStylable, Componentable, Scrolable
 {
     /// Store with data

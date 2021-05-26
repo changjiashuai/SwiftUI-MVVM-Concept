@@ -27,6 +27,7 @@ struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Contr
     /// ToolBar with set of controls
     let toolBar: ToolContent
     
+    /// Indicates master Store loading
     @Binding var masterIsLoading: Bool
 
     /// The type of view representing the body of this view

@@ -14,7 +14,9 @@ It is not about how to create Lists and Charts and view design. **It's about pos
 * Easily split the development of View and Data layers between independent developers
 * Testability
 
-## The principle of the concept 1-2-3
+## The principle of the concept is
+## 1-2-3
+
 
 ### 1. Model
 * Define Model
@@ -73,7 +75,7 @@ App stores are assembled in AppViewModel In the code example. Two views (Univers
 
 # UI behavior
 
-**Click the picture to watch the expected UI behavior of the example**
+**Click or tap the picture to watch the expected UI behavior of the example**
 
 * Shared source of data with different presentations
 * Views control

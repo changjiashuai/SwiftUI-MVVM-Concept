@@ -14,8 +14,7 @@ It is not about how to create Lists and Charts and view design. **It's about pos
 * Easily split the development of View and Data layers between independent developers
 * Testability
 
-## The principle of the concept is
-## 1-2-3
+## The principle of the concept is 1-2-3
 
 
 ### 1. Model

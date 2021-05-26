@@ -18,7 +18,9 @@ import Ui
 /// `Componentable` - Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 /// `Scrolable` - Defines to represent scroll into `View`
 
-struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable, Componentable, Scrolable {
+struct Master<T: Model, D: Model, V: Proxy, U: Proxy, F: View, Content: View>:
+    View, Controllable, Loadable, Selectable, BlueStylable, Componentable, Scrolable
+{
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -36,11 +38,11 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     let content: (T, Bool) -> Content
     
     /// ToolBar with set of controls
-    let toolBar: ToolContent
+    let toolBar: F
     
     /// Indicates master Store loading
     @Binding var masterIsLoading: Bool
-        
+    
     /// The type of view representing the body of this view
     var body: some View {
         VStack(spacing: 0) {
@@ -81,7 +83,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     private func onLoadingChange(_ loading: Bool){
         masterIsLoading = loading
     }
-
+    
     /// Load detail store for a master item
     /// - Parameter item: current master item
     private func loadDetails(_ item: T){

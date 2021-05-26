@@ -18,7 +18,9 @@ import Service
 /// `Componentable` - Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 /// `Scrolable` - Defines to represent scroll into `View`
 
-struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable, Componentable {
+struct BarChart<T: Model, U: Proxy, V : View, Content: View>:
+    View, Controllable, Loadable, Selectable, BlueStylable, Componentable
+{
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -33,8 +35,8 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     let content: (T, Bool, CGFloat) -> Content
     
     /// ToolBar with set of controls
-    let toolBar: ToolBarContent
-
+    let toolBar: V
+    
     /// The type of view representing the body of this view
     var body: some View {
         VStack(spacing: 0){

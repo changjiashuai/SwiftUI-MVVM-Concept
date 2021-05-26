@@ -18,23 +18,24 @@ import Ui
 /// `Componentable` - Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 /// `Scrolable` - Defines to represent scroll into `View`
 
-struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, BlueStylable, Componentable, Scrolable
+struct Detail<T: Model, U: Proxy, V: View, Content: View>:
+    View, Controllable, Loadable, BlueStylable, Componentable, Scrolable
 {
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
-
+    
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
-
+    
     /// A view builder that creates the content of an Item view
     let content: (T) -> Content
-
+    
     /// ToolBar with set of controls
-    let toolBar: ToolContent
+    let toolBar: V
     
     /// Indicates master Store loading
     @Binding var masterIsLoading: Bool
-
+    
     /// The type of view representing the body of this view
     var body: some View {
         VStack(spacing: 0) {
@@ -43,9 +44,9 @@ struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Contr
             StatusBar(total: $store.total)
         }.mask(!notLoading || masterIsLoading)
     }
-
+    
     // MARK: - Methods
-
+    
     /// Get list View
     /// - Returns: list view
     @ViewBuilder

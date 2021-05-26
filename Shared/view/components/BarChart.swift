@@ -30,18 +30,16 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     /// ToolBar with set of controls
     let toolBar: ToolBarContent
     
+    /// Cover component body with ScrollView
+    let scrolable = false
+    
     /// The type of view representing the body of this view
     var body: some View {
-        ZStack(alignment: .topLeading) {
+        VStack(spacing: 0){
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
-            if store.count() > 0 {
-                buildComponentBody()
-            } else {
-                if store.error != nil { ErrorView(store.error!) }
-                else { EmptyData() }
-            }
+            controlRender()
         }
-        .frame(height: 150, alignment: .topLeading)
+        .frame(height: 150)
         .mask(!notLoading, text: "Loading data for chart...")
         .background(componentRGB)
         .onAppear { if notLoading { load() } }
@@ -66,9 +64,7 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
                     content(item, isSelected(item), getItemWidth(proxy))
                         .onTapGesture { select(item) }
                 }
-            }
-            .offset(y: 50)
-           .frame(height: 100, alignment: .bottomLeading)
+            }.frame(maxHeight: .infinity, alignment: .bottom)
         }
     }
     

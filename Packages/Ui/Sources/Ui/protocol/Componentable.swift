@@ -20,20 +20,22 @@ public protocol Componentable{
     /// Repository with data
     var store: AbstractStore { get }
     
+    /// Cover component body with ScrollView
+    var scrolable: Bool { get }
+    
     /// build component body
     func buildComponentBody() -> Template
 }
 
-public extension Componentable{
+public extension Componentable{    
     
     /// Define component body depends on a request results
     /// - Returns: Component body
     @ViewBuilder
     func controlRender() -> some View{
         if store.count() > 0 {
-            ScrollView {
-                buildComponentBody()
-            }
+            if scrolable { ScrollView() { buildComponentBody() } }
+            else { buildComponentBody() }
         } else {
             if store.error != nil { ErrorView(store.error!) }
             else { EmptyData() }

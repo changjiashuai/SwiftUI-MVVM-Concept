@@ -27,6 +27,9 @@ struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Contr
 
     /// ToolBar with set of controls
     let toolBar: ToolContent
+    
+    /// Cover component body with ScrollView
+    let scrolable = true
 
     /// The type of view representing the body of this view
     var body: some View {

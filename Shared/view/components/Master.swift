@@ -34,6 +34,9 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     /// ToolBar with set of controls
     let toolBar: ToolContent
     
+    /// Cover component body with ScrollView
+    let scrolable = true
+    
     /// The type of view representing the body of this view
     var body: some View {
         VStack(spacing: 0) {

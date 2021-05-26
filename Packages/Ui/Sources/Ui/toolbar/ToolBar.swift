@@ -35,7 +35,7 @@ public struct ToolBar<Content: View>: View, BlueStylable {
             }
             Spacer()
             if showControls {
-                getItemsView()
+                getItems()
                 Button("update", action: {
                     curentCommand = LoadCommand(params: ["page": "*", "access token": authentication.getToken()], callback: { print("🟦 do something") })
                 })
@@ -81,7 +81,7 @@ public struct ToolBar<Content: View>: View, BlueStylable {
     /// Get View for extra controls
     /// - Returns: extra controls from config
     @ViewBuilder
-    private func getItemsView() -> some View {
+    private func getItems() -> some View {
         if items != nil {
             HStack { items!() }.padding().background(componentBorderRGB)
                 .border(width: 1, edges: [.leading,.trailing], color: borderRGB)

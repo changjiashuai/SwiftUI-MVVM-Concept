@@ -34,6 +34,9 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     /// ToolBar with set of controls
     let toolBar: ToolContent
     
+    /// Indicates master Store loading
+    @Binding var masterIsLoading: Bool
+    
     /// Cover component body with ScrollView
     let scrolable = true
     
@@ -42,8 +45,11 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
         VStack(spacing: 0) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             controlRender()
+            StatusBar(total: $store.total)
         }
         .mask(!notLoading)
+        .onReceive(store.$loading, perform: onLoadingChange)
+        .onReceive(store.$total, perform: onTotalChange)
         .onAppear { if notLoading { load(); detail.removeAll() } }
     }
     
@@ -61,13 +67,30 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
         }
     }
     
+    private func onTotalChange(_ total: Int){
+        if total == 0 { detail.removeAll() }
+    }
+    
+    /// Process master Store loading
+    /// - Parameter loading: loading indicator
+    private func onLoadingChange(_ loading: Bool){
+        if loading {
+            masterIsLoading = true
+        }else{
+            masterIsLoading = false
+        }
+    }
     
     /// Select item
     /// - Parameter item: selected item
     func select(_ item: T) {
-        
         selectedItem = item
-        
-        detail.load(params: ["page": "*", "access token": authentication.getToken(), "masterId": "\(item.id)"], callback: { print("🟦 do something") })
+        loadDetails(item)
+    }
+    
+    /// Load detail store for a master item
+    /// - Parameter item: current master item
+    private func loadDetails(_ item: T){
+        detail.load(params: ["page": "*", "access token": authentication.getToken(), "masterId": "\(item.id)"], callback: {masterIsLoading = false; print("🟦 do something") })
     }
 }

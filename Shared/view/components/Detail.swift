@@ -15,7 +15,6 @@ import Ui
 /// Property notLoading is implemented in Loadable
 struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, BlueStylable, Componentable
 {
-
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
 
@@ -30,13 +29,16 @@ struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Contr
     
     /// Cover component body with ScrollView
     let scrolable = true
+    
+    @Binding var masterIsLoading: Bool
 
     /// The type of view representing the body of this view
     var body: some View {
         VStack(spacing: 0) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             controlRender()
-        }.mask(!notLoading)
+            StatusBar(total: $store.total)
+        }.mask(!notLoading || masterIsLoading)
     }
 
     // MARK: - Methods

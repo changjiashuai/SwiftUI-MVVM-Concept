@@ -13,6 +13,8 @@ struct Movies: View {
 
     /// Item view factory
     let item = MovieFactory()
+    
+    @State var masterIsLoading: Bool = false
 
     /// App viewModel
     @EnvironmentObject var viewModel: AppViewModel
@@ -25,14 +27,17 @@ struct Movies: View {
                 store: viewModel.ganre,
                 detail: viewModel.movie,
                 content: item.ganre,
-                toolBar: ToolBar<EmptyView>("Ganre", showControls: false)
+                toolBar: ToolBar<EmptyView>("Ganre", showControls: false),
+                masterIsLoading : $masterIsLoading
             )
             Detail(
                 store: viewModel.movie,
                 content: item.movie,
-                toolBar: ToolBar<EmptyView>("Movie", showControls: false)
+                toolBar: ToolBar<EmptyView>("Movie", showControls: false),
+                masterIsLoading : $masterIsLoading
             )
         }
+            .mask(masterIsLoading, text: "Ganre is loading")
             .padding(.trailing)
             .padding(.vertical)
             .frame(minWidth: 320)

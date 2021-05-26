@@ -38,8 +38,9 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
         VStack(spacing: 0) {
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             controlRender()
+            StatusBar(total: $store.total)
         }
-        .frame(height: 150, alignment: .topLeading)
+        .frame(height: 150)
         .mask(!notLoading)
         .onAppear { if notLoading { load() } }
     }

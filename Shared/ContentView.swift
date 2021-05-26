@@ -33,7 +33,7 @@ struct ContentView: View {
                     viewModel: viewModel,
                     factory: buildItem,
                     count: count
-                )
+                )                
                 buildWidget.list(
                     store: viewModel.users,
                     content: buildItem.userRow,

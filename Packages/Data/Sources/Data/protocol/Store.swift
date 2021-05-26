@@ -52,5 +52,6 @@ public protocol Store {
     
     /// Remove all elements
     func removeAll()
+
 }
 

@@ -19,8 +19,11 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
     /// Informs the View that loading process is in the progress
     @Published public var loading: Bool = false
     
+    @Published public var total: Int = 0
+    
     /// Defines the communication level for data
     public var proxy: U
+    
     
     // MARK: - Life circle
     
@@ -30,7 +33,15 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
         self.proxy = proxy
     }
     
+    // MARK: - Private Methods
+    
+    /// Set total
+    private func setTotal(){
+        total = count()
+    }
+    
     // MARK: - API Methods
+    
     
     /// Get total of items in Store
     /// - Returns: count
@@ -53,6 +64,7 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
     /// Remove all elements
     public func removeAll() {
         items.removeAll()
+        self.setTotal()
     }
     
     /// Get if Store is empty
@@ -88,6 +100,7 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
                     DispatchQueue.main.async {
                         self.removeAll()
                         self.appendAll(response.items as! [T])
+                        self.setTotal()
                         callback?()
                         self.loading = false
                         if let error = response.error {

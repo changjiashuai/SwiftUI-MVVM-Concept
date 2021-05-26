@@ -38,6 +38,7 @@ struct MainToolBar: View, BlueStylable {
             Button("sign out") { auth.signOut() }.padding(.horizontal)
         }
             .font(.system(size: 12, weight: .thin))
+            .foregroundColor(.white)
             .border(borderRGB)
             .background(backgroundRGB)
     }

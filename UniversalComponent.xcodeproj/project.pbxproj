@@ -48,8 +48,6 @@
 		B27DD7522654FABA00977F74 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD7502654FABA00977F74 /* Movie.swift */; };
 		B27DD75726550D8A00977F74 /* BoardToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD75626550D8A00977F74 /* BoardToolBar.swift */; };
 		B27DD75826550D8A00977F74 /* BoardToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27DD75626550D8A00977F74 /* BoardToolBar.swift */; };
-		B27DD75D2655140800977F74 /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = B27DD75C2655140800977F74 /* video.png */; };
-		B27DD75E2655140800977F74 /* video.png in Resources */ = {isa = PBXBuildFile; fileRef = B27DD75C2655140800977F74 /* video.png */; };
 		B27DD7722656A75B00977F74 /* swiftui_mvvm_architecture.png in Resources */ = {isa = PBXBuildFile; fileRef = B27DD7712656A75B00977F74 /* swiftui_mvvm_architecture.png */; };
 		B27DD7732656A75B00977F74 /* swiftui_mvvm_architecture.png in Resources */ = {isa = PBXBuildFile; fileRef = B27DD7712656A75B00977F74 /* swiftui_mvvm_architecture.png */; };
 		B2835A2126524AAB00F257DA /* Ui in Frameworks */ = {isa = PBXBuildFile; productRef = B2835A2026524AAB00F257DA /* Ui */; };
@@ -65,8 +63,6 @@
 		B2B25D3F2639AA0B0044E693 /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B25D3D2639AA0B0044E693 /* book.json */; };
 		B2C900E5264D2CC800547364 /* ItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C900E4264D2CC800547364 /* ItemFactory.swift */; };
 		B2C900E6264D2CC800547364 /* ItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C900E4264D2CC800547364 /* ItemFactory.swift */; };
-		B2D8E437265D494800B8F7DA /* readme_app.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D8E436265D494800B8F7DA /* readme_app.png */; };
-		B2D8E438265D494800B8F7DA /* readme_app.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D8E436265D494800B8F7DA /* readme_app.png */; };
 		B2EFF661263AC0B300A584D2 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EFF660263AC0B300A584D2 /* AppViewModel.swift */; };
 		B2EFF662263AC0B300A584D2 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EFF660263AC0B300A584D2 /* AppViewModel.swift */; };
 		B2EFF6B7263AEE8C00A584D2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B2EFF6B6263AEE8C00A584D2 /* README.md */; };
@@ -96,7 +92,6 @@
 		B27DD74D2654E82100977F74 /* MovieFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieFactory.swift; sourceTree = "<group>"; };
 		B27DD7502654FABA00977F74 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		B27DD75626550D8A00977F74 /* BoardToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardToolBar.swift; sourceTree = "<group>"; };
-		B27DD75C2655140800977F74 /* video.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video.png; sourceTree = "<group>"; };
 		B27DD7712656A75B00977F74 /* swiftui_mvvm_architecture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swiftui_mvvm_architecture.png; sourceTree = "<group>"; };
 		B2835A1D26524AA100F257DA /* Ui */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Ui; path = Packages/Ui; sourceTree = "<group>"; };
 		B29ACAF2262D678A00209343 /* ComponentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentApp.swift; sourceTree = "<group>"; };
@@ -110,7 +105,6 @@
 		B2B25D382639A94C0044E693 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		B2B25D3D2639AA0B0044E693 /* book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = book.json; sourceTree = "<group>"; };
 		B2C900E4264D2CC800547364 /* ItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFactory.swift; sourceTree = "<group>"; };
-		B2D8E436265D494800B8F7DA /* readme_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = readme_app.png; sourceTree = "<group>"; };
 		B2EFF660263AC0B300A584D2 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		B2EFF6B6263AEE8C00A584D2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B2EFF6C2263AF69A00A584D2 /* mvvm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mvvm.png; sourceTree = "<group>"; };
@@ -250,11 +244,9 @@
 		B2B25D372639A9370044E693 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B2D8E436265D494800B8F7DA /* readme_app.png */,
 				B2EFF6C2263AF69A00A584D2 /* mvvm.png */,
 				B25C04092656B3C400041DB6 /* composition.png */,
 				B27DD7712656A75B00977F74 /* swiftui_mvvm_architecture.png */,
-				B27DD75C2655140800977F74 /* video.png */,
 				B2B25D3D2639AA0B0044E693 /* book.json */,
 				B2B25D382639A94C0044E693 /* user.json */,
 				B212028826443E1B0053EC0E /* user_chart.json */,
@@ -362,8 +354,6 @@
 			files = (
 				B212028926443E1B0053EC0E /* user_chart.json in Resources */,
 				B27DD73D2654DFDF00977F74 /* movie.json in Resources */,
-				B27DD75D2655140800977F74 /* video.png in Resources */,
-				B2D8E437265D494800B8F7DA /* readme_app.png in Resources */,
 				B27DD7722656A75B00977F74 /* swiftui_mvvm_architecture.png in Resources */,
 				B25C040A2656B3C400041DB6 /* composition.png in Resources */,
 				B2B25D392639A94C0044E693 /* user.json in Resources */,
@@ -381,8 +371,6 @@
 			files = (
 				B212028A26443E1B0053EC0E /* user_chart.json in Resources */,
 				B27DD73E2654DFDF00977F74 /* movie.json in Resources */,
-				B27DD75E2655140800977F74 /* video.png in Resources */,
-				B2D8E438265D494800B8F7DA /* readme_app.png in Resources */,
 				B27DD7732656A75B00977F74 /* swiftui_mvvm_architecture.png in Resources */,
 				B25C040B2656B3C400041DB6 /* composition.png in Resources */,
 				B2B25D3A2639A94C0044E693 /* user.json in Resources */,

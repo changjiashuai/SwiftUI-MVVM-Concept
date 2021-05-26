@@ -47,6 +47,7 @@ public struct ToolBar<Content: View>: View, BlueStylable {
             .padding(.horizontal, 11)
             .frame(height: 50)
             .font(.system(size: 12, weight: .thin))
+            .foregroundColor(.white)
             .background(backgroundRGB)
             .border(borderRGB)
             .preference(key: StoreCommandKey.self, value: curentCommand)

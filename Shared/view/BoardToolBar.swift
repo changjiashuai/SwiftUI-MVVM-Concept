@@ -33,6 +33,7 @@ struct BoardToolBar: View, BlueStylable {
                 .padding()
                 .border(borderRGB)
                 .background(backgroundRGB)
+                .foregroundColor(.white)
             ProgressView(value: Float(count) / Float(maxCol))
         }
     }

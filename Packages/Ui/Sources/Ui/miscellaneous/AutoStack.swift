@@ -1,5 +1,5 @@
 //
-//  AVStack.swift
+//  AutoStack.swift
 //  UniversalComponent
 //
 //  Created by Igor Shelopaev on 26.05.2021.

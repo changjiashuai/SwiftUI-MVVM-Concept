@@ -41,7 +41,7 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
         .onAppear { if notLoading { load() } }
     }
     
-    // MARK: - Methods
+    // MARK: - API Methods
     
     /// Get Item width
     /// - Parameter proxy: Geometry reader proxy

@@ -46,11 +46,10 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
         }
         .mask(!notLoading)
         .onReceive(store.$loading, perform: onLoadingChange)
-        .onReceive(store.$total, perform: onTotalChange)
         .onAppear { if notLoading { load(); detail.removeAll() } }
     }
     
-    // MARK: - Methods
+    // MARK: - API Methods
     
     /// Get list View
     /// - Returns: list view
@@ -64,9 +63,14 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
         }
     }
     
-    private func onTotalChange(_ total: Int){
-        if total == 0 { detail.removeAll() }
+    /// Select item
+    /// - Parameter item: selected item
+    func select(_ item: T) {
+        selectedItem = item
+        loadDetails(item)
     }
+    
+    // MARK: - Private Methods
     
     /// Process master Store loading
     /// - Parameter loading: loading indicator
@@ -78,13 +82,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
         }
     }
     
-    /// Select item
-    /// - Parameter item: selected item
-    func select(_ item: T) {
-        selectedItem = item
-        loadDetails(item)
-    }
-    
+
     /// Load detail store for a master item
     /// - Parameter item: current master item
     private func loadDetails(_ item: T){

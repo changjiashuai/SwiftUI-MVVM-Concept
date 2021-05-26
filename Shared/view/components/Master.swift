@@ -81,7 +81,6 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
             masterIsLoading = false
         }
     }
-    
 
     /// Load detail store for a master item
     /// - Parameter item: current master item

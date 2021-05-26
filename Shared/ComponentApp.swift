@@ -23,15 +23,20 @@ struct LayoutApp: App, BlueStylable {
             if auth.authenticated {
                 VStack {
                     MainToolBar()
-                    HStack {
-                        ContentView(
-                            buildItem: ItemFactory(),
-                            buildWidget: WidgetFactory()
-                        )
-                        Movies()
-                    }.environmentObject(viewModel)
-                }.environmentObject(auth)
-                 .background(backgroundRGB)
+                    #if os(iOS)
+                        AutoStack {
+                            ContentView(buildItem: ItemFactory(), buildWidget: WidgetFactory())
+                            Movies()
+                        }.environmentObject(viewModel)
+                    #elseif os(macOS)
+                        HStack {
+                            ContentView(buildItem: ItemFactory(), buildWidget: WidgetFactory())
+                            Movies()
+                        }.environmentObject(viewModel)
+                    #endif
+                }
+                    .environmentObject(auth)
+                    .background(backgroundRGB)
             } else {
                 Launching().environmentObject(auth)
             }

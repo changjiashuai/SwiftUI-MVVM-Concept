@@ -20,11 +20,6 @@
 },
 {
     "id" : 5,
-    "name": "Pavel",
-    "age" : 59
-},
-{
-    "id" : 6,
     "name": "Bill",
     "age" : 33
 }]

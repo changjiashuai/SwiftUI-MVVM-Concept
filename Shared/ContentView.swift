@@ -57,7 +57,6 @@ struct ContentView: View {
                     toolBar: ToolBar<EmptyView>("Books")
                 )
             }
-        }.padding()
-         .frame(minWidth: 580)
+        }.padding(5)
     }
 }

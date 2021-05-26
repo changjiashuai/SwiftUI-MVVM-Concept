@@ -38,9 +38,8 @@ struct Movies: View {
             )
         }
             .mask(masterIsLoading, text: "Ganre is loading")
-            .padding(.trailing)
-            .padding(.vertical)
-            .frame(minWidth: 320)
+            .padding(5)
+
     }
 }
 

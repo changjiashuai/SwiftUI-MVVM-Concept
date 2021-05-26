@@ -18,11 +18,8 @@ public protocol Componentable{
     associatedtype AbstractStore: Store
     
     /// Repository with data
-    var store: AbstractStore { get }
-    
-    /// Cover component body with ScrollView
-    var scrolable: Bool { get }
-    
+    var store: AbstractStore { get }    
+   
     /// build component body
     func buildComponentBody() -> Template
 }
@@ -34,7 +31,7 @@ public extension Componentable{
     @ViewBuilder
     func controlRender() -> some View{
         if store.count() > 0 {
-            if scrolable { ScrollView() { buildComponentBody() } }
+            if self is Scrolable { ScrollView() { buildComponentBody() } }
             else { buildComponentBody() }
         } else {
             if store.error != nil { ErrorView(store.error!) }

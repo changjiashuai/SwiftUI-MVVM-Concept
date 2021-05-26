@@ -12,7 +12,7 @@ import Ui
 /// List displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
-struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable, Componentable {
+struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable, Componentable, Scrolable {
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -27,10 +27,7 @@ struct UniversalList<T: Model, U: Proxy, ToolContent: View, Content: View>: View
     let content: (T, Bool) -> Content
     
     /// ToolBar with set of controls
-    let toolBar: ToolContent
-    
-    /// Cover component body with ScrollView
-    let scrolable = true
+    let toolBar: ToolContent    
     
     /// The type of view representing the body of this view
     var body: some View {

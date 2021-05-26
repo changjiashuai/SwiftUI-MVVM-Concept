@@ -29,10 +29,7 @@ struct BarChart<T: Model, U: Proxy, ToolBarContent : View, Content: View>: View,
     
     /// ToolBar with set of controls
     let toolBar: ToolBarContent
-    
-    /// Cover component body with ScrollView
-    let scrolable = false
-    
+
     /// The type of view representing the body of this view
     var body: some View {
         VStack(spacing: 0){

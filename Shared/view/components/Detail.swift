@@ -13,7 +13,7 @@ import Ui
 /// Detail list displays data conformed to Model protocol
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
-struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, BlueStylable, Componentable
+struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, BlueStylable, Componentable, Scrolable
 {
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -26,9 +26,6 @@ struct Detail<T: Model, U: Proxy, ToolContent: View, Content: View>: View, Contr
 
     /// ToolBar with set of controls
     let toolBar: ToolContent
-    
-    /// Cover component body with ScrollView
-    let scrolable = true
     
     @Binding var masterIsLoading: Bool
 

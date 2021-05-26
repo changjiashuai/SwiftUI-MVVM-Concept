@@ -14,7 +14,7 @@ import Ui
 /// Detail view is updated after am item is selected
 /// Method onCommandChanged is implemented in Controllable
 /// Property notLoading is implemented in Loadable
-struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable, Componentable {
+struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content: View>: View, Controllable, Loadable, Selectable, BlueStylable, Componentable, Scrolable {
     
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
@@ -36,10 +36,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     
     /// Indicates master Store loading
     @Binding var masterIsLoading: Bool
-    
-    /// Cover component body with ScrollView
-    let scrolable = true
-    
+        
     /// The type of view representing the body of this view
     var body: some View {
         VStack(spacing: 0) {

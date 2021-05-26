@@ -9,7 +9,7 @@ import SwiftUI
 import Ui
 
 
-/// Set of templates for Master Detail View presenting Ganges and Movies
+/// Set of templates for Master Detail View presenting Ganres and Movies
 struct MovieFactory: GridBuilder {
     
     // MARK: - API Methods

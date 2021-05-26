@@ -10,8 +10,10 @@ import Ui
 
 
 /// Set of templates for items View
-/// ChartBuilder - contains builders for creating Chart elements
-/// GridBuilder - contains builders for creating Grid elements
+///
+/// `ChartBuilder` - contains builders for creating Chart elements
+/// `GridBuilder` - contains builders for creating Grid elements
+
 struct ItemFactory: ChartBuilder, GridBuilder {
 
     // MARK: - API Methods

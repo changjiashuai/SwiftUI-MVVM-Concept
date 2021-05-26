@@ -8,6 +8,8 @@
 import SwiftUI
 import Ui
 
+
+/// Toolbar for managing the dynamic charts
 struct BoardToolBar: View, BlueStylable {
 
     ///Max amount of charts

@@ -75,11 +75,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, ToolContent: View, Content
     /// Process master Store loading
     /// - Parameter loading: loading indicator
     private func onLoadingChange(_ loading: Bool){
-        if loading {
-            masterIsLoading = true
-        }else{
-            masterIsLoading = false
-        }
+        masterIsLoading = loading
     }
 
     /// Load detail store for a master item

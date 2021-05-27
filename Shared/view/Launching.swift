@@ -19,15 +19,20 @@ struct Launching: View, BlueStylable {
     var body: some View {
         VStack {
             Spacer()
-            Image("dashboard")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            if authentication.authenticated == false {
+                Image("dashboard_title")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .overlay(BarChartAnimation(), alignment: .center)
+                    .padding(20)
+            }
             Button("Click to launch") { authentication.signIn() }
             Spacer()
         }
             .frame(maxWidth: .infinity)
-            .padding()
+            .padding(25)
             .foregroundColor(.white)
             .background(backgroundRGB)
+            .ignoresSafeArea()
     }
 }

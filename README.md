@@ -83,7 +83,7 @@ App stores are assembled in AppViewModel In the code example. Two views (Univers
 * Master detail view 
 * Sign in sign out
 
-[![click to watch expected UI behavior for the example](https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/readme_app.png)](https://youtu.be/tUgEK03Hu00)
+[![click to watch expected UI behavior for the example](https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/readme_app.png)](https://youtu.be/zFkxT3cqdaA)
 
 ## Requirements
 

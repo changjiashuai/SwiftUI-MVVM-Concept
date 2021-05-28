@@ -23,7 +23,7 @@ struct Launching: View, Stylable {
                 Image("dashboard_title")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .overlay(BarChartAnimation(), alignment: .center)
+                    .overlay(BarAnimation(), alignment: .center)
                     .padding(20)
             }
             Button("Click to launch") { authentication.signIn() }

@@ -25,6 +25,11 @@ public protocol Controllable {
 
 extension Controllable {
 
+    /// Indicates state of loading
+    public var notLoading: Bool {
+        !store.loading
+    }
+    
     /// Act on a command from the ToolBar
     /// - Parameter command: Command from toolBar to do some actions
     public func onCommandChanged(_ command: StoreCommand) {
@@ -35,7 +40,8 @@ extension Controllable {
     public func load() {
         ///Using authentication service generate secret token to prove level of access to communicate with remote sources
         store.load(
-            params: ["page": "*",
+            params: [
+                "page": "*",
                 "access token": authentication.getToken()
             ]
         ) {

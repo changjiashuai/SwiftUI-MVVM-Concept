@@ -13,13 +13,13 @@ import Service
 /// Chart View
 ///
 /// `Controllable` - Add controllable behavior to view to obey commands from others views. Method `onCommandChanged` is implemented in Controllable
-/// `Loadable` - Process load state of bound `Store`. Property `notLoading` is implemented in Loadable
+/// `Property `notLoading` is implemented in `Controllable`
 /// `Selectable` - Add selection behavior for `View` items.  Method`isSelected` is defined in Selectable
 /// `Componentable` - Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 /// `Scrolable` - Defines to represent scroll into `View`
 
 struct BarChart<T: Model, U: Proxy, V : View, Content: View>:
-    View, Controllable, Loadable, Selectable, BlueStylable, Componentable
+    View, Controllable, Selectable, BlueStylable, Componentable
 {
     
     /// Store with data

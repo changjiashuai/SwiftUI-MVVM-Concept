@@ -7,7 +7,9 @@
 import Foundation
 
 
-public class Authentication: ObservableObject, AuthenticationAPI {
+/// `Handler` is responsible for cheking the right to execute a command acording the state of authentication
+public class Authentication: ObservableObject, AuthenticationAPI, Handler {
+   
     
     /// State of authentication
     @Published public var authenticated = false
@@ -48,5 +50,14 @@ public class Authentication: ObservableObject, AuthenticationAPI {
         }
         /// Generate secret token
         return "\(Int.random(in: 1...1_000_000)) \(user?.name.uppercased() ?? "")"
+    }
+    
+    /// Chek the right to execute a command
+    public func handle() -> HandlerError? {
+        if authenticated == false{
+            return .notAuthenticated
+        }
+
+        return nil
     }
 }

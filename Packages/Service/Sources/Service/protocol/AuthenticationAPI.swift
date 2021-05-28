@@ -7,7 +7,7 @@
 import Foundation
 
 /// API for authenticating
-public protocol AuthenticationAPI {
+public protocol AuthenticationAPI : Handler {
    
     /// Get authenticated user name
     /// - Returns: user name

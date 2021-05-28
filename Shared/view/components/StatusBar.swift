@@ -18,7 +18,8 @@ struct StatusBar: View, Stylable  {
     /// The type of view representing the body of this view
     var body: some View {
         HStack{
-            Text("Total items: \(total)").foregroundColor(.white).font(.system(size: 9, weight: .thin))
+            Text("Total items: \(total)")
+                .foregroundColor(.white).font(.system(size: 9, weight: .thin))
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(5)

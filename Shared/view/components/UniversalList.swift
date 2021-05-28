@@ -21,8 +21,7 @@ import Ui
 
 struct UniversalList<T: Model, U: Proxy, V: View, Content: View>:
     View, Controllable, Selectable, Stylable, Componentable, Scrolable
-{
-    
+{    
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
     

@@ -22,8 +22,7 @@ import Service
 
 struct BarChart<T: Model, U: Proxy, V : View, Content: View>:
     View, Controllable, Selectable, Stylable, Componentable
-{
-    
+{    
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
     

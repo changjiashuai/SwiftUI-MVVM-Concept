@@ -17,7 +17,8 @@ public class LoadCommand: StoreCommand{
     public typealias Params = [String: String]
     
     /// Set of params
-    let params: Params?
+    private let params: Params?
+    
     /// Do something after loading
     private let callback: CallbackClosure?
 

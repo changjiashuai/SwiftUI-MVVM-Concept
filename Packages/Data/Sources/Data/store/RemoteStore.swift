@@ -19,6 +19,7 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
     /// Informs the View that loading process is in the progress
     @Published public var loading: Bool = false
     
+    /// Total amount of items in Store
     @Published public var total: Int = 0
     
     /// Defines the communication level for data

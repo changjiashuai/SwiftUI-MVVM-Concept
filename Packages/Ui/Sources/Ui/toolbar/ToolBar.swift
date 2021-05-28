@@ -37,12 +37,7 @@ public struct ToolBar<Content: View>: View, Stylable {
             if showControls {
                 getItems()
                 Button("update", action: {
-                    curentCommand = LoadCommand(
-                        params: [
-                            "page": "*",
-                            "access token": authentication.getToken()
-                        ],
-                        callback: { print("🟦 do something") })
+                    curentCommand = load()
                 })
                 Button("clear", action: {
                     curentCommand = RemoveAllCommand()
@@ -58,6 +53,7 @@ public struct ToolBar<Content: View>: View, Stylable {
             .preference(key: StoreCommandKey.self, value: curentCommand)
 
     }
+   
 
     // MARK: - Life circle
 
@@ -84,6 +80,17 @@ public struct ToolBar<Content: View>: View, Stylable {
 
     // MARK: - Methods
 
+    /// Create load command
+    /// - Returns: Load command
+    private func load() -> StoreCommand{
+        LoadCommand(
+            params: [
+                "page": "*",
+                "access token": authentication.getToken()
+            ],
+            callback: { print("🟦 do something") })
+    }
+    
     /// Get View for extra controls
     /// - Returns: extra controls from config
     @ViewBuilder

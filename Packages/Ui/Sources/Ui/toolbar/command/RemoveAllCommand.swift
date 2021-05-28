@@ -13,7 +13,7 @@ public class RemoveAllCommand: StoreCommand{
     
     /// Remode all items from a store
     /// - Parameter store: controlled store
-    override public func execute<T:Model, U: Proxy>(store : RemoteStore<T,U>){
+    override public func execute<T: Store>(store : T){
         store.removeAll()
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 import Data
 
 /// Defines command for store from a UI control
-public class StoreCommand: Equatable {
+public class StoreCommand: Command {
     
     /// Time stamp to differ repeating the same command several times in a row
     let date = Date()
@@ -19,7 +19,7 @@ public class StoreCommand: Equatable {
     // MARK: - API Methods
     
     /// Execute command method
-    public func execute<V:Model, U: Proxy>(store : RemoteStore<V,U>){ }
+    public func execute<T: Store>(store : T){ }
     
     /// Compare values for equality or inequality
     /// - Parameters:

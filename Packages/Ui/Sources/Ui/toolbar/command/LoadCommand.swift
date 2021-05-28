@@ -35,7 +35,7 @@ public class LoadCommand: StoreCommand{
     // MARK: - Methods
     /// Load data
     /// - Parameter store: controlled store
-    override public func execute<T:Model, U: Proxy>(store : RemoteStore<T,U>){
+    override public func execute<T: Store>(store : T){
         store.load(params: params, callback: callback)
     }
 }

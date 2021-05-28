@@ -50,7 +50,8 @@ extension Controllable {
         guard let error = handle() else{
             return command.execute(store: store)
         }
-
+        
+        //Display an error in the view that requested to run a command
         store.error = error.description
     }
     

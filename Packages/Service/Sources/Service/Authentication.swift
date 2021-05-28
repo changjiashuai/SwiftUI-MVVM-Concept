@@ -12,7 +12,7 @@ public class Authentication: ObservableObject, AuthenticationAPI, Handler {
    
     
     /// State of authentication
-    @Published public var authenticated = false
+    @Published public private(set) var authenticated = false
     
     /// authenticated user
     private var user: AuthenticatedUser? = nil

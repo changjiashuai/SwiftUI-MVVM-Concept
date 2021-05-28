@@ -13,6 +13,8 @@ public class StoreCommand: Equatable {
     
     /// Time stamp to differ repeating the same command several times in a row
     let date = Date()
+    
+    public init() {}
        
     // MARK: - API Methods
     

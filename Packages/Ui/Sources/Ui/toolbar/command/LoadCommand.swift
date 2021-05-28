@@ -9,12 +9,12 @@ import Foundation
 import Data
 
 /// Command to load Store with params
-class LoadCommand: StoreCommand{
+public class LoadCommand: StoreCommand{
 
     /// Optinal closure type for a collback
-    typealias CallbackClosure = () -> Void
+    public typealias CallbackClosure = () -> Void
     ///Dic for a request params
-    typealias Params = [String: String]
+    public typealias Params = [String: String]
     
     /// Set of params
     let params: Params?
@@ -27,7 +27,7 @@ class LoadCommand: StoreCommand{
     /// - Parameters:
     ///   - params: set of params
     ///   - callback: Do something after loading
-    init (params: Params? = nil, callback: CallbackClosure? = nil){
+    public init (params: Params? = nil, callback: CallbackClosure? = nil){
         self.params = params
         self.callback = callback
     }
@@ -35,7 +35,7 @@ class LoadCommand: StoreCommand{
     // MARK: - Methods
     /// Load data
     /// - Parameter store: controlled store
-    override func execute<T:Model, U: Proxy>(store : RemoteStore<T,U>){
+    override public func execute<T:Model, U: Proxy>(store : RemoteStore<T,U>){
         store.load(params: params, callback: callback)
     }
 }

@@ -10,36 +10,35 @@ import Ui
 
 /// Master detail view with ganres and movies
 struct Movies: View {
-
+    
     /// Item view factory
     let item = MovieFactory()
     
-    @State var masterIsLoading: Bool = false
-
     /// App viewModel
     @EnvironmentObject var viewModel: AppViewModel
-
+    
+    /// Current command
+    @State var curentCommand: StoreCommand = StoreCommand()
+    
     /// The type of view representing the body of this view
     var body: some View {
-
+        
         HStack(spacing: 2) {
             Master(
                 store: viewModel.ganre,
-                detail: viewModel.movie,
                 content: item.ganre,
                 toolBar: ToolBar<EmptyView>("Ganre", showControls: false),
-                masterIsLoading : $masterIsLoading
+                curentCommand : $curentCommand
             )
             Detail(
                 store: viewModel.movie,
                 content: item.movie,
                 toolBar: ToolBar<EmptyView>("Movie", showControls: false),
-                masterIsLoading : $masterIsLoading
+                curentCommand : $curentCommand
             )
         }
-            .mask(masterIsLoading, text: "Ganre is loading")
-            .padding(5)
-
+        .padding(5)
     }
+    
 }
 

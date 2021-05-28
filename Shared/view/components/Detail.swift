@@ -35,8 +35,8 @@ struct Detail<T: Model, U: Proxy, V: View, Content: View>:
     /// ToolBar with set of controls
     let toolBar: V
     
-    /// Indicates master Store loading
-    @Binding var masterIsLoading: Bool
+    /// Current command
+    @Binding var curentCommand: StoreCommand
     
     /// The type of view representing the body of this view
     var body: some View {
@@ -44,7 +44,9 @@ struct Detail<T: Model, U: Proxy, V: View, Content: View>:
             toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             controlRender()
             StatusBar(total: $store.total)
-        }.mask(!notLoading || masterIsLoading)
+        }.mask(!notLoading)
+        .preference(key: StoreCommandKey.self, value: curentCommand)
+        .onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
     }
     
     // MARK: - Methods
@@ -58,5 +60,5 @@ struct Detail<T: Model, U: Proxy, V: View, Content: View>:
                 content(item)
             }
         }
-    }
+    }    
 }

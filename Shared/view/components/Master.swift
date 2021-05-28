@@ -19,14 +19,11 @@ import Ui
 ///  Method`isSelected` is defined in Selectable
 /// `Componentable` - Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 /// `Scrolable` - Defines to represent scroll into `View`
-struct Master<T: Model, D: Model, V: Proxy, U: Proxy, F: View, Content: View>:
+struct Master<T: Model, U: Proxy, F: View, Content: View>:
     View, Controllable, Selectable, Stylable, Componentable, Scrolable
 {
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
-
-    /// Store with data
-    @StateObject var detail: RemoteStore<D, V>
 
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
@@ -40,8 +37,8 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, F: View, Content: View>:
     /// ToolBar with set of controls
     let toolBar: F
 
-    /// Indicates master Store loading
-    @Binding var masterIsLoading: Bool
+    /// Current command
+    @Binding var curentCommand: StoreCommand
 
     /// The type of view representing the body of this view
     var body: some View {
@@ -51,8 +48,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, F: View, Content: View>:
             StatusBar(total: $store.total)
         }
             .mask(!notLoading)
-            .onReceive(store.$loading, perform: onLoadingChange)
-        .onAppear { if notLoading { load() } }
+            .onAppear { if notLoading { load(); curentCommand = RemoveAllCommand() } }
     }
 
     // MARK: - API Methods
@@ -78,22 +74,18 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, F: View, Content: View>:
 
     // MARK: - Private Methods
 
-    /// Process master Store loading
-    /// - Parameter loading: loading indicator
-    private func onLoadingChange(_ loading: Bool) {
-        masterIsLoading = loading
-    }
-
     /// Load detail store for a master item
     /// - Parameter item: current master item
     private func loadDetails(_ item: T) {
-        detail.load(
+
+        curentCommand = LoadCommand(
             params: [
                 "page": "*",
-                "access token": authentication.getToken(),
-                "masterId": "\(item.id)"
+                "masterId": "\(item.id)",
+                "access token": authentication.getToken()
             ],
-            callback: { masterIsLoading = false; print("🟦 do something") }
-        )
+            callback: {
+                print("🟦 do something")
+            })
     }
 }

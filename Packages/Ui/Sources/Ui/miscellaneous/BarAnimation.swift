@@ -1,5 +1,5 @@
 //
-//  BarChartAnimation.swift
+//  BarAnimation.swift
 //
 //
 //  Created by Igor Shelopaev on 27.05.2021.
@@ -13,39 +13,36 @@ public struct BarAnimation: View, Stylable {
     /// Bar Store
     @StateObject fileprivate var store = BarStore()
     
-    /// Count of bars for animation
-    var count: Int {
-        store.count
-    }
     /// The type of view representing the body of this view.
     public var body: some View {
         GeometryReader { proxy in
             HStack {
-                ForEach(1..<count) { i in
+                ForEach(1..<store.count) { i in
                     barAnimationRGB.mask(
-                        ZStack {
-                            Rectangle()
-                                .frame(
-                                    width: proxy.size.width / CGFloat(count * 2),
-                                    height: store.bars[i - 1].height
-                                )
-                        }
+                        Rectangle()
+                            .frame( width: barWidth(proxy), height: barHeight(i) )
                     )
                 }
             }
             .frame(maxWidth: .infinity)
-            .onAppear {
-                store.startAnimation()
-            }
-            .onDisappear {
-                store.stopAnimation()
-            }
+            .onAppear { store.startAnimation() }
+            .onDisappear { store.stopAnimation() }
         }
     }
     
     // MARK: - Life circle
     
     public init() { }
+    
+    // MARK: - Private Methods
+    
+    private func barWidth(_ proxy : GeometryProxy) -> CGFloat {
+        proxy.size.width / CGFloat(store.count * 2)
+    }
+    
+    private func barHeight(_ index : Int) -> CGFloat{
+        store.bars[index - 1].height
+    }
     
 }
 
@@ -113,7 +110,7 @@ fileprivate class BarStore: ObservableObject {
         bars[index - 1].height = barMaxHeight
     }
     
-    private  func setMinHeight(forBar index: Int) {
+    private func setMinHeight(forBar index: Int) {
         bars[index - 1].height = barMinHeight
     }
     

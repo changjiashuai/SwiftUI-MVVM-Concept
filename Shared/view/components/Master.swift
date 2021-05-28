@@ -22,7 +22,6 @@ import Ui
 struct Master<T: Model, D: Model, V: Proxy, U: Proxy, F: View, Content: View>:
     View, Controllable, Selectable, Stylable, Componentable, Scrolable
 {
-
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
 

@@ -13,7 +13,7 @@ import Service
 public struct ToolBar<Content: View>: View, Stylable {
 
     /// Current command
-    @State var curentCommand: StoreCommand = StoreCommand()
+    @State var curentCommand = StoreCommand()
 
     /// Authentication service
     @EnvironmentObject var authentication: Authentication

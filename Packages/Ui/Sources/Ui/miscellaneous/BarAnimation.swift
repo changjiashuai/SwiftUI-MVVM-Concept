@@ -11,7 +11,7 @@ import SwiftUI
 public struct BarAnimation: View, Stylable {
     
     /// Bar Store
-    @StateObject var store = BarStore()
+    @StateObject fileprivate var store = BarStore()
     
     /// Count of bars for animation
     var count: Int {
@@ -52,7 +52,7 @@ public struct BarAnimation: View, Stylable {
 // MARK: -- Store --
 
 /// Generate and manage animation bars
-class BarStore: ObservableObject {
+fileprivate class BarStore: ObservableObject {
     
     @Published private(set) var bars: [Bar] = []
     
@@ -122,7 +122,7 @@ class BarStore: ObservableObject {
 // MARK: -- Model --
 
 /// Animation Bar
-struct Bar: Identifiable, Hashable {
+fileprivate struct Bar: Identifiable, Hashable {
     var id: Int
     var height: CGFloat
 }

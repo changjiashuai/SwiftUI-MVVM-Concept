@@ -52,7 +52,7 @@ struct Master<T: Model, D: Model, V: Proxy, U: Proxy, F: View, Content: View>:
         }
             .mask(!notLoading)
             .onReceive(store.$loading, perform: onLoadingChange)
-            .onAppear { if notLoading { load(); detail.removeAll() } }
+        .onAppear { if notLoading { load() } }
     }
 
     // MARK: - API Methods

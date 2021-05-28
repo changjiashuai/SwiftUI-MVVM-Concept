@@ -25,6 +25,7 @@ struct Launching: View, Stylable {
                     .aspectRatio(contentMode: .fit)
                     .overlay(BarChartAnimation(), alignment: .center)
                     .padding(20)
+                    .padding(.bottom, 50)
             }
             Button("Click to launch") { authentication.signIn() }
             Spacer()

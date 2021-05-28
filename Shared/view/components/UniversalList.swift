@@ -21,7 +21,7 @@ import Ui
 
 struct UniversalList<T: Model, U: Proxy, V: View, Content: View>:
     View, Controllable, Selectable, Stylable, Componentable, Scrolable
-{    
+{
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
     
@@ -47,7 +47,9 @@ struct UniversalList<T: Model, U: Proxy, V: View, Content: View>:
         }
         .frame(height: 150)
         .mask(!notLoading)
-        .onAppear { if notLoading { load() } }
+        .onAppear {
+            if notLoading { load( params : ["page" : "*"] ) }
+        }
     }
     
     // MARK: - API Methods

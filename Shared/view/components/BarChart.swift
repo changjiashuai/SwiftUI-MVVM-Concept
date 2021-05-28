@@ -46,7 +46,9 @@ struct BarChart<T: Model, U: Proxy, V : View, Content: View>:
         }
         .frame(height: 150)
         .mask(!notLoading, text: "Loading data for chart...")
-        .onAppear { if notLoading { load() } }
+        .onAppear {
+            if notLoading { load() }            
+        }
     }
     
     // MARK: - API Methods

@@ -11,20 +11,25 @@ import Service
 
 /// Add controllable behavior to view to obey commands from others views
 public protocol Controllable {
-
+    
     associatedtype Item: Model
     associatedtype AbstractProxy: Proxy
     associatedtype AbstractAuthentication: AuthenticationAPI
-
+    
+    ///Dic for a request params
+    typealias Params = [String: String]
+    /// Optinal closure type for a collback
+    typealias CallbackClosure = () -> Void
+    
     /// Store with data
     var store: RemoteStore<Item, AbstractProxy> { get }
-
+    
     /// Authentication service
     var authentication: AbstractAuthentication { get }
 }
 
 extension Controllable {
-
+    
     /// Indicates state of loading
     public var notLoading: Bool {
         !store.loading
@@ -35,18 +40,16 @@ extension Controllable {
     public func onCommandChanged(_ command: StoreCommand) {
         command.execute(store: store)
     }
-
+    
     /// load data
-    public func load() {
-        ///Using authentication service generate secret token to prove level of access to communicate with remote sources
-        store.load(
-            params: [
-                "page": "*",
-                "access token": authentication.getToken()
-            ]
-        ) {
-            print("🟦 do something after loading")
-        }
+    public func load( params : Params = [:], callback : CallbackClosure? = nil ){
+        
+        var all = [ "access token" : authentication.getToken()]
+        for (key, value) in params { all[key] = value }
+        
+        onCommandChanged(
+            LoadCommand(params: all, callback: callback)
+        )
     }
 }
 

@@ -37,7 +37,12 @@ public struct ToolBar<Content: View>: View, Stylable {
             if showControls {
                 getItems()
                 Button("update", action: {
-                    curentCommand = LoadCommand(params: ["page": "*", "access token": authentication.getToken()], callback: { print("🟦 do something") })
+                    curentCommand = LoadCommand(
+                        params: [
+                            "page": "*",
+                            "access token": authentication.getToken()
+                        ],
+                        callback: { print("🟦 do something") })
                 })
                 Button("clear", action: {
                     curentCommand = RemoveAllCommand()
@@ -85,7 +90,7 @@ public struct ToolBar<Content: View>: View, Stylable {
     private func getItems() -> some View {
         if items != nil {
             HStack { items!() }.padding().background(componentBorderRGB)
-                .border(width: 1, edges: [.leading,.trailing], color: borderRGB)
+                .border(width: 1, edges: [.leading, .trailing], color: borderRGB)
         } else {
             EmptyView()
         }

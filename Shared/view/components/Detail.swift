@@ -12,9 +12,11 @@ import Ui
 
 /// Detail list displays data conformed to Model protocol
 ///
-/// `Controllable` - Add controllable behavior to view to obey commands from others views. Method `onCommandChanged` is implemented in Controllable
-/// `Property `notLoading` is implemented in `Controllable`
-/// `Selectable` - Add selection behavior for `View` items.  Method`isSelected` is defined in Selectable
+/// `Controllable` - Add controllable behavior to view to obey commands from others views.
+///  Method `onCommandChanged` is implemented in `Controllable`
+///  Property `notLoading` is implemented in `Controllable`
+/// `Selectable` - Add selection behavior for `View` items.
+///  Method`isSelected` is defined in Selectable
 /// `Componentable` - Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 /// `Scrolable` - Defines to represent scroll into `View`
 

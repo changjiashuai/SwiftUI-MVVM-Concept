@@ -10,7 +10,7 @@ import Service
 
 
 /// Toolbar for any View supporting StoredView protocol
-public struct ToolBar<Content: View>: View, BlueStylable {
+public struct ToolBar<Content: View>: View, Stylable {
 
     /// Current command
     @State var curentCommand: StoreCommand = StoreCommand()

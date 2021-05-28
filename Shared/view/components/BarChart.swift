@@ -19,7 +19,7 @@ import Service
 /// `Scrolable` - Defines to represent scroll into `View`
 
 struct BarChart<T: Model, U: Proxy, V : View, Content: View>:
-    View, Controllable, Selectable, BlueStylable, Componentable
+    View, Controllable, Selectable, Stylable, Componentable
 {
     
     /// Store with data

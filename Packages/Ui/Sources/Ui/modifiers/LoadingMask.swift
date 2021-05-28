@@ -9,7 +9,7 @@ import SwiftUI
 
 
 /// Mask modifier
-fileprivate struct Mask: ViewModifier, BlueStylable {
+fileprivate struct Mask: ViewModifier, Stylable {
     
     /// true - is loading, false - loaded
     let loading : Bool

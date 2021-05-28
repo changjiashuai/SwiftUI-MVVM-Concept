@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Set of elementary blocks for creating Charts View
-public protocol ChartBuilder: BlueStylable {
+public protocol ChartBuilder: Stylable {
 
     associatedtype BarTemplate: View
 

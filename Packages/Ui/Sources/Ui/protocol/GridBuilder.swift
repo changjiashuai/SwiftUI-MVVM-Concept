@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Set of elementary blocks for creating Grid View
-public protocol GridBuilder: BlueStylable {
+public protocol GridBuilder: Stylable {
     
     //    Cell template
     associatedtype CellTemplate: View

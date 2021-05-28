@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-public protocol BlueStylable {
+public protocol Stylable {
 
 
 }
 
-public extension BlueStylable {
+public extension Stylable {
     var backgroundRGB: LinearGradient {
         LinearGradient(gradient:
                 Gradient(

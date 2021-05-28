@@ -19,7 +19,7 @@ import Ui
 /// `Scrolable` - Defines to represent scroll into `View`
 
 struct Master<T: Model, D: Model, V: Proxy, U: Proxy, F: View, Content: View>:
-    View, Controllable, Selectable, BlueStylable, Componentable, Scrolable
+    View, Controllable, Selectable, Stylable, Componentable, Scrolable
 {
 
     /// Store with data

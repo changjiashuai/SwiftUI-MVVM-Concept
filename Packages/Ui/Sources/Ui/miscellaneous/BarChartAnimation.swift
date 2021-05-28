@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// View with animation for launching
-public struct BarChartAnimation: View, BlueStylable {
+public struct BarChartAnimation: View, Stylable {
     
     /// Bar Store
     @StateObject var store = BarStore()

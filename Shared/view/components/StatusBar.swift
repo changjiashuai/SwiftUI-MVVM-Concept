@@ -10,7 +10,7 @@ import Ui
 
 
 /// Displays additional information for widgets
-struct StatusBar: View, BlueStylable  {
+struct StatusBar: View, Stylable  {
     
     /// Total amount of items
     @Binding var total : Int

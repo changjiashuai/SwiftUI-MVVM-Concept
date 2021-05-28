@@ -18,7 +18,7 @@ import Ui
 /// `Scrolable` - Defines to represent scroll into `View`
 
 struct UniversalList<T: Model, U: Proxy, V: View, Content: View>:
-    View, Controllable, Selectable, BlueStylable, Componentable, Scrolable
+    View, Controllable, Selectable, Stylable, Componentable, Scrolable
 {
     
     /// Store with data

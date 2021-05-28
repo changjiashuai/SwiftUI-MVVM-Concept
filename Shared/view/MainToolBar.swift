@@ -10,7 +10,7 @@ import Service
 import Ui
 
 /// Main tool bar of the app
-struct MainToolBar: View, BlueStylable {
+struct MainToolBar: View, Stylable {
 
     /// Authentication service
     @EnvironmentObject var auth: Authentication

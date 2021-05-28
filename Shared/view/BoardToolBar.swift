@@ -10,7 +10,7 @@ import Ui
 
 
 /// Toolbar for managing the dynamic charts
-struct BoardToolBar: View, BlueStylable {
+struct BoardToolBar: View, Stylable {
 
     ///Max amount of charts
     private let maxCol = 15

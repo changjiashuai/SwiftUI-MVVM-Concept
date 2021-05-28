@@ -10,7 +10,7 @@ import Service
 import Ui
 
 /// This view is presented while the app is launching, i.e. determining if a user is signed in.
-struct Launching: View, BlueStylable {
+struct Launching: View, Stylable {
 
     /// Authentication service
     @EnvironmentObject var authentication: Authentication

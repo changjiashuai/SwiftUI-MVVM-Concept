@@ -19,7 +19,7 @@ import Ui
 /// `Scrolable` - Defines to represent scroll into `View`
 
 struct Detail<T: Model, U: Proxy, V: View, Content: View>:
-    View, Controllable, BlueStylable, Componentable, Scrolable
+    View, Controllable, Stylable, Componentable, Scrolable
 {
     /// Store with data
     @StateObject var store: RemoteStore<T, U>

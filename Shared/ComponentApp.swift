@@ -9,7 +9,7 @@ import Service
 import Ui
 
 @main
-struct ComponentApp: App, BlueStylable {
+struct ComponentApp: App, Stylable {
 
     /// Main view model
     @StateObject var viewModel = AppViewModel()

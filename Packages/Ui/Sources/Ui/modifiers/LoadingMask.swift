@@ -35,6 +35,7 @@ fileprivate struct Mask: ViewModifier, Stylable {
     }
 }
 
+// MARK: -- Extension --
 
 extension View {
     

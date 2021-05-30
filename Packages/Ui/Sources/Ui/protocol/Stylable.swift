@@ -28,7 +28,7 @@ public extension Stylable {
     }
 
     var barRGB: Color {
-        Color(red: 0.22, green: 0.26, blue: 0.43, opacity: 1)
+        Color(red: 0.22, green: 0.26, blue: 0.48, opacity: 1)
     }
 
     var selectedRGB: Color {

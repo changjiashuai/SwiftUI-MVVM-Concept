@@ -29,6 +29,9 @@ struct Detail<T: Model, U: Proxy, V: View, Content: View>:
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
     
+    /// Logger service
+    @EnvironmentObject var logger: Logger
+    
     /// A view builder that creates the content of an Item view
     let content: (T) -> Content
     

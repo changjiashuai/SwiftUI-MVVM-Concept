@@ -28,6 +28,9 @@ struct Master<T: Model, U: Proxy, F: View, Content: View>:
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
 
+    /// Logger service
+    @EnvironmentObject var logger: Logger
+    
     /// Selected item
     @State var selectedItem: T?
 

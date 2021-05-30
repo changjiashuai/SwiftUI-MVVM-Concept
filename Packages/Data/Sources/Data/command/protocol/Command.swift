@@ -6,11 +6,16 @@
 //
 
 import Foundation
-import Data
 
 
 /// The Command protocol declares a method for executing a command.
-protocol Command: Equatable{
+public protocol Command: Equatable{
+       
+    ///Dic for a request params
+    typealias Params = [String: String]
+    
+    /// Set of params
+    var params: Params? { get }
     
     /// Execute a command for a store
     /// - Parameter store: controlled store

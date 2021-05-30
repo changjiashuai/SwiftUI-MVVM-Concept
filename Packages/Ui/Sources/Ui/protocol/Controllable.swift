@@ -27,8 +27,10 @@ public protocol Controllable {
     /// Authentication service
     var authentication: AbstractAuthentication { get }
     
+    var logger: Logger { get }
+    
     /// Chain of handlers to grant a right to execute a command
-    func handle() -> HandlerError?
+    func handle(_ command: StoreCommand) -> HandlerError?
 }
 
 extension Controllable {
@@ -40,14 +42,19 @@ extension Controllable {
     
     /// Chain of handlers to grant a right to execute a command
     /// - Returns: Error of the right to perfom a command
-    public func handle() -> HandlerError? {
-        authentication.handle()
+    public func handle(_ command : StoreCommand) -> HandlerError? {
+        
+        if let error = logger.handle(command){
+            return error
+        }
+        
+        return authentication.handle(command)
     }
     
     /// Act on a command from the ToolBar
     /// - Parameter command: Command from toolBar to do some actions
     public func onCommandChanged(_ command: StoreCommand) {
-        guard let error = handle() else{
+        guard let error = handle(command) else{
             return command.execute(store: store)
         }
         

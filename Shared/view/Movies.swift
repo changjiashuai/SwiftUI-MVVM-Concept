@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Ui
+import Data
 
 /// Master detail view with ganres and movies
 struct Movies: View {

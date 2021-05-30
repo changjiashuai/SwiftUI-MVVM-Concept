@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Service
-
+import Data
 
 /// Toolbar for any View supporting StoredView protocol
 public struct ToolBar<Content: View>: View, Stylable {
@@ -40,7 +40,7 @@ public struct ToolBar<Content: View>: View, Stylable {
                     curentCommand = load()
                 })
                 Button("clear", action: {
-                    curentCommand = RemoveAllCommand()
+                    curentCommand = removeAll()
                 })
             }
         }
@@ -80,6 +80,18 @@ public struct ToolBar<Content: View>: View, Stylable {
 
     // MARK: - Methods
 
+    
+    /// Create remove all command
+    /// - Returns: Remove all command
+    private func removeAll() -> StoreCommand{
+        RemoveAllCommand(
+            params: [
+                "page": "*",
+                "access token": authentication.getToken()
+            ]
+        )
+    }
+    
     /// Create load command
     /// - Returns: Load command
     private func load() -> StoreCommand{

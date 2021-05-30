@@ -17,6 +17,9 @@ struct ComponentApp: App, Stylable {
     /// Authentication service
     @StateObject var auth = Authentication()
 
+    /// Authentication service
+    @StateObject var logger = Logger()
+    
     /// The content and behavior of the app
     var body: some Scene {
         WindowGroup {
@@ -40,6 +43,7 @@ struct ComponentApp: App, Stylable {
                         #endif
                     }
                         .environmentObject(auth)
+                        .environmentObject(logger)
                         .background(backgroundRGB)
                 }
             } else {

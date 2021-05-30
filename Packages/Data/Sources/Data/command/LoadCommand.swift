@@ -1,19 +1,21 @@
 //
-//  RemoveAllCommand.swift
+//  LoadCommand.swift
 //  UniversalComponent
 //
 //  Created by Igor Shelopaev on 12.05.2021.
 //
 
 import Foundation
-import Data
 
-/// Command to temode all items from a store
-public class RemoveAllCommand: StoreCommand{
+/// Command to load Store with params
+public class LoadCommand: StoreCommand{
+
+
     
-    /// Remode all items from a store
+    // MARK: - Methods
+    /// Load data
     /// - Parameter store: controlled store
     override public func execute<T: Store>(store : T){
-        store.removeAll()
+        store.load(params: params, callback: callback)
     }
 }

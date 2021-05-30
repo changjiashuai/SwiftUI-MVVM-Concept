@@ -6,15 +6,30 @@
 //
 
 import Foundation
-import Data
 
 /// Defines command for store from a UI control
 public class StoreCommand: Command {
     
+    /// Optinal closure type for a collback
+    public typealias CallbackClosure = () -> Void
+    
     /// Time stamp to differ repeating the same command several times in a row
     let date = Date()
     
-    public init() {}
+    /// Set of params
+    public let params: Params?
+    
+    /// Do something after loading
+    public let callback: CallbackClosure?
+    
+    /// Initializer
+    /// - Parameters:
+    ///   - params: set of params
+    ///   - callback: Do something after loading
+    public init (params: Params? = nil, callback: CallbackClosure? = nil){
+        self.params = params
+        self.callback = callback
+    }
        
     // MARK: - API Methods
     

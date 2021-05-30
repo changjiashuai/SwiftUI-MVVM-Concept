@@ -5,7 +5,7 @@
 //
 
 import Foundation
-
+import Data
 
 /// `Handler` is responsible for cheking the right to execute a command acording the state of authentication
 public class Authentication: ObservableObject, AuthenticationAPI, Handler {
@@ -53,7 +53,7 @@ public class Authentication: ObservableObject, AuthenticationAPI, Handler {
     }
     
     /// Chek the right to execute a command
-    public func handle() -> HandlerError? {
+    public func handle(_ command : StoreCommand) -> HandlerError? {
         if authenticated == false{
             return .notAuthenticated
         }

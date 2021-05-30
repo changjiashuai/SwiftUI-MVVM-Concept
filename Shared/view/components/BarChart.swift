@@ -22,12 +22,16 @@ import Service
 
 struct BarChart<T: Model, U: Proxy, V : View, Content: View>:
     View, Controllable, Selectable, Stylable, Componentable
-{    
+{
+    
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
     
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
+    
+    /// Logger service
+    @EnvironmentObject var logger: Logger
     
     /// Selected item
     @State var selectedItem: T?

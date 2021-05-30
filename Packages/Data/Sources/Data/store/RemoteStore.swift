@@ -78,7 +78,6 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
     ///   - params: Set of parameters to control a request of data (data range etc.)
     private func beforeLoad(_ params: Params?) {
         loading = true; error = nil
-        print("🟩 \(params ?? [:])")
     }
     
     /// Load data from remote source

@@ -8,7 +8,7 @@
 import Foundation
 import Data
 
-/// Defines set of stores for your App using by view components
+/// Defines set of stores for your App used by view components
 class AppViewModel: ViewModel, ObservableObject {   
     
     let users = RemoteStore<User, File>(

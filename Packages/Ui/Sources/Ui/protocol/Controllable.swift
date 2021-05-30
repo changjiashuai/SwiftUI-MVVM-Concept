@@ -41,7 +41,8 @@ extension Controllable {
         !store.loading
     }
     
-    /// Chain of handlers to grant a right to execute a command, log a command property etc
+    /// Pass a command along a chain of handlers, each handler decides either to process the command or to pass it to the next handler in the chain.
+    /// To grant a right to execute a command, log a command property etc
     /// - Returns: Error of the right to perfom a command
     public func handle(_ command : StoreCommand) -> HandlerError? {
         

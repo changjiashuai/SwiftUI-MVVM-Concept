@@ -19,9 +19,11 @@ public class Logger: ObservableObject, Handler{
     // MARK: - API Methods
     
     /// Log command properties
+    /// Return .logIsFaild if you expand the method and handle error cases
     /// - Parameter command: command from View
     /// - Returns: Error
     public func handle(_ command : StoreCommand) -> HandlerError? {
+
         if let params = command.params{
             print("Log params: 🟩 \(params)")
         }

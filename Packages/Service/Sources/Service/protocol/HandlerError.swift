@@ -12,6 +12,7 @@ public enum HandlerError {
 
     case notAuthenticated
     case notAuthorized
+    case logIsFaild
 
     public var description: String {
         switch self {
@@ -19,6 +20,8 @@ public enum HandlerError {
             return "User is not authenticated"
         case .notAuthorized:
             return "User is not authorized"
+        case .logIsFaild:
+            return "Could not log the command"
         }
     }
 }

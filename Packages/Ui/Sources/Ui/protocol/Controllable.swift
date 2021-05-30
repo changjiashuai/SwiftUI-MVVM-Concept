@@ -36,13 +36,7 @@ public protocol Controllable {
 
 extension Controllable {
     
-    /// Indicates state of loading
-    public var notLoading: Bool {
-        !store.loading
-    }
-    
-    /// Pass a command along a chain of handlers, each handler decides either to process the command or to pass it to the next handler in the chain.
-    /// To grant a right to execute a command, log a command property etc
+    /// Pass a command along a chain of handlers, each handler decides either to process the command or to pass it to the next handler in the chain. To grant a right to execute a command, log a command property etc
     /// - Returns: Error of the right to perfom a command
     public func handle(_ command : StoreCommand) -> HandlerError? {
         
@@ -64,7 +58,10 @@ extension Controllable {
         store.error = error.description
     }
     
-    /// load data
+    /// Create and run load LoadCommand
+    /// - Parameters:
+    ///   - params: Request params
+    ///   - callback: Closure after a request is done
     public func load( params : Params = [:], callback : CallbackClosure? = nil ){
         
         var all = [ "access token" : authentication.getToken()]
@@ -73,6 +70,11 @@ extension Controllable {
         onCommandChanged(
             LoadCommand(params: all, callback: callback)
         )
+    }
+    
+    /// Indicates state of loading
+    public var notLoading: Bool {
+        !store.loading
     }
 }
 

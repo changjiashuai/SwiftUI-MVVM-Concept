@@ -17,7 +17,7 @@ struct ComponentApp: App, Stylable {
     /// Authentication service
     @StateObject var auth = Authentication()
 
-    /// Authentication service
+    /// Logger service
     @StateObject var logger = Logger()
     
     /// The content and behavior of the app

@@ -27,6 +27,7 @@ public protocol Controllable {
     /// Authentication service
     var authentication: AbstractAuthentication { get }
     
+    /// Log service
     var logger: Logger { get }
     
     /// Chain of handlers to grant a right to execute a command
@@ -40,7 +41,7 @@ extension Controllable {
         !store.loading
     }
     
-    /// Chain of handlers to grant a right to execute a command
+    /// Chain of handlers to grant a right to execute a command, log a command property etc
     /// - Returns: Error of the right to perfom a command
     public func handle(_ command : StoreCommand) -> HandlerError? {
         

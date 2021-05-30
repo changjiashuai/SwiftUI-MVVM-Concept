@@ -18,7 +18,6 @@ public class Logger: ObservableObject, Handler{
     
     // MARK: - API Methods
     
-    
     /// Log command properties
     /// - Parameter command: command from View
     /// - Returns: Error

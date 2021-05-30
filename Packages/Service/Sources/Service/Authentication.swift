@@ -8,7 +8,7 @@ import Foundation
 import Data
 
 /// `Handler` is responsible for cheking the right to execute a command acording the state of authentication
-public class Authentication: ObservableObject, AuthenticationAPI, Handler {
+public class Authentication: ObservableObject, AuthenticationAPI {
    
     
     /// State of authentication

@@ -52,7 +52,7 @@ public extension Command{
     /// - Returns: Copy of the  command
     func copy(with params : Params?) -> Self {
         
-        guard let _ = self.params else {
+        if self.params == nil {
             return Self(params: params, callback: self.callback, date: self.date)
         }
         

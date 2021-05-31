@@ -28,13 +28,13 @@ struct Movies: View {
             Master(
                 store: viewModel.ganre,
                 content: item.ganre,
-                toolBar: ToolBar<EmptyView>("Ganre", showControls: false),
+                toolBar: ToolBar("Ganre", showControls: false),
                 curentCommand : $curentCommand
             )
             Detail(
                 store: viewModel.movie,
                 content: item.movie,
-                toolBar: ToolBar<EmptyView>("Movie", showControls: false),
+                toolBar: ToolBar("Movie", showControls: false),
                 curentCommand : $curentCommand
             )
         }

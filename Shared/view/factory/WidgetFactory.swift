@@ -22,7 +22,7 @@ struct WidgetFactory {
                 chart(
                     store: viewModel.getFileJsonStore(from: "user_chart.json"),
                     content: factory.userAgeBar,
-                    toolBar: ToolBar<EmptyView>("Age chart \(id)")
+                    toolBar: ToolBar("Age chart \(id)")
                 )
             }
         }

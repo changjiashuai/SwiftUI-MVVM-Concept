@@ -37,9 +37,7 @@ struct ContentView: View {
                 buildWidget.list(
                     store: viewModel.users,
                     content: buildItem.userRow,
-                    toolBar: ToolBar("Users"){
-                        Button("do something", action: { print("🟦 do something")})
-                    }
+                    toolBar: ToolBar("Users")
                 )
                 buildWidget.chart(
                     store: viewModel.users,
@@ -49,12 +47,12 @@ struct ContentView: View {
                 buildWidget.chart(
                     store: viewModel.users,
                     content: buildItem.userAgeBar,
-                    toolBar: ToolBar<EmptyView>("Chart")
+                    toolBar: ToolBar("Chart")
                 )
                 buildWidget.list(
                     store: viewModel.books,
                     content: buildItem.bookRow,
-                    toolBar: ToolBar<EmptyView>("Books")
+                    toolBar: ToolBar("Books")
                 )
             }
         }.padding(5)

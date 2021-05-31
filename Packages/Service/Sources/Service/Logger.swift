@@ -8,21 +8,18 @@
 import Foundation
 import Data
 
-
 /// Log actions
-public class Logger: ObservableObject, Handler{
+public class Logger: LoggerApi{
     
     // MARK: - Life circle
     
     public init() { }
-    
-    // MARK: - API Methods
-    
+ 
     /// Log command properties
     /// Return .logIsFaild if you expand the method and handle error cases
     /// - Parameter command: command from View
     /// - Returns: Optional Error
-    public func handle(_ command : StoreCommand) -> HandlerError? {
+    public func handle<T>(_ command: T) -> HandlerError? where T: Command {
 
         let format = DateFormatter()
         format.timeZone = TimeZone(abbreviation: "UTC")
@@ -36,6 +33,6 @@ public class Logger: ObservableObject, Handler{
         }
         
       return nil
-    }   
+    }
     
 }

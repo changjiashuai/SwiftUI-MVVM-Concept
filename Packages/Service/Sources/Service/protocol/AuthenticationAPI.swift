@@ -7,7 +7,7 @@
 import Foundation
 
 /// API for authenticating
-public protocol AuthenticationAPI : Handler {
+public protocol AuthenticationApi : ObservableObject, Handler {
    
     /// Get authenticated user name
     /// - Returns: user name
@@ -22,4 +22,7 @@ public protocol AuthenticationAPI : Handler {
     ///Generate secret token to prove level of access to communicate with remote sources
     /// - Returns: Secret token
     func getToken() -> String
+    
 }
+
+

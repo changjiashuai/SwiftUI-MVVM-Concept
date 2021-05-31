@@ -12,5 +12,5 @@ import Data
 public protocol Handler {
     
     /// The handler of the right to execute a command
-    func handle(_ command: StoreCommand) -> HandlerError?
+    func handle<T>(_ command: T) -> HandlerError? where T: Command 
 }

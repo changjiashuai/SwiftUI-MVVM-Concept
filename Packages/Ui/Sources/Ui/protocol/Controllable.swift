@@ -14,7 +14,7 @@ public protocol Controllable {
     
     associatedtype Item: Model
     associatedtype AbstractProxy: Proxy
-    associatedtype AbstractAuthentication: AuthenticationAPI
+    associatedtype AbstractAuthentication: AuthenticationApi
     
     ///Dic for a request params
     typealias Params = [String: String]

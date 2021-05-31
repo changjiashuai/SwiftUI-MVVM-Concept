@@ -58,19 +58,11 @@ public struct ToolBar: View, Stylable {
     ///   - title: Text of title
     ///   - showControls: show set of controlls
     ///   - items: Additional items
-    public init(_ title: String? = nil, showControls: Bool) {
+    public init(_ title: String? = nil, showControls: Bool = true) {
         self.title = title
         self.showControls = showControls
     }
 
-    /// Initializer
-    /// - Parameters:
-    ///   - title: Text of title
-    ///   - items: Additional items
-    public init(_ title: String? = nil) {
-        self.title = title
-        self.showControls = true
-    }
 
     // MARK: - Methods
 

@@ -85,10 +85,7 @@ struct Master<T: Model, U: Proxy, F: View, Content: View>:
             params: [
                 "page": "*",
                 "masterId": "\(item.id)"
-            ],
-            callback: {
-                print("🟦 do something")
-            })
+            ])
         
         curentCommand = authentication.tokenize(command)
     }

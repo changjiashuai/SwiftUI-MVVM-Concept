@@ -10,8 +10,6 @@ import Foundation
 /// Defines repository with data
 public protocol Store {
     
-    /// Optinal closure type for a collback
-    typealias CallbackClosure = () -> Void
     ///Dic for a request params
     typealias Params = [String: String]
     
@@ -33,7 +31,7 @@ public protocol Store {
     /// - Parameters:
     ///   - params: Defines specs for requested data
     ///   - callback: Do something after data is loaded
-    func load(params:Params? , callback: CallbackClosure?)
+    func load(params:Params?)
     
     /// Amount of items in Store
     func count() -> Int

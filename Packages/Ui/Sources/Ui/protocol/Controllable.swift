@@ -62,9 +62,9 @@ extension Controllable {
     /// - Parameters:
     ///   - params: Request params
     ///   - callback: Closure after a request is done
-    public func load( params : Params = [:], callback : CallbackClosure? = nil ){
+    public func load( params : Params = [:]){
         
-        let command = LoadCommand(params: params, callback: callback)
+        let command = LoadCommand(params: params)
 
         onCommandChanged(
             authentication.tokenize(command)

@@ -14,6 +14,6 @@ public class LoadCommand: StoreCommand{
     /// Load data
     /// - Parameter store: controlled store
     override public func execute<T: Store>(store : T){
-        store.load(params: params, callback: callback)
+        store.load(params: params)
     }
 }

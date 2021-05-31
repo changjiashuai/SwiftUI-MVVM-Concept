@@ -16,16 +16,13 @@ public class StoreCommand: Command {
     /// Set of params
     public let params: Params?
     
-    /// Do something after loading
-    public let callback: CallbackClosure?
-    
+   
     /// Initializer
     /// - Parameters:
     ///   - params: set of params
     ///   - callback: Do something after loading
-    public required init (params: Params? = nil, callback: CallbackClosure? = nil, date : Date = Date()){
+    public required init (params: Params? = nil, date : Date = Date()){
         self.params = params
-        self.callback = callback
         self.date = date
     }
        

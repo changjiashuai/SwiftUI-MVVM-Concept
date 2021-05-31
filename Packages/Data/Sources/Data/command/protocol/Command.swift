@@ -12,17 +12,11 @@ import Foundation
 public protocol Command: Equatable{
         
     ///Dic for a request params
-    typealias Params = [String: String]
-    
-    /// Optinal closure type for a collback
-    typealias CallbackClosure = () -> Void
+    typealias Params = [String: String]    
     
     /// Set of params
     var params: Params? { get }
-    
-    /// Do something after loading
-    var callback: CallbackClosure? { get }
-    
+   
     /// Time stamp to differ repeating the same command several times in a row
     var date : Date { get }
     
@@ -34,7 +28,7 @@ public protocol Command: Equatable{
     func copy(with : Params?) -> Self
 
     /// Initilizer
-    init (params: Params?, callback: CallbackClosure?, date : Date)
+    init (params: Params?, date : Date)
 }
 
 public extension Command{
@@ -53,13 +47,13 @@ public extension Command{
     func copy(with params : Params?) -> Self {
         
         if self.params == nil {
-            return Self(params: params, callback: self.callback, date: self.date)
+            return Self(params: params, date: self.date)
         }
         
         var current = self.params
         current?.merge(params ?? [:]) { (_, new) in new }
         
-        return Self(params: current, callback: self.callback, date: self.date)
+        return Self(params: current, date: self.date)
         
     }
 }

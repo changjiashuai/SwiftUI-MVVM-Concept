@@ -50,7 +50,6 @@ public struct ToolBar: View, Stylable {
 
     }
 
-
     // MARK: - Life circle
 
     /// Initializer
@@ -81,9 +80,8 @@ public struct ToolBar: View, Stylable {
         let command = LoadCommand(
             params: [
                 "page": "*"
-            ],
-            callback: { print("🟦 do something") })
-
+            ])
+///print("🟦 do something")
         return authentication.tokenize(command)
     }
 }

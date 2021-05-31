@@ -25,7 +25,6 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
     /// Defines the communication level for data
     public var proxy: U
     
-    
     // MARK: - Life circle
     
     /// Init
@@ -86,7 +85,7 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
     ///   - callback: Closure to perform something after loading
     /// CallbackClosure -  Optinal closure type for a collback () -> Void
     /// Params - Dic for a request params [String: String]
-    public func load(params: Params?, callback: CallbackClosure?) {
+    public func load(params: Params?) {
         
         beforeLoad(params)
         
@@ -101,7 +100,6 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
                         self.removeAll()
                         self.appendAll(response.items as! [T])
                         self.setTotal()
-                        callback?()
                         self.loading = false
                         if let error = response.error {
                             self.error = error.getDescription()

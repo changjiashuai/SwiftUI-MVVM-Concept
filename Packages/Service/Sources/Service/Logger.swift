@@ -24,8 +24,15 @@ public class Logger: ObservableObject, Handler{
     /// - Returns: Optional Error
     public func handle(_ command : StoreCommand) -> HandlerError? {
 
+        let format = DateFormatter()
+        format.timeZone = TimeZone(abbreviation: "UTC")
+        format.dateFormat = "yy-mm-dd HH:mm"
+                
+        let date = command.date
+        let text = format.string(from: date)
+        
         if let params = command.params{
-            print("Log params: 🟩 \(params)")
+            print("\(text) 🟩 \(params)")
         }
         
       return nil

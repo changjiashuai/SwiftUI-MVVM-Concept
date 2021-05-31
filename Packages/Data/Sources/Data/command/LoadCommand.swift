@@ -9,8 +9,6 @@ import Foundation
 
 /// Command to load Store with params
 public class LoadCommand: StoreCommand{
-
-
     
     // MARK: - Methods
     /// Load data

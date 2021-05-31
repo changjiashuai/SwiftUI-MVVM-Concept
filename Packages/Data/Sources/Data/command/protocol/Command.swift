@@ -50,7 +50,7 @@ public extension Command{
     /// Make a copy of the command
     /// - Parameter with: Copy with params
     /// - Returns: Copy of the  command
-    func copy(with params : Params?) -> Self where Self : AnyObject{
+    func copy(with params : Params?) -> Self {
         
         guard let _ = self.params else {
             return Self(params: params, callback: self.callback, date: self.date)

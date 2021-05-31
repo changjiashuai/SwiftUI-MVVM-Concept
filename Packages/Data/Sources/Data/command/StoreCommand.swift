@@ -11,7 +11,7 @@ import Foundation
 public class StoreCommand: Command {
     
     /// Time stamp to differ repeating the same command several times in a row
-    public let date = Date()
+    public let date: Date
     
     /// Set of params
     public let params: Params?
@@ -23,14 +23,15 @@ public class StoreCommand: Command {
     /// - Parameters:
     ///   - params: set of params
     ///   - callback: Do something after loading
-    public init (params: Params? = nil, callback: CallbackClosure? = nil){
+    public required init (params: Params? = nil, callback: CallbackClosure? = nil, date : Date = Date()){
         self.params = params
         self.callback = callback
+        self.date = date
     }
        
     // MARK: - API Methods
     
     /// Execute command method
     public func execute<T: Store>(store : T){ }
-    
+
 }

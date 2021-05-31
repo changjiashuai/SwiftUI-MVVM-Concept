@@ -41,13 +41,20 @@ public class Authentication: AuthenticationApi {
     }
 
     ///Generate secret token to prove level of access to communicate with remote sources
-    /// - Returns: Secret token
-    public func getToken() -> String {
-        guard authenticated else {
-            return ""
+    /// - Returns: Command
+    public func tokenize<T>(_ command: T) -> T where T: Command {
+        
+        guard handle(command) == nil else {
+            return command
         }
         /// Generate secret token
-        return "\(Int.random(in: 1...1_000_000)) \(user?.name.uppercased() ?? "")"
+        let token = "\(Int.random(in: 1...1_000))"
+        let params = [
+            "access token" : token,
+            "user" : user?.name ?? ""
+        ]
+        
+        return command.copy(with: params)
     }
 
     /// Chek the right to execute a command

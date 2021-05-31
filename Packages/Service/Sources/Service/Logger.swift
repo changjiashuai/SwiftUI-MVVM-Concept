@@ -28,7 +28,7 @@ public class Logger: LoggerApi{
         let date = command.date
         let text = format.string(from: date)
         
-        if let params = command.params{
+        if let params = command.params{            
             print("\(text) 🟩 \(params)")
         }
         

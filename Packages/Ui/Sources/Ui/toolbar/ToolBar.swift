@@ -53,7 +53,7 @@ public struct ToolBar<Content: View>: View, Stylable {
             .preference(key: StoreCommandKey.self, value: curentCommand)
 
     }
-   
+
 
     // MARK: - Life circle
 
@@ -80,29 +80,27 @@ public struct ToolBar<Content: View>: View, Stylable {
 
     // MARK: - Methods
 
-    
+
     /// Create remove all command
     /// - Returns: Remove all command
-    private func removeAll() -> StoreCommand{
-        RemoveAllCommand(
-            params: [
-                "page": "*",
-                "access token": authentication.getToken()
-            ]
-        )
+    private func removeAll() -> StoreCommand {
+        let command = RemoveAllCommand()
+
+        return authentication.tokenize(command)
     }
-    
+
     /// Create load command
     /// - Returns: Load command
-    private func load() -> StoreCommand{
-        LoadCommand(
+    private func load() -> StoreCommand {
+        let command = LoadCommand(
             params: [
-                "page": "*",
-                "access token": authentication.getToken()
+                "page": "*"
             ],
             callback: { print("🟦 do something") })
+
+        return authentication.tokenize(command)
     }
-    
+
     /// Get View for extra controls
     /// - Returns: extra controls from config
     @ViewBuilder

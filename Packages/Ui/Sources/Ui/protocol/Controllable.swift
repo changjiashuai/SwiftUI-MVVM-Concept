@@ -64,11 +64,10 @@ extension Controllable {
     ///   - callback: Closure after a request is done
     public func load( params : Params = [:], callback : CallbackClosure? = nil ){
         
-        var all = [ "access token" : authentication.getToken()]
-        for (key, value) in params { all[key] = value }
-        
+        let command = LoadCommand(params: params, callback: callback)
+
         onCommandChanged(
-            LoadCommand(params: all, callback: callback)
+            authentication.tokenize(command)
         )
     }
     

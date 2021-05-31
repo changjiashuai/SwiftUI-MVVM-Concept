@@ -5,6 +5,7 @@
 //
 
 import Foundation
+import Data
 
 /// API for authenticating
 public protocol AuthenticationApi : ObservableObject, Handler {
@@ -21,7 +22,7 @@ public protocol AuthenticationApi : ObservableObject, Handler {
 
     ///Generate secret token to prove level of access to communicate with remote sources
     /// - Returns: Secret token
-    func getToken() -> String
+    func tokenize<T>(_ command: T) -> T where T: Command
     
 }
 

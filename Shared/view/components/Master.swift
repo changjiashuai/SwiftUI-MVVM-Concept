@@ -81,14 +81,15 @@ struct Master<T: Model, U: Proxy, F: View, Content: View>:
     /// - Parameter item: current master item
     private func loadDetails(_ item: T) {
 
-        curentCommand = LoadCommand(
+        let command = LoadCommand(
             params: [
                 "page": "*",
-                "masterId": "\(item.id)",
-                "access token": authentication.getToken()
+                "masterId": "\(item.id)"
             ],
             callback: {
                 print("🟦 do something")
             })
+        
+        curentCommand = authentication.tokenize(command)
     }
 }

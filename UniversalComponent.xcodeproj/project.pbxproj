@@ -69,6 +69,8 @@
 		B2B25D3F2639AA0B0044E693 /* book.json in Resources */ = {isa = PBXBuildFile; fileRef = B2B25D3D2639AA0B0044E693 /* book.json */; };
 		B2C900E5264D2CC800547364 /* ItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C900E4264D2CC800547364 /* ItemFactory.swift */; };
 		B2C900E6264D2CC800547364 /* ItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C900E4264D2CC800547364 /* ItemFactory.swift */; };
+		B2ED922E26667E5F00BF3DFE /* readme_app.png in Resources */ = {isa = PBXBuildFile; fileRef = B2ED922D26667E5F00BF3DFE /* readme_app.png */; };
+		B2ED922F26667E5F00BF3DFE /* readme_app.png in Resources */ = {isa = PBXBuildFile; fileRef = B2ED922D26667E5F00BF3DFE /* readme_app.png */; };
 		B2EFF661263AC0B300A584D2 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EFF660263AC0B300A584D2 /* AppViewModel.swift */; };
 		B2EFF662263AC0B300A584D2 /* AppViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EFF660263AC0B300A584D2 /* AppViewModel.swift */; };
 		B2EFF6B7263AEE8C00A584D2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B2EFF6B6263AEE8C00A584D2 /* README.md */; };
@@ -114,6 +116,7 @@
 		B2B25D382639A94C0044E693 /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		B2B25D3D2639AA0B0044E693 /* book.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = book.json; sourceTree = "<group>"; };
 		B2C900E4264D2CC800547364 /* ItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemFactory.swift; sourceTree = "<group>"; };
+		B2ED922D26667E5F00BF3DFE /* readme_app.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = readme_app.png; sourceTree = "<group>"; };
 		B2EFF660263AC0B300A584D2 /* AppViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModel.swift; sourceTree = "<group>"; };
 		B2EFF6B6263AEE8C00A584D2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B2EFF6C2263AF69A00A584D2 /* mvvm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mvvm.png; sourceTree = "<group>"; };
@@ -266,6 +269,7 @@
 			children = (
 				B2EFF6C2263AF69A00A584D2 /* mvvm.png */,
 				B25C04092656B3C400041DB6 /* composition.png */,
+				B2ED922D26667E5F00BF3DFE /* readme_app.png */,
 				B27DD7712656A75B00977F74 /* swiftui_mvvm_architecture.png */,
 				B2B25D3D2639AA0B0044E693 /* book.json */,
 				B2B25D382639A94C0044E693 /* user.json */,
@@ -380,6 +384,7 @@
 				B29ACB09262D678A00209343 /* Assets.xcassets in Resources */,
 				B2EFF6B7263AEE8C00A584D2 /* README.md in Resources */,
 				B2B25D3E2639AA0B0044E693 /* book.json in Resources */,
+				B2ED922E26667E5F00BF3DFE /* readme_app.png in Resources */,
 				B2EFF6C3263AF69A00A584D2 /* mvvm.png in Resources */,
 				B27DD73A2654DFAD00977F74 /* ganre.json in Resources */,
 			);
@@ -397,6 +402,7 @@
 				B29ACB0A262D678A00209343 /* Assets.xcassets in Resources */,
 				B2EFF6B8263AEE8C00A584D2 /* README.md in Resources */,
 				B2B25D3F2639AA0B0044E693 /* book.json in Resources */,
+				B2ED922F26667E5F00BF3DFE /* readme_app.png in Resources */,
 				B2EFF6C4263AF69A00A584D2 /* mvvm.png in Resources */,
 				B27DD73B2654DFAD00977F74 /* ganre.json in Resources */,
 			);

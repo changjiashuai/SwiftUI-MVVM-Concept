@@ -27,9 +27,9 @@ struct SidebarView: View, Stylable {
                     }.padding(.bottom, 15)
                     getDashBoard()
                     Divider()
-                    
                     getProfile()
-                    
+                    Divider()
+                    getAnalisys()
                 }.listRowBackground(getListBgColor())
             }
             .listStyle(SidebarListStyle())
@@ -66,6 +66,27 @@ struct SidebarView: View, Stylable {
             }
             NavigationLink(destination: MainView(title: "Settings")) {
                 Label("Settings", systemImage: "gear")
+            }
+        }
+    }
+    
+    @ViewBuilder
+    func getAnalisys() -> some View{
+        Text("ANALYSIS")
+            .font(.system(size: 10))
+            .fontWeight(.bold)
+        Group {
+            NavigationLink(destination: MainView(title: "Descriptive")) {
+                Label("Descriptive", systemImage: "chart.pie")
+            }
+            NavigationLink(destination: MainView(title: "Diagnostic")) {
+                Label("Diagnostic", systemImage: "chart.bar")
+            }
+            NavigationLink(destination: MainView(title: "Predictive")) {
+                Label("Predictive", systemImage: "flowchart")
+            }
+            NavigationLink(destination: MainView(title: "Prescriptive")) {
+                Label("Prescriptive", systemImage: "chart.bar.doc.horizontal")
             }
         }
     }

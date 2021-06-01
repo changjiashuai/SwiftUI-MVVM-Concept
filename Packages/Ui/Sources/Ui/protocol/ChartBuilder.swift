@@ -9,9 +9,9 @@ import SwiftUI
 
 /// Set of elementary blocks for creating Charts View
 public protocol ChartBuilder: Stylable {
-
+    
     associatedtype BarTemplate: View
-
+    
     /// Create a bar for Chart
     /// - Parameters:
     ///   - label: Bar label
@@ -35,17 +35,19 @@ public extension ChartBuilder {
     {
         Rectangle()
             .frame(width: width, height: height)
+            .transition(.scale)
             .overlay(
-            Rectangle()
-                .foregroundColor(selected ? selectedRGB : barRGB)
-                .border(borderRGB)
-                .overlay(
-                Text(label).foregroundColor(.white).font(.system(size: 11, weight: .thin)),
-                alignment: .center
-            ),
-            alignment: .topLeading
-        )
+                Rectangle()
+                    .foregroundColor(selected ? selectedRGB : barRGB)
+                    .border(borderRGB)
+                    .overlay(
+                        Text(label).foregroundColor(.white).font(.system(size: 11, weight: .thin)),
+                        alignment: .center
+                    ),
+                alignment: .topLeading
+            )
             .padding(.horizontal, 8)
+        
     }
 }
 

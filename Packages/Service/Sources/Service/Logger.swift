@@ -35,4 +35,8 @@ public class Logger: LoggerApi{
       return nil
     }
     
+    public func log(_ text : String){
+        print("🟨 \(text)")
+    }
+    
 }

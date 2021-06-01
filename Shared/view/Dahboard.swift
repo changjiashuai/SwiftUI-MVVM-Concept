@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Service
 import Ui
 
 /// Main view
@@ -18,6 +19,9 @@ struct Dahboard: View {
     /// Amount of dynamically added charts
     @State private var count = 0
     
+    /// Logger service
+    @EnvironmentObject var logger: Logger
+    
     /// Item view factory
     let buildItem: ItemFactory
     
@@ -26,7 +30,7 @@ struct Dahboard: View {
     
     /// The type of view representing the body of this view.
     var body: some View {
-        VStack {
+        return VStack {
             BoardToolBar(count: $count)
             ScrollView(showsIndicators: false) {
                 buildWidget.charts(
@@ -56,5 +60,6 @@ struct Dahboard: View {
                 )
             }
         }.padding(5)
+        .onAppear { logger.log("Dahboard is renered") }
     }
 }

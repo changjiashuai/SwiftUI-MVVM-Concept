@@ -23,7 +23,7 @@ struct MainView: View, Stylable {
             #if os(iOS)
             VStack {
                 MainToolBar(title: $title, image:  Image(systemName: imageName))
-                    .padding(.top, horizontalSizeClass == .compact ? 88 : 45)
+                    .padding(.top, horizontalSizeClass == .compact ? 88 : 65)
                 AutoStack {
                         Dahboard(buildItem: ItemFactory(), buildWidget: WidgetFactory())
                         Movies()

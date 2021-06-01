@@ -29,8 +29,7 @@ public struct AutoStack<Content: View>: View {
         } else {
             HStack(spacing: 0) { content }
                 .padding(.horizontal, 35)
-                .padding(.bottom, 15)
-            
+                .padding(.bottom, 15)            
         }
     }
     

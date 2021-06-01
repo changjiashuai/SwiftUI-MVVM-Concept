@@ -42,7 +42,6 @@ struct SidebarView: View, Stylable {
             .listStyle(SidebarListStyle())
             .navigationTitle("Pick up a board")
             .background(backgroundRGB)
-            .frame(minWidth: 200, idealWidth: 300)
             .toolbar {
                 #if os(macOS)
                 ToolbarItem(placement: .navigation) {

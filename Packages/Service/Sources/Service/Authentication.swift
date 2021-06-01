@@ -59,7 +59,7 @@ public class Authentication: AuthenticationApi {
 
     /// Chek the right to execute a command
     public func handle<T>(_ command: T) -> HandlerError? where T: Command {
-        if authenticated == false {
+        if authenticated == false && command.type != .idle {
             return .notAuthenticated
         }
 

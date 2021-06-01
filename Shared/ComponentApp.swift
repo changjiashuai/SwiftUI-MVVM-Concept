@@ -16,6 +16,9 @@ struct ComponentApp: App {
 
     /// Logger service
     @StateObject var logger = Logger()
+    
+    /// Main view model
+    @StateObject var viewModel = AppViewModel()
 
     /// The content and behavior of the app
     var body: some Scene {
@@ -24,6 +27,7 @@ struct ComponentApp: App {
                 SidebarView()
                     .environmentObject(auth)
                     .environmentObject(logger)
+                    .environmentObject(viewModel)
             } else {
                 Launching()
                     .environmentObject(auth)

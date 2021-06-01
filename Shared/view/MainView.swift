@@ -17,8 +17,7 @@ struct MainView: View, Stylable {
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     #endif
     
-    /// Main view model
-    @StateObject var viewModel = AppViewModel()
+
 
     var body: some View {
         ZStack {
@@ -44,7 +43,7 @@ struct MainView: View, Stylable {
             #endif
         }
         .background(backgroundRGB)
-        .environmentObject(viewModel)
+        
     }
 }
 

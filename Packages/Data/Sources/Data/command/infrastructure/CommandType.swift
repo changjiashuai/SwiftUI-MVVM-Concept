@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+/// Type of an action to perfome
 public enum CommandType {
 
     case create
@@ -17,5 +19,6 @@ public enum CommandType {
     
     case delete
 
+    /// do nothing for a default state
     case idle
 }

@@ -18,8 +18,7 @@ public struct StoreCommand: Command {
     public let params: Params?
     
     /// type of the command
-    public let type: CommandType
-    
+    public let type: CommandType    
     
     /// Initializer
     /// - Parameters:

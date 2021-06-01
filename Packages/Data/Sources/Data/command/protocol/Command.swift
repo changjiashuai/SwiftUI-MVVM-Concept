@@ -16,6 +16,9 @@ public protocol Command: Equatable{
     
     /// Set of params
     var params: Params? { get }
+    
+    /// Type of action to perfome
+    var type: CommandType { get }
    
     /// Time stamp to differ repeating the same command several times in a row
     var date : Date { get }
@@ -28,7 +31,7 @@ public protocol Command: Equatable{
     func copy(with : Params?) -> Self
 
     /// Initilizer
-    init (params: Params?, date : Date)
+    init (_ type: CommandType, params: Params?, date : Date)
 }
 
 public extension Command{
@@ -47,13 +50,13 @@ public extension Command{
     func copy(with params : Params?) -> Self {
         
         if self.params == nil {
-            return Self(params: params, date: self.date)
+            return Self( self.type, params: params, date: self.date )
         }
         
         var current = self.params
         current?.merge(params ?? [:]) { (_, new) in new }
         
-        return Self(params: current, date: self.date)
+        return Self( self.type, params: current, date: self.date )
         
     }
 }

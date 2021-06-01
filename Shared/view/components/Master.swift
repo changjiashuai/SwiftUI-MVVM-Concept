@@ -51,7 +51,7 @@ struct Master<T: Model, U: Proxy, F: View, Content: View>:
             StatusBar(total: $store.total)
         }
             .mask(!notLoading)
-            .onAppear { if notLoading { load(); curentCommand = RemoveAllCommand() } }
+        .onAppear { if notLoading { load(); curentCommand = StoreCommand(.delete) } }
     }
 
     // MARK: - API Methods
@@ -81,7 +81,7 @@ struct Master<T: Model, U: Proxy, F: View, Content: View>:
     /// - Parameter item: current master item
     private func loadDetails(_ item: T) {
 
-        let command = LoadCommand(
+        let command = StoreCommand( .read,
             params: [
                 "page": "*",
                 "masterId": "\(item.id)"

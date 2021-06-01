@@ -19,7 +19,7 @@ struct Movies: View {
     @EnvironmentObject var viewModel: AppViewModel
     
     /// Current command
-    @State var curentCommand: StoreCommand = StoreCommand()
+    @State var curentCommand = StoreCommand(.idle)
     
     /// The type of view representing the body of this view
     var body: some View {

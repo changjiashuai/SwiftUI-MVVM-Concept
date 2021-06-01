@@ -13,7 +13,7 @@ import Data
 public struct ToolBar: View, Stylable {
 
     /// Current command
-    @State var curentCommand = StoreCommand()
+    @State var curentCommand = StoreCommand(.idle)
 
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
@@ -69,7 +69,7 @@ public struct ToolBar: View, Stylable {
     /// Create remove all command
     /// - Returns: Remove all command
     private func removeAll() -> StoreCommand {
-        let command = RemoveAllCommand()
+        let command = StoreCommand(.delete)
 
         return authentication.tokenize(command)
     }
@@ -77,11 +77,8 @@ public struct ToolBar: View, Stylable {
     /// Create load command
     /// - Returns: Load command
     private func load() -> StoreCommand {
-        let command = LoadCommand(
-            params: [
-                "page": "*"
-            ])
-///print("🟦 do something")
+        let command = StoreCommand( .read, params: [ "page": "*"] )
+
         return authentication.tokenize(command)
     }
 }

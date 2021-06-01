@@ -24,12 +24,11 @@ struct SidebarView: View, Stylable {
                     Spacer()
                     NavigationLink(destination: MainView(title: "Main")) {
                         Label("Main", systemImage: "house")
-                    }
+                    }.padding(.bottom, 15)
                     getDashBoard()
                     Divider()
                     
                     getProfile()
-                    Divider()
                     
                 }.listRowBackground(getListBgColor())
             }

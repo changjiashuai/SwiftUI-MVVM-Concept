@@ -34,7 +34,7 @@ public extension ChartBuilder {
     func bar(_ label: String, _ width: CGFloat, _ height: CGFloat, _ selected: Bool) -> some View
     {
         Rectangle()
-            .frame(width: width, height: height + CGFloat.random(in: 0...25))
+            .frame(width: width, height: height)
             .overlay(
             Rectangle()
                 .foregroundColor(selected ? selectedRGB : barRGB)
@@ -46,7 +46,6 @@ public extension ChartBuilder {
             alignment: .topLeading
         )
             .padding(.horizontal, 8)
-            .animation(.easeOut(duration: 1))
     }
 }
 

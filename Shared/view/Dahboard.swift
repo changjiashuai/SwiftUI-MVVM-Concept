@@ -16,7 +16,7 @@ struct Dahboard: View {
     @EnvironmentObject var viewModel: AppViewModel
    
     /// Amount of dynamically added charts
-    @State private var count = 3
+    @State private var count = 0
     
     /// Item view factory
     let buildItem: ItemFactory

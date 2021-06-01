@@ -45,7 +45,6 @@ struct BarChart<T: Model, U: Proxy, V : View, Content: View>:
     /// The type of view representing the body of this view
     var body: some View {
         VStack(spacing: 0){
-            toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             controlRender()
         }
         .frame(height: 150)

@@ -14,6 +14,8 @@ struct MainToolBar: View, Stylable {
 
     /// Authentication service
     @EnvironmentObject var auth: Authentication
+    
+    @Binding var title : String
 
     /// The type of view representing the body of this view
     var body: some View {
@@ -31,9 +33,10 @@ struct MainToolBar: View, Stylable {
                     .padding(.trailing, 15)
             }
             .background(componentRGB)
-            Text("Analytical dashboard")
+            Text("\(title) analytical dashboard")
                 .padding(.leading, 5)
                 .font(.system(size: 21, weight: .thin))
+                .lineLimit(1)
             Spacer()
             Button("sign out") { auth.signOut() }.padding(.horizontal)
         }

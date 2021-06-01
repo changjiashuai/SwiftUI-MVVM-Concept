@@ -30,10 +30,20 @@ struct Launching: View, Stylable {
             Spacer()
         }
         .frame(maxWidth: .infinity)
-        .padding(25)
-        .padding(.top, 50)
+        .padding(getInset())
         .foregroundColor(.white)
         .background(backgroundRGB)
         .ignoresSafeArea()
+    }
+    
+    
+    /// Get Inset
+    /// - Returns: Inset
+   private func getInset() -> CGFloat {
+        #if os(iOS)
+        return 25.0
+        #else
+        return 102.0
+        #endif
     }
 }

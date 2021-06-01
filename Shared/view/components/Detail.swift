@@ -39,16 +39,15 @@ struct Detail<T: Model, U: Proxy, V: View, Content: View>:
     let toolBar: V
     
     /// Current command
-    @Binding var curentCommand: StoreCommand
+    @Binding var curentCommand: StoreCommand?
     
     /// The type of view representing the body of this view
     var body: some View {
         VStack(spacing: 0) {
-            toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             controlRender()
             StatusBar(total: $store.total)
         }.mask(!notLoading)
-        .preference(key: StoreCommandKey.self, value: curentCommand)
+        .preference(key: StoreCommandKey.self, value: curentCommand  ?? StoreCommand(.idle))
         .onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
     }
     

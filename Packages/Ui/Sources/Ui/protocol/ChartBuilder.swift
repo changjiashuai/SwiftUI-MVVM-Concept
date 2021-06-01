@@ -34,17 +34,19 @@ public extension ChartBuilder {
     func bar(_ label: String, _ width: CGFloat, _ height: CGFloat, _ selected: Bool) -> some View
     {
         Rectangle()
-            .frame(width: width, height: height)
+            .frame(width: width, height: height + CGFloat.random(in: 0...25))
             .overlay(
             Rectangle()
                 .foregroundColor(selected ? selectedRGB : barRGB)
                 .border(borderRGB)
                 .overlay(
-                Text(label).foregroundColor(.white).font(.system(size: 12, weight: .thin)),
+                Text(label).foregroundColor(.white).font(.system(size: 11, weight: .thin)),
                 alignment: .center
             ),
             alignment: .topLeading
         )
-            .padding(.horizontal, 8)        
+            .padding(.horizontal, 8)
+            .animation(.easeOut(duration: 0.5))
     }
 }
+

@@ -24,38 +24,42 @@ struct Master<T: Model, U: Proxy, F: View, Content: View>:
 {
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
-
+    
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
-
+    
     /// Logger service
     @EnvironmentObject var logger: Logger
     
     /// Selected item
     @State var selectedItem: T?
-
+    
     /// A view builder that creates the content of an Item view
     let content: (T, Bool) -> Content
-
+    
     /// ToolBar with set of controls
     let toolBar: F
-
+    
     /// Current command
-    @Binding var curentCommand: StoreCommand
-
+    @Binding var curentCommand: StoreCommand?
+    
     /// The type of view representing the body of this view
     var body: some View {
         VStack(spacing: 0) {
-            toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             controlRender()
             StatusBar(total: $store.total)
         }
-            .mask(!notLoading)
-        .onAppear { if notLoading { load(); curentCommand = StoreCommand(.delete) } }
+        .mask(!notLoading)
+        .onAppear {
+            if notLoading {
+                load()
+                curentCommand = StoreCommand(.delete)
+            }
+        }
     }
-
+    
     // MARK: - API Methods
-
+    
     /// Get list View
     /// - Returns: list view
     @ViewBuilder
@@ -67,25 +71,25 @@ struct Master<T: Model, U: Proxy, F: View, Content: View>:
             }
         }
     }
-
+    
     /// Select item
     /// - Parameter item: selected item
     func select(_ item: T) {
         selectedItem = item
         loadDetails(item)
     }
-
+    
     // MARK: - Private Methods
-
+    
     /// Load detail store for a master item
     /// - Parameter item: current master item
     private func loadDetails(_ item: T) {
-
+        
         let command = StoreCommand( .read,
-            params: [
-                "page": "*",
-                "masterId": "\(item.id)"
-            ])
+                                    params: [
+                                        "page": "*",
+                                        "masterId": "\(item.id)"
+                                    ])
         
         curentCommand = authentication.tokenize(command)
     }

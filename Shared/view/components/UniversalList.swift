@@ -42,10 +42,8 @@ struct UniversalList<T: Model, U: Proxy, V: View, Content: View>:
     let toolBar: V
     
     /// The type of view representing the body of this view
-    var body: some View {
-        
+    var body: some View {        
         VStack(spacing: 0) {
-            toolBar.onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
             controlRender()
             StatusBar(total: $store.total)
         }

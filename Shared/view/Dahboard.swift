@@ -10,7 +10,7 @@ import Ui
 
 /// Main view
 /// User list and User age chart share the same Store but introduce a different presentation for the data
-struct ContentView: View {
+struct Dahboard: View {
 
     /// App viewModel
     @EnvironmentObject var viewModel: AppViewModel
@@ -33,16 +33,16 @@ struct ContentView: View {
                     viewModel: viewModel,
                     factory: buildItem,
                     count: count
-                )                
-                buildWidget.list(
-                    store: viewModel.users,
-                    content: buildItem.userRow,
-                    toolBar: ToolBar("Users")
                 )
                 buildWidget.chart(
                     store: viewModel.users,
                     content: buildItem.userAgeBar,
                     toolBar: EmptyView()
+                )
+                buildWidget.list(
+                    store: viewModel.users,
+                    content: buildItem.userRow,
+                    toolBar: ToolBar("Users")
                 )
                 buildWidget.chart(
                     store: viewModel.users,

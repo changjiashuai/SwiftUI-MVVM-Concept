@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+/// Add color style scheem behaviour
 public protocol Stylable {
 
 
@@ -57,4 +59,9 @@ public extension Stylable {
                 Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.1)]
         ), startPoint: .top, endPoint: .bottom)
     }
+    #if os(iOS)
+    var uiBackgroundColor: UIColor {
+        UIColor(red: 0.2, green: 0.23, blue: 0.4, alpha: 1.0)
+    }
+    #endif
 }

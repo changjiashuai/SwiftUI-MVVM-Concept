@@ -13,7 +13,7 @@ import Data
 public struct ToolBar: View, Stylable {
 
     /// Current command
-    @State var curentCommand = StoreCommand(.idle)
+    @State var curentCommand : StoreCommand?
 
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
@@ -46,8 +46,7 @@ public struct ToolBar: View, Stylable {
             .foregroundColor(.white)
             .background(backgroundRGB)
             .border(borderRGB)
-            .preference(key: StoreCommandKey.self, value: curentCommand)
-
+            .preference(key: StoreCommandKey.self, value: curentCommand ?? StoreCommand(.idle))
     }
 
     // MARK: - Life circle
@@ -70,7 +69,6 @@ public struct ToolBar: View, Stylable {
     /// - Returns: Remove all command
     private func removeAll() -> StoreCommand {
         let command = StoreCommand(.delete)
-
         return authentication.tokenize(command)
     }
 
@@ -78,7 +76,6 @@ public struct ToolBar: View, Stylable {
     /// - Returns: Load command
     private func load() -> StoreCommand {
         let command = StoreCommand( .read, params: [ "page": "*"] )
-
         return authentication.tokenize(command)
     }
 }

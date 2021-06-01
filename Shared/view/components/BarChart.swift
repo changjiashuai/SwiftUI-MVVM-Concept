@@ -60,7 +60,7 @@ struct BarChart<T: Model, U: Proxy, V : View, Content: View>:
     /// - Parameter proxy: Geometry reader proxy
     /// - Returns: Width for an item
     private func getItemWidth(_ proxy: GeometryProxy) -> CGFloat {
-        proxy.size.width / CGFloat(store.count()) - 16.0
+        proxy.size.width / CGFloat(store.count()) - 11.0
     }
     
     /// Get chart View

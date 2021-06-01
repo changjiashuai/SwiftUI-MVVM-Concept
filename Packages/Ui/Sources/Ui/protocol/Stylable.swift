@@ -41,6 +41,10 @@ public extension Stylable {
         Color(red: 0.26, green: 0.31, blue: 0.51, opacity: 1)
     }
 
+    var barBorderRGB: Color {
+        Color(red: 0.26, green: 0.31, blue: 0.78, opacity: 1)
+    }
+    
     var componentBorderRGB: Color {
         Color(red: 0.2, green: 0.24, blue: 0.4, opacity: 1)
     }

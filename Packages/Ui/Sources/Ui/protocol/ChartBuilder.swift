@@ -35,11 +35,10 @@ public extension ChartBuilder {
     {
         Rectangle()
             .frame(width: width, height: height)
-            .transition(.scale)
             .overlay(
                 Rectangle()
                     .foregroundColor(selected ? selectedRGB : barRGB)
-                    .border(borderRGB)
+                    .border(barBorderRGB)
                     .overlay(
                         Text(label).foregroundColor(.white).font(.system(size: 11, weight: .thin)),
                         alignment: .center

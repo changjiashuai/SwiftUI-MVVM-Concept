@@ -31,7 +31,10 @@ struct ComponentApp: App {
             } else {
                 Launching()
                     .environmentObject(auth)
+                    .environmentObject(logger)
             }
+        }.commands {
+            SidebarCommands()
         }
     }
 }

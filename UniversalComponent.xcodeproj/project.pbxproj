@@ -110,7 +110,7 @@
 		B29ACAF4262D678A00209343 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B29ACAF9262D678A00209343 /* UniversalComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29ACAFC262D678A00209343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B29ACB01262D678A00209343 /* UniversalComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B29ACB01262D678A00209343 /* SwiftUI Application.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI Application.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B29ACB03262D678A00209343 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B29ACB04262D678A00209343 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		B2AACFDC265E2F9400D6FDFD /* StatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBar.swift; sourceTree = "<group>"; };
@@ -242,7 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				B29ACAF9262D678A00209343 /* UniversalComponent.app */,
-				B29ACB01262D678A00209343 /* UniversalComponent.app */,
+				B29ACB01262D678A00209343 /* SwiftUI Application.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -332,7 +332,7 @@
 				B27DD74B2654E68E00977F74 /* Service */,
 			);
 			productName = "Layout (macOS)";
-			productReference = B29ACB01262D678A00209343 /* UniversalComponent.app */;
+			productReference = B29ACB01262D678A00209343 /* SwiftUI Application.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -645,7 +645,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ishelopaev.Layout;
-				PRODUCT_NAME = UniversalComponent;
+				PRODUCT_NAME = "SwiftUI Application";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;
@@ -671,7 +671,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ishelopaev.Layout;
-				PRODUCT_NAME = UniversalComponent;
+				PRODUCT_NAME = "SwiftUI Application";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = macosx;
 				SWIFT_VERSION = 5.0;

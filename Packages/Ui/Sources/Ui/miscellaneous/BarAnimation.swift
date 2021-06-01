@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import Service
 
 /// View with animation for launching
 public struct BarAnimation: View, Stylable {
     
     /// Bar Store
     @StateObject fileprivate var store = BarStore()
+    
+    /// Logger service
+    @EnvironmentObject var logger: Logger
     
     /// The type of view representing the body of this view.
     public var body: some View {
@@ -25,7 +29,11 @@ public struct BarAnimation: View, Stylable {
                 }
             }
             .frame(maxWidth: .infinity)
-            .onAppear { store.startAnimation() }
+            .onAppear {
+                logger.log("Animation started")
+                store.startAnimation()
+                
+            }
             .onDisappear { store.stopAnimation() }
         }
     }

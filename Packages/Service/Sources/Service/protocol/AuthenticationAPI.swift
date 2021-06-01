@@ -12,7 +12,7 @@ public protocol AuthenticationApi : ObservableObject, Handler {
    
     /// Get authenticated user name
     /// - Returns: user name
-    func getAuthenticatedUserName() -> String
+    func getUserName() -> String
     
     /// Attempt to  authenticate
     func signIn()

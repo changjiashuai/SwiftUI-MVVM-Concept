@@ -12,13 +12,18 @@
     "id" : 3,
     "name": "Bryan",
     "age" : 68
+},
+{
+    "id" : 5,
+    "name": "Henry",
+    "age" : 88
+},
+{
+    "id" : 6,
+    "name": "Pavel",
+    "age" : 59
 },{
     "id" : 4,
     "name": "Alex",
     "age" : 25
-},
-{
-    "id" : 5,
-    "name": "Pavel",
-    "age" : 59
 }]

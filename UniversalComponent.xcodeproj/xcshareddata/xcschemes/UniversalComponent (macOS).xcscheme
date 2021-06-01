@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B29ACB00262D678A00209343"
-               BuildableName = "UniversalComponent.app"
+               BuildableName = "SwiftUI Application.app"
                BlueprintName = "UniversalComponent (macOS)"
                ReferencedContainer = "container:UniversalComponent.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B29ACB00262D678A00209343"
-            BuildableName = "UniversalComponent.app"
+            BuildableName = "SwiftUI Application.app"
             BlueprintName = "UniversalComponent (macOS)"
             ReferencedContainer = "container:UniversalComponent.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B29ACB00262D678A00209343"
-            BuildableName = "UniversalComponent.app"
+            BuildableName = "SwiftUI Application.app"
             BlueprintName = "UniversalComponent (macOS)"
             ReferencedContainer = "container:UniversalComponent.xcodeproj">
          </BuildableReference>

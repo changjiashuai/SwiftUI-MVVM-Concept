@@ -16,10 +16,23 @@ struct MainToolBar: View, Stylable {
     @EnvironmentObject var auth: Authentication
     
     @Binding var title : String
-
+    
+    @State var image: Image
+    
     /// The type of view representing the body of this view
     var body: some View {
         HStack {
+            image
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding(5)
+                .frame(width: 33, height: 33)
+                .padding(5)
+                .padding(.leading, 8)
+            Text("\(title) analytical dashboard")                
+                .font(.system(size: 21, weight: .thin))
+                .lineLimit(1)
+            Spacer()
             HStack(spacing: 0) {
                 Image("user")
                     .resizable()
@@ -29,16 +42,11 @@ struct MainToolBar: View, Stylable {
                     .overlay(Circle().stroke(borderRGB, lineWidth: 1))
                     .frame(width: 33, height: 33)
                     .padding(5)
-                Text("\(auth.getAuthenticatedUserName())")
-                    .padding(.trailing, 15)
+                    .padding(.leading, 15)
+                Text("\(auth.getUserName())")
+                    .padding(.trailing, 25)
             }
             .background(componentRGB)
-            Text("\(title) analytical dashboard")
-                .padding(.leading, 5)
-                .font(.system(size: 21, weight: .thin))
-                .lineLimit(1)
-            Spacer()
-            Button("sign out") { auth.signOut() }.padding(.horizontal)
         }
             .font(.system(size: 12, weight: .thin))
             .foregroundColor(.white)

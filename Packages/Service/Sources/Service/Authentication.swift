@@ -24,7 +24,7 @@ public class Authentication: AuthenticationApi {
 
     /// Get authenticated user name
     /// - Returns: user name
-    public func getAuthenticatedUserName() -> String {
+    public func getUserName() -> String {
         return user?.name ?? ""
     }
 

@@ -74,6 +74,7 @@ struct BarChart<T: Model, U: Proxy, V : View, Content: View>:
                         .onTapGesture { select(item) }
                 }
             }.frame(maxHeight: .infinity, alignment: .bottom)
+            .clipped()
         }
     }
     

@@ -13,19 +13,23 @@ struct MainView: View, Stylable {
 
 
     @State var title: String
-
+    #if os(iOS)
+    @Environment(\.horizontalSizeClass) var horizontalSizeClass
+    #endif
+    
     /// Main view model
     @StateObject var viewModel = AppViewModel()
 
     var body: some View {
         ZStack {
             #if os(iOS)
+            VStack {
+                MainToolBar(title: $title)
+                    .padding(.top, horizontalSizeClass == .compact ? 88 : 45)
                 AutoStack {
-                    VStack {
-                        MainToolBar(title: $title)
                         Dahboard(buildItem: ItemFactory(), buildWidget: WidgetFactory())
                         Movies()
-                    } .padding(.top, 25)
+                    }
                 }
                 .background(backgroundRGB)
                 .ignoresSafeArea()

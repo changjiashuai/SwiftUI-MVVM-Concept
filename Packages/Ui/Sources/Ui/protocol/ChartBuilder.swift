@@ -46,7 +46,7 @@ public extension ChartBuilder {
             alignment: .topLeading
         )
             .padding(.horizontal, 8)
-            .animation(.easeOut(duration: 0.5))
+            .animation(.easeOut(duration: 1))
     }
 }
 

@@ -25,11 +25,9 @@ public struct AutoStack<Content: View>: View {
     public var body: some View {
         if isCompact {
             VStack(spacing: 0) { content }
-                .padding(.top, 65)
                 .padding(.bottom, 25)
         } else {
             HStack(spacing: 0) { content }
-                .padding(.top, 45)
                 .padding(.horizontal, 35)
                 .padding(.bottom, 15)
             
@@ -37,6 +35,7 @@ public struct AutoStack<Content: View>: View {
     }
     
     // MARK: - Life circle
+    
     /// Initializer
     /// - Parameters:
     ///   - content: View to put into the adaptive Stack

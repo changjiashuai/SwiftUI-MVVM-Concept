@@ -91,7 +91,7 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
         
         DispatchQueue.global(qos: .userInitiated)
             .asyncAfter(
-                deadline: .now() + 1,
+                deadline: .now() + 0.5,
                 execute: {
                     let request  = self.proxy.createRequest(params: params)
                     let response = self.proxy.run(request)

@@ -27,7 +27,7 @@ struct ItemFactory: ChartBuilder, GridBuilder {
     func userAgeBar(_ user: User, _ selected: Bool, _ width: CGFloat) -> some View
     {
         let height = CGFloat(user.age)
-        let label = "\(user.name) - \(user.age)"
+        let label = "\(user.name) \(user.age)"
         
         bar(label, width, height, selected)
     }

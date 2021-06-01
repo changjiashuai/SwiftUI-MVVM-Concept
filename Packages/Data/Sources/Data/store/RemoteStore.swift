@@ -65,6 +65,7 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
     public func removeAll() {
         items.removeAll()
         self.setTotal()
+        error = nil
     }
     
     /// Get if Store is empty

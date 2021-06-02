@@ -17,6 +17,12 @@ fileprivate struct Mask: ViewModifier, Stylable {
     /// Text while loading
     let text : String
     
+    /// Width
+    var width : CGFloat { loading ? 1.0 : 0.0 }
+    
+    /// Visibility
+    var vision : Double { loading ? 1.0 : 0.0 }
+    
     // MARK: - API Methods
 
     /// The type of view representing the body of this view
@@ -27,10 +33,10 @@ fileprivate struct Mask: ViewModifier, Stylable {
                 .overlay(
                     Text(text).foregroundColor(.white).font(.system(.body)),
                     alignment: .center)
-                .opacity(loading ? 1 : 0),
+                .opacity(vision),
             alignment: .center)
-            .border(width: 1, edges: [.leading, .bottom], color: selectedRGB)
-            .border(width: 1, edges: [.top, .trailing], color: borderRGB)
+            .border(width: width, edges: [.leading, .bottom], color: selectedRGB)
+            .border(width: width, edges: [.top, .trailing], color: borderRGB)
             .background(componentRGB)
     }
 }

@@ -58,7 +58,6 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
                 Button(action: { authentication.signOut() }) {
                         Label("Sign Out", systemImage: "arrow.backward").padding(15.0)
                 }.buttonStyle(PlainButtonStyle())
-                .onTapGesture { authentication.signOut() }                
             }
             .listRowBackground(isMac ? Color.clear : componentRGB)
             .padding(.leading, 15)

@@ -25,6 +25,7 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
    
     /// The type of view representing the body of this view
     var body: some View {
+        EmptyView()
         NavigationView {
             controlRender()
         }.preferredColorScheme(.dark)
@@ -41,7 +42,7 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
             buildComponentBody()
         } else {
             if store.error != nil { ErrorView(store.error!) }
-            else { EmptyData() }
+            else { Rectangle().fill(backgroundRGB).opacity(isMac ? 1 : 0.55)}
         }
     }
     

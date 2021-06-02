@@ -30,7 +30,7 @@ struct MainToolBar: View, Stylable {
                 .padding(5)
                 .padding(.leading, 8)
             Text("\(title) analytical dashboard")                
-                .font(.system(size: 21, weight: .thin))
+                .font(.system(.title2))
                 .lineLimit(1)
             Spacer()
             HStack(spacing: 0) {
@@ -48,7 +48,7 @@ struct MainToolBar: View, Stylable {
             }
             .background(componentRGB)
         }
-            .font(.system(size: 12, weight: .thin))
+        .font(.system(.body))
             .foregroundColor(.white)
             .border(borderRGB)
             .background(backgroundRGB)

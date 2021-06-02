@@ -27,6 +27,10 @@
 		B259C6B026676B3200DC9961 /* menu.json in Resources */ = {isa = PBXBuildFile; fileRef = B259C6AE26676B3200DC9961 /* menu.json */; };
 		B259C6B22667760000DC9961 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B259C6B12667760000DC9961 /* Menu.swift */; };
 		B259C6B32667760000DC9961 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = B259C6B12667760000DC9961 /* Menu.swift */; };
+		B259C6B62667DD7600DC9961 /* readme_app_3.png in Resources */ = {isa = PBXBuildFile; fileRef = B259C6B42667DD7600DC9961 /* readme_app_3.png */; };
+		B259C6B72667DD7600DC9961 /* readme_app_3.png in Resources */ = {isa = PBXBuildFile; fileRef = B259C6B42667DD7600DC9961 /* readme_app_3.png */; };
+		B259C6B82667DD7600DC9961 /* readme_app_2.png in Resources */ = {isa = PBXBuildFile; fileRef = B259C6B52667DD7600DC9961 /* readme_app_2.png */; };
+		B259C6B92667DD7600DC9961 /* readme_app_2.png in Resources */ = {isa = PBXBuildFile; fileRef = B259C6B52667DD7600DC9961 /* readme_app_2.png */; };
 		B25C040A2656B3C400041DB6 /* composition.png in Resources */ = {isa = PBXBuildFile; fileRef = B25C04092656B3C400041DB6 /* composition.png */; };
 		B25C040B2656B3C400041DB6 /* composition.png in Resources */ = {isa = PBXBuildFile; fileRef = B25C04092656B3C400041DB6 /* composition.png */; };
 		B26305752665FA580007B7E0 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26305742665FA580007B7E0 /* SidebarView.swift */; };
@@ -96,6 +100,8 @@
 		B255971F264ED46A00353A37 /* Service */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Service; path = Packages/Service; sourceTree = "<group>"; };
 		B259C6AE26676B3200DC9961 /* menu.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = menu.json; sourceTree = "<group>"; };
 		B259C6B12667760000DC9961 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		B259C6B42667DD7600DC9961 /* readme_app_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = readme_app_3.png; sourceTree = "<group>"; };
+		B259C6B52667DD7600DC9961 /* readme_app_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = readme_app_2.png; sourceTree = "<group>"; };
 		B25C04092656B3C400041DB6 /* composition.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = composition.png; sourceTree = "<group>"; };
 		B26305742665FA580007B7E0 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		B2630577266610120007B7E0 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -278,6 +284,8 @@
 				B25C04092656B3C400041DB6 /* composition.png */,
 				B2ED922D26667E5F00BF3DFE /* readme_app.png */,
 				B27DD7712656A75B00977F74 /* swiftui_mvvm_architecture.png */,
+				B259C6B52667DD7600DC9961 /* readme_app_2.png */,
+				B259C6B42667DD7600DC9961 /* readme_app_3.png */,
 				B2B25D3D2639AA0B0044E693 /* book.json */,
 				B2B25D382639A94C0044E693 /* user.json */,
 				B212028826443E1B0053EC0E /* user_chart.json */,
@@ -386,6 +394,7 @@
 			files = (
 				B212028926443E1B0053EC0E /* user_chart.json in Resources */,
 				B27DD73D2654DFDF00977F74 /* movie.json in Resources */,
+				B259C6B62667DD7600DC9961 /* readme_app_3.png in Resources */,
 				B27DD7722656A75B00977F74 /* swiftui_mvvm_architecture.png in Resources */,
 				B25C040A2656B3C400041DB6 /* composition.png in Resources */,
 				B2B25D392639A94C0044E693 /* user.json in Resources */,
@@ -395,6 +404,7 @@
 				B2B25D3E2639AA0B0044E693 /* book.json in Resources */,
 				B2ED922E26667E5F00BF3DFE /* readme_app.png in Resources */,
 				B2EFF6C3263AF69A00A584D2 /* mvvm.png in Resources */,
+				B259C6B82667DD7600DC9961 /* readme_app_2.png in Resources */,
 				B27DD73A2654DFAD00977F74 /* ganre.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -405,6 +415,7 @@
 			files = (
 				B212028A26443E1B0053EC0E /* user_chart.json in Resources */,
 				B27DD73E2654DFDF00977F74 /* movie.json in Resources */,
+				B259C6B72667DD7600DC9961 /* readme_app_3.png in Resources */,
 				B27DD7732656A75B00977F74 /* swiftui_mvvm_architecture.png in Resources */,
 				B25C040B2656B3C400041DB6 /* composition.png in Resources */,
 				B2B25D3A2639A94C0044E693 /* user.json in Resources */,
@@ -414,6 +425,7 @@
 				B2B25D3F2639AA0B0044E693 /* book.json in Resources */,
 				B2ED922F26667E5F00BF3DFE /* readme_app.png in Resources */,
 				B2EFF6C4263AF69A00A584D2 /* mvvm.png in Resources */,
+				B259C6B92667DD7600DC9961 /* readme_app_2.png in Resources */,
 				B27DD73B2654DFAD00977F74 /* ganre.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

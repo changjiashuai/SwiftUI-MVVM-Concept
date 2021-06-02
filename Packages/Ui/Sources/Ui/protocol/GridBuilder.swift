@@ -63,11 +63,22 @@ public extension GridBuilder{
     func cell(_ content: String, _ selected: Bool) -> some View
     {
         Rectangle().overlay(
-            Text(content).foregroundColor(.white).font(.system(size: 12, weight: .thin)),
+            Text(content).foregroundColor(.white)
+                .font(isMac ? .system(size: 12, weight: .thin) : .body),
             alignment: .center
         )
         .foregroundColor(selected ? selectedRGB : cellRGB)
         .border(width: 1, edges: [.bottom], color: borderRGB)
     }
+}
+
+
+///Support
+fileprivate var isMac: Bool {
+    var isMac: Bool = false
+    #if os(macOS)
+        isMac = true
+    #endif
+    return isMac
 }
 

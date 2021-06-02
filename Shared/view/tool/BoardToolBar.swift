@@ -31,7 +31,7 @@ struct BoardToolBar: View, Stylable {
                 Spacer()
                 if count != 0 { Button("Remove chart") { count -= 1 } }
             }
-                .font(.system(size: 12, weight: .thin))
+            .font(.system(.body))
                 .padding()
                 .border(borderRGB)
                 .background(backgroundRGB)

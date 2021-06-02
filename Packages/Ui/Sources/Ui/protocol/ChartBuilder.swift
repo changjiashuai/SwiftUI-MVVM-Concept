@@ -40,7 +40,8 @@ public extension ChartBuilder {
                     .foregroundColor(selected ? selectedRGB : barRGB)
                     .border(barBorderRGB)
                     .overlay(
-                        Text(label).foregroundColor(.white).font(.system(size: 11, weight: .thin)),
+                        Text(label).foregroundColor(.white)                            
+                            .font(isMac ? .system(size: 11, weight: .thin) : .caption),
                         alignment: .center
                     ),
                 alignment: .topLeading
@@ -48,5 +49,14 @@ public extension ChartBuilder {
             .padding(.horizontal, 5)
         
     }
+}
+
+///Support
+fileprivate var isMac: Bool {
+    var isMac: Bool = false
+    #if os(macOS)
+        isMac = true
+    #endif
+    return isMac
 }
 

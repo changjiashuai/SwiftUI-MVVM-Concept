@@ -28,7 +28,7 @@ public struct ToolBar: View, Stylable {
     public var body: some View {
         HStack {
             if title != nil {
-                Text("\(title!)").frame(minWidth: 50).font(.system(size: 17, weight: .thin))
+                Text("\(title!)").frame(minWidth: 50).font(.system(.title3))
             }
             Spacer()
             if showControls {
@@ -42,7 +42,7 @@ public struct ToolBar: View, Stylable {
         }
             .padding(.horizontal, 11)
             .frame(height: 50)
-            .font(.system(size: 12, weight: .thin))
+        .font(.system(.body))
             .foregroundColor(.white)
             .background(backgroundRGB)
             .border(borderRGB)

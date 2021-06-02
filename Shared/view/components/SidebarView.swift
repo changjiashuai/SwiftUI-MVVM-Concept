@@ -77,7 +77,7 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
     @ViewBuilder
     private func buildListBody(_ data: [MenuSection]) -> some View {
         ForEach(data, id: \.self) { section in
-            Text(section.title).font(.system(size: 10)).fontWeight(.bold)
+            Text(section.title).font(.system(.title3))
             ForEach(section.items, id: \.self) { item in
                 NavigationLink(
                     destination: MainView(title: item.title, imageName: item.imageName)){

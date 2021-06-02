@@ -25,7 +25,7 @@ fileprivate struct Mask: ViewModifier, Stylable {
             Rectangle()
                 .foregroundColor(componentRGB)
                 .overlay(
-                    Text(text).foregroundColor(.white).font(.system(size: 12, weight: .thin)),
+                    Text(text).foregroundColor(.white).font(.system(.body)),
                     alignment: .center)
                 .opacity(loading ? 1 : 0),
             alignment: .center)

@@ -16,27 +16,34 @@ struct ComponentApp: App {
 
     /// Logger service
     @StateObject var logger = Logger()
-    
+
     /// Main view model
     @StateObject var viewModel = AppViewModel()
 
     /// The content and behavior of the app
     var body: some Scene {
         WindowGroup {
-            if auth.authenticated {
+            ZStack {
+                EmptyData()
                 SidebarView(
                     store: viewModel.menu
                 )
                     .environmentObject(auth)
                     .environmentObject(logger)
                     .environmentObject(viewModel)
-            } else {
-                Launching()
-                    .environmentObject(auth)
-                    .environmentObject(logger)
-            }
-        }.commands {
-            SidebarCommands()
+
+                if !auth.authenticated {
+                    Launching()
+                        .environmentObject(auth)
+                        .environmentObject(logger)
+                }
+            }.onReceive(auth.$authenticated, perform: { value in
+                if value {
+                    viewModel.menu.load()
+                }else{
+                    viewModel.menu.removeAll()
+                }
+            })
         }
     }
 }

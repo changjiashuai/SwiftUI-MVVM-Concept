@@ -86,7 +86,7 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
     ///   - callback: Closure to perform something after loading
     /// CallbackClosure -  Optinal closure type for a collback () -> Void
     /// Params - Dic for a request params [String: String]
-    public func load(params: Params?) {
+    public func load(params: Params? = nil) {
         
         beforeLoad(params)
         

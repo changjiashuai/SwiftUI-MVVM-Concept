@@ -22,7 +22,6 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
     
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
-    
    
     /// The type of view representing the body of this view
     var body: some View {
@@ -92,7 +91,6 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
         UITableView.appearance().backgroundColor = uiBackgroundColor
         UITableViewCell.appearance().backgroundColor = uiBackgroundColor
         #endif
-        if notLoading { load() }
     }
     
     ///Support

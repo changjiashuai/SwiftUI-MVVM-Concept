@@ -11,6 +11,13 @@ import Data
 /// Defines set of stores for your App used by view components
 class AppViewModel: ViewModel, ObservableObject {   
     
+    let menu = RemoteStore<MenuSection, File>(
+        proxy: File<MenuSection, Json>(
+            reader: Json<MenuSection>(),
+            fileName: "menu.json"
+        )
+    )
+    
     let users = RemoteStore<User, File>(
         proxy: File<User, Json>(
             reader: Json<User>(),
@@ -48,3 +55,5 @@ class AppViewModel: ViewModel, ObservableObject {
         )
     }
 }
+
+

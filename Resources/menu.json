@@ -1,0 +1,72 @@
+[{
+    "id" : 1,
+    "title": "DASHBOARD",
+    "items" : [
+        {
+            "id" : 1,
+            "title": "Rate",
+            "imageName" : "star"
+        },
+        {
+            "id" : 2,
+            "title": "Globe",
+            "imageName" : "globe"
+        },
+        {
+            "id" : 3,
+            "title": "Link",
+            "imageName" : "link"
+        },
+        {
+            "id" : 4,
+            "title": "Templates",
+            "imageName" : "rectangle.stack"
+        }
+    ]
+}, {
+    "id" : 2,
+    "title": "ANALYSIS",
+    "items" : [
+        {
+            "id" : 1,
+            "title": "Descriptive",
+            "imageName" : "chart.pie"
+        },
+        {
+            "id" : 2,
+            "title": "Diagnostic",
+            "imageName" : "chart.bar"
+        },
+        {
+            "id" : 3,
+            "title": "Predictive",
+            "imageName" : "flowchart"
+        },
+        {
+            "id" : 4,
+            "title": "Prescriptive",
+            "imageName" : "chart.bar.doc.horizontal"
+        }
+    ]
+}, {
+    "id" : 3,
+    "title": "PROFILE",
+    "items" : [
+        {
+            "id" : 1,
+            "title": "Account",
+            "imageName" : "person"
+        },
+        {
+            "id" : 2,
+            "title": "Notifications",
+            "imageName" : "bell"
+        },
+        {
+            "id" : 3,
+            "title": "Settings",
+            "imageName" : "gear"
+        }
+    ]
+}]
+

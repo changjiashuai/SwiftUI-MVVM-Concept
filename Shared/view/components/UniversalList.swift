@@ -47,7 +47,7 @@ struct UniversalList<T: Model, U: Proxy, V: View, Content: View>:
             controlRender()
             StatusBar(total: $store.total)
         }
-        .frame(height: 150)
+        .frame(height: 150)        
         .mask(!notLoading)
         .onAppear {
             if notLoading { load( params : ["page" : "*"] ) }

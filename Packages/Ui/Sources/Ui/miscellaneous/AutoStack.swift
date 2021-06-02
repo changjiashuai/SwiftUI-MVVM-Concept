@@ -21,6 +21,10 @@ public struct AutoStack<Content: View>: View {
     var isCompact: Bool {
         horizontalSizeClass == .compact
     }
+    
+    var isPhone: Bool {
+            return UIDevice.current.userInterfaceIdiom == .phone
+        }
 
     public var body: some View {
         if isCompact {
@@ -28,8 +32,8 @@ public struct AutoStack<Content: View>: View {
                 .padding(.bottom, 25)
         } else {
             HStack(spacing: 0) { content }
-                .padding(.horizontal, 35)
-                .padding(.bottom, 15)            
+                .padding(.horizontal, isPhone ? 35 : 0)
+                .padding(.bottom, 15)
         }
     }
     

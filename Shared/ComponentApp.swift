@@ -24,7 +24,9 @@ struct ComponentApp: App {
     var body: some Scene {
         WindowGroup {
             if auth.authenticated {
-                SidebarView()
+                SidebarView(
+                    store: viewModel.menu
+                )
                     .environmentObject(auth)
                     .environmentObject(logger)
                     .environmentObject(viewModel)

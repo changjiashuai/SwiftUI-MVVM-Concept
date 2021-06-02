@@ -34,8 +34,7 @@ struct Launching: View, Stylable {
         .foregroundColor(.white)
         .background(backgroundRGB)
         .ignoresSafeArea()
-    }
-    
+    }    
     
     /// Get Inset
     /// - Returns: Inset

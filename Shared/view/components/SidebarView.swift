@@ -30,6 +30,7 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
             controlRender()
         }.preferredColorScheme(.dark)
         .onAppear(perform: afterRender)
+        .mask(!notLoading)
     }
     
     // MARK: - Private methods
@@ -42,7 +43,7 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
             buildComponentBody()
         } else {
             if store.error != nil { ErrorView(store.error!) }
-            else { Rectangle().fill(backgroundRGB).opacity(isMac ? 1 : 0.55)}
+            else { EmptyData() }
         }
     }
     

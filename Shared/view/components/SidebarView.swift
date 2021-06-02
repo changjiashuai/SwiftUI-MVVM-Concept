@@ -30,7 +30,7 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
             controlRender()
         }.preferredColorScheme(.dark)
         .onAppear(perform: afterRender)
-        .mask(!notLoading)
+        .mask(!notLoading, text: "loading menu", border: false)
     }
     
     // MARK: - Private methods

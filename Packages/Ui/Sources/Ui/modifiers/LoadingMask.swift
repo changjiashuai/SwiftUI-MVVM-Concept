@@ -17,11 +17,8 @@ fileprivate struct Mask: ViewModifier, Stylable {
     /// Text while loading
     let text : String
     
-    /// Width
-    var width : CGFloat { loading ? 1.0 : 0.0 }
-    
     /// Visibility
-    var vision : Double { loading ? 1.0 : 0.0 }
+    var boder : Bool
     
     // MARK: - API Methods
 
@@ -33,10 +30,10 @@ fileprivate struct Mask: ViewModifier, Stylable {
                 .overlay(
                     Text(text).foregroundColor(.white).font(.system(.body)),
                     alignment: .center)
-                .opacity(vision),
+                .opacity(loading ? 1.0 : 0.0 ),
             alignment: .center)
-            .border(width: width, edges: [.leading, .bottom], color: selectedRGB)
-            .border(width: width, edges: [.top, .trailing], color: borderRGB)
+            .border(width: boder ? 1.0 : 0.0 , edges: [.leading, .bottom], color: selectedRGB)
+            .border(width: boder ? 1.0 : 0.0 , edges: [.top, .trailing], color: borderRGB)
             .background(componentRGB)
     }
 }
@@ -50,7 +47,9 @@ extension View {
     ///   - loading: Boolean flag  true - is loading, false - loaded
     ///   - text: Text displayed while loading. Default value "Loading..."
     /// - Returns: Mask view
-    public func mask(_ loading: Bool, text: String = "Loading...") -> some View {
-        self.modifier(Mask(loading: loading, text: text))
+    public func mask(_ loading: Bool, text: String = "Loading...", border : Bool = true) -> some View {
+        self.modifier(Mask(loading: loading, text: text, boder: border))
     }
 }
+
+

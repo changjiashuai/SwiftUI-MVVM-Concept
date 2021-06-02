@@ -63,6 +63,7 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
             .listRowBackground(getListBgColor())
             .padding(.leading, 15)
         }
+        .frame(minWidth: 200)
         .listStyle(SidebarListStyle())
         .navigationTitle("Pick up a board")
         .background(backgroundRGB)

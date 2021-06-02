@@ -54,9 +54,11 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
                 Spacer()
                 NavigationLink(destination: MainView(title: "Main", imageName:"person")) { Label("Main", systemImage: "house")}
                 buildListBody(store.items)
-                NavigationLink(destination: EmptyView())
-                { Label("Sign Out", systemImage: "arrow.backward")
-                }.onTapGesture { authentication.signOut() }
+                
+                Button(action: { authentication.signOut() }) {
+                        Label("Sign Out", systemImage: "arrow.backward").padding(15.0)
+                }.buttonStyle(PlainButtonStyle())
+                .onTapGesture { authentication.signOut() }                
             }
             .listRowBackground(isMac ? Color.clear : componentRGB)
             .padding(.leading, 15)

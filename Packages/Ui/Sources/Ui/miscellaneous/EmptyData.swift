@@ -22,5 +22,7 @@ public struct EmptyData: View, Stylable {
     // MARK: - Life circle
 
     /// Initializer
-    public init() { }
+    public init() {
+        
+    }
 }

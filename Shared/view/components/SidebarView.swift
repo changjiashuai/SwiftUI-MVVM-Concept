@@ -23,6 +23,7 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
     
+   
     /// The type of view representing the body of this view
     var body: some View {
         NavigationView {
@@ -52,18 +53,16 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
         List {
             Group {
                 Spacer()
-                NavigationLink(destination: MainView(title: "Main", imageName: "person")) {
-                    Label("Main", systemImage: "house")
-                }
+                NavigationLink(destination: MainView(title: "Main", imageName:"person")) { Label("Main", systemImage: "house")}
                 buildListBody(store.items)
-                NavigationLink(destination: EmptyView()) {
-                    Label("Sign Out", systemImage: "arrow.backward")
+                NavigationLink(destination: EmptyView())
+                { Label("Sign Out", systemImage: "arrow.backward")
                 }.onTapGesture { authentication.signOut() }
             }
-            .listRowBackground(getListBgColor())
+            .listRowBackground(isMac ? Color.clear : componentRGB)
             .padding(.leading, 15)
         }
-        .frame(minWidth: 200)
+        .frame(minWidth: isMac ? 200 : 0)
         .listStyle(SidebarListStyle())
         .navigationTitle("Pick up a board")
         .background(backgroundRGB)
@@ -96,14 +95,13 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
         if notLoading { load() }
     }
     
-    /// Support collor depens on OS
-    /// - Returns: Color
-    private func getListBgColor() -> Color {
-        #if os(iOS)
-        return componentRGB
-        #elseif os(macOS)
-        return Color.clear
+    ///Support
+    private var isMac: Bool {
+        var isMac: Bool = false
+        #if os(macOS)
+            isMac = true
         #endif
+        return isMac
     }
 }
 

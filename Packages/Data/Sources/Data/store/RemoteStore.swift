@@ -17,10 +17,10 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
     @Published public var error: String? = nil
     
     /// Informs the View that loading process is in the progress
-    @Published public var loading: Bool = false
+    @Published public private(set) var loading: Bool = false
     
     /// Total amount of items in Store
-    @Published public var total: Int = 0
+    @Published public private(set) var total: Int = 0
     
     /// Defines the communication level for data
     public var proxy: U

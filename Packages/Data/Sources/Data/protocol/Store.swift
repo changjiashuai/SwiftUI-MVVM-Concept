@@ -19,13 +19,13 @@ public protocol Store {
     associatedtype AbstractProxy: Proxy
     
     /// Contains error string if loading ends up with errors
-    var error: String? { get set }
+    var error: String? { get }
     
     /// Indicates state of loading
-    var loading: Bool { get set }
+    var loading: Bool { get }
     
     /// Amount of items in Store
-    var total: Int { get set }
+    var total: Int { get }
     
     /// Defines communication layer with remote source of data
     var proxy: AbstractProxy { get set }

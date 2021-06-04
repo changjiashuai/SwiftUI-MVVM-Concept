@@ -58,7 +58,7 @@ UniversalList(
 <img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/composition.png?raw=true">
 
 ### SwiftUI template Development Architecture Designing with Protocols
-App stores are assembled in AppViewModel In the code example. Two views (UniversalList, BarChart) implementing different presentation (Chart and List) share the same Store. All data are loaded from remote sources ( SidebarView data also ).
+App stores are assembled in *AppViewModel* In the code example. Two views (*UniversalList, BarChart*) implementing different presentation (Chart and List) share the same *Store*. All data are loaded from remote sources ( *SidebarView* data also ). All main visual components used in the App are placed in */Shared/view/components*.
 | Package | Description |
 | --- | --- |
 | **Data** | The package  is comprised of set of classes, structs and protocols for organizing infrastructure for **a data layer** in apps.| 

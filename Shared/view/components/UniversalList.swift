@@ -22,37 +22,37 @@ import Ui
 struct UniversalList<T: Model, U: Proxy, V: View, Content: View>:
     View, Controllable, Selectable, Stylable, Componentable, Scrolable
 {
-
+    
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
-
+    
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
-
+    
     /// Logger service
     @EnvironmentObject var logger: Logger
-
+    
     /// Selected item
     @State var selectedItem: T?
-
+    
     /// A view builder that creates the content of an Item view
     let content: (T, Bool) -> Content
-
+    
     /// ToolBar with set of controls
     let toolBar: V
-
+    
     /// The type of view representing the body of this view
     var body: some View {
-        controlRender() /// Template method too call `buildComponentBody` definition in `Componentable`
+        controlRender() /// Template method to call `buildComponentBody` definition in `Componentable`
             .frame(height: 150)
             .mask(!notLoading)
             .onAppear {
-            if notLoading { load(params: ["page": "*"]) }
-        }
+                if notLoading { load(params: ["page": "*"]) }
+            }
     }
 
     // MARK: - API Methods
-
+    
     /// Get list View
     /// - Returns: list view
     @ViewBuilder
@@ -64,7 +64,7 @@ struct UniversalList<T: Model, U: Proxy, V: View, Content: View>:
             }
         }
     }
-
+    
     /// Select item
     /// - Parameter item: selected item
     func select(_ item: T) { selectedItem = item }

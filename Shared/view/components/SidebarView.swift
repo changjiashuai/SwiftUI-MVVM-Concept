@@ -22,7 +22,7 @@ struct SidebarView<U: Proxy>: View, Stylable, Supportable, Controllable {
     
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
-
+    
     /// The type of view representing the body of this view
     var body: some View {
         NavigationView {
@@ -59,7 +59,7 @@ struct SidebarView<U: Proxy>: View, Stylable, Supportable, Controllable {
                 buildListBody(store.items)
                 
                 Button(action: { authentication.signOut() }) {
-                        Label("Sign Out", systemImage: "arrow.backward").padding(15.0)
+                    Label("Sign Out", systemImage: "arrow.backward").padding(15.0)
                 }.buttonStyle(PlainButtonStyle())
             }
             .listRowBackground(isMac ? Color.clear : componentRGB)
@@ -97,7 +97,6 @@ struct SidebarView<U: Proxy>: View, Stylable, Supportable, Controllable {
         UITableViewCell.appearance().backgroundColor = uiBackgroundColor
         #endif
     }
-
 }
 
 

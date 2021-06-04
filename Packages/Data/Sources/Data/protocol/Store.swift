@@ -24,6 +24,9 @@ public protocol Store {
     /// Indicates state of loading
     var loading: Bool { get set }
     
+    /// Amount of items in Store
+    var total: Int { get set }
+    
     /// Defines communication layer with remote source of data
     var proxy: AbstractProxy { get set }
        

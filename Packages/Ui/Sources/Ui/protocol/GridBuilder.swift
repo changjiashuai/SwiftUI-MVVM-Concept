@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Set of elementary blocks for creating Grid View
-public protocol GridBuilder: Stylable {
+public protocol GridBuilder: Stylable, Supportable {
     
     //    Cell template
     associatedtype CellTemplate: View
@@ -72,13 +72,4 @@ public extension GridBuilder{
     }
 }
 
-
-///Support
-fileprivate var isMac: Bool {
-    var isMac: Bool = false
-    #if os(macOS)
-        isMac = true
-    #endif
-    return isMac
-}
 

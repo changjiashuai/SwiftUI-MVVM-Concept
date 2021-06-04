@@ -41,7 +41,7 @@ public struct ToolBar: View, Stylable {
             }
         }
             .padding(.horizontal, 11)
-            .frame(height: 50)
+            .frame(height: 39)
         .font(.system(.body))
             .foregroundColor(.white)
             .background(backgroundRGB)
@@ -63,7 +63,6 @@ public struct ToolBar: View, Stylable {
 
 
     // MARK: - Methods
-
 
     /// Create remove all command
     /// - Returns: Remove all command

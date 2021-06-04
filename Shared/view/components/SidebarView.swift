@@ -12,7 +12,7 @@ import Service
 import Ui
 
 /// Main tool panel with controlls
-struct SidebarView<U: Proxy>: View, Stylable, Controllable {
+struct SidebarView<U: Proxy>: View, Stylable, Supportable, Controllable {
     
     /// Logger service
     @EnvironmentObject var logger: Logger
@@ -22,13 +22,13 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
     
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
-   
+
     /// The type of view representing the body of this view
     var body: some View {
-        EmptyView()
         NavigationView {
             controlRender()
-        }.preferredColorScheme(.dark)
+        }
+        .preferredColorScheme(.dark)
         .onAppear(perform: afterRender)
         .mask(!notLoading, text: "loading menu", border: false)
     }
@@ -55,6 +55,7 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
             Group {
                 Spacer()
                 NavigationLink(destination: MainView(title: "Main", imageName:"person")) { Label("Main", systemImage: "house")}
+                
                 buildListBody(store.items)
                 
                 Button(action: { authentication.signOut() }) {
@@ -68,6 +69,7 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
         .listStyle(SidebarListStyle())
         .navigationTitle("Pick up a board")
         .background(backgroundRGB)
+        
         MainView(title: "Main", imageName: "house")
     }
     
@@ -95,15 +97,7 @@ struct SidebarView<U: Proxy>: View, Stylable, Controllable {
         UITableViewCell.appearance().backgroundColor = uiBackgroundColor
         #endif
     }
-    
-    ///Support
-    private var isMac: Bool {
-        var isMac: Bool = false
-        #if os(macOS)
-            isMac = true
-        #endif
-        return isMac
-    }
+
 }
 
 

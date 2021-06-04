@@ -6,14 +6,13 @@
 //
 
 import SwiftUI
-import Ui
 
 
 /// Displays additional information for widgets
 struct StatusBar: View, Stylable  {
     
     /// Total amount of items
-    @Binding var total : Int
+    var total : Int
 
     /// The type of view representing the body of this view
     var body: some View {

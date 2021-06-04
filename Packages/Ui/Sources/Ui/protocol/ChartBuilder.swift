@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Set of elementary blocks for creating Charts View
-public protocol ChartBuilder: Stylable {
+public protocol ChartBuilder: Stylable, Supportable {
     
     associatedtype BarTemplate: View
     
@@ -38,7 +38,7 @@ public extension ChartBuilder {
             .overlay(
                 Rectangle()
                     .foregroundColor(selected ? selectedRGB : barRGB)
-                    .border(barBorderRGB)
+                    .border(width: 1.0 , edges: [.leading, .top, .trailing], color: barBorderRGB)
                     .overlay(
                         Text(label).foregroundColor(.white)                            
                             .font(isMac ? .system(size: 11, weight: .thin) : .caption),
@@ -49,14 +49,5 @@ public extension ChartBuilder {
             .padding(.horizontal, 5)
         
     }
-}
-
-///Support
-fileprivate var isMac: Bool {
-    var isMac: Bool = false
-    #if os(macOS)
-        isMac = true
-    #endif
-    return isMac
 }
 

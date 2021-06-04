@@ -25,34 +25,32 @@ struct Detail<T: Model, U: Proxy, V: View, Content: View>:
 {
     /// Store with data
     @StateObject var store: RemoteStore<T, U>
-    
+
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
-    
+
     /// Logger service
     @EnvironmentObject var logger: Logger
-    
+
     /// A view builder that creates the content of an Item view
     let content: (T) -> Content
-    
+
     /// ToolBar with set of controls
     let toolBar: V
-    
+
     /// Current command
     @Binding var curentCommand: StoreCommand?
-    
+
     /// The type of view representing the body of this view
     var body: some View {
-        VStack(spacing: 0) {
-            controlRender()
-            StatusBar(total: $store.total)
-        }.mask(!notLoading)
-        .preference(key: StoreCommandKey.self, value: curentCommand  ?? StoreCommand(.idle))
-        .onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
+        controlRender() /// Template method too call `buildComponentBody` definition in `Componentable`
+            .mask(!notLoading)
+            .preference(key: StoreCommandKey.self, value: curentCommand ?? StoreCommand(.idle))
+            .onPreferenceChange(StoreCommandKey.self, perform: self.onCommandChanged)
     }
-    
+
     // MARK: - Methods
-    
+
     /// Get list View
     /// - Returns: list view
     @ViewBuilder
@@ -62,5 +60,5 @@ struct Detail<T: Model, U: Proxy, V: View, Content: View>:
                 content(item)
             }
         }
-    }    
+    }
 }

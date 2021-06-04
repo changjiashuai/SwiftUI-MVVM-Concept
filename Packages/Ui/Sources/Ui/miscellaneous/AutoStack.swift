@@ -10,7 +10,7 @@ import SwiftUI
 #if os(iOS)
 /// Adaptive stack
 @available(iOS 14.0, *)
-public struct AutoStack<Content: View>: View {
+public struct AutoStack<Content: View>: View, Supportable {
 
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
 
@@ -21,10 +21,6 @@ public struct AutoStack<Content: View>: View {
     var isCompact: Bool {
         horizontalSizeClass == .compact
     }
-    
-    var isPhone: Bool {
-            return UIDevice.current.userInterfaceIdiom == .phone
-        }
 
     public var body: some View {
         if isCompact {

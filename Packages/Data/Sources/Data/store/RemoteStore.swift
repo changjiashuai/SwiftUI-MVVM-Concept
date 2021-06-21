@@ -36,7 +36,7 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
     // MARK: - Private Methods
     
     /// Set total
-    private func setTotal(){
+    private func setTotal() {
         total = count()
     }
     
@@ -91,21 +91,20 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
         beforeLoad(params)
         
         DispatchQueue.global(qos: .userInitiated)
-            .asyncAfter(
-                deadline: .now() + 0.5,
-                execute: {
-                    let request  = self.proxy.createRequest(params: params)
-                    let response = self.proxy.run(request)
-                    
+            .asyncAfter(deadline: .now() + 0.5){ [weak self] in
+                if let proxy = self?.proxy {
+                    let request = proxy.createRequest(params: params)
+                    let response = proxy.run(request)
                     DispatchQueue.main.async {
-                        self.removeAll()
-                        self.appendAll(response.items as! [T])
-                        self.setTotal()
-                        self.loading = false
+                        self?.removeAll()
+                        self?.appendAll(response.items as! [T])
+                        self?.setTotal()
+                        self?.loading = false
                         if let error = response.error {
-                            self.error = error.getDescription()
+                            self?.error = error.getDescription()
                         }
                     }
-                }) // end of asyncAfter
+                }
+            }
     }
 }

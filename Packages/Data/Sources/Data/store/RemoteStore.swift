@@ -22,6 +22,10 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
     /// Total amount of items in Store
     @Published public private(set) var total: Int = 0
     
+    
+    /// Currently performed task
+    var currentWork : DispatchWorkItem?
+    
     /// Defines the communication level for data
     public var proxy: U
     
@@ -33,11 +37,29 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
         self.proxy = proxy
     }
     
+    deinit {
+        if let c = currentWork?.isCancelled, c == false {
+            stopTask()
+        }
+    }
+    
     // MARK: - Private Methods
+    
+    /// Stop curent task
+    private func stopTask(){
+        currentWork?.cancel()
+        currentWork = nil
+    }
     
     /// Set total
     private func setTotal() {
         total = count()
+    }
+    
+    /// Set of cations before loading
+    ///   - params: Set of parameters to control a request of data (data range etc.)
+    private func beforeLoad(_ params: Params?) {
+        loading = true; error = nil
     }
     
     // MARK: - API Methods
@@ -74,12 +96,6 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
         items.count == 0
     }
     
-    /// Set of cations before loading
-    ///   - params: Set of parameters to control a request of data (data range etc.)
-    private func beforeLoad(_ params: Params?) {
-        loading = true; error = nil
-    }
-    
     /// Load data from remote source
     /// - Parameters:
     ///   - params: Set of parameters to control a request of data (data range etc.)
@@ -90,21 +106,32 @@ public final class RemoteStore<T: Model, U: Proxy>: ObservableObject, Store {
         
         beforeLoad(params)
         
-        DispatchQueue.global(qos: .userInitiated)
-            .asyncAfter(deadline: .now() + 0.5){ [weak self] in
-                if let proxy = self?.proxy {
-                    let request = proxy.createRequest(params: params)
-                    let response = proxy.run(request)
-                    DispatchQueue.main.async {
-                        self?.removeAll()
-                        self?.appendAll(response.items as! [T])
-                        self?.setTotal()
-                        self?.loading = false
-                        if let error = response.error {
-                            self?.error = error.getDescription()
-                        }
+        if let c = currentWork?.isCancelled, c == false {
+            stopTask()
+        }
+        
+        currentWork = DispatchWorkItem { [weak self] in
+            if let proxy = self?.proxy {
+                let request = proxy.createRequest(params: params)
+                let response = proxy.run(request)
+                
+                guard let self = self else { return }
+                
+                DispatchQueue.main.async {
+                    self.removeAll()
+                    self.appendAll(response.items as! [T])
+                    self.setTotal()
+                    self.loading = false
+                    if let error = response.error {
+                        self.error = error.getDescription()
                     }
+                    self.stopTask()
                 }
             }
+        }
+        
+        DispatchQueue.global(qos: .userInitiated)
+            .asyncAfter(deadline: .now() + 0.5, execute: currentWork!)
     }
+
 }

@@ -67,8 +67,6 @@ App stores are assembled in *AppViewModel* In the code example. Two views (*Univ
 
 > Writer is not implemented in the code example. It is placed on the diagram to show the comprehensiveness of the solution for any type of communication with remote sources
 
-<img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/composition.png?raw=true">
-
 # Class-Struct Diagramm
 
 <img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/mvvm.png?raw=true">

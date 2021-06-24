@@ -8,7 +8,7 @@ import Foundation
 
 
 /// Store is a repo that maneges models conformed to Model protocol
-public final class RemoteStore<T: Model, U: Proxy>: Store {
+public final class RemoteStore<T: Model, U: Proxy>: Store where T == U.Item {
     
     /// Set of stored data
     @Published public private(set) var items = [T]()

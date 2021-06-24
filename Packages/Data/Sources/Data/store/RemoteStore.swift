@@ -8,7 +8,7 @@ import Foundation
 
 
 /// Store is a repo that maneges models conformed to Model protocol
-public final class RemoteStore<T, U: Proxy>: Store where T == U.Item {
+public final class RemoteStore<T, U: Proxy>: Store where T == U.Item, U.AbstractResponse.Item == T {
     
     /// Set of stored data
     @Published public private(set) var items = [T]()
@@ -125,10 +125,9 @@ public final class RemoteStore<T, U: Proxy>: Store where T == U.Item {
                 
                 DispatchQueue.main.async {
                     self.removeAll()
+
+                    self.appendAll(response.items)
                     
-                    if let elms = response.items as? [T]{
-                        self.appendAll(elms)
-                    }
                     if let error = response.error {
                         self.error = error.getDescription()
                     }

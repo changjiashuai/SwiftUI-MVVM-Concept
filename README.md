@@ -57,7 +57,7 @@ UniversalList(
 
 # UI behavior and functionality
 
-**Click or tap the picture to watch the expected UI behavior of the example**
+**Click or tap the picture at the end of the page to watch the expected UI behavior of the example**
 
 * Add a token to any request after authorization
 * Shared source of data with different Views

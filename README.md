@@ -61,7 +61,7 @@ UniversalList(
 App stores are assembled in *AppViewModel* In the code example. Two views (*UniversalList, BarChart*) implementing different presentation (Chart and List) share the same *Store*. All data are loaded from remote sources ( *SidebarView* data also ). All main visual components used in the App are in */Shared/view/components*.
 | Package | Description |
 | --- | --- |
-| **Data** | The package  is comprised of set of classes, structs and protocols for organizing infrastructure for **a data layer** in apps.| 
+| **Data** | The package  is comprised of set of classes, structs and protocols for organizing infrastructure for **Data layer** in apps.| 
 |**Service**|  The package is comprised of set of classes, structs and protocols for implementing different services like authentication etc.|
 |**Ui**|  The package  is comprised of view components that might be shared between diff projects.|
 

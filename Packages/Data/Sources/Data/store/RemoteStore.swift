@@ -57,10 +57,17 @@ public final class RemoteStore<T: Model, U: Proxy>: Store where T == U.Item {
     }
     
     /// Set of cations before loading
-    ///   - params: Set of parameters to control a request of data (data range etc.)
-    private func beforeLoad(_ params: Params?) {
+    private func beforeLoad() {
         loading = true; error = nil
     }
+    
+    /// Set of cations after loading
+    private func afterLoad() {
+        setTotal()
+        loading = false
+        stopTask()
+    }
+    
     
     // MARK: - API Methods
     
@@ -104,7 +111,7 @@ public final class RemoteStore<T: Model, U: Proxy>: Store where T == U.Item {
     /// Params - Dic for a request params [String: String]
     public func load(params: Params? = nil) {
         
-        beforeLoad(params)
+        beforeLoad()
         
         if let c = currentWork?.isCancelled, c == false {
             stopTask()
@@ -122,12 +129,11 @@ public final class RemoteStore<T: Model, U: Proxy>: Store where T == U.Item {
                     if let elms = response.items as? [T]{
                         self.appendAll(elms)
                     }
-                    self.setTotal()
-                    self.loading = false
                     if let error = response.error {
                         self.error = error.getDescription()
                     }
-                    self.stopTask()
+                    
+                    self.afterLoad()
                 }
             }
         }

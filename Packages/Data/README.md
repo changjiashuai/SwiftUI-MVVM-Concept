@@ -21,9 +21,9 @@ struct User: Model {
 * Proxy is defining a communication layer. Proxies are used by Store to handle the loading and saving of Model data
 * Readers are used to interpret data to be loaded into a Model instance
 ```Swift 
-let store = RemoteStore<User, File>(
-    proxy: File<User, Json>(
-        reader: Json<User>(),
+let users = RemoteStore<User, File>(
+    proxy: File(
+        reader: Json(),
         fileName: "user.json"
     )
 )

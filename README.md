@@ -55,6 +55,20 @@ UniversalList(
 
 >  Passing data through **environmentObject** it's on your own, it's just a technical convenient solution in the code example
 
+# UI behavior and functionality
+
+**Click or tap the picture to watch the expected UI behavior of the example**
+
+* Add a token to any request after authorization
+* Shared source of data with different Views
+* Get the menu data dynamically 
+* Log UI actions or requests
+* Dynamically added Views
+* NavigationView actions
+* Master detail view 
+* Sign in sign out
+* Views control
+
 <img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/swiftui_mvvm_architecture.png?raw=true">
 
 ### SwiftUI template Development Architecture Designing with Protocols
@@ -74,16 +88,7 @@ App stores are assembled in *AppViewModel* In the code example. Two views (*Univ
 <img src="https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/mvvm.png?raw=true">
 
 
-# UI behavior
 
-**Click or tap the picture to watch the expected UI behavior of the example**
-
-* Shared source of data with different presentations
-* Dynamically added Views
-* NavigationView actions
-* Master detail view 
-* Sign in sign out
-* Views control
 
 
 [![click to watch expected UI behavior for the example](https://github.com/The-Igor/SwiftUI-MVVM-Concept/blob/main/Resources/readme_app_2.png)](https://youtu.be/jhgM21fHkPM)

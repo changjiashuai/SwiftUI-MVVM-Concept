@@ -20,11 +20,14 @@ import Ui
 /// `Componentable` - Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 /// `Scrolable` - Defines to represent scroll into `View`
 
-struct Detail<T: Model, U: Proxy, V: View, Content: View>:
+struct Detail<T: Model, U: Store, V: View, Content: View>:
     View, Controllable, Stylable, Componentable, Scrolable
 {
+
+    typealias Item = T
+    
     /// Store with data
-    @StateObject var store: RemoteStore<T, U>
+    @StateObject var store: U
     
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
@@ -57,7 +60,7 @@ struct Detail<T: Model, U: Proxy, V: View, Content: View>:
     func buildComponentBody() -> some View {
         VStack(spacing: 0) {
             ForEach(store.items, id: \.self) { item in
-                content(item)
+                content(item as! T)
             }
         }
     }

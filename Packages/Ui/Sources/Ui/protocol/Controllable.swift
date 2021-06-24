@@ -13,7 +13,7 @@ import Service
 public protocol Controllable {
     
     associatedtype Item: Model
-    associatedtype AbstractProxy: Proxy
+    associatedtype AbstractStore: Store
     associatedtype AbstractAuthentication: AuthenticationApi
     
     ///Dic for a request params
@@ -22,7 +22,7 @@ public protocol Controllable {
     typealias CallbackClosure = () -> Void
     
     /// Store with data
-    var store: RemoteStore<Item, AbstractProxy> { get }
+    var store: AbstractStore{ get }
     
     /// Authentication service
     var authentication: AbstractAuthentication { get }

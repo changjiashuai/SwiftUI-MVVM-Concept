@@ -12,13 +12,15 @@ import Service
 import Ui
 
 /// Main tool panel with controlls
-struct SidebarView<U: Proxy>: View, Stylable, Supportable, Controllable {
+struct SidebarView<U : Store>: View, Stylable, Supportable, Controllable {
+    
+    typealias Item = MenuSection
     
     /// Logger service
     @EnvironmentObject var logger: Logger
     
     /// Store with data
-    @StateObject var store: RemoteStore<MenuSection, U>
+    @StateObject var store: U
     
     /// Authentication service
     @EnvironmentObject var authentication: Authentication
@@ -56,7 +58,7 @@ struct SidebarView<U: Proxy>: View, Stylable, Supportable, Controllable {
                 Spacer()
                 NavigationLink(destination: MainView(title: "Main", imageName:"person")) { Label("Main", systemImage: "house")}
                 
-                buildListBody(store.items)
+                buildListBody(store.items as! [Item])
                 
                 Button(action: { authentication.signOut() }) {
                     Label("Sign Out", systemImage: "arrow.backward").padding(15.0)

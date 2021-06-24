@@ -8,7 +8,7 @@ import Foundation
 
 
 /// Defines repository with data
-public protocol Store {
+public protocol Store: ObservableObject {
     
     ///Dic for a request params
     typealias Params = [String: String]
@@ -18,8 +18,10 @@ public protocol Store {
     /// Defines a communication layer with a remote source of data
     associatedtype AbstractProxy: Proxy
     
+    var items : [Item] { get }
+    
     /// Contains error string if loading ends up with errors
-    var error: String? { get }
+    var error: String? { get set }
     
     /// Indicates state of loading
     var loading: Bool { get }

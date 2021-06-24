@@ -119,7 +119,9 @@ public final class RemoteStore<T: Model, U: Proxy>: Store {
                 
                 DispatchQueue.main.async {
                     self.removeAll()
-                    self.appendAll(response.items as! [T])
+                    if let elms = response.items as? [T]{
+                        self.appendAll(elms)
+                    }
                     self.setTotal()
                     self.loading = false
                     if let error = response.error {

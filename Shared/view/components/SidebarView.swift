@@ -57,8 +57,9 @@ struct SidebarView<U : Store>: View, Stylable, Supportable, Controllable {
             Group {
                 Spacer()
                 NavigationLink(destination: MainView(title: "Main", imageName:"person")) { Label("Main", systemImage: "house")}
-                
-                buildListBody(store.items as! [Item])
+                if let elms = store.items as? [Item]{
+                    buildListBody(elms)
+                }
                 
                 Button(action: { authentication.signOut() }) {
                     Label("Sign Out", systemImage: "arrow.backward").padding(15.0)

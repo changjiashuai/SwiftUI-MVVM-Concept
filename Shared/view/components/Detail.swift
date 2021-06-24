@@ -60,7 +60,9 @@ struct Detail<T: Model, U: Store, V: View, Content: View>:
     func buildComponentBody() -> some View {
         VStack(spacing: 0) {
             ForEach(store.items, id: \.self) { item in
-                content(item as! T)
+                if let elm = item as? T {
+                    content(elm)
+                }
             }
         }
     }

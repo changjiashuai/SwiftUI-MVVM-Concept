@@ -65,8 +65,10 @@ struct Master<T: Model, U: Store, F: View, Content: View>:
     func buildComponentBody() -> some View {
         VStack(spacing: 0) {
             ForEach(store.items, id: \.self) { item in
-                content(item as! T, isSelected(item as! T))
-                    .onTapGesture { select(item as! T) }
+                if let elm = item as? T {
+                    content(elm, isSelected(elm))
+                        .onTapGesture { select(elm) }
+                }
             }
         }
     }

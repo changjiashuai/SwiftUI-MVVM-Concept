@@ -20,11 +20,11 @@ import Ui
 /// `Componentable` - Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 /// `Scrolable` - Defines to represent scroll into `View`
 
-struct Detail<T, U: Store, V: View, Content: View>:
-    View, Controllable, Stylable, Componentable, Scrolable  where T == U.Item
+struct Detail<U: Store, V: View, Content: View>:
+    View, Controllable, Stylable, Componentable, Scrolable
 {
 
-    typealias Item = T
+    typealias Item = U.Item
     
     /// Store with data
     @StateObject var store: U
@@ -36,7 +36,7 @@ struct Detail<T, U: Store, V: View, Content: View>:
     @EnvironmentObject var logger: Logger
     
     /// A view builder that creates the content of an Item view
-    let content: (T) -> Content
+    let content: (Item) -> Content
     
     /// ToolBar with set of controls
     let toolBar: V

@@ -12,7 +12,7 @@ import Service
 import Ui
 
 /// Main tool panel with controlls
-struct SidebarView<U : Store>: View, Stylable, Supportable, Controllable where U.Item == MenuSection {
+struct SidebarView<U : Store>: View, Stylable, Supportable, Controllable where U.Item == MenuSection{
     
     typealias Item = MenuSection
     

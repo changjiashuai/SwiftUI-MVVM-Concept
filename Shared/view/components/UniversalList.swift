@@ -19,11 +19,10 @@ import Ui
 /// `Componentable` - Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 /// `Scrolable` - Defines to represent scroll into `View`
 
-struct UniversalList<T, U: Store, V: View, Content: View>:
-    View, Controllable, Selectable, Stylable, Componentable, Scrolable where T == U.Item
+struct UniversalList<U: Store, V: View, Content: View>:
+    View, Controllable, Selectable, Stylable, Componentable, Scrolable
 {
-    
-    typealias Item = T
+    typealias Item = U.Item
     
     /// Store with data
     @StateObject var store: U
@@ -35,10 +34,10 @@ struct UniversalList<T, U: Store, V: View, Content: View>:
     @EnvironmentObject var logger: Logger
     
     /// Selected item
-    @State var selectedItem: T?
+    @State var selectedItem: Item?
     
     /// A view builder that creates the content of an Item view
-    let content: (T, Bool) -> Content
+    let content: (Item, Bool) -> Content
     
     /// ToolBar with set of controls
     let toolBar: V
@@ -69,5 +68,5 @@ struct UniversalList<T, U: Store, V: View, Content: View>:
     
     /// Select item
     /// - Parameter item: selected item
-    func select(_ item: T) { selectedItem = item }
+    func select(_ item: Item) { selectedItem = item }
 }

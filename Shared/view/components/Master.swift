@@ -19,10 +19,10 @@ import Ui
 ///  Method`isSelected` is defined in Selectable
 /// `Componentable` - Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 /// `Scrolable` - Defines to represent scroll into `View`
-struct Master<T, U: Store, F: View, Content: View>:
-    View, Controllable, Selectable, Stylable, Componentable, Scrolable  where T == U.Item
+struct Master<U: Store, F: View, Content: View>:
+    View, Controllable, Selectable, Stylable, Componentable, Scrolable
 {
-    typealias Item = T  
+    typealias Item = U.Item
     
     /// Store with data
     @StateObject var store: U
@@ -34,10 +34,10 @@ struct Master<T, U: Store, F: View, Content: View>:
     @EnvironmentObject var logger: Logger
     
     /// Selected item
-    @State var selectedItem: T?
+    @State var selectedItem: Item?
     
     /// A view builder that creates the content of an Item view
-    let content: (T, Bool) -> Content
+    let content: (Item, Bool) -> Content
     
     /// ToolBar with set of controls
     let toolBar: F
@@ -73,7 +73,7 @@ struct Master<T, U: Store, F: View, Content: View>:
     
     /// Select item
     /// - Parameter item: selected item
-    func select(_ item: T) {
+    func select(_ item: Item) {
         selectedItem = item
         loadDetails(item)
     }
@@ -82,7 +82,7 @@ struct Master<T, U: Store, F: View, Content: View>:
     
     /// Load detail store for a master item
     /// - Parameter item: current master item
-    private func loadDetails(_ item: T) {
+    private func loadDetails(_ item: Item) {
         
         let command = StoreCommand(.read,
                                    params: [

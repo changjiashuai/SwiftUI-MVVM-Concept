@@ -20,11 +20,11 @@ import Service
 /// `Componentable` - Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 /// `Scrolable` - Defines to represent scroll into `View`
 
-struct BarChart<T, U: Store, V : View, Content: View>:
-    View, Controllable, Selectable, Stylable, Componentable where T == U.Item
+struct BarChart<U: Store, V : View, Content: View>:
+    View, Controllable, Selectable, Stylable, Componentable
 {
     
-    typealias Item = T
+    typealias Item = U.Item
     
     /// Store with data
     @StateObject var store: U
@@ -36,10 +36,10 @@ struct BarChart<T, U: Store, V : View, Content: View>:
     @EnvironmentObject var logger: Logger
     
     /// Selected item
-    @State var selectedItem: T?
+    @State var selectedItem: Item?
     
     /// Template to define Item view
-    let content: (T, Bool, CGFloat) -> Content
+    let content: (Item, Bool, CGFloat) -> Content
     
     /// ToolBar with set of controls
     let toolBar: V
@@ -80,5 +80,5 @@ struct BarChart<T, U: Store, V : View, Content: View>:
     
     /// Select item
     /// - Parameter item: selected item
-    func select(_ item: T) { selectedItem = item }
+    func select(_ item: Item) { selectedItem = item }
 }

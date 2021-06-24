@@ -80,7 +80,7 @@ App stores are assembled in *AppViewModel* In the code example. Two views (*Univ
 
 * Add a token to any request after authorization
 * Shared source of data with different Views
-* Pagination and parametrs in requests
+* Pagination and parameters in requests
 * Get the menu data dynamically 
 * Log UI actions or requests
 * Dynamically added Views

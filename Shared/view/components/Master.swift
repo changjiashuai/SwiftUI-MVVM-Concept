@@ -19,8 +19,8 @@ import Ui
 ///  Method`isSelected` is defined in Selectable
 /// `Componentable` - Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 /// `Scrolable` - Defines to represent scroll into `View`
-struct Master<T: Model, U: Store, F: View, Content: View>:
-    View, Controllable, Selectable, Stylable, Componentable, Scrolable
+struct Master<T, U: Store, F: View, Content: View>:
+    View, Controllable, Selectable, Stylable, Componentable, Scrolable  where T == U.Item
 {
     typealias Item = T  
     
@@ -65,10 +65,8 @@ struct Master<T: Model, U: Store, F: View, Content: View>:
     func buildComponentBody() -> some View {
         VStack(spacing: 0) {
             ForEach(store.items, id: \.self) { item in
-                if let elm = item as? T {
-                    content(elm, isSelected(elm))
-                        .onTapGesture { select(elm) }
-                }
+                content(item, isSelected(item))
+                    .onTapGesture { select(item) }
             }
         }
     }

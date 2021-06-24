@@ -20,8 +20,8 @@ import Service
 /// `Componentable` - Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 /// `Scrolable` - Defines to represent scroll into `View`
 
-struct BarChart<T: Model, U: Store, V : View, Content: View>:
-    View, Controllable, Selectable, Stylable, Componentable
+struct BarChart<T, U: Store, V : View, Content: View>:
+    View, Controllable, Selectable, Stylable, Componentable  where T == U.Item
 {
     
     typealias Item = T
@@ -70,11 +70,8 @@ struct BarChart<T: Model, U: Store, V : View, Content: View>:
         GeometryReader { proxy in
             HStack(alignment: .bottom, spacing: 0) {
                 ForEach(store.items, id: \.self) { item in
-                    if let elm = item as? T {
-                        content(elm, isSelected(elm), getItemWidth(proxy))
-                            .onTapGesture { select(elm) }
-                    }
-
+                    content(item, isSelected(item), getItemWidth(proxy))
+                        .onTapGesture { select(item) }
                 }
             }.frame(maxHeight: .infinity, alignment: .bottom)
             .clipped()

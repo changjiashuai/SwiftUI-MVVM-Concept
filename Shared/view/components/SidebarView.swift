@@ -12,10 +12,10 @@ import Service
 import Ui
 
 /// Main tool panel with controlls
-struct SidebarView<U : Store>: View, Stylable, Supportable, Controllable {
+struct SidebarView<U : Store>: View, Stylable, Supportable, Controllable  where U.Item == MenuSection{
     
     typealias Item = MenuSection
-    
+   
     /// Logger service
     @EnvironmentObject var logger: Logger
     
@@ -57,10 +57,7 @@ struct SidebarView<U : Store>: View, Stylable, Supportable, Controllable {
             Group {
                 Spacer()
                 NavigationLink(destination: MainView(title: "Main", imageName:"person")) { Label("Main", systemImage: "house")}
-                if let elms = store.items as? [Item]{
-                    buildListBody(elms)
-                }
-                
+                    buildListBody(store.items)                
                 Button(action: { authentication.signOut() }) {
                     Label("Sign Out", systemImage: "arrow.backward").padding(15.0)
                 }.buttonStyle(PlainButtonStyle())

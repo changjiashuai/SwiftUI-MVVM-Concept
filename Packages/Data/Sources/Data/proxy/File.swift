@@ -7,7 +7,7 @@
 import Foundation
 
 /// Defines communication layer to get data from local files
-public struct File<T:Model, R: Reader>: Proxy {
+public struct File<T, R>: Proxy where R: Reader, R.Item == T {
     
     /// Parse data loaded from a file
     public let reader: R
@@ -58,7 +58,7 @@ public struct File<T:Model, R: Reader>: Proxy {
         }
         
         do {
-            items = try reader.read(data: data) as! [T]
+            items = try reader.read(data: data)
         } catch {
            return createResponse(request, ReaderError.readError)
         }

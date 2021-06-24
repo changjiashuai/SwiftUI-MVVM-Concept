@@ -20,8 +20,7 @@ public final class RemoteStore<T: Model, U: Proxy>: Store where T == U.Item {
     @Published public private(set) var loading: Bool = false
     
     /// Total amount of items in Store
-    @Published public private(set) var total: Int = 0
-    
+    @Published public private(set) var total: Int = 0    
     
     /// Currently performed task
     var currentWork : DispatchWorkItem?
@@ -126,6 +125,7 @@ public final class RemoteStore<T: Model, U: Proxy>: Store where T == U.Item {
                 
                 DispatchQueue.main.async {
                     self.removeAll()
+                    
                     if let elms = response.items as? [T]{
                         self.appendAll(elms)
                     }

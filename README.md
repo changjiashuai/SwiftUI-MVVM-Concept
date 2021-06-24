@@ -51,6 +51,7 @@ UniversalList(
 )
 ```
 > **content** parameter is a template for creating View depicting an entity 
+
 > **toolBar** set of predefined controls to manage View plus you can add your cystom set 
 
 >  Passing data through **environmentObject** it's on your own, it's just a technical convenient solution in the code example

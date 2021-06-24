@@ -61,6 +61,7 @@ UniversalList(
 
 * Add a token to any request after authorization
 * Shared source of data with different Views
+* Pagination and parametrs in requests
 * Get the menu data dynamically 
 * Log UI actions or requests
 * Dynamically added Views

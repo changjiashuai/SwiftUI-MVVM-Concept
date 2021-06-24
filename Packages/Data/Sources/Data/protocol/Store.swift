@@ -15,9 +15,11 @@ public protocol Store: ObservableObject {
     
     /// Defines an element of Store
     associatedtype Item: Model
+    
     /// Defines a communication layer with a remote source of data
     associatedtype AbstractProxy: Proxy
     
+    /// Array of manageable data
     var items : [Item] { get }
     
     /// Contains error string if loading ends up with errors

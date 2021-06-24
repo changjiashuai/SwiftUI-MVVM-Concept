@@ -11,7 +11,7 @@ import Foundation
 public protocol Proxy {
     
     /// Defines an element of Store
-    associatedtype Item    
+    associatedtype Item: Model
     /// Processes data fetched from a remote source
     associatedtype AbstractReader: Reader
     /// Defines specs for a request

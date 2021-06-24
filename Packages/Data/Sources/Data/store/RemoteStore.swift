@@ -8,7 +8,7 @@ import Foundation
 
 
 /// Store is a repo that maneges models conformed to Model protocol
-public final class RemoteStore<T: Model, U: Proxy>: Store where T == U.Item {
+public final class RemoteStore<T, U: Proxy>: Store where T == U.Item {
     
     /// Set of stored data
     @Published public private(set) var items = [T]()
@@ -20,7 +20,7 @@ public final class RemoteStore<T: Model, U: Proxy>: Store where T == U.Item {
     @Published public private(set) var loading: Bool = false
     
     /// Total amount of items in Store
-    @Published public private(set) var total: Int = 0    
+    @Published public private(set) var total: Int = 0
     
     /// Currently performed task
     var currentWork : DispatchWorkItem?

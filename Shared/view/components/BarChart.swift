@@ -21,7 +21,7 @@ import Service
 /// `Scrolable` - Defines to represent scroll into `View`
 
 struct BarChart<T, U: Store, V : View, Content: View>:
-    View, Controllable, Selectable, Stylable, Componentable  where T == U.Item
+    View, Controllable, Selectable, Stylable, Componentable where T == U.Item
 {
     
     typealias Item = T

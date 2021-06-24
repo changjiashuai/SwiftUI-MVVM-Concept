@@ -31,7 +31,7 @@ struct WidgetFactory {
     /// Get  chart
     /// - Returns: Chart view
     @ViewBuilder
-    func chart<T:Model, U: Proxy, Content: View, ToolBarContent: View>
+    func chart<T, U: Proxy, Content: View, ToolBarContent: View>
     (
         store: RemoteStore<T,U>,
         content: @escaping (T, Bool, CGFloat) -> Content,
@@ -48,7 +48,7 @@ struct WidgetFactory {
     /// Get  list
     /// - Returns: List view
     @ViewBuilder
-    func list<T:Model, U: Proxy, Content: View, ToolBarContent: View>
+    func list<T, U: Proxy, Content: View, ToolBarContent: View>
     (
         store: RemoteStore<T,U>,
         content: @escaping (T, Bool) -> Content,

@@ -12,36 +12,36 @@ import Data
 class AppViewModel: ViewModel, ObservableObject {   
     
     let menu = RemoteStore<MenuSection, File>(
-        proxy: File<MenuSection, Json>(
-            reader: Json<MenuSection>(),
+        proxy: File(
+            reader: Json(),
             fileName: "menu.json"
         )
     )
     
     let users = RemoteStore<User, File>(
-        proxy: File<User, Json>(
-            reader: Json<User>(),
+        proxy: File(
+            reader: Json(),
             fileName: "user.json"
         )
     )
 
     let books = RemoteStore<Book, File>(
-        proxy: File<Book, Json>(
-            reader: Json<Book>(),
+        proxy: File(
+            reader: Json(),
             fileName: "book.json"
         )
     )
     
     let ganre = RemoteStore<Ganre, File>(
-        proxy: File<Ganre, Json>(
-            reader: Json<Ganre>(),
+        proxy: File(
+            reader: Json(),
             fileName: "ganre.json"
         )
     )
 
     let movie = RemoteStore<Movie, File>(
-        proxy: File<Movie, Json>(
-            reader: Json<Movie>(),
+        proxy: File(
+            reader: Json(),
             fileName: "movie.json"
         )
     )

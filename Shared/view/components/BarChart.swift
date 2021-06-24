@@ -20,8 +20,7 @@ import Service
 /// `Componentable` - Template Method  is a behavioral design pattern defines the skeleton of an algorithm in the protocol but lets Structs implement specific steps of the algorithm without changing its structure.
 /// `Scrolable` - Defines to represent scroll into `View`
 
-struct BarChart<U: Store, V : View, Content: View>:
-    View, Controllable, Selectable, Stylable, Componentable
+struct BarChart<U: Store, V : View, Content: View>: View, Controllable, Selectable, Stylable, Componentable
 {
     
     typealias Item = U.Item

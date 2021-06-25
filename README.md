@@ -102,5 +102,48 @@ App stores are assembled in *AppViewModel* In the code example. Two views (*Univ
 * Xcode Version 12.5+ Swift 5.3
 
 
+### What might be the next step...
+### Rest proxy
+```Swift 
+RemoteStore<User, Rest>(
+    proxy: Rest(
+        headers: ["Content-Type": "text/plain" ]
+        actions : [
+            .create  : .post,
+            .read    : .get,
+            .update  : .put,
+            .destroy : .delete
+        ],
+        reader: Json(rootElement: "data"),
+        writer: Json(),
+        url: "http://apple.com/user.json"
+    )
+)
+```
+### Http proxy
+```Swift 
+RemoteStore<User, Http>(
+    proxy: Http(
+      binary : true,
+      username: "Igor",
+      password: "*****",
+      url: "http://apple.com/images",
+      reader: Amf(
+         rootElement : "data",
+         messageIndex : 5
+      )
+    )
+)
+```
 
+### LongFile proxy
+```Swift 
+RemoteStore<User, LongFile>(
+    proxy: LongFile(
+        bufferSize : 64,
+        reader: Json(),
+        fileName: "user.txt"
+    )
+)
+```
 

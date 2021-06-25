@@ -142,7 +142,7 @@ RemoteStore<User, LongFile>(
     proxy: LongFile(
         bufferSize : 64,
         reader: Json(),
-        fileName: "user.txt"
+        fileName: "user.json"
     )
 )
 ```

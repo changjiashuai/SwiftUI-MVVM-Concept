@@ -146,7 +146,8 @@ RemoteStore<User, LongFile>(
 ### Direct proxy
 ```Swift 
 RemoteStore<User, Direct>(
-    proxy: Direct(       
+    proxy: Direct( 
+       providerId : "providerid",
        forNamespace: "/user",
        api : [
             .read : "Socket.User.read"

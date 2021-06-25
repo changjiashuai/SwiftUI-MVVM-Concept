@@ -128,7 +128,8 @@ RemoteStore<User, Http>(
       username: "Igor",
       password: "*****",
       url: "http://apple.com/images",
-      reader: Amf(
+      //Reader for binary data in either AMF0 or AMF3 format
+      reader: Amf( 
          rootElement : "data",
          messageIndex : 5
       )

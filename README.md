@@ -146,8 +146,8 @@ RemoteStore<User, LongFile>(
 ### Direct store
 ```Swift 
 DirectStore<User>(
-    providerId : "localhost:8080",
-    forNamespace: "/user",
+    providerId : "localhost:8080",  
+    forNamespace: "/user", // manager.socket(forNamespace: "/user")
     api : [
        .read : "Socket.User.read"
     ]

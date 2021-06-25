@@ -130,7 +130,7 @@ RemoteStore<User, Http>(
       url: "http://apple.com/images",
       reader: Amf( 
          rootElement : "data",
-         messageIndex : 5
+         messageIndex : 0
       )
     )
 )

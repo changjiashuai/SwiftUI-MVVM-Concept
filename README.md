@@ -125,8 +125,6 @@ RemoteStore<User, Rest>(
 RemoteStore<User, Http>(
     proxy: Http(
       binary : true,
-      username: "Igor",
-      password: "*****",
       url: "http://apple.com/images",
       reader: Amf( 
          rootElement : "data",

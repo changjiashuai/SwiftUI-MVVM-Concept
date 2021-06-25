@@ -116,7 +116,7 @@ RemoteStore<User, Rest>(
         ],
         reader: Json(rootElement: "data"),
         writer: Json(),
-        url: "http://apple.com/user.json"
+        url: "http://apple.com/user"
     )
 )
 ```

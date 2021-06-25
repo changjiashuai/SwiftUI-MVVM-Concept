@@ -143,7 +143,7 @@ RemoteStore<User, LongFile>(
 )
 ```
 
-### Direct proxy
+### Direct store
 ```Swift 
 DirectStore<User>(
     providerId : "localhost:8080",

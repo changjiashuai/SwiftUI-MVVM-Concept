@@ -137,8 +137,8 @@ RemoteStore<User, Http>(
 RemoteStore<User, LongFile>(
     proxy: LongFile(
         bufferSize : 64,
-        reader: Json(),
-        fileName: "user.json"
+        reader: Csv(),
+        fileName: "user.csv"
     )
 )
 ```

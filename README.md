@@ -126,10 +126,7 @@ RemoteStore<User, Http>(
     proxy: Http(
       binary : true,
       url: "http://apple.com/images",
-      reader: Amf( 
-         rootElement : "data",
-         messageIndex : 0
-      )
+      reader: Amf( messageIndex : 0 )
     )
 )
 ```
